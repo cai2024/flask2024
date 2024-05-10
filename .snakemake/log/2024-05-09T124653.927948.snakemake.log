@@ -1,4 +1,0 @@
-Building DAG of jobs...
-WildcardError in rule all in file /data/cailab/flask_snk/CS.py, line 15:
-Wildcards in input files cannot be determined from output files: (rule all, line 15, /data/cailab/flask_snk/CS.py)
-'sample'

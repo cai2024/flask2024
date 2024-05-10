@@ -1,4 +1,0 @@
-Building DAG of jobs...
-WildcardError in rule get_log in file /data/cailab/flask_snk/WGS.py, line 140:
-Wildcards in input files cannot be determined from output files: (rule get_log, line 305, /data/cailab/flask_snk/WGS.py)
-'sample'
