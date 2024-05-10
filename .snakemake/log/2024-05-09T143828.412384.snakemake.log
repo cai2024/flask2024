@@ -1,0 +1,79 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+all            1
+get_log        2
+total          3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May  9 14:38:29 2024]
+localrule get_log:
+    input: /data/cailab/flask_output/20240508223837-eed0523f-881d-45c9-9913-f0b522237846/trim/CS-3w-caC.fq, /data/cailab/flask_output/20240508223837-eed0523f-881d-45c9-9913-f0b522237846/trim/CS-3w-caC.json, /data/cailab/flask_output/20240508223837-eed0523f-881d-45c9-9913-f0b522237846/cover/de_CS-3w-caC/genome_results.txt, /data/cailab/flask_output/20240508223837-eed0523f-881d-45c9-9913-f0b522237846/bam/CS-3w-caC.bam, /data/cailab/flask_output/20240508223837-eed0523f-881d-45c9-9913-f0b522237846/debam/de_CS-3w-caC.bam, /data/cailab/flask_output/20240508223837-eed0523f-881d-45c9-9913-f0b522237846/debam/de_CS-3w-caC.bam.all.bed.hmc, /data/cailab/flask_output/20240508223837-eed0523f-881d-45c9-9913-f0b522237846/debam/de_CS-3w-caC.bam.all.bed.mc
+    output: /data/cailab/flask_output/20240508223837-eed0523f-881d-45c9-9913-f0b522237846/final_log/CS-3w-caC.log
+    jobid: 16
+    reason: Missing output files: /data/cailab/flask_output/20240508223837-eed0523f-881d-45c9-9913-f0b522237846/final_log/CS-3w-caC.log; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: sample=CS-3w-caC
+    threads: 4
+    resources: mem_mb=8000, mem_mib=7630, disk_mb=9174, disk_mib=8750, tmpdir=/data/cailab/flask_output/20240508223837-eed0523f-881d-45c9-9913-f0b522237846/temp_test
+
+RuleException in rule get_log in file /data/cailab/flask_snk/CS.py, line 175:
+NameError: The name ' sum += $4; count++ \\' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        name=$(echo {params.my_sample})
+        raw_size=$(python3 {get_json} {input.json} summary,before_filtering,total_bases)
+        raw_read_num=$(python3 {get_json} {input.json} summary,before_filtering,total_reads)
+        trimed_read_num=$(python3 {get_json} {input.json} summary,after_filtering,total_reads)
+        model_read_num=$(wc -l < {input.fq})
+        dup_radio1=$(python3 {get_json} {input.json} duplication,rate)
+
+        clean_read_num=$(samtools view -c {input.bam}) 
+        de_read_num=$(samtools view -c {input.dedup_bam})
+        map_read_num=$(samtools view -c -F 4 {input.bam})
+        
+        cover=$(sed -n 's/.*There is a \([0-9.]*\)\% of reference with a coverageData >= 1X.*/\1/p' {input.cover})
+        ref_size=$(sed -n 's/.*number of bases = \([0-9,]*\) bp.*/\1/p' {input.cover} | tr -d ',')
+        map_size=$(sed -n 's/.*number of mapped bases = \([0-9,]*\) bp.*/\1/p' {input.cover} | tr -d ',')
+
+        gc=$(python3 {get_json} {input.json} summary,after_filtering,gc_content)
+        q20=$(python3 {get_json} {input.json} summary,after_filtering,q20_rate)
+        q30=$(python3 {get_json} {input.json} summary,after_filtering,q30_rate)
+        chrm_num=$(samtools view -c {input.bam} chrM)
+        
+        hmc_cpg=$(awk '$7 == "CpG" \{ sum += $4; count++ \} END \{ if (count > 0) print sum / count \}' {input.hmc})
+        hmc_chg=$(awk '$7 == "CHG" { sum += $4; count++ } END { if (count > 0) print sum / count }' {input.hmc}) 
+        hmc_chh=$(awk '$7 == "CHH" { sum += $4; count++ } END { if (count > 0) print sum / count }' {input.hmc})
+        mc_cpg=$(awk '$7 == "CpG" { sum += $4; count++ } END { if (count > 0) print sum / count }' {input.mc})
+        mc_chg=$(awk '$7 == "CHG" { sum += $4; count++ } END { if (count > 0) print sum / count }' {input.mc}) 
+        mc_chh=$(awk '$7 == "CHH" { sum += $4; count++ } END { if (count > 0) print sum / count }' {input.mc})
+        hmc=$(echo "$hmc_cpg|$hmc_chg|$hmc_chh")
+
+     
+        [ "$(echo "$raw_read_num == 0" | bc)" -eq 1 ] && raw_read_num=100000000000
+        [ "$(echo "$clean_read_num == 0" | bc)" -eq 1 ] && clean_read_num=100000000000
+        [ "$(echo "$cover == 0" | bc)" -eq 1 ] && cover=100000000000
+        [ "$(echo "$map_read_num == 0" | bc)" -eq 1 ] && map_read_num=100000000000
+        ########################################
+        sequence_size=$(echo "scale=4; $raw_size/1000000000" | bc)
+        clean_read_ratio=$(echo "scale=4; $trimed_read_num/$raw_read_num" | bc)
+        match_model_ratio=$(echo "scale=4; $model_read_num/($trimed_read_num*2)" | bc)
+        duplication_rate=$(echo "scale=4; (($clean_read_num-$de_read_num)/$clean_read_num)" | bc)
+        map_read_ratio=$(echo "scale=4; $map_read_num/$clean_read_num" | bc)
+        average_depth=$(echo "scale=4; $map_size/($cover*$ref_size*0.01)" | bc)
+
+
+        mit_ratio=$(echo "scale=4; $chrm_num/$map_read_num" | bc)
+        gc_filter_ratio=$(echo "scale=4; $gc/1" | bc)
+        q20_filter_ratio=$(echo "scale=4; $q20/1" | bc)
+        q30_filter_ratio=$(echo "scale=4; $q30/1" | bc)
+
+
+        echo -e "name	sequence_size	clean_read_ratio	match_model_ratio	duplication_rate	map_read_ratio	cover_ratio	average_depth	hmc	gc_filter_ratio	mit_ratio	q20_filter_ratio	q30_filter_ratio	total_reads_raw" > {output.log}
+
+        echo -e "$name	$sequence_size(G)	$clean_read_ratio	$match_model_ratio	$duplication_rate	$map_read_ratio	$cover	$average_depth	$hmc	$gc_filter_ratio	$mit_ratio	$q20_filter_ratio	$q30_filter_ratio	$raw_read_num" >> {output.log}
+        

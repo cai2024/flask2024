@@ -1,0 +1,10 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+candidate job trim_galore_pe
+    wildcards: sample=1w
+selected job trim_galore_pe
+    wildcards: sample=1w
+selected job all
+    wildcards: 
+Nothing to be done (all requested files are present and up to date).

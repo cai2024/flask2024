@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /data/cailab/flask_snk/CS.py, line 15:
+Missing input files for rule all:
+    affected files:
+        /data/cailab/flask_output/20240508171928-18753c73-62dd-433e-b0b1-fc11b5cf51ad/debam/de_1w.cov.log

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% from 'bootstrap4/form.html' import render_form %}
+
+{% block content %}
+    {% include 'biology/folder_selection.html' %}
+
+    <div class="container h-100">
+        <div class="row h-100 page-header justify-content-center align-items-center">
+        </div>
+        <div class="row h-100 justify-content-center align-items-center">
+            {{ render_form(form, extra_classes='col-lg-20') }}
+        </div>
+    </div>
+{% endblock %}
+

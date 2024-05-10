@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in rule all in file /data/cailab/flask_snk/WGS.py, line 12:
+Wildcards in input files cannot be determined from output files: (rule all, line 12, /data/cailab/flask_snk/WGS.py)
+'trim_out_path'

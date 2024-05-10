@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}操作日志和进度{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>操作日志</h2>
+            <button id="refreshLogsButton" class="btn btn-secondary">刷新日志</button>  <!-- 添加用于刷新日志的按钮 -->
+            <pre id="log-content" style="height: 400px; overflow-y: scroll; background-color: #f4f4f4; padding: 10px;">
+                <!-- 日志内容将显示在这里 -->
+            </pre>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <h2>分析进度</h2>
+            <button id="refreshButton" class="btn btn-primary">刷新结果</button>  <!-- 添加用于刷新结果的按钮 -->
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover table-sm" id="data_info">
+                    <!-- 表格内容将显示在这里 -->
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    var taskId = "{{ task_id }}";  // 从后端获取 task_id
+
+    function fetchLogs() {
+        $.ajax({
+            url: '/fetch-logs?task_id=' + taskId,
+            success: function(data) {
+                $('#log-content').text(data.logs);
+            }
+        });
+    }
+
+    function updateProgress() {
+        $.post('/progress', { task_id: taskId }).done(function(n){
+            $('#data_info').html(n[0]);
+        }).fail(function() {
+            $('#data_info').html('<p>等待程序运行结果</p>');
+        });
+    }
+
+    $(document).ready(function() {
+        $('#refreshLogsButton').on('click', function() {
+            fetchLogs();  // 点击刷新日志按钮时获取日志
+        });
+        $('#refreshButton').on('click', function() {
+            updateProgress();  // 点击刷新结果按钮时更新进度
+        });
+    });
+</script>
+{% endblock %}
+

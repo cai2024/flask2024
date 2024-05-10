@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% from 'bootstrap4/form.html' import render_form %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <h1><strong>{{ form.pipeline.data |upper}}分析流程 </strong></h1>
+    </div>
+</div>
+
+<div class="container h-100">
+<br>
+<div class="row h-100 justify-content-center align-items-center">
+    {{render_form(form, extra_classes='col-6')}}
+</div>
+
+<div class="container">
+    <div class="row h-100 page-header justify-content-center align-items-center">
+        <h2>数据</h2>
+    </div>
+    <div class="row h-100 justify-content-center align-items-center">
+        {{data_info|safe}}
+    </div>
+ </div>
+
+{% endblock %}
+
