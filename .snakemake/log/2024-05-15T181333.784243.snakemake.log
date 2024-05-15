@@ -1,7 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule get_log in file /data/cailab/flask2024/flask_snk/WGS.py, line 206:
-Missing input files for rule get_log:
-    output: /data/cailab/flask_output/20240515181131-ff89f927-650e-4a43-8564-d2bfdac9bd61/final_log/1w_1.log
-    wildcards: sample=1w_1
-    affected files:
-        /data/cailab/flask_output/20240515181131-ff89f927-650e-4a43-8564-d2bfdac9bd61/sp_bam/sp_1w_1.bam
