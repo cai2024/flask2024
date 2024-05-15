@@ -58,8 +58,8 @@ def check(task_id):
     selected_folder = session.get(f'selected_folder_{task_id}', 'no input')  
     fastqs = get_fq_list(selected_folder, info["mode"] != "single")
     df_data = pd.DataFrame(fastqs, index=range(1,len(fastqs)+1), columns=[f'total: {len(fastqs)}']).to_html(justify='center')
-    form = pipelineForm.create_instance(info['pipeline']+"_"+info['param_choice'])
-    form.data_ana.data = selected_folder
+    form = pipelineForm.create_instance(info['pipeline']+"Form_"+info['param_choice'])
+    form.fq_in_path.data = selected_folder
     form.output_dir.data = user_dir + task_id
     form.cpu_count.data = info['cpu_count']
     form.mode.data=info["mode"]

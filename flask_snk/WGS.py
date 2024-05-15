@@ -5,8 +5,15 @@ fastp = "/data/biosoft/soft2024/fastp/fastp-0.23.4/fastp"
 bowtie2="/data/biosoft/soft2024/bowtie2/bowtie2-2.5.2-linux-x86_64/bowtie2"
 picard="/data/biosoft/soft2024/picard/picard.jar"
 qualimap="/data/biosoft/soft2024/qualimap/qualimap_v2.3/qualimap"
-py_ref="/data/cailab/flask_snk/ref"
+bedtools="/data/biosoft/soft2024/bedtools/bedtools2/bin/bedtools"
+py_ref="/data/cailab/flask2024/flask_snk/ref"
+spikein_ref="/data/reference2024/spikein/bowtie2/spikein"
+
+
 # 加载配置文件
+params_list = config['spikein_params'].split(',')
+spikein_list = '\t'.join([f'{param}_(cover|dep)' for param in params_list])
+
 # 命令行加载
 
 # 规则定义
@@ -35,11 +42,10 @@ rule fastp_se:
         config['fastp_params'],
     conda:
         "flask2024",
-    threads: 2,
+    threads: 3,
     shell:
         """
-        {fastp} {params} -i {input.fq1} -o {output.trim_fq1} -j {output.json} -h {output.html} 2> {log}
-        
+        {fastp} {params} -i {input.fq1} -o {output.trim_fq1} -j {output.json} -h {output.html} -w {threads}  2> {log}
         """
 
 rule fastp_pe:
@@ -57,10 +63,10 @@ rule fastp_pe:
         config['fastp_params'],
     conda:
         "flask2024",  
-    threads: 2,
+    threads: 3,
     shell:
         """
-        {fastp} {params} -i {input.fq1} -I {input.fq2} -o {output.trim_fq1} -O {output.trim_fq2} -j {output.json} -h {output.html} 2> {log}
+        {fastp} {params} -i {input.fq1} -I {input.fq2} -o {output.trim_fq1} -O {output.trim_fq2} -j {output.json} -h {output.html} -w {threads} 2> {log}
         """
 rule bowtie2_se: 
     input:
@@ -77,7 +83,7 @@ rule bowtie2_se:
     shell:
         """
         ({bowtie2} -x {params.ref} -U {input.trim_fq1} -S {params.sam}  -p {threads} ) 2> {log} 
-        samtools view -b {params.sam} | samtools sort > {output.bam}
+        samtools view -b {params.sam} | samtools sort -@ {threads} -o {output.bam}
         samtools index {output.bam}
         rm {params.sam}
         """
@@ -98,10 +104,57 @@ rule bowtie2_pe:
     shell:
         """
         ({bowtie2} -x {params.ref} -1 {input.trim_fq1} -2 {input.trim_fq2} -S {params.sam}  -p {threads} ) 2> {log} 
-        samtools view -b {params.sam} | samtools sort > {output.bam}
+        samtools view -b {params.sam} | samtools sort -@ {threads} -o {output.bam}
         samtools index {output.bam}
         rm {params.sam}
         """
+
+rule sp_bowtie2_se:
+    input:
+        trim_fq1="{output_dir}/trim/trim_{{sample}}_single.fq.gz".format(output_dir=config['output_dir'])
+    output:
+        bam="{output_dir}/sp_bam/sp_{{sample}}_single.bam".format(output_dir=config['output_dir']),
+        bed="{output_dir}/sp_bam/sp_{{sample}}.bed".format(output_dir=config['output_dir']),
+    log:
+        "{output_dir}/logs/sp_bowtie2/sp_{{sample}}.log".format(output_dir=config['output_dir']),
+    threads: 10
+    params:
+        ref=spikein_ref,
+        sam="{output_dir}/sp_bam/sp_{{sample}}_single.sam".format(output_dir=config['output_dir']),
+        other=config['bowtie2_params'],
+    shell:
+        """
+        ({bowtie2} -x {params.ref} -U {input.trim_fq1} -S {params.sam}  -p {threads} ) 2> {log}
+        samtools view -b {params.sam} | samtools sort -@ {threads} -o {output.bam} 
+        samtools index {output.bam}
+        rm {params.sam}
+        {bedtools} genomecov -ibam {output.bam}  -bga > {output.bed}
+        """
+
+rule sp_bowtie2_pe:
+    input:
+        trim_fq1="{output_dir}/trim/trim_{{sample}}_1.fq.gz".format(output_dir=config['output_dir']),
+        trim_fq2="{output_dir}/trim/trim_{{sample}}_2.fq.gz".format(output_dir=config['output_dir']),
+    output:
+        bam="{output_dir}/sp_bam/sp_{{sample}}_pair.bam".format(output_dir=config['output_dir']),
+        bed="{output_dir}/sp_bam/sp_{{sample}}.bed".format(output_dir=config['output_dir']),
+    log:
+        "{output_dir}/logs/sp_bowtie2/sp_{{sample}}.log".format(output_dir=config['output_dir']),
+    threads: 10
+    params:
+        ref=spikein_ref,
+        sam="{output_dir}/sp_bam/sp_{{sample}}_pair.sam".format(output_dir=config['output_dir']),
+        other=config['bowtie2_params'],
+    shell:
+        """
+        ({bowtie2} -x {params.ref} -1 {input.trim_fq1} -2 {input.trim_fq2} -S {params.sam}  -p {threads} ) 2> {log} 
+        samtools view -b {params.sam} | samtools sort -@ {threads} -o {output.bam}
+        samtools index {output.bam}
+        rm {params.sam}
+        {bedtools} genomecov -ibam {output.bam}  -bga > {output.bed}
+        """
+
+
 
 
 rule mark_duplicate:
@@ -117,7 +170,7 @@ rule mark_duplicate:
         other=config['picard_params']
     shell:
         """
-        (/usr/bin/java -jar {picard} MarkDuplicatesWithMateCigar --REMOVE_DUPLICATES {params.other}-I {input.bam} -O {output.dedup_bam} -M {params.tmp_report}) 2> {log}
+        (/usr/bin/java -jar {picard} MarkDuplicatesWithMateCigar --REMOVE_DUPLICATES {params.other} -I {input.bam} -O {output.dedup_bam} -M {params.tmp_report}) 2> {log}
         samtools index {output.dedup_bam}        
         """
 
@@ -143,12 +196,14 @@ rule get_log:
         cover="{output_dir}/cover/{{sample}}/genome_results.txt".format(output_dir=config['output_dir']),
         bam="{output_dir}/bam/{{sample}}_{mode}.bam".format(output_dir=config['output_dir'],mode=config["mode"]),
         dedup_bam="{output_dir}/debam/{{sample}}_dedup.bam".format(output_dir=config['output_dir']),
+        bed="{output_dir}/sp_bam/sp_{{sample}}.bed".format(output_dir=config['output_dir']),
     output:
-        log="{output_dir}/final_log/{{sample}}.log".format(output_dir=config['output_dir'])
+        log="{output_dir}/final_log/{{sample}}.log".format(output_dir=config['output_dir']),
     conda:
         "flask2024",
     params:
-        my_sample="{sample}"
+        my_sample="{sample}",
+        spikein=config['spikein_params'],
     threads: 4
 
     shell:
@@ -172,6 +227,9 @@ rule get_log:
         chrm_num=$(samtools view -c {input.bam} chrM)
 
 
+        all_spikein=$(python3 {py_ref}/spikein.py --bed {input.bed} --spikein {params.spikein} --hmc hmc.bed)
+
+
 
      
         [ "$(echo "$raw_read_num == 0" | bc)" -eq 1 ] && raw_read_num=100000000000
@@ -191,9 +249,9 @@ rule get_log:
         q30_filter_ratio=$(echo "scale=4; $q30/1" | bc)
 
 
-        echo -e "name\tsequence_size\tclean_read_ratio\tduplication_rate\tmap_read_ratio\tcover_ratio\taverage_depth\tgc_filter_ratio\tmit_ratio\tq20_filter_ratio\tq30_filter_ratio\ttotal_reads_raw" > {output.log}
+        echo -e "name\tsequence_size\tclean_read_ratio\tduplication_rate\tmap_read_ratio\tcover_ratio\taverage_depth\t{spikein_list}\tgc_filter_ratio\tmit_ratio\tq20_filter_ratio\tq30_filter_ratio\ttotal_reads_raw" > {output.log}
 
-        echo -e "$name\t$sequence_size\t$clean_read_ratio\t$duplication_rate\t$map_read_ratio\t$cover\t$average_depth\t$gc_filter_ratio\t$mit_ratio\t$q20_filter_ratio\t$q30_filter_ratio\t$raw_read_num" >> {output.log}
+        echo -e "$name\t$sequence_size\t$clean_read_ratio\t$duplication_rate\t$map_read_ratio\t$cover\t$average_depth\t$all_spikein\t$gc_filter_ratio\t$mit_ratio\t$q20_filter_ratio\t$q30_filter_ratio\t$raw_read_num" >> {output.log}
         """
 
 

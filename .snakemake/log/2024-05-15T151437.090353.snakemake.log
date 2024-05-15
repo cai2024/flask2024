@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in rule fastp_pe in file /data/cailab/flask2024/flask_snk/WGS.py, line 45:
+Missing input files for rule fastp_pe:
+    output: /data/cailab/flask_output/20240515151429-14a86bfa-3785-4268-a1c8-14e3cd9dc9a4/trim/trim_1w_1_1.fq.gz, /data/cailab/flask_output/20240515151429-14a86bfa-3785-4268-a1c8-14e3cd9dc9a4/trim/trim_1w_1_2.fq.gz, /data/cailab/flask_output/20240515151429-14a86bfa-3785-4268-a1c8-14e3cd9dc9a4/trim/1w_1_pair.json, /data/cailab/flask_output/20240515151429-14a86bfa-3785-4268-a1c8-14e3cd9dc9a4/trim/1w_1_pair.html
+    wildcards: sample=1w_1
+    affected files:
+        /data/cailab/temp/fastq/1w_1_1.fq.gz
+        /data/cailab/temp/fastq/1w_1_2.fq.gz

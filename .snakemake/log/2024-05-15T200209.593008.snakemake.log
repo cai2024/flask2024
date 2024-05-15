@@ -1,0 +1,205 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+bowtie2_se               1
+bowtie2_se_sp            1
+de_extract_mc_hmc        1
+extract_mc_hmc           1
+extract_mc_hmc_sp        1
+fastp_pe                 1
+get_log                  1
+hairpin_cut              1
+mark_duplicate           1
+qualimap_bamqc           1
+total                   11
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 20:02:09 2024]
+localrule fastp_pe:
+    input: /data/cailab/fastq/CGS-3w_1.fq.gz, /data/cailab/fastq/CGS-3w_2.fq.gz
+    output: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/trim_CGS-3w_1.fq.gz, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/trim_CGS-3w_2.fq.gz, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.json, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.html
+    log: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/logs/fastp/CGS-3w.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/trim_CGS-3w_2.fq.gz, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.json, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/trim_CGS-3w_1.fq.gz
+    wildcards: sample=CGS-3w
+    threads: 3
+    resources: mem_mb=1940, mem_mib=1851, disk_mb=1940, disk_mib=1851, tmpdir=/data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/temp_test
+
+Activating conda environment: flask2024
+[Wed May 15 20:02:58 2024]
+Finished job 3.
+1 of 11 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 20:02:58 2024]
+localrule hairpin_cut:
+    input: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/trim_CGS-3w_1.fq.gz, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/trim_CGS-3w_2.fq.gz
+    output: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.fq, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w_cut_f1.fq, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w_cut_f2.fq
+    log: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/logs/hairpin_cut/CGS-3w.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.fq, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w_cut_f1.fq; Input files updated by another job: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/trim_CGS-3w_2.fq.gz, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/trim_CGS-3w_1.fq.gz
+    wildcards: sample=CGS-3w
+    threads: 20
+    resources: mem_mb=1323, mem_mib=1262, disk_mb=1323, disk_mib=1262, tmpdir=/data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/temp_test
+
+Activating conda environment: flask2024
+[Wed May 15 20:08:25 2024]
+Finished job 2.
+2 of 11 steps (18%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed May 15 20:08:25 2024]
+localrule bowtie2_se_sp:
+    input: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.fq
+    output: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam
+    log: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/logs/bowtie2/CGS-3w.log
+    jobid: 9
+    reason: Missing output files: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam; Input files updated by another job: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.fq
+    wildcards: sample=CGS-3w
+    threads: 10
+    resources: mem_mb=1426, mem_mib=1360, disk_mb=1426, disk_mib=1360, tmpdir=/data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/temp_test
+
+
+[Wed May 15 20:08:25 2024]
+localrule bowtie2_se:
+    input: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.fq
+    output: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam
+    log: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/logs/bowtie2/CGS-3w.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam; Input files updated by another job: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.fq
+    wildcards: sample=CGS-3w
+    threads: 10
+    resources: mem_mb=1426, mem_mib=1360, disk_mb=1426, disk_mib=1360, tmpdir=/data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/temp_test
+
+[Wed May 15 20:08:58 2024]
+Finished job 9.
+3 of 11 steps (27%) done
+Select jobs to execute...
+[Wed May 15 20:10:08 2024]
+Finished job 1.
+4 of 11 steps (36%) done
+Execute 1 jobs...
+
+[Wed May 15 20:10:08 2024]
+localrule mark_duplicate:
+    input: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam, /data/cailab/fastq/CGS-3w_1.fq.gz, /data/cailab/fastq/CGS-3w_2.fq.gz
+    output: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_temp_CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam
+    log: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/logs/dedup/CGS-3w.log
+    jobid: 6
+    reason: Missing output files: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam; Input files updated by another job: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam
+    wildcards: sample=CGS-3w
+    threads: 10
+    resources: mem_mb=2341, mem_mib=2233, disk_mb=2341, disk_mib=2233, tmpdir=/data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/temp_test
+
+[Wed May 15 20:14:31 2024]
+Finished job 6.
+5 of 11 steps (45%) done
+Removing temporary output /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_temp_CGS-3w.bam.
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 20:14:31 2024]
+localrule extract_mc_hmc:
+    input: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w_cut_f1.fq
+    output: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam.all.bed.mc
+    log: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/logs/extract_mc_hmc/CGS-3w.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam.all.bed.hmc; Input files updated by another job: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w_cut_f1.fq, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam
+    wildcards: sample=CGS-3w
+    threads: 20
+    resources: mem_mb=1826, mem_mib=1742, disk_mb=1826, disk_mib=1742, tmpdir=/data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/temp_test
+
+[Wed May 15 20:16:54 2024]
+Finished job 4.
+6 of 11 steps (55%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 20:16:54 2024]
+localrule de_extract_mc_hmc:
+    input: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w_cut_f1.fq
+    output: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam.all.bed.mc
+    log: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/logs/de_extract_mc_hmc/CGS-3w.log
+    jobid: 5
+    reason: Missing output files: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam.all.bed.mc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam.all.bed.hmc; Input files updated by another job: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w_cut_f1.fq
+    wildcards: sample=CGS-3w
+    threads: 20
+    resources: mem_mb=1805, mem_mib=1722, disk_mb=1805, disk_mib=1722, tmpdir=/data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/temp_test
+
+[Wed May 15 20:19:15 2024]
+Finished job 5.
+7 of 11 steps (64%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 20:19:15 2024]
+localrule extract_mc_hmc_sp:
+    input: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w_cut_f1.fq
+    output: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam.all.bed.mc
+    log: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/logs/extract_mc_hmc/CGS-3w.log
+    jobid: 10
+    reason: Missing output files: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam.all.bed.mc; Input files updated by another job: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w_cut_f1.fq
+    wildcards: sample=CGS-3w
+    threads: 20
+    resources: mem_mb=1713, mem_mib=1634, disk_mb=1713, disk_mib=1634, tmpdir=/data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/temp_test
+
+[Wed May 15 20:19:29 2024]
+Finished job 10.
+8 of 11 steps (73%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 20:19:29 2024]
+localrule qualimap_bamqc:
+    input: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam
+    output: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/cover/de_CGS-3w/genome_results.txt
+    log: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/logs/qualimap/de_CGS-3w.log
+    jobid: 7
+    reason: Missing output files: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/cover/de_CGS-3w/genome_results.txt; Input files updated by another job: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam
+    wildcards: sample=CGS-3w
+    threads: 10
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/temp_test
+
+[Wed May 15 20:20:01 2024]
+Finished job 7.
+9 of 11 steps (82%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 20:20:01 2024]
+localrule get_log:
+    input: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.fq, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.json, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/cover/de_CGS-3w/genome_results.txt, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam.all.bed.mc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam.all.bed.mc
+    output: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/final_log/CGS-3w.log, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bed
+    jobid: 8
+    reason: Missing output files: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/final_log/CGS-3w.log; Input files updated by another job: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.fq, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/trim/CGS-3w.json, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam.all.bed.mc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam.all.bed.mc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/cover/de_CGS-3w/genome_results.txt
+    wildcards: sample=CGS-3w
+    threads: 4
+    resources: mem_mb=8000, mem_mib=7630, disk_mb=9851, disk_mib=9395, tmpdir=/data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/temp_test
+
+Activating conda environment: flask2024
+[Wed May 15 20:21:38 2024]
+Finished job 8.
+10 of 11 steps (91%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 20:21:38 2024]
+localrule all:
+    input: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/cover/de_CGS-3w/genome_results.txt, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/final_log/CGS-3w.log, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam.all.bed.hmc
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/debam/de_CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/final_log/CGS-3w.log, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/bam/CGS-3w.bam, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/sp_bam/sp_CGS-3w.bam.all.bed.hmc, /data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/cover/de_CGS-3w/genome_results.txt
+    resources: mem_mb=7757, mem_mib=7398, disk_mb=7757, disk_mib=7398, tmpdir=/data/cailab/flask_output/20240515200156-1b245bed-20bb-4521-b92f-b6385e0d5ace/temp_test
+
+[Wed May 15 20:21:38 2024]
+Finished job 0.
+11 of 11 steps (100%) done
+Complete log: .snakemake/log/2024-05-15T200209.593008.snakemake.log

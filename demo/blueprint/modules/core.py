@@ -1,37 +1,34 @@
 import os
-from .pipeline_WGS import WGSForm_default,WGSForm_custom
-from .pipeline_CS import CSForm_default,CSForm_custom
-#from .pipeline_WGBS import WGBSForm_default,WGBSForm_custom
+import glob
+import importlib
+import sys
 
 
+
+package_name = 'demo.blueprint.modules'
+files = glob.glob(os.path.dirname(os.path.abspath(__file__))  + '/pipeline*.py')
+
+for file in files:    
+    name = file[len(os.path.dirname(os.path.abspath(__file__)))+10:-3]
+    module = importlib.import_module(".pipeline_"+name , package=package_name)
+    globals()[name+"Form_default"] = getattr(module, name+"Form_default")
+    globals()[name+"Form_custom"] = getattr(module, name+"Form_custom")
+
+
+  
 
 class PipelineForm:
-    class_map = {
-        'WGS_default': WGSForm_default,
-        'WGS_custom': WGSForm_custom,
-        'CS_default': CSForm_default,
-        'CS_custom': CSForm_custom,
-
-        #'WGBS_default': WGBSForm_default,
-        #'WGBS_custom': WGBSForm_custom,
-       
-    }
     def __init__(self):
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        self.suffixes = find_pipeline_suffixes(script_dir)
+        self.suffixes = [filename.split("pipeline_")[1][:-3] for filename in os.listdir(script_dir) if filename.startswith("pipeline_")]
 
-    def create_instance(self, class_type):   
-            return self.class_map[class_type]()
+    def create_instance(self, class_type):    
+        cls = globals().get(class_type)
+        return cls()
+
+    
 
 
 
 
-
-def find_pipeline_suffixes(directory):
-    suffixes = []
-    for filename in os.listdir(directory):
-        if filename.startswith("pipeline_"):
-            suffix = filename.split("pipeline_")[1][:-3]  # 分割字符串获取后缀
-            suffixes.append(suffix)
-    return suffixes
 

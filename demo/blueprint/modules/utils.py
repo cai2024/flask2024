@@ -12,17 +12,14 @@ class MappingConfigForm(FlaskForm):
     output_dir=HiddenField()
     mode = SelectField("选择测序数据模式", choices=[('pair', '双端测序'), ('single', '单端测序')],validate_choice=False, validators=[DataRequired()], description='')
     pipeline = SelectField("选择分析流程" ,validate_choice=False, validators=[DataRequired()], description='')
-    param_choice = SelectField('选择参数类型',
-                              choices=[('default', 'default'), ('custom', 'custom')],
-                              default='default', validators=[DataRequired()])
+    param_choice = SelectField('选择参数类型',choices=[('default', 'default'), ('custom', 'custom')], default='default', validators=[DataRequired()])
     cpu_count = IntegerField('CPU数量', validators=[DataRequired()],default=20 ,description='CPU数量，必须为正整数，不超过机器最大CPU数量')
-    
-
+  
     submit = SubmitField('开始比对')
 
 
 class MappingCheckForm(FlaskForm):
-    data_ana = StringField('数据目录', render_kw={'readonly':True})
+    fq_in_path = StringField('数据目录', render_kw={'readonly':True})
     output_dir = StringField('输出目录', render_kw={'readonly':True})
     mode = HiddenField()
     pipeline= HiddenField()

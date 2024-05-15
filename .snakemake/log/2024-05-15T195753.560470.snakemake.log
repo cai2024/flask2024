@@ -1,0 +1,72 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+bowtie2_se               1
+bowtie2_se_sp            1
+de_extract_mc_hmc        1
+extract_mc_hmc           1
+extract_mc_hmc_sp        1
+fastp_pe                 1
+get_log                  1
+hairpin_cut              1
+mark_duplicate           1
+qualimap_bamqc           1
+total                   11
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 19:57:53 2024]
+localrule fastp_pe:
+    input: /data/cailab/fastq/CGS-3w_1.fq.gz, /data/cailab/fastq/CGS-3w_2.fq.gz
+    output: /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/trim_CGS-3w_1.fq.gz, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/trim_CGS-3w_2.fq.gz, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w.json, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w.html
+    log: /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/logs/fastp/CGS-3w.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/trim_CGS-3w_1.fq.gz, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/trim_CGS-3w_2.fq.gz, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w.json
+    wildcards: sample=CGS-3w
+    threads: 3
+    resources: mem_mb=1940, mem_mib=1851, disk_mb=1940, disk_mib=1851, tmpdir=/data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/temp_test
+
+Activating conda environment: flask2024
+[Wed May 15 19:58:44 2024]
+Finished job 3.
+1 of 11 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 19:58:44 2024]
+localrule hairpin_cut:
+    input: /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/trim_CGS-3w_1.fq.gz, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/trim_CGS-3w_2.fq.gz
+    output: /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w.fq, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w_cut_f1.fq, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w_cut_f2.fq
+    log: /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/logs/hairpin_cut/CGS-3w.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w_cut_f1.fq, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w.fq; Input files updated by another job: /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/trim_CGS-3w_1.fq.gz, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/trim_CGS-3w_2.fq.gz
+    wildcards: sample=CGS-3w
+    threads: 20
+    resources: mem_mb=1323, mem_mib=1262, disk_mb=1323, disk_mib=1262, tmpdir=/data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/temp_test
+
+Activating conda environment: flask2024
+[Wed May 15 19:58:44 2024]
+Error in rule hairpin_cut:
+    jobid: 2
+    input: /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/trim_CGS-3w_1.fq.gz, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/trim_CGS-3w_2.fq.gz
+    output: /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w.fq, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w_cut_f1.fq, /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w_cut_f2.fq
+    log: /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/logs/hairpin_cut/CGS-3w.log (check log file(s) for error details)
+    conda-env: flask2024
+    shell:
+        
+        (python3 /data/cailab/flask_snk/ref/new_hairpin_cut.py --fq1 /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/trim_CGS-3w_1.fq.gz --fq2 /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/trim_CGS-3w_2.fq.gz           --outfile /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w --min 50 --rule 2 --parallel 20) > /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/logs/hairpin_cut/CGS-3w.log 2>&1
+        python3 /data/cailab/flask_snk/ref/wild_stats.py --fq1 /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w_cut_f1.fq --fq2 /data/cailab/flask_output/20240515195724-47243a1a-0989-4e72-bf9b-079debf896e3/trim/CGS-3w_cut_f2.fq
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-05-15T195753.560470.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

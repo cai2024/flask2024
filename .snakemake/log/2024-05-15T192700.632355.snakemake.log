@@ -1,0 +1,78 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+get_log               1
+mark_duplicate        1
+qualimap_bamqc        1
+total                 4
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 19:27:01 2024]
+localrule mark_duplicate:
+    input: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/bam/1w_pair.bam
+    output: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/debam/1w_dedup.bam
+    log: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/logs/duplication/1w.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/debam/1w_dedup.bam
+    wildcards: sample=1w
+    threads: 4
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/temp_test
+
+[Wed May 15 19:27:04 2024]
+Finished job 3.
+1 of 4 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 19:27:04 2024]
+localrule qualimap_bamqc:
+    input: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/debam/1w_dedup.bam
+    output: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/cover/1w/genome_results.txt
+    log: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/logs/qualimap/1w.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/cover/1w/genome_results.txt; Input files updated by another job: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/debam/1w_dedup.bam
+    wildcards: sample=1w
+    threads: 10
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/temp_test
+
+[Wed May 15 19:27:20 2024]
+Finished job 4.
+2 of 4 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 19:27:20 2024]
+localrule get_log:
+    input: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/trim/1w_pair.json, /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/cover/1w/genome_results.txt, /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/bam/1w_pair.bam, /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/debam/1w_dedup.bam, /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/sp_bam/sp_1w.bed
+    output: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/final_log/1w.log
+    jobid: 5
+    reason: Missing output files: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/final_log/1w.log; Input files updated by another job: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/debam/1w_dedup.bam, /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/cover/1w/genome_results.txt
+    wildcards: sample=1w
+    threads: 4
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/temp_test
+
+Activating conda environment: flask2024
+[Wed May 15 19:27:20 2024]
+Finished job 5.
+3 of 4 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 15 19:27:20 2024]
+localrule all:
+    input: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/bam/1w_pair.bam, /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/debam/1w_dedup.bam, /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/cover/1w/genome_results.txt, /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/final_log/1w.log
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/final_log/1w.log, /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/debam/1w_dedup.bam, /data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/cover/1w/genome_results.txt
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/data/cailab/flask_output/20240515192526-959192e9-5c97-44e6-a8fa-72192f860d14/temp_test
+
+[Wed May 15 19:27:20 2024]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: .snakemake/log/2024-05-15T192700.632355.snakemake.log
