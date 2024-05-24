@@ -1,15 +1,34 @@
+
 {% extends 'base.html' %}
 
 {% from 'bootstrap4/form.html' import render_form %}
+
+{% block head %}
+<script>
+    function toggleImage() {
+        var img = document.getElementById('instructionImage');
+        img.style.display = (img.style.display === 'none' ? 'block' : 'none');
+    }
+</script>
+{% endblock %}
 
 {% block content %}
     {% include 'biology/folder_selection.html' %}
 
     <div class="container h-100">
-        <div class="row h-100 page-header justify-content-center align-items-center">
-        </div>
         <div class="row h-100 justify-content-center align-items-center">
             {{ render_form(form, extra_classes='col-lg-20') }}
+        </div>
+        <!-- 添加右对齐的按钮，并加入一个新按钮用于跳转 -->
+        <div class="row mt-3 justify-content-end">
+            <div class="col-auto">
+                <button onclick="toggleImage()" class="btn btn-outline-secondary btn-sm">使用说明</button>
+                <a href="https://github.com/cai2024/flask2024/releases" class="btn btn-outline-secondary btn-sm" target="_blank">查看发布</a>
+                <a href="{{ url_for('static', filename='images/wangzc.jpg') }}" class="btn btn-outline-secondary btn-sm">查看图片</a>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <img id="instructionImage" src="{{ url_for('static', filename='images/instruction.jpg') }}" style="display:none;" alt="Instruction Image"/>
         </div>
     </div>
 {% endblock %}

@@ -9,7 +9,10 @@ from .utils import ana_get_res
 def submit_snakemake(info):
     script_path="/data/cailab/flask2024/flask_snk/"
     snakemake="/data/biosoft/soft2024/conda/anaconda_23.4.7/bin/snakemake"
-    ref="/data/reference2024/" + info['ref_ana'].replace(" ","/")  +"/bowtie2/" + info['ref_ana'].split(" ")[1]
+    if info["align_soft"]=="bowtie2":
+        ref="/data/reference2024/" + info['ref_ana'].replace(" ","/")  +"/bowtie2/" + info['ref_ana'].split(" ")[1]
+    elif info["align_soft"]=="bismark":
+        ref="/data/reference2024/" + info['ref_ana'].replace(" ","/")  +"/bismark/" 
 
 
 
@@ -22,7 +25,7 @@ def submit_snakemake(info):
 
 
 
-    script_file= script_path + info['pipeline'] + ".py"
+    script_file= script_path + info['pipeline'] + "/"+ info['pipeline'] + ".py"
     with open(info['output_dir']+'/config.yaml', 'w') as file:
         yaml.dump(config, file)
 
