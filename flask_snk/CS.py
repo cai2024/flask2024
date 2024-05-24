@@ -8,7 +8,7 @@ qualimap="/data/biosoft/soft2024/qualimap/qualimap_v2.3/qualimap"
 bedtools="/data/biosoft/soft2024/bedtools/bedtools2/bin/bedtools"
 samtools="/data/biosoft/software/samtools-1.9/samtools"
 # 加载配置文件
-py_ref="/data/cailab/flask_snk/ref"
+py_ref="/data/cailab/flask2024/flask_snk/ref"
 spikein_ref="/data/reference2024/spikein/bowtie2/spikein"
 log_params = config['spikein_params']
 params_list = log_params.split(',')
@@ -46,10 +46,10 @@ rule fastp_pe:
         config['fastp_params'],
     conda:
         "flask2024",  
-    threads: 2,
+    threads: 3,
     shell:
         """
-        {fastp} {params} -i {input.fq1} -I {input.fq2} -o {output.trim_fq1} -O {output.trim_fq2} -j {output.json} -h {output.html} 2> {log}
+        {fastp} {params} -i {input.fq1} -I {input.fq2} -o {output.trim_fq1} -O {output.trim_fq2} -j {output.json} -h {output.html} -w {threads} 2> {log}
         """
 
 rule hairpin_cut: 
@@ -95,7 +95,7 @@ rule bowtie2_se:
     shell:
         """
         ({bowtie2} -x {params.ref} -U {input.trim_fq1} -S {params.sam}  -p {threads} ) 2> {log} 
-        samtools view -b {params.sam} | samtools sort > {output.bam}
+        samtools view -b {params.sam} | samtools sort -@ {threads} -o {output.bam}
         samtools index {output.bam}
         rm {params.sam}
         """
@@ -134,7 +134,7 @@ rule mark_duplicate:
     shell:
         """
         (python3 {py_ref}/remove_dup.py --input {input.bam} --output {output.temp_bam} --fq1 {input.fq1} --fq2 {input.fq2} ) 2> {log}
-        samtools sort {output.temp_bam} > {output.bam}
+        samtools sort -@ {threads} {output.temp_bam} -o {output.bam}
         samtools index {output.bam}
         """
 
@@ -174,7 +174,7 @@ rule bowtie2_se_sp:
     shell:
         """
         ({bowtie2} -x {params.ref} -U {input.trim_fq1} -S {params.sam}  -p {threads} ) 2> {log} 
-        samtools view -b {params.sam} | samtools sort > {output.bam}
+        samtools view -b {params.sam} | samtools sort -@ {threads} -o {output.bam}
         samtools index {output.bam}
         rm {params.sam}
         """
