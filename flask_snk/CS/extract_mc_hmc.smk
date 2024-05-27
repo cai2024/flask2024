@@ -7,6 +7,8 @@ rule extract_mc_hmc:
         mc="{output_dir}/bam/CGS_call_modify/{{sample}}.bam.all.bed.mc".format(output_dir=config['output_dir']),
     log:
         "{output_dir}/logs/extract_mc_hmc/{{sample}}.log".format(output_dir=config['output_dir'])
+    conda:
+        "flask2024",
     threads: 20
     params:
         ref=config["ref_fa"],
@@ -26,6 +28,8 @@ rule de_extract_mc_hmc:
         mc="{output_dir}/de_bam/CGS_call_modify/{{sample}}_dedup.bam.all.bed.mc".format(output_dir=config['output_dir']),
     log:
         "{output_dir}/logs/de_extract_mc_hmc/{{sample}}.log".format(output_dir=config['output_dir'])
+    conda:
+        "flask2024",
     threads: 20
     params:
         ref=config["ref_fa"]
@@ -46,6 +50,8 @@ rule extract_mc_hmc_sp:
         mc="{output_dir}/sp_bam/CGS_call_modify/sp_{{sample}}.bam.all.bed.mc".format(output_dir=config['output_dir']),
     log:
         "{output_dir}/logs/sp_extract_mc_hmc/{{sample}}.log".format(output_dir=config['output_dir'])
+    conda:
+        "flask2024",
     threads: 20
     params:
         ref=f"{spikein_ref}/spikein.fa",

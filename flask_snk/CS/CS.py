@@ -3,6 +3,7 @@ from os.path import join, exists
 # 主要软件路径
 fastp = "/data/biosoft/soft2024/fastp/fastp-0.23.4/fastp"
 bowtie2="/data/biosoft/soft2024/bowtie2/bowtie2-2.5.2-linux-x86_64/bowtie2"
+bwa="/data/biosoft/soft2024/bwa/bwa-0.7.17/bwa"
 picard="/data/biosoft/soft2024/picard/picard.jar"
 qualimap="/data/biosoft/soft2024/qualimap/qualimap_v2.3/qualimap"
 bedtools="/data/biosoft/soft2024/bedtools/bedtools2/bin/bedtools"

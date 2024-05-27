@@ -12,7 +12,7 @@ bedtools="/data/biosoft/soft2024/bedtools/bedtools2/bin/bedtools"
 py_ref="/data/cailab/flask2024/flask_snk/ref"
 java="/usr/bin/java"
 
-spikein_ref="/data/reference2024/spikein/bismark"
+spikein_ref="/data/reference2024/spikein"
 
 
 # 加载配置文件

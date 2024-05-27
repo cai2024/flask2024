@@ -168,7 +168,7 @@ def dup_map(bam, debam, dup_radio1):
         duplication_rate = round(float(dup_radio1), 4)
     else:
         d1 = round(1 - round(de_read_num/map_read_num, 4),4)
-        duplication_rate= str(d1)+ "|" + str(round(float(dup_radio1),4))
+        duplication_rate=  str(round(float(dup_radio1),4))+ "|" + str(d1)
     if all_read_num==0:
         map_read_ratio=0
     else:
