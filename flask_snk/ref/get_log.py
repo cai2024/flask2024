@@ -61,9 +61,9 @@ def spikein_log(spikein, bam, hmc="" , mc="", bedtools="bedtools"):
         print('\t'.join(result))
 
 
-def spikein_wgbs(spikein, bam , mc="", bedtools="bedtools"):
+def spikein_wgbs(spikein, bam , sort_bam ,mc="", bedtools="bedtools"):
     bed = bam[:-3] + "bed"
-    command = f"{bedtools} genomecov -ibam {bam} -bga > {bed}"
+    command = f"{bedtools} genomecov -ibam {sort_bam} -bga > {bed}"
     process = subprocess.run(command, shell=True, text=True, check=True)
 
     spikein = spikein.split(',')
@@ -220,13 +220,13 @@ def mit_ratio(bam):
 
 def gc_q20_q30(fq_path, mode, bam, picard, java = "java"):
     if mode=="single":
-        fq1 = fq_path + ".fq.gz"
+        fq1 = fq_path + "_trimmed.fq.gz"
         command = f"seqtk fqchk {fq1} | awk 'NR == 3 {{print $4 + $5}}'"
         result = subprocess.run(command, shell=True, text=True, capture_output=True)
         gc = round(float(result.stdout.strip()),4)
-    else:
-        fq1 = fq_path + "_1.fq.gz"
-        fq2 = fq_path + "_2.fq.gz"
+    elif mode=="pair":
+        fq1 = fq_path + "_1_val_1.fq.gz"
+        fq2 = fq_path + "_2_val_2.fq.gz"
         command = f"seqtk fqchk {fq1} | awk 'NR == 3 {{print $4 + $5}}'"
         result = subprocess.run(command, shell=True, text=True, capture_output=True)
         gc1 = float(result.stdout.strip())
@@ -234,6 +234,12 @@ def gc_q20_q30(fq_path, mode, bam, picard, java = "java"):
         result = subprocess.run(command, shell=True, text=True, capture_output=True)
         gc2 = float(result.stdout.strip())
         gc = round((gc1+gc2)/2,4)
+    elif mode=="CGS":
+        fq1 = fq_path
+        command = f"seqtk fqchk {fq1} | awk 'NR == 3 {{print $4 + $5}}'"
+        result = subprocess.run(command, shell=True, text=True, capture_output=True)
+        gc = round(float(result.stdout.strip()),4)
+
 
     command = f"{java} -jar {picard} CollectQualityYieldMetrics -I {bam} -O /dev/stdout"
     result = subprocess.run(command, shell=True, text=True, capture_output=True)
@@ -267,6 +273,7 @@ def main():
     parser_spikein_wgbs = subparsers.add_parser('spikein_wgbs', help='Run spikein')
     parser_spikein_wgbs.add_argument('--spikein', type=str, help='The input file for FastQC.')
     parser_spikein_wgbs.add_argument('--bam', type=str, help='bam.')
+    parser_spikein_wgbs.add_argument('--sort_bam', type=str, help='bam.')
     parser_spikein_wgbs.add_argument('--mc', type=str, default='', help='Optional: Path to the HMC file.')
     parser_spikein_wgbs.add_argument('--bedtools', type=str, default='bedtools', help='Optional: Path to the bedtools executable or name if in PATH.')
 
@@ -310,7 +317,7 @@ def main():
     if args.command == 'spikein':
         spikein_log(args.spikein, args.bam, args.hmc, args.mc, args.bedtools)
     elif args.command == 'spikein_wgbs':
-        spikein_wgbs(args.spikein, args.bam, args.mc, args.bedtools)
+        spikein_wgbs(args.spikein, args.bam, args.sort_bam ,args.mc, args.bedtools)
     elif args.command == 'size_clean':
         size_clean(args.raw_fq1, args.trim_fq1, args.mode)
     elif args.command == 'get_json':

@@ -37,7 +37,7 @@ rule all:
                output_dir=config['output_dir'], sample=config["sampleList"], mode=config["mode"],align_soft=config['align_soft']),
         expand("{output_dir}/sp_bam/{align_soft}/sp_{sample}_{mode}.bam",
                output_dir=config['output_dir'], sample=config["sampleList"], mode=config["mode"],align_soft=config['align_soft']),
-        expand("{output_dir}/debam/{call_modify_soft}/{sample}_dedup_splitting_report.txt",
+        expand("{output_dir}/de_bam/{call_modify_soft}/{sample}_dedup_splitting_report.txt",
                output_dir=config['output_dir'], sample=config["sampleList"], mode=config["mode"],call_modify_soft=config['call_modify_soft']),
         expand("{output_dir}/final_log/{sample}.log",
                output_dir=config['output_dir'], sample=config["sampleList"]),

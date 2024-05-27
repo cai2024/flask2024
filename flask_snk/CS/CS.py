@@ -9,10 +9,11 @@ bedtools="/data/biosoft/soft2024/bedtools/bedtools2/bin/bedtools"
 samtools="/data/biosoft/software/samtools-1.9/samtools"
 java="/usr/bin/java"
 # 加载配置文件
+spikein_ref="/data/reference2024/spikein"
 py_ref="/data/cailab/flask2024/flask_snk/ref"
-spikein_ref="/data/reference2024/spikein/bowtie2/spikein"
-log_params = config['spikein_params']
-params_list = log_params.split(',')
+
+
+params_list = config['spikein_params'].split(',')
 spikein_list = '\t'.join([f'{param}_(cover|dep)\t{param}_hmc(CpG|CHG|CHH)\t{param}_mc(CpG|CHG|CHH)' for param in params_list])
 # 命令行加载
 include: "trim.smk"
@@ -29,10 +30,10 @@ rule all:
     input:
         expand("{output_dir}/bam/{align_soft}/{sample}.bam", 
                output_dir=config['output_dir'], sample=config["sampleList"],align_soft=config['align_soft']),
-        expand("{output_dir}/bam/{align_soft}/{sample}.bam.all.bed.hmc",
-               output_dir=config['output_dir'], sample=config["sampleList"],align_soft=config["align_soft"]),
-        expand("{output_dir}/debam/{align_soft}/de_{sample}.bam.all.bed.hmc",
-               output_dir=config['output_dir'], sample=config["sampleList"],align_soft=config["align_soft"]),
+        expand("{output_dir}/bam/{call_modify_soft}/{sample}.bam.all.bed.hmc",
+               output_dir=config['output_dir'], sample=config["sampleList"],call_modify_soft=config["call_modify_soft"]),
+        expand("{output_dir}/de_bam/{call_modify_soft}/{sample}_dedup.bam.all.bed.hmc",
+               output_dir=config['output_dir'], sample=config["sampleList"],call_modify_soft=config["call_modify_soft"]),
         expand("{output_dir}/final_log/{sample}.log",
                output_dir=config['output_dir'], sample=config["sampleList"]),
     

@@ -2,16 +2,18 @@ rule mark_duplicate:
     input:
         bam="{output_dir}/bam/{align_soft}/{{sample}}_{mode}.bam".format(output_dir=config['output_dir'],mode=config["mode"], align_soft=config['align_soft']),
     output:
-        dedup_bam="{output_dir}/debam/{align_soft}/{{sample}}_dedup.bam".format(output_dir=config['output_dir'], align_soft=config['align_soft']),
+        de_bam="{output_dir}/de_bam/picard/{{sample}}_dedup.bam".format(output_dir=config['output_dir']),
     log:
         "{output_dir}/logs/duplication/{{sample}}.log".format(output_dir=config['output_dir']),
     threads: 4
+    conda:
+        "flask2024",
     params:
-        tmp_report="{output_dir}/debam/{{sample}}.txt".format(output_dir=config['output_dir']),
-        other=config['picard_params']
+        tmp_report="{output_dir}/de_bam/picard/{{sample}}.txt".format(output_dir=config['output_dir']),
+        other=config['dup_params']
     shell:
         """
-        (/usr/bin/java -jar {picard} MarkDuplicates --REMOVE_DUPLICATES {params.other} -I {input.bam} -O {output.dedup_bam} -M {params.tmp_report}) 2> {log}
-        samtools index {output.dedup_bam}        
+        ({java} -jar {picard} MarkDuplicates --REMOVE_DUPLICATES {params.other} -I {input.bam} -O {output.de_bam} -M {params.tmp_report}) > {log} 2>&1
+        samtools index {output.de_bam}        
         """
 

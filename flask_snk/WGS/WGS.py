@@ -3,11 +3,12 @@ from os.path import join, exists
 # 主要软件路径
 fastp = "/data/biosoft/soft2024/fastp/fastp-0.23.4/fastp"
 bowtie2="/data/biosoft/soft2024/bowtie2/bowtie2-2.5.2-linux-x86_64/bowtie2"
+bwa="/data/biosoft/soft2024/bwa/bwa-0.7.17/bwa"
 picard="/data/biosoft/soft2024/picard/picard.jar"
 qualimap="/data/biosoft/soft2024/qualimap/qualimap_v2.3/qualimap"
 bedtools="/data/biosoft/soft2024/bedtools/bedtools2/bin/bedtools"
 py_ref="/data/cailab/flask2024/flask_snk/ref"
-spikein_ref="/data/reference2024/spikein/bowtie2/spikein"
+spikein_ref="/data/reference2024/spikein"
 java="/usr/bin/java"
 
 # 加载配置文件
@@ -29,8 +30,8 @@ rule all:
     input:
         expand("{output_dir}/bam/{align_soft}/{sample}_{mode}.bam", 
                output_dir=config['output_dir'], sample=config["sampleList"], mode=config["mode"], align_soft=config['align_soft']),
-        expand("{output_dir}/debam/{align_soft}/{sample}_dedup.bam",
-               output_dir=config['output_dir'], sample=config["sampleList"], align_soft=config['align_soft']),
+        expand("{output_dir}/de_bam/{dup_soft}/{sample}_dedup.bam",
+               output_dir=config['output_dir'], sample=config["sampleList"], dup_soft=config['dup_soft']),
 
 
         expand("{output_dir}/cover/{sample}/genome_results.txt",

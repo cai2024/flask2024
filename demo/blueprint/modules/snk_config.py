@@ -7,16 +7,20 @@ from .utils import ana_get_res
 
 
 def submit_snakemake(info):
+    config = info.copy()
     script_path="/data/cailab/flask2024/flask_snk/"
     snakemake="/data/biosoft/soft2024/conda/anaconda_23.4.7/bin/snakemake"
     if info["align_soft"]=="bowtie2":
         ref="/data/reference2024/" + info['ref_ana'].replace(" ","/")  +"/bowtie2/" + info['ref_ana'].split(" ")[1]
+        config['ref_fa']=ref+".fa"
     elif info["align_soft"]=="bismark":
         ref="/data/reference2024/" + info['ref_ana'].replace(" ","/")  +"/bismark/" 
+        config['ref_fa']=ref + info['ref_ana'].split(" ")[1] +".fa"
+    elif info["align_soft"]=="bwa":
+        ref="/data/reference2024/" + info['ref_ana'].replace(" ","/")  +"/bwa/" + info['ref_ana'].split(" ")[1] + ".fa"
+        config['ref_fa']=ref
 
 
-
-    config = info.copy()
     config['ref_genome']=ref
     fastqs = get_fq_list(info['fq_in_path'], info["mode"] != "single")
     suffix = ".fq.gz" if info["mode"] == "single" else "_1.fq.gz"
