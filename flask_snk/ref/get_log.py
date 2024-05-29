@@ -151,7 +151,7 @@ def get_json(json_file, json_key):
 
 
 
-def dup_map(bam, debam, dup_radio1):
+def dup_map(fastq, mode, bam, debam, dup_radio1):
     command = f"samtools view -c -F 4 {bam}"
     result = subprocess.run(command, shell=True, text=True, capture_output=True)
     map_read_num=int(result.stdout.strip())
@@ -160,10 +160,10 @@ def dup_map(bam, debam, dup_radio1):
     result = subprocess.run(command, shell=True, text=True, capture_output=True)
     de_read_num=int(result.stdout.strip())
 
-    command = f"samtools view -c {bam}"
+    command = f"zcat {fastq} | wc -l"
     result = subprocess.run(command, shell=True, text=True, capture_output=True)
-    all_read_num=int(result.stdout.strip())
-
+    all_read_num=int(result.stdout.strip())/2 if mode == "pair" else int(result.stdout.strip())/4
+    
     if map_read_num==0:
         duplication_rate = round(float(dup_radio1), 4)
     else:
@@ -290,6 +290,8 @@ def main():
 
     # dup_map 子命令
     parser_dup_map = subparsers.add_parser('dup_map', help='Run size_clean')
+    parser_dup_map.add_argument('--fastq', type=str, help='The input ')
+    parser_dup_map.add_argument('--mode', type=str, help='The input ')
     parser_dup_map.add_argument('--bam', type=str, help='The input ')
     parser_dup_map.add_argument('--debam', type=str, help='The input ')
     parser_dup_map.add_argument('--dup_radio1', type=str, help='The input ')
@@ -323,7 +325,7 @@ def main():
     elif args.command == 'get_json':
         get_json(args.json_file, args.json_key)
     elif args.command == 'dup_map':
-        dup_map(args.bam, args.debam, args.dup_radio1)
+        dup_map(args.fastq, args.mode, args.bam, args.debam, args.dup_radio1)
     elif args.command == 'cover_depth':
         cover_depth(args.input_file)
     elif args.command == 'mit_ratio':

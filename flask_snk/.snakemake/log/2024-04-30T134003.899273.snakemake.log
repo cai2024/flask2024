@@ -1,4 +1,0 @@
-Building DAG of jobs...
-WildcardError in rule bwa_map in file /data/cailab/flask_snk/11.py, line 44:
-Wildcards in input files cannot be determined from output files: (rule bwa_map, line 78, /data/cailab/flask_snk/11.py)
-'trim_out_path'

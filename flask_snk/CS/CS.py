@@ -1,17 +1,18 @@
 from os.path import join, exists
 
-# 主要软件路径
-fastp = "/data/biosoft/soft2024/fastp/fastp-0.23.4/fastp"
-bowtie2="/data/biosoft/soft2024/bowtie2/bowtie2-2.5.2-linux-x86_64/bowtie2"
-bwa="/data/biosoft/soft2024/bwa/bwa-0.7.17/bwa"
-picard="/data/biosoft/soft2024/picard/picard.jar"
-qualimap="/data/biosoft/soft2024/qualimap/qualimap_v2.3/qualimap"
-bedtools="/data/biosoft/soft2024/bedtools/bedtools2/bin/bedtools"
-samtools="/data/biosoft/software/samtools-1.9/samtools"
-java="/usr/bin/java"
-# 加载配置文件
-spikein_ref="/data/reference2024/spikein"
-py_ref="/data/cailab/flask2024/flask_snk/ref"
+fastp = config['fastp']
+bowtie2 = config['bowtie2']
+bowtie2_path = config['bowtie2_path']
+bwa = config['bwa']
+bismark = config['bismark']
+bismark_methylation_extractor = config['bismark_methylation_extractor']
+picard = config['picard']
+qualimap = config['qualimap']
+bedtools = config['bedtools']
+py_ref = config['py_ref']
+java = config['java']
+spikein_ref = config['spikein_ref']
+
 
 
 params_list = config['spikein_params'].split(',')

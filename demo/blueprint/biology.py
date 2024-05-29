@@ -24,9 +24,11 @@ from demo.blueprint.modules.utils import ResultForm
 from demo.blueprint.modules.snk_config import submit_snakemake
 from demo.blueprint.modules.core import PipelineForm
 
+from demo.blueprint.modules.paths import paths_dict
+
 pipelineForm=PipelineForm()
 biology= Blueprint('biology', __name__)
-user_dir="/data/cailab/flask_output/"
+user_dir=paths_dict["flask_out"]
 
 
 
@@ -60,7 +62,7 @@ def check(task_id):
     df_data = pd.DataFrame(fastqs, index=range(1,len(fastqs)+1), columns=[f'total: {len(fastqs)}']).to_html(justify='center')
     form = pipelineForm.create_instance(info['pipeline']+"Form_"+info['param_choice'])
     form.fq_in_path.data = selected_folder
-    form.output_dir.data = user_dir + task_id
+    form.output_dir.data = user_dir +"/" + task_id
     form.cpu_count.data = info['cpu_count']
     form.mode.data=info["mode"]
     if form.submit_ana.data and form.validate_on_submit():
@@ -85,13 +87,13 @@ def query(task_id):
 @biology.route('/fetch-logs')
 def fetch_logs():
     task_id = request.args.get('task_id')
-    with open( user_dir+ task_id +"/snk.log", 'r') as file:
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
         return jsonify({'logs': file.read()})
 
 @biology.route('/progress/', methods=['POST'])
 def get_progress():
     task_id = request.form.get('task_id')
-    outdir=user_dir +task_id  + "/final_log"
+    outdir=user_dir+"/" +task_id  + "/final_log"
     data_info = ana_get_res(outdir)
     return [ data_info.to_html()]
 

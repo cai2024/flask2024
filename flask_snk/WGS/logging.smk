@@ -19,9 +19,10 @@ rule get_log:
 
     shell:
         """
+        trim_fq1="{params.trim_fq1}$( [ {params.mode} = \'pair\' ] && echo \'_1_val_1\' || echo \'_trimmed\').fq.gz"
         size_clean=$(python3 {py_ref}/get_log.py size_clean --raw_fq1 {params.raw_fq1} --trim_fq1 {params.trim_fq1} --mode {params.mode})
         dup_radio1=$(python3 {py_ref}/get_log.py get_json --json_file {params.json} --json_key duplication,rate)
-        dup_map=$(python3 {py_ref}/get_log.py dup_map --bam {input.bam} --debam {input.dedup_bam} --dup_radio1 $dup_radio1)
+        dup_map=$(python3 {py_ref}/get_log.py dup_map --fastq $trim_fq1 --mode {params.mode}  --bam {input.bam} --debam {input.dedup_bam} --dup_radio1 $dup_radio1)
         cover_depth=$(python3 {py_ref}/get_log.py cover_depth --input_file {input.cover} )
         all_spikein=$(python3 {py_ref}/get_log.py spikein --bam {input.sp_bam} --spikein {params.spikein} --bedtools {bedtools})
         mit_ratio=$(python3 {py_ref}/get_log.py mit_ratio --bam {input.bam} ) 

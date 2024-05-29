@@ -1,8 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule bwa_map in file /data/cailab/flask_snk/11.py, line 44:
-Missing input files for rule bwa_map:
-    output: /data/cailab/temp/fastq/1w_sorted.bam
-    wildcards: fq_in_path=/data/cailab/temp/fastq, sample=1w
-    affected files:
-        {'trim_out_path'}/1w_1_val_1.fq.gz
-        {'trim_out_path'}/1w_2_val_2.fq.gz

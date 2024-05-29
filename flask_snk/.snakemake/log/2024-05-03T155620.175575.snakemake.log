@@ -1,5 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule all in file /data/cailab/flask_snk/WGS.py, line 14:
-Missing input files for rule all:
-    affected files:
-        /data/cailab/temp/trimmed/1w_1.fq.gz

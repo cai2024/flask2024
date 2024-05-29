@@ -25,7 +25,8 @@ rule get_log:
         size_clean=$(python3 {py_ref}/get_log.py size_clean --raw_fq1 {params.raw_fq1} --trim_fq1 {params.trim_fq1} --mode pair)
         match_model_ratio=$(echo "scale=4; $(cat {input.cut_fq}  | wc -l)/$(zcat {params.trim_fq1}_1_val_1.fq.gz  | wc -l)" | bc)
         dup_radio1=$(python3 {py_ref}/get_log.py get_json --json_file {params.json} --json_key duplication,rate)
-        dup_map=$(python3 {py_ref}/get_log.py dup_map --bam {input.bam} --debam {input.de_bam} --dup_radio1 $dup_radio1)
+        gzip {input.cut_fq}
+        dup_map=$(python3 {py_ref}/get_log.py dup_map --fastq {input.cut_fq}.gz --mode single --bam {input.bam} --debam {input.de_bam} --dup_radio1 $dup_radio1)
         cover_depth=$(python3 {py_ref}/get_log.py cover_depth --input_file {input.cover} )
         all_spikein=$(python3 {py_ref}/get_log.py spikein --bam {input.sp_bam} --spikein {params.spikein} --hmc {input.sp_hmc} --mc {input.sp_mc} --bedtools {bedtools})
         mit_ratio=$(python3 {py_ref}/get_log.py mit_ratio --bam {input.bam} ) 

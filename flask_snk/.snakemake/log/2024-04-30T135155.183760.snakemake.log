@@ -1,8 +1,0 @@
-Building DAG of jobs...
-candidate job all
-    wildcards: 
-candidate job bwa_map
-    wildcards: fq_in_path=/data/cailab/temp/fastq, sample=1w
-WildcardError in rule trim_galore_pe in file /data/cailab/flask_snk/11.py, line 23:
-Wildcards in input files cannot be determined from output files: (rule trim_galore_pe, line 32, /data/cailab/flask_snk/11.py)
-'fq_in_path'

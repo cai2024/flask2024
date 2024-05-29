@@ -1,7 +1,0 @@
-Building DAG of jobs...
-candidate job all
-    wildcards: 
-MissingInputException in rule all in file /data/cailab/flask_snk/11.py, line 14:
-Missing input files for rule all:
-    affected files:
-        /data/cailab/temp/fastq/1w_sorted.bam
