@@ -17,5 +17,23 @@ paths_dict = {
     "ref_path": "/data/reference2024",
 }
 
-
+"""
+paths_dict = {
+    "flask_out": "/home/flask/flask_out" ,
+    "snakemake": "/home/soft/conda/anaconda_23.4.7/bin//snakemake",
+    "fastp": "/home/soft/fastp/fastp-0.23.4/fastp",
+    "bowtie2": "/home/soft/bowtie2/bowtie2-2.5.2-linux-x86_64/bowtie2",
+    "bowtie2_path": "/home/soft/bowtie2/bowtie2-2.5.2-linux-x86_64",
+    "bwa": "/home/soft/bwa/bwa-0.7.17/bwa",
+    "bismark": "/home/soft/bismark/Bismark-0.24.2/bismark",
+    "bismark_methylation_extractor": "/home/soft/bismark/Bismark-0.24.2/bismark_methylation_extractor",
+    "picard": "/home/soft/picard/picard.jar",
+    "qualimap": "/home/soft/qualimap/qualimap_v2.3/qualimap",
+    "bedtools": "/home/soft/bedtools/bedtools2/bin/bedtools",
+    "py_ref": "/home/flask/flask2024/flask_snk/ref",
+    "spikein_ref": "/home/reference/spikein",
+    "java": "/usr/bin/java",
+    "ref_path": "home/reference",
+}
+"""
 
