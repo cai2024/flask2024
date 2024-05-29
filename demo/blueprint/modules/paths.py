@@ -33,7 +33,7 @@ paths_dict = {
     "py_ref": "/home/flask/flask2024/flask_snk/ref",
     "spikein_ref": "/home/reference/spikein",
     "java": "/usr/bin/java",
-    "ref_path": "home/reference",
+    "ref_path": "/home/reference",
 }
 """
 
