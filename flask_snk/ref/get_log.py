@@ -122,9 +122,9 @@ def size_clean(raw_fq1, trim_fq1, mode):
     command = f"seqtk comp {raw_fq1} | awk '{{sum += $2}} END {{print sum}}'"
     result = subprocess.run(command, shell=True, text=True, capture_output=True)
     if mode == "single":
-        sequence_size = round(int(result.stdout.strip()) / 1000000000, 4)
+        sequence_size = round(int(float(result.stdout.strip())) / 1000000000, 4)
     else:
-        sequence_size = round(2 * int(result.stdout.strip()) / 1000000000, 4)
+        sequence_size = round(2 * int(float(result.stdout.strip())) / 1000000000, 4)
 
     command = f"seqtk seq {raw_fq1} | wc -l"
     result = subprocess.run(command, shell=True, text=True, capture_output=True)
