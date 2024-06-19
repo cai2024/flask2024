@@ -5,6 +5,7 @@ from flask import Flask
 from flask_bootstrap import Bootstrap4
 from demo.blueprint.biology import biology
 from demo.blueprint.analysis import analysis_bp
+from demo.blueprint.hidden import hidden_bp
 from demo.blueprint.complex_junction import complex_junction_bp
 
 class BaseConfig:
@@ -18,6 +19,7 @@ def create_app(config_name=None):
     bootstrap=Bootstrap4()
     bootstrap.init_app(app)
     app.register_blueprint(biology)
+    app.register_blueprint(hidden_bp)
     app.register_blueprint(analysis_bp)
     app.register_blueprint(complex_junction_bp)
     return app
