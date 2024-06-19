@@ -23,6 +23,9 @@ RUN conda create --name flask2024 python=3.9 -y && \
     conda install samtools -y && \
     pip install gunicorn click flask flask-wtf bootstrap-flask pandas numpy PyYAML flask_sqlalchemy Bio Levenshtein pysam"
 
+
+COPY ./ /data/cailab/flask2024
+
 # 确保虚拟环境被激活
 ENV PATH /opt/conda/envs/flask2024/bin:$PATH
 
