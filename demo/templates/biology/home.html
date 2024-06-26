@@ -1,29 +1,33 @@
 {% extends 'base.html' %}
-
 {% from 'bootstrap4/form.html' import render_form %}
 
-{% block head %}
-<script>
-    function toggleImage() {
-        var img = document.getElementById('instructionImage');
-        img.style.display = (img.style.display === 'none' ? 'block' : 'none');
-    }
 
-    document.addEventListener('keydown', function(event) {
-        if (event.ctrlKey && event.key === 'y') {
-            event.preventDefault(); // 阻止默认行为，如关闭窗口
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'y') {
-                    document.getElementById('loginPrompt').style.display = 'block';
-                }
-            }, {once: true});
-        }
-    });
-</script>
+
+{% block head %}
+        {{ super() }}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/home.style.css') }}" type="text/css">
 {% endblock %}
 
+
 {% block content %}
-    {% include 'biology/folder_selection.html' %}
+    <div class="container mt-5">
+        <h1>基础设置</h1>
+        <h4>请输入原始测序数据所在文件夹位置</h4>
+        <div class="overlay-container">
+            <input type="text" id="folderInput" class="form-control" placeholder="">
+            <div id="suggestions" class="overlay"></div>
+        </div>
+        <h6>原始数据命名要求：单端: .fq.gz结尾 双端: _1.fq.gz, _2.fq.gz</h6>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+    <body data-task-id="{{ task_id }}">
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+
+
+
 
     <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
@@ -49,5 +53,7 @@
             </div>
         </div>
     </div>
+
+
 {% endblock %}
 

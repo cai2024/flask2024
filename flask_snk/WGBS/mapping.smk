@@ -63,7 +63,7 @@ rule sp_bismark_se:
     conda:
         "flask2024",
     params:
-        ref=f"{spikein_ref}/bismark",
+        ref=f"{ref_path}/spikein/bismark",
         out_dir="{output_dir}/sp_bam/bismark".format(output_dir=config['output_dir']),
         temp_bam="{output_dir}/sp_bam/bismark/{{sample}}_trimmed_bismark_bt2.bam".format(output_dir=config['output_dir']),
         other=config['align_params'],
@@ -88,7 +88,7 @@ rule sp_bismark_pe:
     conda:
         "flask2024",
     params:
-        ref=f"{spikein_ref}/bismark",
+        ref=f"{ref_path}/spikein/bismark",
         out_dir="{output_dir}/sp_bam/bismark".format(output_dir=config['output_dir']),
         temp_bam="{output_dir}/sp_bam/bismark/{{sample}}_1_val_1_bismark_bt2_pe.bam".format(output_dir=config['output_dir']),
         other=config['align_params'],

@@ -23,7 +23,8 @@ rule get_log:
     shell:
         """
         size_clean=$(python3 {py_ref}/get_log.py size_clean --raw_fq1 {params.raw_fq1} --trim_fq1 {params.trim_fq1} --mode pair)
-        match_model_ratio=$(echo "scale=4; $(cat {input.cut_fq}  | wc -l)/$(zcat {params.trim_fq1}_1_val_1.fq.gz  | wc -l)" | bc)
+        match_model_ratio=$(awk 'BEGIN {{ print '$(cat {input.cut_fq} | wc -l)' / '$(zcat {params.trim_fq1}_1_val_1.fq.gz | wc -l)' }}')
+        match_model_ratio=$(python3 -c "print(format($match_model_ratio, '.4f'))")
         dup_radio1=$(python3 {py_ref}/get_log.py get_json --json_file {params.json} --json_key duplication,rate)
         gzip {input.cut_fq}
         dup_map=$(python3 {py_ref}/get_log.py dup_map --fastq {input.cut_fq}.gz --mode single --bam {input.bam} --debam {input.de_bam} --dup_radio1 $dup_radio1)
@@ -39,10 +40,10 @@ rule get_log:
         mc_cpg=$(awk '$7 == "CpG" {{ sum += $4; count++ }} END {{ if (count > 0) print sum / count }}' {input.mc})
         mc_chg=$(awk '$7 == "CHG" {{ sum += $4; count++ }} END {{ if (count > 0) print sum / count }}' {input.mc}) 
         mc_chh=$(awk '$7 == "CHH" {{ sum += $4; count++ }} END {{ if (count > 0) print sum / count }}' {input.mc})
+  
+        hmc=$(python3 -c "print(format($hmc_cpg, '.4f') + '|' + format($hmc_chg, '.4f') + '|' + format($hmc_chh, '.4f'))") 
+        mc=$(python3 -c "print(format($mc_cpg, '.4f') + '|' + format($mc_chg, '.4f') + '|' + format($mc_chh, '.4f'))")
 
-        hmc="0"$(echo "scale=4; $hmc_cpg/1" | bc)"|0"$(echo "scale=4; $hmc_chg/1" | bc)"|0"$(echo "scale=4; $hmc_chh/1" | bc)
-        mc="0"$(echo "scale=4; $mc_cpg/1" | bc)"|0"$(echo "scale=4; $mc_chg/1" | bc)"|0"$(echo "scale=4; $mc_chh/1" | bc)
-        
 
         echo -e "name\tsequence_size\tclean_read_ratio\tmatch_model_ratio\tduplication_rate\tmap_read_ratio\tcover_ratio\taverage_depth\thmc_level(CpG|CHG|CHH)\tmc_level(CpG|CHG|CHH)\t{spikein_list}\tmit_ratio\tgc_filter_ratio\tq20_filter_ratio\tq30_filter_ratio\ttotal_reads_raw" > {output.log}
 

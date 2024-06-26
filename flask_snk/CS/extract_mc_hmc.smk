@@ -54,7 +54,7 @@ rule extract_mc_hmc_sp:
         "flask2024",
     threads: 20
     params:
-        ref=f"{spikein_ref}/spikein.fa",
+        ref=f"{ref_path}/spikein/spikein.fa",
     shell:
         """
         (python3 {py_ref}/CGS_extract_modify.py --bam {input.sp_bam} --cutfq1 {input.cut_fq1}  --ref {params.ref} --parallel {threads} --type mc --output {output.mc}) 2> {log}

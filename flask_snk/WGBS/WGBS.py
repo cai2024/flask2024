@@ -12,7 +12,7 @@ qualimap = config['qualimap']
 bedtools = config['bedtools']
 py_ref = config['py_ref']
 java = config['java']
-spikein_ref = config['spikein_ref']
+ref_path = config['ref_path']
 
 
 # 加载配置文件

@@ -32,7 +32,7 @@ rule sp_bowtie2_se:
     conda:
         "flask2024",
     params:
-        ref=f"{spikein_ref}/bowtie2/spikein",
+        ref=f"{ref_path}/spikein/bowtie2/spikein",
         sam="{output_dir}/sp_bam/sp_{{sample}}.sam".format(output_dir=config['output_dir']),
         other=config['align_params'],
     shell:
@@ -78,7 +78,7 @@ rule sp_bwa_se:
     conda:
         "flask2024",
     params:
-        ref=f"{spikein_ref}/bwa/spikein.fa",
+        ref=f"{ref_path}/spikein/bwa/spikein.fa",
         other=config['align_params'],
     shell:
         """

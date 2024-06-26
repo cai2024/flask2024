@@ -1,43 +1,54 @@
 {% from 'bootstrap4/nav.html' import render_nav_item %}
 <!DOCTYPE html>
-<html>
-
-
-
+<html lang="zh">
 <head>
     {% block head %}
-
-        <title>{% block title %}{% endblock title %} </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}默认标题{% endblock title %}</title>
         <link rel="icon" href="{{ url_for('static', filename='ico/heart.ico') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/blue.mini.css') }}" type="text/css">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/blue.mini.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
         <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
-
-
+        {% block styles %}
+        {% endblock styles %}
     {% endblock head %}
 </head>
-
-
-
-
-
-{% block nav %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mr-auto">
-                    {{ render_nav_item('biology.index', '主页') }}
-                    {{ render_nav_item('analysis.analysis', '分析流程代码') }} 
-                    {{ render_nav_item('complex_junction.complex_junction', '复杂接头识别') }} 
-                </ul>
+<body>
+    {% block nav %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        {{ render_nav_item('biology.index', '主页') }}
+                        {{ render_nav_item('analysis.analysis', '分析流程代码') }} 
+                        {{ render_nav_item('complex_junction.complex_junction', '复杂接头识别') }} 
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-{% endblock nav %}
+        </nav>
+    {% endblock nav %}
 
-{% block content %}
-{% endblock content %}
+    <div class="content">
+        {% block content %}
+        <!-- 主内容区，具体页面中定义 -->
+        {% endblock content %}
+    </div>
 
+    {% block sidebar %}
+        <!-- 如果需要侧边栏，可以在此定义 -->
+    {% endblock sidebar %}
 
+    <footer>
+        {% block footer %}
+            <p style="text-align: center;">© 2024 Cai Lab. All rights reserved.</p>
+        {% endblock footer %}
+    </footer>
+
+    {% block scripts %}
+        <!-- 页面特定脚本可以在此定义 -->
+    {% endblock scripts %}
 </body>
 </html>
+

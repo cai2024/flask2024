@@ -27,7 +27,7 @@ rule sp_bismark_call_methylation:
     threads: 4
     params:
         out_dir="{output_dir}/sp_bam/bismark".format(output_dir=config['output_dir']),
-        ref=spikein_ref,
+        ref=f"{ref_path}/spikein",
         other=config['call_modify_params'],
     shell:
         """
