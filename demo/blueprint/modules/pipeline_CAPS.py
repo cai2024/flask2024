@@ -17,7 +17,7 @@ class CAPSForm_custom(MappingCheckForm):
 
 
     ref_ana = SelectField('选择参考基因组物种和版本',
-                          choices=["mouse mm9", "mouse mm10", "mouse mm39","human hg18","human hg19","huamn hg38","human hs1"],
+                          choices=["mouse mm9", "mouse mm10", "mouse mm39","human hg18","human hg19","human hg38","human hs1"],
                           validate_choice=False, validators=[DataRequired()], description='') 
     
 
@@ -44,7 +44,7 @@ class CAPSForm_default(MappingCheckForm):
 
 
     ref_ana = SelectField('选择参考基因组物种和版本',
-                          choices=["mouse mm9", "mouse mm10", "mouse mm39","human hg18","human hg19","huamn hg38","human hs1"],
+                          choices=["mouse mm9", "mouse mm10", "mouse mm39","human hg18","human hg19","human hg38","human hs1"],
                           validate_choice=False, validators=[DataRequired()], description='')
 
     dup_soft = HiddenField(default="picard")

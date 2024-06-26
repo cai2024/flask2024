@@ -47,6 +47,8 @@ RUN sed -i '/"picard"/c\    "picard": "/app/soft/picard/picard.jar",' /app/demo/
 RUN sed -i '/"qualimap"/c\    "qualimap": "/app/soft/qualimap_v2.3/qualimap",' /app/demo/blueprint/modules/paths.py
 RUN sed -i '/"bedtools"/c\    "bedtools": "/app/soft/bedtools2/bin/bedtools",' /app/demo/blueprint/modules/paths.py
 RUN sed -i '/"py_ref"/c\    "py_ref": "/app/flask_snk/ref",' /app/demo/blueprint/modules/paths.py
+RUN sed -i '/"bamUtil"/c\    "bamUtil": "/app/soft/bamUtil/bin/bam",' /app/demo/blueprint/modules/paths.py
+
 
 
 
