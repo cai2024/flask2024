@@ -21,11 +21,11 @@ spikein_list = '\t'.join([f'{param}_(cover|dep)\t{param}_mc(CpG|CHG|CHH)' for pa
 
 
 # 命令行加载
-include: "trim.smk"
-include: "mapping.smk"
-include: "deduping.smk"
-include: "call_modify.smk"
-include: "cover.smk"
+include: "../smk_modules/trim.smk"
+include: "../smk_modules/mapping_bismark.smk"
+include: "../smk_modules/deduping.smk"
+include: "../smk_modules/call_dup_bismark.smk"
+include: "../smk_modules/de_cover.smk"
 include: "logging.smk"
 
 

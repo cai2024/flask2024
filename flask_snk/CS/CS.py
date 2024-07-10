@@ -17,7 +17,8 @@ ref_path = config['ref_path']
 params_list = config['spikein_params'].split(',')
 spikein_list = '\t'.join([f'{param}_(cover|dep)\t{param}_hmc(CpG|CHG|CHH)\t{param}_mc(CpG|CHG|CHH)' for param in params_list])
 # 命令行加载
-include: "trim.smk"
+include: "../smk_modules/trim.smk"
+
 include: "mapping.smk"
 include: "deduping.smk"
 include: "cover.smk"

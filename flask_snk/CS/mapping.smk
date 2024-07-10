@@ -9,7 +9,7 @@ rule bowtie2_se:
     conda:
         "flask2024",
     params:
-        ref=config["ref_genome"],
+        ref=config["ref_path"] +"/"+config["ref_species"] +"/"+ config["ref_release"] +"/bowtie2/" + config["ref_release"],
         sam="{output_dir}/bam/{{sample}}.sam".format(output_dir=config['output_dir']),
         other=config['align_params'],
     shell:
@@ -57,7 +57,7 @@ rule bwa_se:
     conda:
         "flask2024",
     params:
-        ref=config["ref_genome"],
+        ref=config["ref_path"] +"/"+config["ref_species"] +"/"+ config["ref_release"] +"/bowtie2/" + config["ref_release"] +".fa",
         other=config['align_params'],
     shell:
         """

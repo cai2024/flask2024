@@ -24,13 +24,15 @@ spikein_list = '\t'.join([f'{param}_(cover|dep)' for param in params_list])
 
 # 命令行加载
 
-include: "trim.smk"
-include: "mapping.smk"
-include: "deduping.smk"
-include: "cover.smk"
+include: "../smk_modules/trim.smk"
+include: "../smk_modules/mapping_bowtie2.smk"
+include: "../smk_modules/mapping_bwa.smk"
+include: "../smk_modules/deduping.smk"
+include: "../smk_modules/de_cover.smk"
+
 include: "logging.smk"
-include: "call_spikein_modify.smk"
-include: "call_modify.smk"
+include: "../smk_modules/call_dup_astair.smk"
+include: "../smk_modules/call_spikein_astair.smk"
 
 # 规则定义
 rule all:

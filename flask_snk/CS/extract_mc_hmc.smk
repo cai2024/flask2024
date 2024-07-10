@@ -11,7 +11,7 @@ rule extract_mc_hmc:
         "flask2024",
     threads: 20
     params:
-        ref=config["ref_fa"],
+        ref=config["ref_path"] +"/"+config["ref_species"] +"/"+ config["ref_release"] + "/" + config["ref_release"] + ".fa",
     shell:
         """
         (python3 {py_ref}/CGS_extract_modify.py --bam {input.bam} --cutfq1 {input.cut_fq1}  --ref {params.ref} --parallel {threads} --type mc --output {output.mc} ) 2> {log}
@@ -32,7 +32,7 @@ rule de_extract_mc_hmc:
         "flask2024",
     threads: 20
     params:
-        ref=config["ref_fa"]
+        ref=config["ref_path"] +"/"+config["ref_species"] +"/"+ config["ref_release"] + "/" + config["ref_release"] + ".fa",
     shell:
         """
         (python3 {py_ref}/CGS_extract_modify.py --bam {input.de_bam} --cutfq1 {input.cut_fq1}  --ref {params.ref} --parallel {threads} --type mc --output {output.mc}) 2> {log}
