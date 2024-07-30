@@ -1,19 +1,19 @@
 rule get_log:
     input:
-        sort_bam="{output_dir}/bam/{align_soft}/{{sample}}_{mode}.bam".format(output_dir=config['output_dir'],mode=config["mode"],align_soft=config['align_soft']),
-        de_sort_bam="{output_dir}/de_bam/{dup_soft}/{{sample}}_dedup.bam".format(output_dir=config['output_dir'],dup_soft=config['dup_soft']),
-        sp_sort_bam="{output_dir}/sp_bam/{align_soft}/sp_{{sample}}_{mode}.bam".format(output_dir=config['output_dir'],mode=config["mode"],align_soft=config['align_soft']),
-        mc_report="{output_dir}/de_bam/{call_modify_soft}/{{sample}}_dedup_splitting_report.txt".format(output_dir=config['output_dir'],call_modify_soft=config['call_modify_soft']),
-        mc_sp="{output_dir}/sp_bam/{call_modify_soft}/sp_{{sample}}_{mode}.CX_report.txt".format(output_dir=config['output_dir'],mode=config['mode'],call_modify_soft=config['call_modify_soft']),
-        cover="{output_dir}/cover/{{sample}}/genome_results.txt".format(output_dir=config['output_dir']),
+        sort_bam="{output_dir}/{{sample}}/bam/{align_soft}/{{sample}}_{mode}.bam".format(output_dir=config['output_dir'],mode=config["mode"],align_soft=config['align_soft']),
+        de_sort_bam="{output_dir}/{{sample}}/de_bam/{dup_soft}/{{sample}}_dedup.bam".format(output_dir=config['output_dir'],dup_soft=config['dup_soft']),
+        sp_sort_bam="{output_dir}/{{sample}}/sp_bam/{align_soft}/sp_{{sample}}_{mode}.bam".format(output_dir=config['output_dir'],mode=config["mode"],align_soft=config['align_soft']),
+        mc_report="{output_dir}/{{sample}}/de_bam/{call_modify_soft}/{{sample}}_dedup_splitting_report.txt".format(output_dir=config['output_dir'],call_modify_soft=config['call_modify_soft']),
+        mc_sp="{output_dir}/{{sample}}/sp_bam/{call_modify_soft}/sp_{{sample}}_{mode}.CX_report.txt".format(output_dir=config['output_dir'],mode=config['mode'],call_modify_soft=config['call_modify_soft']),
+        cover="{output_dir}/{{sample}}/cover/{{sample}}/genome_results.txt".format(output_dir=config['output_dir']),
     output:
         log="{output_dir}/final_log/{{sample}}.log".format(output_dir=config['output_dir']),
     conda:
         "flask2024",
     params: 
         raw_fq1="{fq_in_path}/{{sample}}".format(fq_in_path=config['fq_in_path']),
-        trim_fq1="{output_dir}/trim/{trim_soft}/{{sample}}".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
-        json="{output_dir}/trim/{trim_soft}/{{sample}}_{mode}.json".format(output_dir=config['output_dir'],trim_soft=config['trim_soft'],mode=config["mode"]),
+        trim_fq1="{output_dir}/{{sample}}/trim/{trim_soft}/{{sample}}".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
+        json="{output_dir}/{{sample}}/trim/{trim_soft}/{{sample}}_{mode}.json".format(output_dir=config['output_dir'],trim_soft=config['trim_soft'],mode=config["mode"]),
         spikein=config['spikein_params'],
         mode=config["mode"],
         my_sample="{sample}",

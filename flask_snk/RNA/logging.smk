@@ -1,15 +1,15 @@
 rule get_log:
     input: 
-        bam="{output_dir}/bam/{align_soft}/{{sample}}_{mode}.bam".format(output_dir=config['output_dir'],mode=config["mode"],align_soft=config['align_soft']),
-        cover="{output_dir}/cover/{{sample}}/genome_results.txt".format(output_dir=config['output_dir']),
-        count_log="{output_dir}/logs/count/{{sample}}.log".format(output_dir=config['output_dir']),
+        bam="{output_dir}/{{sample}}/bam/{align_soft}/{{sample}}_{mode}.bam".format(output_dir=config['output_dir'],mode=config["mode"],align_soft=config['align_soft']),
+        cover="{output_dir}/{{sample}}/cover/{{sample}}/genome_results.txt".format(output_dir=config['output_dir']),
+        count_log="{output_dir}/{{sample}}/logs/count/{{sample}}.log".format(output_dir=config['output_dir']),
     output:
         log="{output_dir}/final_log/{{sample}}.log".format(output_dir=config['output_dir']),
     conda:
         "flask2024",
     params:
         raw_fq1="{fq_in_path}/{{sample}}".format(fq_in_path=config['fq_in_path']),
-        trim_fq1="{output_dir}/trim/{trim_soft}/{{sample}}".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
+        trim_fq1="{output_dir}/{{sample}}/trim/{trim_soft}/{{sample}}".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
         mode=config["mode"],
         my_sample="{sample}",
     threads: 4

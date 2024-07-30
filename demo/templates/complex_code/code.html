@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% from 'bootstrap4/form.html' import render_form %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<!-- 引入Highlight.js的CSS样式 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/atom-one-dark.min.css">
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center my-4">代码展示页面</h1>
+    <div class="row">
+
+
+<div class="col-md-12">
+    <!-- 动态代码展示区域 -->
+    <pre><code class="hljs language-python" id="dynamicCode"># 这里将展示从服务器获取的代码</code></pre>
+</div>
+
+
+
+
+    </div>
+    <div class="text-center my-4">
+        <!-- 操作按钮 -->
+        <button class="btn btn-success">操作一</button>
+        <button class="btn btn-danger">操作二</button>
+    </div>
+    <p class="text-center">这里可以添加一些额外的文字描述或说明。</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- 引入jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- 引入Highlight.js的JavaScript库 -->
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // 应用highlight.js到所有的<pre><code>标签
+        hljs.highlightAll();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    // 检索保存的代码
+    const code = localStorage.getItem('code');
+    if (code) {
+        const codeElement = document.getElementById('dynamicCode');
+        if (codeElement) {
+            codeElement.textContent = code;
+            hljs.highlightElement(codeElement); // 应用高亮
+        }
+        //localStorage.removeItem('code'); // 清除存储的代码
+    }
+});
+</script>
+{{ super() }}
+{% endblock %}
+

@@ -1,0 +1,127 @@
+.box-fixed-height {
+    height: 300px; /* 固定高度，可以根据需要调整 */
+    overflow-y: auto; /* 当内容超出时，显示滚动条 */
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.bordered-area {
+    border: 2px solid #007BFF;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.bordered-area h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.step-item {
+    margin: 5px;
+    padding: 10px;
+    background-color: #d3d3d3;
+    cursor: move;
+    list-style-type: none;
+    border-radius: 4px;
+}
+
+.card {
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.card-header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.btn-block {
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.text-center {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 10px;
+}
+
+.col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 10px;
+}
+
+.inline-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inline-container > div {
+    flex: 1;
+    margin: 0 10px;
+}
+/* 基本的容器样式，调整内边距和边框 */
+.border {
+    padding: 1rem;
+    border: 1px solid #dee2e6; /* 浅灰色边框 */
+    border-radius: 0.25rem; /* 轻微的圆角 */
+    background-color: #f8f9fa; /* 浅灰色背景 */
+    margin-bottom: 1rem; /* 底部边距 */
+}
+
+/* 输出区的特定样式 */
+.alert-info {
+    color: #0c5460; /* 深蓝绿色文本 */
+    background-color: #d1ecf1; /* 浅蓝色背景 */
+    border-color: #bee5eb; /* 匹配的边框颜色 */
+    padding: 0.75rem 1.25rem; /* 内边距调整 */
+    margin-bottom: 1rem; /* 底部边距 */
+    border-radius: 0.25rem; /* 圆角 */
+}
+
+.alert-info strong {
+    color: #0c5460; /* 加强文字颜色，确保可读性 */
+}
+.custom-border {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+}
+
+.custom-alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+}
+

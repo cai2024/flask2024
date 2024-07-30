@@ -30,11 +30,11 @@ include: "extract_mc_hmc.smk"
 # 规则定义
 rule all:
     input:
-        expand("{output_dir}/bam/{align_soft}/{sample}.bam", 
+        expand("{output_dir}/{sample}/bam/{align_soft}/{sample}.bam", 
                output_dir=config['output_dir'], sample=config["sampleList"],align_soft=config['align_soft']),
-        expand("{output_dir}/bam/{call_modify_soft}/{sample}.bam.all.bed.hmc",
+        expand("{output_dir}/{sample}/bam/{call_modify_soft}/{sample}.bam.all.bed.hmc",
                output_dir=config['output_dir'], sample=config["sampleList"],call_modify_soft=config["call_modify_soft"]),
-        expand("{output_dir}/de_bam/{call_modify_soft}/{sample}_dedup.bam.all.bed.hmc",
+        expand("{output_dir}/{sample}/de_bam/{call_modify_soft}/{sample}_dedup.bam.all.bed.hmc",
                output_dir=config['output_dir'], sample=config["sampleList"],call_modify_soft=config["call_modify_soft"]),
         expand("{output_dir}/final_log/{sample}.log",
                output_dir=config['output_dir'], sample=config["sampleList"]),

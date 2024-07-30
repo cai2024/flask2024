@@ -7,17 +7,17 @@ else:
 
 rule generate_expression_matrix:
     input:
-        bam="{output_dir}/bam/{align_soft}/{{sample}}_{mode}.bam".format(output_dir=config['output_dir'],mode=config["mode"], align_soft=config['align_soft']),
+        bam="{output_dir}/{{sample}}/bam/{align_soft}/{{sample}}_{mode}.bam".format(output_dir=config['output_dir'],mode=config["mode"], align_soft=config['align_soft']),
     output:
-        expression_matrix="{output_dir}/count/featureCounts/{{sample}}_expression_matrix.txt".format(output_dir=config['output_dir']),
-        log="{output_dir}/logs/count/{{sample}}.log".format(output_dir=config['output_dir']),
+        expression_matrix="{output_dir}/{{sample}}/count/featureCounts/{{sample}}_expression_matrix.txt".format(output_dir=config['output_dir']),
+        log="{output_dir}/{{sample}}/logs/count/{{sample}}.log".format(output_dir=config['output_dir']),
     log:
-        "{output_dir}/logs/count/{{sample}}.log".format(output_dir=config['output_dir']),
+        "{output_dir}/{{sample}}/logs/count/{{sample}}.log".format(output_dir=config['output_dir']),
     threads: 4
     conda:
         "flask2024",
     params:
-        out_dir="{output_dir}/count/featureCounts/".format(output_dir=config['output_dir']),
+        out_dir="{output_dir}/{{sample}}/count/featureCounts/".format(output_dir=config['output_dir']),
         other=config['count_params']
     shell:
         """

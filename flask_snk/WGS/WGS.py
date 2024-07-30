@@ -36,13 +36,13 @@ include: "logging.smk"
 # 规则定义
 rule all:
     input:
-        expand("{output_dir}/bam/{align_soft}/{sample}_{mode}.bam", 
+        expand("{output_dir}/{sample}/bam/{align_soft}/{sample}_{mode}.bam", 
                output_dir=config['output_dir'], sample=config["sampleList"], mode=config["mode"], align_soft=config['align_soft']),
-        expand("{output_dir}/de_bam/{dup_soft}/{sample}_dedup.bam",
+        expand("{output_dir}/{sample}/de_bam/{dup_soft}/{sample}_dedup.bam",
                output_dir=config['output_dir'], sample=config["sampleList"], dup_soft=config['dup_soft']),
 
 
-        expand("{output_dir}/cover/{sample}/genome_results.txt",
+        expand("{output_dir}/{sample}/cover/{sample}/genome_results.txt",
                output_dir=config['output_dir'], sample=config["sampleList"]),
         expand("{output_dir}/final_log/{sample}.log",
                output_dir=config['output_dir'], sample=config["sampleList"]),

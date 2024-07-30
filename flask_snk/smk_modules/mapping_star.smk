@@ -1,16 +1,16 @@
 rule star_se: 
     input:
-        trim_fq1="{output_dir}/trim/{trim_soft}/{{sample}}_trimmed.fq.gz".format(output_dir=config['output_dir'],trim_soft=config['trim_soft'])
+        trim_fq1="{output_dir}/{{sample}}/trim/{trim_soft}/{{sample}}_trimmed.fq.gz".format(output_dir=config['output_dir'],trim_soft=config['trim_soft'])
     output:
-        bam="{output_dir}/bam/star/{{sample}}_single.bam".format(output_dir=config['output_dir']),
+        bam="{output_dir}/{{sample}}/bam/star/{{sample}}_single.bam".format(output_dir=config['output_dir']),
     log:
-        "{output_dir}/logs/star/{{sample}}.log".format(output_dir=config['output_dir']),
+        "{output_dir}/{{sample}}/logs/star/{{sample}}.log".format(output_dir=config['output_dir']),
     threads: 10
     conda:
         "flask2024",
     params:
         ref=config["ref_path"] +"/"+config["ref_species"] +"/"+ config["ref_release"] +"/star/"+config["ref_release"]+"_"+config["ref_len"],
-        bam="{output_dir}/bam/{{sample}}.star.".format(output_dir=config['output_dir']),
+        bam="{output_dir}/{{sample}}/bam/{{sample}}.star.".format(output_dir=config['output_dir']),
         other=config['align_params'],
     shell:
         """
@@ -24,18 +24,18 @@ rule star_se:
 
 rule star_pe:
     input:
-        trim_fq1="{output_dir}/trim/{trim_soft}/{{sample}}_1_val_1.fq.gz".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
-        trim_fq2="{output_dir}/trim/{trim_soft}/{{sample}}_2_val_2.fq.gz".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
+        trim_fq1="{output_dir}/{{sample}}/trim/{trim_soft}/{{sample}}_1_val_1.fq.gz".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
+        trim_fq2="{output_dir}/{{sample}}/trim/{trim_soft}/{{sample}}_2_val_2.fq.gz".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
     output:
-        bam="{output_dir}/bam/star/{{sample}}_pair.bam".format(output_dir=config['output_dir']),
+        bam="{output_dir}/{{sample}}/bam/star/{{sample}}_pair.bam".format(output_dir=config['output_dir']),
     log:
-        "{output_dir}/logs/star/{{sample}}.log".format(output_dir=config['output_dir']),
+        "{output_dir}/{{sample}}/logs/star/{{sample}}.log".format(output_dir=config['output_dir']),
     threads: 10
     conda:
         "flask2024",
     params:
         ref=config["ref_path"] +"/"+config["ref_species"] +"/"+ config["ref_release"] +"/star/"+config["ref_release"]+"_"+config["ref_len"],
-        bam="{output_dir}/bam/{{sample}}.star.".format(output_dir=config['output_dir']),
+        bam="{output_dir}/{{sample}}/bam/{{sample}}.star.".format(output_dir=config['output_dir']),
         other=config['align_params'],
     shell:
         """

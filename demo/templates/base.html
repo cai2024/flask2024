@@ -8,8 +8,9 @@
         <title>{% block title %}默认标题{% endblock title %}</title>
         <link rel="icon" href="{{ url_for('static', filename='ico/heart.ico') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/blue.mini.css') }}" type="text/css">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
         <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
         {% block styles %}
         {% endblock styles %}
@@ -23,7 +24,7 @@
                     <ul class="navbar-nav mr-auto">
                         {{ render_nav_item('biology.index', '主页') }}
                         {{ render_nav_item('analysis.analysis', '分析流程代码') }} 
-                        {{ render_nav_item('complex_junction.complex_junction', '复杂接头识别') }} 
+                        {{ render_nav_item('complex_code.code_home', '复杂接头和流程设计') }} 
                     </ul>
                 </div>
             </div>

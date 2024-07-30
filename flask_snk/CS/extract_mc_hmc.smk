@@ -1,12 +1,12 @@
 rule extract_mc_hmc:
     input:
-        bam="{output_dir}/bam/{align_soft}/{{sample}}.bam".format(output_dir=config['output_dir'],align_soft=config['align_soft']),
-        cut_fq1="{output_dir}/trim/{cut_soft}/{{sample}}_cut_f1.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
+        bam="{output_dir}/{{sample}}/bam/{align_soft}/{{sample}}.bam".format(output_dir=config['output_dir'],align_soft=config['align_soft']),
+        cut_fq1="{output_dir}/{{sample}}/trim/{cut_soft}/{{sample}}_cut_f1.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
     output:
-        hmc= "{output_dir}/bam/CGS_call_modify/{{sample}}.bam.all.bed.hmc".format(output_dir=config['output_dir']),
-        mc="{output_dir}/bam/CGS_call_modify/{{sample}}.bam.all.bed.mc".format(output_dir=config['output_dir']),
+        hmc= "{output_dir}/{{sample}}/bam/CGS_call_modify/{{sample}}.bam.all.bed.hmc".format(output_dir=config['output_dir']),
+        mc="{output_dir}/{{sample}}/bam/CGS_call_modify/{{sample}}.bam.all.bed.mc".format(output_dir=config['output_dir']),
     log:
-        "{output_dir}/logs/extract_mc_hmc/{{sample}}.log".format(output_dir=config['output_dir'])
+        "{output_dir}/{{sample}}/logs/extract_mc_hmc/{{sample}}.log".format(output_dir=config['output_dir'])
     conda:
         "flask2024",
     threads: 20
@@ -21,13 +21,13 @@ rule extract_mc_hmc:
 
 rule de_extract_mc_hmc:
     input:
-        de_bam="{output_dir}/de_bam/{dup_soft}/{{sample}}_dedup.bam".format(output_dir=config['output_dir'],dup_soft=config['dup_soft']),
-        cut_fq1="{output_dir}/trim/{cut_soft}/{{sample}}_cut_f1.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
+        de_bam="{output_dir}/{{sample}}/de_bam/{dup_soft}/{{sample}}_dedup.bam".format(output_dir=config['output_dir'],dup_soft=config['dup_soft']),
+        cut_fq1="{output_dir}/{{sample}}/trim/{cut_soft}/{{sample}}_cut_f1.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
     output:
-        hmc= "{output_dir}/de_bam/CGS_call_modify/{{sample}}_dedup.bam.all.bed.hmc".format(output_dir=config['output_dir']),
-        mc="{output_dir}/de_bam/CGS_call_modify/{{sample}}_dedup.bam.all.bed.mc".format(output_dir=config['output_dir']),
+        hmc= "{output_dir}/{{sample}}/de_bam/CGS_call_modify/{{sample}}_dedup.bam.all.bed.hmc".format(output_dir=config['output_dir']),
+        mc="{output_dir}/{{sample}}/de_bam/CGS_call_modify/{{sample}}_dedup.bam.all.bed.mc".format(output_dir=config['output_dir']),
     log:
-        "{output_dir}/logs/de_extract_mc_hmc/{{sample}}.log".format(output_dir=config['output_dir'])
+        "{output_dir}/{{sample}}/logs/de_extract_mc_hmc/{{sample}}.log".format(output_dir=config['output_dir'])
     conda:
         "flask2024",
     threads: 20
@@ -43,13 +43,13 @@ rule de_extract_mc_hmc:
 
 rule extract_mc_hmc_sp:
     input:
-        sp_bam="{output_dir}/sp_bam/{align_soft}/sp_{{sample}}.bam".format(output_dir=config['output_dir'],align_soft=config['align_soft']),
-        cut_fq1="{output_dir}/trim/{cut_soft}/{{sample}}_cut_f1.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
+        sp_bam="{output_dir}/{{sample}}/sp_bam/{align_soft}/sp_{{sample}}.bam".format(output_dir=config['output_dir'],align_soft=config['align_soft']),
+        cut_fq1="{output_dir}/{{sample}}/trim/{cut_soft}/{{sample}}_cut_f1.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
     output:
-        hmc= "{output_dir}/sp_bam/CGS_call_modify/sp_{{sample}}.bam.all.bed.hmc".format(output_dir=config['output_dir']),
-        mc="{output_dir}/sp_bam/CGS_call_modify/sp_{{sample}}.bam.all.bed.mc".format(output_dir=config['output_dir']),
+        hmc= "{output_dir}/{{sample}}/sp_bam/CGS_call_modify/sp_{{sample}}.bam.all.bed.hmc".format(output_dir=config['output_dir']),
+        mc="{output_dir}/{{sample}}/sp_bam/CGS_call_modify/sp_{{sample}}.bam.all.bed.mc".format(output_dir=config['output_dir']),
     log:
-        "{output_dir}/logs/sp_extract_mc_hmc/{{sample}}.log".format(output_dir=config['output_dir'])
+        "{output_dir}/{{sample}}/logs/sp_extract_mc_hmc/{{sample}}.log".format(output_dir=config['output_dir'])
     conda:
         "flask2024",
     threads: 20
