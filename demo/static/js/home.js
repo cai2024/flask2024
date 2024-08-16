@@ -1,4 +1,7 @@
 
+var select_raw_folder="";
+
+
 function toggleImage() {
     var img = document.getElementById('instructionImage');
     img.style.display = (img.style.display === 'none' ? 'block' : 'none');
@@ -76,7 +79,9 @@ $(document).ready(function() {
             method: 'POST',
             data: { selected_folder: folder, task_id: taskId },
             success: function(response) {
+                select_raw_folder=folder;       
                 console.log("选定的文件夹已成功发送到服务器！");
+                console.log(select_raw_folder)
             },
             error: function(xhr, status, error) {
                 console.error("发送文件夹选择时发生错误:", error);

@@ -7,6 +7,12 @@ from .utils import ana_get_res
 
 
 
+
+
+
+
+
+
 def submit_snakemake(info):
     config = info.copy()
     config.update(paths_dict)

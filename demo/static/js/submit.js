@@ -6,39 +6,39 @@ document.getElementById('WGSBtn').addEventListener('click', function() {
     initialPreset("WGS");
 });
 
+var config_string = "";
+var smk_string= "";
 
 
 
 async function submitSteps() {
-    console.log('fq_type:', fq_type);
-    const stepsData = steps.map(step => ({
-        id: step.id,
-        type: step.type,
-        oninput: step.params,
-        select_option: step.select_option,
-	select_index: step.select_index,
-    }));
-    console.log('stepsData:', stepsData);
     try {
-        const response = await fetch('/submit_steps', {
+        const response = await fetch('/submit_form_steps', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ steps: stepsData ,fq_type:fq_type ,raw_file: raw_myOptions[0] })
+            body: JSON.stringify({
+                fq_type: fq_type,
+                raw_myOptions: raw_myOptions[0],
+                steps: steps
+            })
         });
-        const data = await response.json();         
+
         if (response.ok) {
-            localStorage.setItem('code', data.my_code);
-            window.location.href = '/submit_form_code/' + data.task_id; 
-          
+            window.location.href = '/submit_form_code/' + task_id;
         } else {
-            console.error('Server responded with non-OK status');
+            const errorData = await response.json();
+            console.error('Failed to submit steps:', errorData);
         }
     } catch (error) {
         console.error('Error submitting steps:', error);
     }
 }
+
+
+
+
 
 
 
@@ -58,19 +58,5 @@ function disableAllButtons() {
     });
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

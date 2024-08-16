@@ -40,6 +40,58 @@
         {% endfor %}
     {% endfor %}
 
+let steps = [];
+function addStep(type) {
+    const stepId = steps.length;
+    const stepItem = `<li class="list-group-item step-item" id="step-${stepId}">${type}</li>`;
+    $('#selected-steps').append(stepItem);
+    $('#selected-steps').sortable({
+        update: function(event, ui) {
+            updateStepOrder();
+        }
+    });
+    $('#selected-steps').disableSelection();
+    steps.push({ id: stepId, type: type, text: '', select_option: '' });
+}
+
+function updateStepOrder() {
+    const newOrder = [];
+    $('#selected-steps').children().each(function(index, element) {
+        const stepId = parseInt(element.id.replace('step-', ''));
+        newOrder.push(steps.find(step => step.id === stepId));
+    });
+    steps = newOrder;
+}
+
+
+
+
+var raw_myOptions = [localStorage.getItem('selectedFileType') || "raw.fq.gz"];
+var fq_type = localStorage.getItem('selectedFqType') || "single";
+var myOptions = [];
+
+$(document).ready(function() {
+    $('input[name="fileType"][value="' + raw_myOptions[0] + '"]').prop('checked', true);
+    myOptions = [raw_myOptions[0]];
+    $('input[name="fileType"]').change(function() {
+        raw_myOptions = [$(this).val()];
+        myOptions = [raw_myOptions[0]];
+        localStorage.setItem('selectedFileType', $(this).val());
+        location.reload();
+    });
+    $('input[name="fqType"][value="' + fq_type + '"]').prop('checked', true);
+    $('input[name="fqType"]').change(function() {
+        fq_type = $(this).val();
+        localStorage.setItem('selectedFqType', fq_type);
+        location.reload();
+    });
+
+
+
+});
+
+
+var task_id="{{task_id}}";
 
 
 

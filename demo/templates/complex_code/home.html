@@ -32,8 +32,8 @@
 
         <div class="col-md-12 text-center my-2 radio-toolbar">
             <div class="form-check form-check-inline group-divider">
-                <input class="form-check-input" type="radio" name="fileType" id="rawFq" value="raw.fq">
-                <label class="form-check-label" for="rawFq">raw.fq</label>
+                <input class="form-check-input" type="radio" name="fileType" id="rawFq" value="raw.fq.gz">
+                <label class="form-check-label" for="rawFq">raw.fq.gz</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="fileType" id="rawBam" value="raw.bam">
@@ -84,8 +84,6 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
-<script src="{{ url_for('static', filename='js/buttons.js') }}"></script>
 <script src="{{ url_for('static', filename='js/project_update.js') }}"></script>
 <script src="{{ url_for('static', filename='js/project_init.js') }}"></script>
 <script src="{{ url_for('static', filename='js/submit.js') }}"></script> 

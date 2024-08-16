@@ -46,3 +46,57 @@ async function updateOptions_select(stepType, stepId) {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+// 展示部分的更新
+
+let isUpdating = false;
+async function updateOutputArea() {
+    if (isUpdating) {
+        console.log('Update is currently in progress. Please wait.');
+        return;
+    }
+    isUpdating = true;
+    const outputArea = document.getElementById('outputArea');
+    outputArea.classList.add('custom-border'); // 应用自定义边框样式
+    outputArea.innerHTML = '<h2>Loading...</h2>';
+
+    for (const step of steps) {
+        try {
+            const inputElement = document.querySelector(`#input-step-${step.id} input`);
+            const inputValue = inputElement.value;
+            step.params = inputValue;
+            const response = await fetch('/get_display_value', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    type: step.type,
+                    select_option: step.select_option,
+                    params: step.params || ""
+                })
+            });
+            const data = await response.json();
+            const outputDiv = document.createElement('div');
+            outputDiv.id = `output-step-${step.id}`;
+            outputDiv.classList.add('alert', 'custom-alert-info'); // 应用自定义警告信息样式
+            outputDiv.innerHTML = `<strong>${step.type}:</strong> ${data.displayString}`;
+            outputArea.appendChild(outputDiv);
+        } catch (error) {
+            console.error('Error:', error);
+            outputArea.innerHTML = '<h2>Error Loading Data</h2>';
+        }
+    }
+    isUpdating = false;
+}
+

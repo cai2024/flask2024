@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job         count
+--------  -------
+all             1
+fastp_pe        1
+total           2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Aug 16 16:31:08 2024]
+localrule fastp_pe:
+    input: /data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/wgs/step1_fastp/fastp_wgs_1.fq.gz, /data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/wgs/step1_fastp/fastp_wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/wgs/step2_fastp/fastp_wgs_1.fq.gz, /data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/wgs/step2_fastp/fastp_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/logs/wgs/step2_fastp/fastp_wgs_pair.log
+    jobid: 3
+    reason: Updated input files: /data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/wgs/step1_fastp/fastp_wgs_1.fq.gz, /data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/wgs/step1_fastp/fastp_wgs_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547, sample=wgs, step=step2
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/temp_test
+
+Activating conda environment: flask2024
+[Fri Aug 16 16:31:10 2024]
+Finished job 3.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Aug 16 16:31:10 2024]
+localrule all:
+    input: /data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/wgs/step1_fastp/fastp_wgs_1.fq.gz, /data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/wgs/step2_fastp/fastp_wgs_1.fq.gz
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/wgs/step2_fastp/fastp_wgs_1.fq.gz
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240816161314-d5a392ac-b4ff-401f-b652-b91b38c34547/temp_test
+
+[Fri Aug 16 16:31:10 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-08-16T163107.129232.snakemake.log

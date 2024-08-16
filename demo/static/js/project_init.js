@@ -1,31 +1,25 @@
 document.getElementById('confirmBtn').addEventListener('click', confirmSteps);
-var raw_myOptions = [localStorage.getItem('selectedFileType') || "raw.fq"];
-var fq_type = localStorage.getItem('selectedFqType') || "single";
-var myOptions = [];
-
-$(document).ready(function() {
-    $('input[name="fileType"][value="' + raw_myOptions[0] + '"]').prop('checked', true);
-    myOptions = [raw_myOptions[0]];
-    $('input[name="fileType"]').change(function() {
-        raw_myOptions = [$(this).val()];
-        myOptions = [raw_myOptions[0]];
-        localStorage.setItem('selectedFileType', $(this).val());
-        location.reload();
-    });
-    $('input[name="fqType"][value="' + fq_type + '"]').prop('checked', true);
-    $('input[name="fqType"]').change(function() {
-        fq_type = $(this).val();
-        localStorage.setItem('selectedFqType', fq_type);
-        location.reload();
-    });
-    
-
-    
-});
 
 
 
-
+// 更新总体选项的路由    /update_my_options
+async function updateMyOptions(stepType, stepId) {
+    const step = steps.find(step =>  step.id === stepId);
+    try {
+        const response = await fetch('/update_my_options', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ step_id: stepId, step_type: stepType, select_option: step.select_option, my_options: myOptions })
+        });
+        const data = await response.json();
+        const updatedMYOptions = data.my_options;  // 实现初始化时更新my_options
+        myOptions = updatedMYOptions;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
 
 
 
@@ -48,6 +42,7 @@ async function confirmSteps() {
 
 
 // 初始化当前行的input和options
+// /get_options /index_select  返回选项和参数
 async function initOptions(stepType, stepId) {
     try {
         const response = await fetch('/get_options', {
@@ -78,6 +73,13 @@ async function initOptions(stepType, stepId) {
         console.error('Error:', error);
     }
 }
+
+
+
+
+
+
+
 
 
 async function initOptionsUI(stepId, stepType, options) {

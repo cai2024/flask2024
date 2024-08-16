@@ -4,57 +4,133 @@
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-<!-- 引入Highlight.js的CSS样式 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/atom-one-dark.min.css">
 {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.style.css') }}" type="text/css">
 {% endblock %}
 
+
+
+
+
 {% block content %}
+    <div class="container mt-5">
+        <h4>请输入原始数据所在文件夹位置</h4>
+        <div class="overlay-container">
+            <input type="text" id="folderInput" class="form-control" placeholder="">
+            <div id="suggestions" class="overlay"></div>
+        </div>
+        <h6>原始数据命名要求：单端: .fq.gz结尾 双端: _1.fq.gz, _2.fq.gz  或包含.bam文件</h6>
+    </div>
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+
 <div class="container">
     <h1 class="text-center my-4">代码展示页面</h1>
     <div class="row">
-
-
 <div class="col-md-12">
     <!-- 动态代码展示区域 -->
     <pre><code class="hljs language-python" id="dynamicCode"># 这里将展示从服务器获取的代码</code></pre>
 </div>
 
 
-
-
     </div>
     <div class="text-center my-4">
-        <!-- 操作按钮 -->
-        <button class="btn btn-success">操作一</button>
-        <button class="btn btn-danger">操作二</button>
+        <button id="selectInputDir"  class="btn btn-success">确认输入文件夹</button>
+        <button id="operationTwoBtn" class="btn btn-danger" disabled>执行smk任务</button>
     </div>
-    <p class="text-center">这里可以添加一些额外的文字描述或说明。</p>
+    <p class="text-center">请先输入并确认原始数据所在的文件夹。</p>
 </div>
 {% endblock %}
 
+
+
+
 {% block scripts %}
-<!-- 引入jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- 引入Highlight.js的JavaScript库 -->
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        // 应用highlight.js到所有的<pre><code>标签
-        hljs.highlightAll();
-    });
-    document.addEventListener('DOMContentLoaded', function() {
-    // 检索保存的代码
-    const code = localStorage.getItem('code');
-    if (code) {
-        const codeElement = document.getElementById('dynamicCode');
-        if (codeElement) {
-            codeElement.textContent = code;
-            hljs.highlightElement(codeElement); // 应用高亮
-        }
-        //localStorage.removeItem('code'); // 清除存储的代码
+    var task_id = "{{ task_id }}"       
+document.addEventListener('DOMContentLoaded', function() {
+    const folderInput = document.getElementById('folderInput');
+    const selectInputDirBtn = document.getElementById('selectInputDir');
+    if (selectInputDirBtn) {
+        selectInputDirBtn.addEventListener('click', async function() {
+            select_raw_folder = folderInput.value;
+            folderInput.disabled = true;
+            selectInputDirBtn.disabled = true;
+            operationTwoBtn.disabled = false;
+            try {
+                const response = await fetch('/submit_dir_script', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ select_raw_folder: select_raw_folder,task_id : task_id})
+                });
+                if (response.ok) {
+                    const responseData = await response.json();
+                    const my_code = responseData.my_code;
+                    const codeElement = document.getElementById('dynamicCode');
+                    if (codeElement && my_code) {
+                        codeElement.textContent = my_code;
+                        hljs.highlightElement(codeElement);
+                    } else {
+                        console.log("No code to display or element not found.");
+                    }
+                } else {
+                    console.error('Failed to submit directory:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error submitting directory:', error);
+            }
+        });
+    } else {
+        console.error('Button with id "selectInputDir" not found.');
     }
+
+
+
+
+const operationTwoBtn = document.getElementById('operationTwoBtn');
+if (operationTwoBtn) {
+    operationTwoBtn.addEventListener('click', function() {
+        // 立即跳转
+        window.location.href = '/query/' + task_id;
+
+        // 在后台发送请求
+        fetch('/submit_smk_job', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ task_id: task_id })
+        })
+        .then(response => {
+            if (!response.ok) {
+                console.error('Server responded with non-OK status');
+            }
+        })
+        .catch(error => {
+            console.error('Error submitting steps:', error);
+        });
+
+        // 无需禁用按钮，因为用户将被重定向
+    });
+} else {
+    console.error('Button with id "operationTwoBtn" not found.');
+}
+
+
+
 });
+
+
+
+
+
+
+
+
 </script>
 {{ super() }}
 {% endblock %}
