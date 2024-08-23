@@ -1,0 +1,40 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+fastp_pe              1
+trim_galore_pe        1
+total                 3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu Aug 22 17:21:14 2024]
+localrule trim_galore_pe:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz, /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/logs/wgs/step0_trim_galore/trim_galore_wgs_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403, sample=wgs, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/temp_test
+
+Activating conda environment: flask2024
+
+[Thu Aug 22 17:21:25 2024]
+localrule fastp_pe:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz, /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/wgs/step1_fastp/fastp_wgs_1.fq.gz, /data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/wgs/step1_fastp/fastp_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/logs/wgs/step1_fastp/fastp_wgs_pair.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/wgs/step1_fastp/fastp_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403, sample=wgs, step=step1
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/temp_test
+
+Activating conda environment: flask2024

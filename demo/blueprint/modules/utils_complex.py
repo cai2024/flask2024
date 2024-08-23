@@ -15,6 +15,82 @@ def get_samples_list(select_raw_folder,fq_type,raw_myOptions):
     return samples_list
 
 
+def find_rec_Option(type,options):
+    if type=="fq1_fq2":
+        paired_strings=[]
+        fq1_strings = [s for s in options if s.endswith("_1.fq.gz")]
+        fq2_strings = [s for s in options if s.endswith("_2.fq.gz")]
+        for s1 in fq1_strings:
+            s2 = s1[:-len("_1.fq.gz")] + "_2.fq.gz"
+            if s2 in fq2_strings:
+                paired_strings.append((s1, s2))
+        if len(paired_strings) != 0 :
+            return max(paired_strings, key=lambda pair: len(pair[0]) + len(pair[1]))
+        else:
+            return "", ""
+    elif type=="fq1":
+        fq1_strings = [s for s in options if s.endswith("_1.fq.gz")]
+        if len(fq1_strings) != 0 :
+            return max(fq1_strings, key=len)
+        else:
+            return ""
+    elif type=="fq2":
+        fq2_strings = [s for s in options if s.endswith("_2.fq.gz")]
+        if len(fq2_strings) != 0 :
+            return max(fq2_strings, key=len)
+        else:
+            return ""
+    else:
+        if len(options) != 0 :
+            return max(options, key=len)
+        else:
+            return ""
+
+def get_init_div(stepId, step_type, step_params, options_list, mode):
+    options_fq = ''.join([f'<option value="{option}">{option}</option>' for option in options_list["fq"]])
+    options_bam = ''.join([f'<option value="{option}">{option}</option>' for option in options_list["bam"]])
+    options_other = ''.join([f'<option value="{option}">{option}</option>' for option in options_list["other"]])
+    options_all = ''.join([f'<option value="{option}">{option}</option>' for option in options_list["all"]])
+    
+    
+    start_sting = f"""
+            <div id="input-step-{stepId}" class="form-group">
+                <label><strong>step{stepId}: {step_type}:</strong></label>
+                <input id="input-{stepId}" type="text" class="form-control" placeholder="输入额外参数（默认为空）" onchange="updateInput({stepId})" value="{step_params}">
+            """
+    end_string = f"""
+                </div>
+            """
+
+    if mode == "single":
+        if step_type == "hairpin_cut":
+            result_sting = f"""
+                <select id="select-{stepId}-fq1" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq1">{options_fq}</select>
+                <select id="select-{stepId}-fq2" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq2">{options_fq}</select>
+                <select id="select-{stepId}-fq" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq">{options_fq}</select>
+            """
+            rec_Option = {"fq1": find_rec_Option("fq1_fq2", options_list["fq"])[0], "fq2": find_rec_Option("fq1_fq2", options_list["fq"])[1], "fq": find_rec_Option("fq", options_list["fq"])}
+        else:
+            result_sting = f"""
+                <select id="select-{stepId}-fq" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq">{options_fq}</select>
+            """
+            rec_Option = {"fq": find_rec_Option("fq", options_list["fq"])}
+
+    else:
+        if step_type == "hairpin_cut":
+            result_sting = f"""
+                <select id="select-{stepId}-fq1" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq1">{options_fq}</select>
+                <select id="select-{stepId}-fq2" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq2">{options_fq}</select>
+                <select id="select-{stepId}-fq" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq">{options_fq}</select>
+            """
+            rec_Option = {"fq1": find_rec_Option("fq1_fq2", options_list["fq"])[0], "fq2": find_rec_Option("fq1_fq2", options_list["fq"])[1], "fq": find_rec_Option("fq", options_list["fq"])}
+        else:
+            result_sting = f"""
+                <select id="select-{stepId}-fq1" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq1">{options_fq}</select>
+                <select id="select-{stepId}-fq2" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq2">{options_fq}</select>
+            """
+            rec_Option = {"fq1": find_rec_Option("fq1_fq2", options_list["fq"])[0], "fq2": find_rec_Option("fq1_fq2", options_list["fq"])[1]}
+    return start_sting + result_sting + end_string , rec_Option
 
 def get_result_option(step_id, step_type, select_option,my_options):
     sample_name="raw"
@@ -30,8 +106,18 @@ def get_result_option(step_id, step_type, select_option,my_options):
     return my_options
 
 
+def get_type_index(step_type):
+    if step_type.split()[1]=="bowtie2":
+        return ["mouse mm9", "mouse mm10", "mouse mm39", "human hg18", "human hg19", "human hg38", "human hs1"]
+    elif step_type.split()[1]=="star":
+        return ["mouse mm9", "mouse mm10", "mouse mm39", "human hg18", "human hg19", "human hg38", "human hs1"]
+    else:
+        return ["mouse mm9", "mouse mm10", "mouse mm39", "human hg18", "human hg19", "human hg38", "human hs1"]
+   
 
-def get_type_option(step_type,my_options):
+
+
+def get_type_option(my_options):
     fq=[]
     bam=[]
     other=[]
@@ -42,14 +128,10 @@ def get_type_option(step_type,my_options):
             bam.append(i)
         else:
             other.append(i)
-    if step_type.split()[0]=="Trim":
-        return list(set(fq))
-    elif step_type.split()[0]=="map":
-        return list(set(fq))
-    elif step_type.split()[0]=="BAM":
-        return list(set(bam))
-    else:
-        return list(set(other))
+
+    return {"fq":list(set(fq)),"bam":list(set(bam)),"other":list(set(other)),"all":list(set(my_options))}
+
+
 
 
 

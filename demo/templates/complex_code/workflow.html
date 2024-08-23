@@ -51,7 +51,7 @@ function addStep(type) {
         }
     });
     $('#selected-steps').disableSelection();
-    steps.push({ id: stepId, type: type, text: '', select_option: '' });
+    steps.push({ id: stepId, type: type, select_option: '', params:'', mode: fq_type, raw_type: raw_myOptions[0]});
 }
 
 function updateStepOrder() {
@@ -73,6 +73,10 @@ var myOptions = [];
 $(document).ready(function() {
     $('input[name="fileType"][value="' + raw_myOptions[0] + '"]').prop('checked', true);
     myOptions = [raw_myOptions[0]];
+    if (fq_type === "pair" && raw_myOptions[0] === "raw.fq.gz") {
+        myOptions = ["raw_1.fq.gz", "raw_2.fq.gz"];
+    }
+
     $('input[name="fileType"]').change(function() {
         raw_myOptions = [$(this).val()];
         myOptions = [raw_myOptions[0]];

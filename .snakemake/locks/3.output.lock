@@ -1,0 +1,4 @@
+/data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz
+/data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+/data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/wgs/step1_fastp/fastp_wgs_1.fq.gz
+/data/cailab/flask_out/20240822171920-a0557945-8115-4324-b3cb-28d1242cb403/wgs/step1_fastp/fastp_wgs_2.fq.gz

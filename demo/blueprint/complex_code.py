@@ -5,7 +5,7 @@ import yaml
 import uuid
 from datetime import datetime
 from .modules.paths import paths_dict
-from demo.blueprint.modules.utils_complex import get_result_option, get_type_option, get_samples_list, generate_steps_config,generate_present_script
+from demo.blueprint.modules.utils_complex import get_result_option, get_type_option, get_samples_list, generate_steps_config,generate_present_script,get_type_index,get_init_div
 from demo.blueprint.modules.utils_complex import available_steps, soft_format
 
 complex_code = Blueprint('complex_code', __name__)
@@ -20,29 +20,26 @@ def code_home():
 def code_for_batch(task_id):
     return render_template('complex_code/home.html', available_steps=available_steps, task_id=task_id)
 
-
+@complex_code.route('/init_type_div', methods=['POST'])
+def init_type_div():
+    data = request.json
+    result= get_init_div(data.get('step_id'),data.get('step_type'),data.get('step_params'),data.get('options'),data.get('mode'))
+    print(result[1]) 
+    return jsonify({'div_string':result[0],'rec_option':result[1] }) 
 #####################################
 @complex_code.route('/update_my_options', methods=['POST'])
 def update_my_options():
     data = request.json
-    my_options = data.get('my_options')
-    my_options=get_result_option(str(data.get('step_id')),data.get('step_type'),data.get('select_option'),my_options)  # 新增选项保存到总选项
+    my_options=get_result_option(str(data.get('step_id')),data.get('step_type'),data.get('select_option'),data.get('my_options'))  # 新增选项保存到总选项
     return jsonify({'my_options': list(set(my_options))})
-
 @complex_code.route('/index_select', methods=['POST'])
 def update_index():
     data = request.json
-    step_type = data.get('step_type').split()[1]
-    index_options=["mouse mm9", "mouse mm10", "mouse mm39","human hg18","human hg19","human hg38","human hs1"]
-    return jsonify({'index_options': index_options})
-
+    return jsonify({'index_options': get_type_index(data.get('step_type'))})
 @complex_code.route('/get_options', methods=['POST'])
 def get_options():
-    data = request.json
-    step_type = data.get('step_type')
-    my_options = data.get('my_options')
-    options = get_type_option(step_type,my_options)  # 公用的获取选项框应该提供的选项，也就是总选项的子集
-    return jsonify({'options': options})
+    data = request.json # 公用的获取选项框应该提供的选项，也就是总选项的子集
+    return jsonify({'options': get_type_option(data.get('my_options'))})
 
 ####################################
 @complex_code.route('/get_display_value', methods=['POST'])

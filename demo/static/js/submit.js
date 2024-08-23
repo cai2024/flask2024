@@ -24,6 +24,7 @@ async function submitSteps() {
                 steps: steps
             })
         });
+        console.log(steps)
 
         if (response.ok) {
             window.location.href = '/submit_form_code/' + task_id;
