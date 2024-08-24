@@ -1,49 +1,15 @@
 document.getElementById('confirmBtn').addEventListener('click', confirmSteps);
-
-
-
-// 更新总体选项的路由    /update_my_options
-async function updateMyOptions(stepType, stepId) {
-    const step = steps.find(step =>  step.id === stepId);
-    try {
-        const response = await fetch('/update_my_options', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ step_id: stepId, step_type: stepType, select_option: step.select_option, my_options: myOptions })
-        });
-        const data = await response.json();
-        const updatedMYOptions = data.my_options;  
-        myOptions = updatedMYOptions;
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-
-
-
 async function update_my_options(stepId) {
     const step = steps.find(s => s.id === stepId);
     try {
         const response = await fetch('/update_my_options', {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ step_id: step.id, step_type: step.type, select_option: step.select_option, my_options: myOptions })
+            body: JSON.stringify({ step_id: step.id, step_type: step.type, select_option: step.select_option, mode: step.mode, temp_options: temp_options })
         });
-        return  (await response.json()).my_options;
+        return  (await response.json()).temp_options;
     } catch (error) { console.error('Error:', error); }
 }
 
-async function get_options(stepId) {
-    const step = steps.find(s => s.id === stepId);
-    try {
-        const response = await fetch('/get_options', {
-            method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ step_type: step.type, my_options: myOptions })
-        });
-        return (await response.json()).options;
-    } catch (error) { console.error('Error:', error); }
-}
 
 async function index_select(stepId) {
     const step = steps.find(s => s.id === stepId);
@@ -98,8 +64,7 @@ async function init_type_div(stepId,options) {
 
 async function initOptionsUI(stepId) {
     const step = steps.find(step => step.id === stepId);
-    const options = await get_options(stepId);
-    const temp_data = await init_type_div(stepId,options)
+    const temp_data = await init_type_div(stepId,temp_options)
     const inputDiv = document.createElement('div');
     inputDiv.innerHTML = temp_data.div_string
     document.getElementById('inputArea').appendChild(inputDiv);
@@ -112,8 +77,8 @@ async function initOptionsUI(stepId) {
         const selectElement = document.querySelector(`#input-step-${stepId} select#select-${stepId}-${key}`)
         const index = Array.from(selectElement.options).findIndex(option => option.value === temp_data.rec_option[key]);
         if (index !== -1) { selectElement.selectedIndex = index; }
-        step.select_option = selectElement.value;
-        myOptions = await update_my_options(stepId);   //第二个任务核心
+        step.select_option[key] = selectElement.value; 
+        temp_options = await update_my_options(stepId);   
     }
     if (step.type.slice(0, 3) === 'map') {
         const index_options =  await index_select(stepId);

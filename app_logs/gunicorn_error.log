@@ -1,175 +1,20 @@
-[2024-08-22 14:59:05,109] ERROR in app: Exception on /submit_dir_script [POST]
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 120, in submit_dir_script
-    my_code += generate_present_script([record["type"] for record in steps], fq_type, params_list, input_list, select_raw_folder) + "\n"
-  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 170, in generate_present_script
-    result += my_code_script[types_list[i]][mode].format(params=params_list[i], filename=temp, step="step" + str(i))
-KeyError: 'map bowtie2'
-[2024-08-22 15:28:49 +0800] [384395] [ERROR] Worker (pid:384545) was sent SIGHUP!
-[2024-08-22 15:28:49 +0800] [384395] [ERROR] Worker (pid:384397) was sent SIGHUP!
-[2024-08-22 15:28:49 +0800] [384395] [ERROR] Worker (pid:384396) was sent SIGHUP!
-[2024-08-22 15:28:49 +0800] [384395] [ERROR] Worker (pid:384448) was sent SIGHUP!
-[2024-08-22 15:28:49 +0800] [384395] [ERROR] Worker (pid:384446) was sent SIGHUP!
-[2024-08-22 15:28:49 +0800] [384395] [ERROR] Worker (pid:384497) was sent SIGHUP!
-[2024-08-22 15:28:49 +0800] [384395] [ERROR] Worker (pid:390499) was sent SIGHUP!
-[2024-08-22 15:28:49 +0800] [384395] [ERROR] Worker (pid:390500) was sent SIGHUP!
-[2024-08-22 15:28:49 +0800] [384395] [ERROR] Worker (pid:390502) was sent SIGHUP!
-[2024-08-22 15:28:49 +0800] [384395] [ERROR] Worker (pid:390506) was sent SIGHUP!
-[2024-08-22 15:28:49 +0800] [384395] [ERROR] Worker (pid:384398) was sent SIGHUP!
-[2024-08-22 15:28:49 +0800] [384395] [ERROR] Worker (pid:384449) was sent SIGHUP!
-[2024-08-22 15:28:50 +0800] [384395] [ERROR] Worker (pid:390504) was sent SIGTERM!
-[2024-08-22 15:28:50 +0800] [384395] [ERROR] Worker (pid:390510) was sent SIGTERM!
-[2024-08-22 15:28:50 +0800] [384395] [ERROR] Worker (pid:390508) was sent SIGTERM!
-[2024-08-22 16:35:56 +0800] [396087] [ERROR] Worker (pid:396187) was sent SIGINT!
-[2024-08-22 16:35:56 +0800] [396087] [ERROR] Worker (pid:396188) was sent SIGINT!
-[2024-08-22 17:05:59 +0800] [399154] [ERROR] Worker (pid:399158) was sent SIGHUP!
-[2024-08-22 17:05:59 +0800] [399154] [ERROR] Worker (pid:399350) was sent SIGHUP!
-[2024-08-22 17:05:59 +0800] [399154] [ERROR] Worker (pid:399351) was sent SIGHUP!
-[2024-08-22 17:05:59 +0800] [399154] [ERROR] Worker (pid:399161) was sent SIGHUP!
-[2024-08-22 17:05:59 +0800] [399154] [ERROR] Worker (pid:399156) was sent SIGHUP!
-[2024-08-22 17:05:59 +0800] [399154] [ERROR] Worker (pid:399160) was sent SIGHUP!
-[2024-08-22 17:05:59 +0800] [399154] [ERROR] Worker (pid:399159) was sent SIGHUP!
-[2024-08-22 17:05:59 +0800] [399154] [ERROR] Worker (pid:399157) was sent SIGHUP!
-[2024-08-22 17:06:00 +0800] [399154] [ERROR] Worker (pid:403798) was sent SIGTERM!
-[2024-08-22 17:06:00 +0800] [399154] [ERROR] Worker (pid:403802) was sent SIGTERM!
-[2024-08-22 17:06:00 +0800] [399154] [ERROR] Worker (pid:403803) was sent SIGTERM!
-[2024-08-22 17:06:00 +0800] [399154] [ERROR] Worker (pid:403800) was sent SIGTERM!
-[2024-08-22 17:06:00 +0800] [399154] [ERROR] Worker (pid:403801) was sent SIGTERM!
-[2024-08-22 17:06:01 +0800] [399154] [ERROR] Worker (pid:403799) was sent SIGTERM!
-[2024-08-22 17:13:35,250] ERROR in app: Exception on /init_type_div [POST]
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 26, in init_type_div
-    return jsonify({'options': get_type_option(data.get('step_id'),data.get('step_type'),data.get('step_params'),data.get('options'),data.get('mode'))})
-TypeError: get_type_option() takes 2 positional arguments but 5 were given
-[2024-08-22 17:18:55 +0800] [405347] [ERROR] Worker (pid:405349) was sent SIGINT!
-[2024-08-22 17:21:26 +0800] [406355] [CRITICAL] WORKER TIMEOUT (pid:406505)
-[2024-08-22 17:21:26 +0800] [406505] [ERROR] Error handling request /submit_smk_job
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 135, in handle
-    self.handle_request(listener, req, client, addr)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
-    respiter = self.wsgi(environ, resp.start_response)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1498, in __call__
-    return self.wsgi_app(environ, start_response)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 155, in submit_smk_job
-    subprocess.run(snakemake_cmd , stdout=f, stderr=subprocess.STDOUT)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/subprocess.py", line 507, in run
-    stdout, stderr = process.communicate(input, timeout=timeout)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/subprocess.py", line 1126, in communicate
-    self.wait()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/subprocess.py", line 1189, in wait
-    return self._wait(timeout=timeout)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/subprocess.py", line 1933, in _wait
-    (pid, sts) = self._try_wait(0)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/subprocess.py", line 1891, in _try_wait
-    (pid, sts) = os.waitpid(self.pid, wait_flags)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 203, in handle_abort
-    sys.exit(1)
-SystemExit: 1
-[2024-08-22 17:48:59 +0800] [406355] [ERROR] Worker (pid:406359) was sent SIGHUP!
-[2024-08-22 17:48:59 +0800] [406355] [ERROR] Worker (pid:406360) was sent SIGHUP!
-[2024-08-22 17:48:59 +0800] [406355] [ERROR] Worker (pid:406948) was sent SIGHUP!
-[2024-08-22 17:48:59 +0800] [406355] [ERROR] Worker (pid:406357) was sent SIGHUP!
-[2024-08-22 17:48:59 +0800] [406355] [ERROR] Worker (pid:406361) was sent SIGHUP!
-[2024-08-22 17:48:59 +0800] [406355] [ERROR] Worker (pid:406358) was sent SIGHUP!
-[2024-08-22 17:48:59 +0800] [406355] [ERROR] Worker (pid:406504) was sent SIGHUP!
-[2024-08-22 17:48:59 +0800] [406355] [ERROR] Worker (pid:406456) was sent SIGHUP!
-[2024-08-22 17:49:05 +0800] [406355] [ERROR] Worker (pid:409809) was sent SIGTERM!
-[2024-08-22 17:49:05 +0800] [406355] [ERROR] Worker (pid:409814) was sent SIGTERM!
-[2024-08-22 17:49:05 +0800] [406355] [ERROR] Worker (pid:409813) was sent SIGTERM!
-[2024-08-22 17:49:05 +0800] [406355] [ERROR] Worker (pid:409815) was sent SIGTERM!
-[2024-08-22 17:49:05 +0800] [406355] [ERROR] Worker (pid:409817) was sent SIGTERM!
-[2024-08-22 17:49:05 +0800] [406355] [ERROR] Worker (pid:409816) was sent SIGTERM!
-[2024-08-22 17:49:05 +0800] [406355] [ERROR] Worker (pid:409811) was sent SIGTERM!
-[2024-08-22 17:49:05 +0800] [406355] [ERROR] Worker (pid:409812) was sent SIGTERM!
-[2024-08-23 11:59:13 +0800] [27792] [ERROR] Connection in use: ('0.0.0.0', 6090)
-[2024-08-23 11:59:13 +0800] [27792] [ERROR] Retrying in 1 second.
-[2024-08-23 11:59:14 +0800] [27792] [ERROR] Connection in use: ('0.0.0.0', 6090)
-[2024-08-23 11:59:14 +0800] [27792] [ERROR] Retrying in 1 second.
-[2024-08-23 11:59:15 +0800] [27792] [ERROR] Connection in use: ('0.0.0.0', 6090)
-[2024-08-23 11:59:15 +0800] [27792] [ERROR] Retrying in 1 second.
-[2024-08-23 11:59:16 +0800] [27792] [ERROR] Connection in use: ('0.0.0.0', 6090)
-[2024-08-23 11:59:16 +0800] [27792] [ERROR] Retrying in 1 second.
-[2024-08-23 11:59:17 +0800] [27792] [ERROR] Connection in use: ('0.0.0.0', 6090)
-[2024-08-23 11:59:17 +0800] [27792] [ERROR] Retrying in 1 second.
-[2024-08-23 11:59:18 +0800] [27792] [ERROR] Can't connect to ('0.0.0.0', 6090)
-[2024-08-23 12:35:12 +0800] [28583] [ERROR] Worker (pid:28732) was sent SIGHUP!
-[2024-08-23 12:35:12 +0800] [28583] [ERROR] Worker (pid:28584) was sent SIGHUP!
-[2024-08-23 12:35:12 +0800] [28583] [ERROR] Worker (pid:28683) was sent SIGHUP!
-[2024-08-23 12:35:12 +0800] [28583] [ERROR] Worker (pid:28633) was sent SIGHUP!
-[2024-08-23 12:35:12 +0800] [28583] [ERROR] Worker (pid:28585) was sent SIGHUP!
-[2024-08-23 12:35:12 +0800] [28583] [ERROR] Worker (pid:28682) was sent SIGHUP!
-[2024-08-23 12:35:12 +0800] [28583] [ERROR] Worker (pid:28684) was sent SIGHUP!
-[2024-08-23 12:35:12 +0800] [28583] [ERROR] Worker (pid:28634) was sent SIGHUP!
-[2024-08-23 12:35:14 +0800] [28583] [ERROR] Worker (pid:31005) was sent SIGTERM!
-[2024-08-23 12:35:14 +0800] [28583] [ERROR] Worker (pid:31006) was sent SIGTERM!
-[2024-08-23 12:35:14 +0800] [28583] [ERROR] Worker (pid:31011) was sent SIGTERM!
-[2024-08-23 12:35:14 +0800] [28583] [ERROR] Worker (pid:31012) was sent SIGTERM!
-[2024-08-23 12:35:14 +0800] [28583] [ERROR] Worker (pid:31010) was sent SIGTERM!
-[2024-08-23 12:35:14 +0800] [28583] [ERROR] Worker (pid:31007) was sent SIGTERM!
-[2024-08-23 12:35:14 +0800] [28583] [ERROR] Worker (pid:31008) was sent SIGTERM!
-[2024-08-23 13:43:47 +0800] [39502] [ERROR] Worker (pid:39505) was sent SIGINT!
-[2024-08-23 13:43:47 +0800] [39502] [ERROR] Worker (pid:39506) was sent SIGINT!
-[2024-08-23 13:43:47 +0800] [39502] [ERROR] Worker (pid:39602) was sent SIGINT!
-[2024-08-23 13:43:47 +0800] [39502] [ERROR] Worker (pid:39507) was sent SIGINT!
-[2024-08-23 13:52:44 +0800] [42517] [ERROR] Worker (pid:42521) was sent SIGINT!
-[2024-08-23 13:55:21 +0800] [43597] [ERROR] Worker (pid:43606) was sent SIGINT!
-[2024-08-23 13:55:21 +0800] [43597] [ERROR] Worker (pid:43601) was sent SIGINT!
-[2024-08-23 13:55:21 +0800] [43597] [ERROR] Worker (pid:43603) was sent SIGINT!
-[2024-08-23 13:55:21 +0800] [43597] [ERROR] Worker (pid:43605) was sent SIGINT!
-[2024-08-23 13:55:21 +0800] [43597] [ERROR] Worker (pid:43604) was sent SIGINT!
-[2024-08-23 13:55:21 +0800] [43597] [ERROR] Worker (pid:43602) was sent SIGINT!
-[2024-08-23 13:55:21 +0800] [43597] [ERROR] Worker (pid:43600) was sent SIGINT!
-[2024-08-23 13:55:21 +0800] [43597] [ERROR] Worker (pid:43607) was sent SIGINT!
-[2024-08-23 14:31:17 +0800] [48520] [ERROR] Worker (pid:48523) was sent SIGHUP!
-[2024-08-23 14:31:17 +0800] [48520] [ERROR] Worker (pid:48524) was sent SIGHUP!
-[2024-08-23 14:31:17 +0800] [48520] [ERROR] Worker (pid:48572) was sent SIGHUP!
-[2024-08-23 14:31:17 +0800] [48520] [ERROR] Worker (pid:48573) was sent SIGHUP!
-[2024-08-23 14:31:17 +0800] [48520] [ERROR] Worker (pid:48670) was sent SIGHUP!
-[2024-08-23 14:31:17 +0800] [48520] [ERROR] Worker (pid:48621) was sent SIGHUP!
-[2024-08-23 14:31:17 +0800] [48520] [ERROR] Worker (pid:48522) was sent SIGHUP!
-[2024-08-23 14:31:18 +0800] [48520] [ERROR] Worker (pid:49121) was sent SIGTERM!
-[2024-08-23 14:31:18 +0800] [48520] [ERROR] Worker (pid:49117) was sent SIGTERM!
-[2024-08-23 14:31:18 +0800] [48520] [ERROR] Worker (pid:49113) was sent SIGTERM!
-[2024-08-23 14:31:18 +0800] [48520] [ERROR] Worker (pid:49115) was sent SIGTERM!
-[2024-08-23 14:31:18 +0800] [48520] [ERROR] Worker (pid:49118) was sent SIGTERM!
-[2024-08-23 14:31:18 +0800] [48520] [ERROR] Worker (pid:49119) was sent SIGTERM!
-[2024-08-23 14:31:18 +0800] [48520] [ERROR] Worker (pid:49116) was sent SIGTERM!
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49128) exited with code 120
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49128) exited with code 120.
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49125) exited with code 120
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49125) exited with code 120.
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49129) exited with code 120
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49129) exited with code 120.
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49123) exited with code 120
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49123) exited with code 120.
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49122) exited with code 120
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49122) exited with code 120.
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49124) exited with code 120
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49124) exited with code 120.
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49126) exited with code 120
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49126) exited with code 120.
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49127) exited with code 120
-[2024-08-23 15:45:13 +0800] [48520] [ERROR] Worker (pid:49127) exited with code 120.
+[2024-08-24 11:33:26 +0800] [139264] [ERROR] Worker (pid:139267) was sent SIGINT!
+[2024-08-24 11:33:26 +0800] [139264] [ERROR] Worker (pid:139268) was sent SIGINT!
+[2024-08-24 11:35:22 +0800] [139467] [ERROR] Worker (pid:139470) was sent SIGINT!
+[2024-08-24 11:36:53 +0800] [139679] [ERROR] Worker (pid:139682) was sent SIGINT!
+[2024-08-24 11:36:53 +0800] [139679] [ERROR] Worker (pid:139683) was sent SIGINT!
+[2024-08-24 11:38:45 +0800] [139861] [ERROR] Worker (pid:139863) was sent SIGINT!
+[2024-08-24 11:39:36 +0800] [140068] [ERROR] Worker (pid:140072) was sent SIGINT!
+[2024-08-24 11:41:24 +0800] [140217] [ERROR] Worker (pid:140219) was sent SIGINT!
+[2024-08-24 11:41:24 +0800] [140217] [ERROR] Worker (pid:140220) was sent SIGINT!
+[2024-08-24 11:44:14 +0800] [140432] [ERROR] Worker (pid:140434) was sent SIGINT!
+[2024-08-24 11:45:18 +0800] [140713] [ERROR] Worker (pid:140715) was sent SIGINT!
+[2024-08-24 11:46:46 +0800] [140872] [ERROR] Worker (pid:140875) was sent SIGINT!
+[2024-08-24 11:48:33 +0800] [141072] [ERROR] Worker (pid:141075) was sent SIGINT!
+[2024-08-24 11:48:33 +0800] [141072] [ERROR] Worker (pid:141074) was sent SIGINT!
+[2024-08-24 11:49:30 +0800] [141293] [ERROR] Worker (pid:141295) was sent SIGINT!
+[2024-08-24 11:49:30 +0800] [141293] [ERROR] Worker (pid:141296) was sent SIGINT!
+[2024-08-24 12:19:36 +0800] [141447] [ERROR] Worker (pid:141450) was sent SIGHUP!
+[2024-08-24 12:19:36 +0800] [141447] [ERROR] Worker (pid:141451) was sent SIGHUP!
+[2024-08-24 12:19:49 +0800] [141447] [ERROR] Worker (pid:143335) was sent SIGTERM!
+[2024-08-24 12:19:49 +0800] [141447] [ERROR] Worker (pid:143336) was sent SIGTERM!

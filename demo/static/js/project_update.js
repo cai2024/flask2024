@@ -8,44 +8,36 @@ async  function updateInput(stepId) {
 
 // 更新选项
 async  function updateSelectOption(stepId) {
-    const selectElement = document.querySelector(`#input-step-${stepId} select`);
-    const selectOption = selectElement.value;
-    steps[stepId].select_option = selectOption;
-    myOptions=[raw_myOptions[0]];  // 后面要修改为初始化状态
-    for (let i = 0; i < stepId + 1; i++) {
-        await updateMyOptions(steps[i].type, steps[i].id); //调用公用更新函数
-    }
-    for (let i = stepId + 1; i < steps.length; i++) {
-        await updateOptions_select(steps[i].type, steps[i].id);
-    }
-}
-async function updateOptions_select(stepType, stepId) {
-    try {
-        const step = steps.find(step => step.id === stepId);
-        const response = await fetch('/get_options', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ step_type: stepType, my_options: myOptions })
-        });
-        const data = await response.json();
-        const options = data.options;
-
-        const optionsHtml = options.map(option => `<option value="${option}">${option}</option>`).join('');
-        const selectElement = document.querySelector(`#input-step-${stepId} select`);
-        selectElement.innerHTML = optionsHtml;
-        if (selectElement && options.length > 0) {
-            const longestIndex = options.reduce((maxIndex, option, index, array) => option.length > array[maxIndex].length ? index : maxIndex, 0);
-        selectElement.selectedIndex = longestIndex;
-            step.select_option = selectElement.value; // 更新当前行选项，这里应该和初始化的保持一致
-            await updateMyOptions(stepType, stepId); //提交给后台更新my_options
+    const step = steps.find(step => step.id === stepId);
+    const key_dir={}
+    for (let find_key in step.select_option) {
+        const selectElement = document.querySelector(`#input-step-${stepId} select#select-${stepId}-${find_key}`)
+        if (step.select_option[find_key] !== selectElement.value){
+            const change_key= find_key
+            step.select_option[find_key] = selectElement.value
+            try {
+                for (let key in step.select_option) {
+                    const selectElement = document.querySelector(`#input-step-${stepId} select#select-${stepId}-${key}`)
+                    const optionsList = Array.from(selectElement.options).map(option => option.text);
+                    key_dir[key]=[step.select_option[key],optionsList]}
+                const response = await fetch('/update_pair_select', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({key_dir: key_dir,change_key: change_key,step_type:steps.type,mode:step.mode})
+                });
+                const update_select_dir = (await response.json()).update_select_dir;
+                for (let key in update_select_dir) {
+                    const selectElement = document.querySelector(`#input-step-${stepId} select#select-${stepId}-${key}`)
+                    const optionsList = Array.from(selectElement.options).map(option => option.text);
+                    const index = optionsList.indexOf(update_select_dir[key][0]);
+                    if (index !== -1) {selectElement.selectedIndex = index;}
+                    step.select_option[key] = selectElement.value
+                }
+            } catch (error) { console.error('Error:', error); }
+            break
         }
-    } catch (error) {
-        console.error('Error:', error);
     }
 }
-
 
 
 

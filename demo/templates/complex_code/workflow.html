@@ -51,7 +51,7 @@ function addStep(type) {
         }
     });
     $('#selected-steps').disableSelection();
-    steps.push({ id: stepId, type: type, select_option: '', params:'', mode: fq_type, raw_type: raw_myOptions[0]});
+    steps.push({ id: stepId, type: type, select_option: {}, params:'', mode: fq_type, raw_type: raw_myOptions[0]});
 }
 
 function updateStepOrder() {
@@ -68,18 +68,29 @@ function updateStepOrder() {
 
 var raw_myOptions = [localStorage.getItem('selectedFileType') || "raw.fq.gz"];
 var fq_type = localStorage.getItem('selectedFqType') || "single";
-var myOptions = [];
+var temp_options = {};
 
 $(document).ready(function() {
     $('input[name="fileType"][value="' + raw_myOptions[0] + '"]').prop('checked', true);
-    myOptions = [raw_myOptions[0]];
+    temp_options["fq"]=[]
+    temp_options["bam"]=[]
+    temp_options["other"]=[]
+    temp_options["all"]=[]
+
+    
     if (fq_type === "pair" && raw_myOptions[0] === "raw.fq.gz") {
-        myOptions = ["raw_1.fq.gz", "raw_2.fq.gz"];
+        temp_options["fq"] = ["raw_1.fq.gz", "raw_2.fq.gz"];
+        temp_options["all"] = ["raw_1.fq.gz", "raw_2.fq.gz"];
+    }else if (fq_type === "single" && raw_myOptions[0] === "raw.fq.gz"){
+        temp_options["fq"] = ["raw.fq.gz"];
+        temp_options["all"] = ["raw.fq.gz"];
+    }else {
+        temp_options["bam"] = ["raw.bam"];
+        temp_options["all"] = ["raw.bam"];
     }
 
     $('input[name="fileType"]').change(function() {
         raw_myOptions = [$(this).val()];
-        myOptions = [raw_myOptions[0]];
         localStorage.setItem('selectedFileType', $(this).val());
         location.reload();
     });

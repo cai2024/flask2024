@@ -5,7 +5,7 @@ import yaml
 import uuid
 from datetime import datetime
 from .modules.paths import paths_dict
-from demo.blueprint.modules.utils_complex import get_result_option, get_type_option, get_samples_list, generate_steps_config,generate_present_script,get_type_index,get_init_div
+from demo.blueprint.modules.utils_complex import get_result_option, get_samples_list, generate_steps_config,generate_present_script,get_type_index,get_init_div,update_select_dir
 from demo.blueprint.modules.utils_complex import available_steps, soft_format
 
 complex_code = Blueprint('complex_code', __name__)
@@ -30,15 +30,19 @@ def init_type_div():
 @complex_code.route('/update_my_options', methods=['POST'])
 def update_my_options():
     data = request.json
-    my_options=get_result_option(str(data.get('step_id')),data.get('step_type'),data.get('select_option'),data.get('my_options'))  # 新增选项保存到总选项
-    return jsonify({'my_options': list(set(my_options))})
+    temp_options=get_result_option(str(data.get('step_id')),data.get('step_type'),data.get('select_option'),data.get('mode'),data.get('temp_options'))  # 新增选项保存到总选项
+    return jsonify({'temp_options': {key: list(set(value)) for key, value in temp_options.items()} })
+
+@complex_code.route('/update_pair_select', methods=['POST'])
+def update_pair_select():
+    data = request.json
+    return jsonify({'update_select_dir': update_select_dir(data.get('key_dir'),data.get('change_key'), data.get('step_type'),data.get('mode')) })
+
+
 @complex_code.route('/index_select', methods=['POST'])
 def update_index():
     data = request.json
     return jsonify({'index_options': get_type_index(data.get('step_type'))})
-@complex_code.route('/get_options', methods=['POST'])
-def get_options():
-    data = request.json # 公用的获取选项框应该提供的选项，也就是总选项的子集
     return jsonify({'options': get_type_option(data.get('my_options'))})
 
 ####################################

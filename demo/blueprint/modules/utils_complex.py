@@ -51,7 +51,10 @@ def get_init_div(stepId, step_type, step_params, options_list, mode):
     options_bam = ''.join([f'<option value="{option}">{option}</option>' for option in options_list["bam"]])
     options_other = ''.join([f'<option value="{option}">{option}</option>' for option in options_list["other"]])
     options_all = ''.join([f'<option value="{option}">{option}</option>' for option in options_list["all"]])
-    
+
+
+    options_fq1 = ''.join([f'<option value="{option}">{option}</option>' for option in [s for s in options_list["fq"] if s.endswith("_1.fq.gz")]])
+    options_fq2 = ''.join([f'<option value="{option}">{option}</option>' for option in [s for s in options_list["fq"] if s.endswith("_2.fq.gz")]])
     
     start_sting = f"""
             <div id="input-step-{stepId}" class="form-group">
@@ -65,8 +68,8 @@ def get_init_div(stepId, step_type, step_params, options_list, mode):
     if mode == "single":
         if step_type == "hairpin_cut":
             result_sting = f"""
-                <select id="select-{stepId}-fq1" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq1">{options_fq}</select>
-                <select id="select-{stepId}-fq2" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq2">{options_fq}</select>
+                <select id="select-{stepId}-fq1" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq1">{options_fq1}</select>
+                <select id="select-{stepId}-fq2" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq2">{options_fq2}</select>
                 <select id="select-{stepId}-fq" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq">{options_fq}</select>
             """
             rec_Option = {"fq1": find_rec_Option("fq1_fq2", options_list["fq"])[0], "fq2": find_rec_Option("fq1_fq2", options_list["fq"])[1], "fq": find_rec_Option("fq", options_list["fq"])}
@@ -79,31 +82,36 @@ def get_init_div(stepId, step_type, step_params, options_list, mode):
     else:
         if step_type == "hairpin_cut":
             result_sting = f"""
-                <select id="select-{stepId}-fq1" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq1">{options_fq}</select>
-                <select id="select-{stepId}-fq2" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq2">{options_fq}</select>
+                <select id="select-{stepId}-fq1" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq1">{options_fq1}</select>
+                <select id="select-{stepId}-fq2" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq2">{options_fq2}</select>
                 <select id="select-{stepId}-fq" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq">{options_fq}</select>
             """
             rec_Option = {"fq1": find_rec_Option("fq1_fq2", options_list["fq"])[0], "fq2": find_rec_Option("fq1_fq2", options_list["fq"])[1], "fq": find_rec_Option("fq", options_list["fq"])}
         else:
             result_sting = f"""
-                <select id="select-{stepId}-fq1" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq1">{options_fq}</select>
-                <select id="select-{stepId}-fq2" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq2">{options_fq}</select>
+                <select id="select-{stepId}-fq1" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq1">{options_fq1}</select>
+                <select id="select-{stepId}-fq2" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="fq2">{options_fq2}</select>
             """
             rec_Option = {"fq1": find_rec_Option("fq1_fq2", options_list["fq"])[0], "fq2": find_rec_Option("fq1_fq2", options_list["fq"])[1]}
     return start_sting + result_sting + end_string , rec_Option
 
-def get_result_option(step_id, step_type, select_option,my_options):
+def get_result_option(step_id, step_type, select_option,mode,temp_options):
     sample_name="raw"
-    if step_type.split()[0]=="Trim":
-        temp="step"+step_id  + "_"+ step_type.split()[1] +"."+ sample_name + ".fq.gz"
-    elif step_type.split()[0]=="map":
-        temp="step"+step_id  + "_"+ step_type.split()[1] +"."+ sample_name + ".bam"
-    elif step_type.split()[0]=="BAM":
-        temp="step"+step_id  + "_"+ step_type.split()[1] +"."+ sample_name + ".bam"
+    if step_type.split()[0]=="Trim" and mode == "single":
+        temp = ["step"+step_id  + "_"+ step_type.split()[1] +"."+ sample_name + ".fq.gz"]
+        temp_options.setdefault("fq", []).extend(temp)
+    elif step_type.split()[0]=="Trim" and mode == "pair":
+        temp = ["step"+step_id  + "_"+ step_type.split()[1] +"."+ sample_name + "_1.fq.gz","step"+step_id  + "_"+ step_type.split()[1] +"."+ sample_name + "_2.fq.gz"]
+        temp_options.setdefault("fq", []).extend(temp)
+    elif step_type.split()[0]=="map" or step_type.split()[0]=="BAM":
+        temp= ["step"+step_id  + "_"+ step_type.split()[1] +"."+ sample_name + ".bam"]
+        temp_options.setdefault("bam", []).extend(temp)
     else:
-        temp="step"+step_id  + "_"+ step_type.split()[1] +"."+ sample_name
-    my_options.append(temp)
-    return my_options
+        temp= ["step"+step_id  + "_"+ step_type.split()[1] +"."+ sample_name]
+        temp_options.setdefault("other", []).extend(temp)
+
+    temp_options.setdefault("all", []).extend(temp)
+    return  temp_options
 
 
 def get_type_index(step_type):
@@ -117,21 +125,17 @@ def get_type_index(step_type):
 
 
 
-def get_type_option(my_options):
-    fq=[]
-    bam=[]
-    other=[]
-    for i in my_options:
-        if i[-3:]==".fq" or i[-6:]==".fq.gz":
-            fq.append(i)
-        elif i[-3:]=="bam":
-            bam.append(i)
-        else:
-            other.append(i)
+def update_select_dir(key_dir,change_key,step_type,mode):
+    if step_type == "hairpin_cut" and mode == "single":
+        pass
+    elif change_key == "fq1" and mode == "pair" and ("fq2" in key_dir):
+        paired_file = key_dir["fq1"][0].replace('_1.fq.gz', '_2.fq.gz')
+        key_dir["fq2"][0] = paired_file if paired_file in key_dir["fq2"][1] else key_dir["fq2"][0]
+    elif change_key == "fq2" and mode == "pair" and ("fq1" in key_dir):
+        paired_file = key_dir["fq2"][0].replace('_2.fq.gz', '_1.fq.gz')
+        key_dir["fq1"][0] = paired_file if paired_file in key_dir["fq1"][1] else key_dir["fq1"][0]
 
-    return {"fq":list(set(fq)),"bam":list(set(bam)),"other":list(set(other)),"all":list(set(my_options))}
-
-
+    return key_dir
 
 
 
