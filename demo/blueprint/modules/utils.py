@@ -76,6 +76,18 @@ def get_fq_list(indir, paired_end=True):
     return fastqs
 
 
+def get_samples_list(select_raw_folder, fq_type, raw_myOptions):
+    samples_list = []
+    for filename in os.listdir(select_raw_folder):
+        base_name = os.path.basename(filename)
+        if filename.endswith(".fq.gz") and fq_type == "single" and raw_myOptions == "raw.fq.gz":
+            samples_list.append(base_name[:-6])
+        elif filename.endswith("_1.fq.gz") and fq_type == "pair" and raw_myOptions == "raw.fq.gz" and (
+                filename[:-8] + "_2.fq.gz" in os.listdir(select_raw_folder)):
+            samples_list.append(base_name[:-8])
+        elif filename.endswith(".bam") and raw_myOptions == "raw.bam":
+            samples_list.append(base_name[:-4])
+    return samples_list
 
 
 

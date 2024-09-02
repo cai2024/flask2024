@@ -5,8 +5,9 @@ import yaml
 import uuid
 from datetime import datetime
 from .modules.paths import paths_dict
-from demo.blueprint.modules.utils_complex import get_result_option, get_samples_list, generate_steps_config,generate_present_script,get_type_index,get_init_div,update_select_dir
-from demo.blueprint.modules.utils_complex import available_steps, soft_format
+from demo.blueprint.modules.utils import get_samples_list
+from demo.blueprint.modules.utils_complex import get_result_option, generate_steps_config,generate_present_script,get_type_index,get_init_div,update_select_dir
+from demo.blueprint.modules.utils_complex import available_steps, my_code_simple
 
 complex_code = Blueprint('complex_code', __name__)
 
@@ -15,58 +16,50 @@ complex_code = Blueprint('complex_code', __name__)
 def code_home():
     task_id = f"{datetime.now().strftime('%Y%m%d%H%M%S')}-{str(uuid.uuid4())}"
     return redirect(url_for('complex_code.code_for_batch', task_id=task_id))
-
 @complex_code.route('/code_for_batch/<task_id>', methods=['GET', 'POST'])
 def code_for_batch(task_id):
     return render_template('complex_code/home.html', available_steps=available_steps, task_id=task_id)
+
 
 @complex_code.route('/init_type_div', methods=['POST'])
 def init_type_div():
     data = request.json
     result= get_init_div(data.get('step_id'),data.get('step_type'),data.get('step_params'),data.get('options'),data.get('mode'))
-    print(result[1]) 
     return jsonify({'div_string':result[0],'rec_option':result[1] }) 
-#####################################
 @complex_code.route('/update_my_options', methods=['POST'])
 def update_my_options():
     data = request.json
-    temp_options=get_result_option(str(data.get('step_id')),data.get('step_type'),data.get('select_option'),data.get('mode'),data.get('temp_options'))  # 新增选项保存到总选项
+    temp_options=get_result_option(str(data.get('step_id')),data.get('step_type'),data.get('mode'),data.get('temp_options'))  
     return jsonify({'temp_options': {key: list(set(value)) for key, value in temp_options.items()} })
+@complex_code.route('/index_select', methods=['POST'])
+def update_index():
+    data = request.json
+    return jsonify({'index_options': get_type_index(data.get('stepId'),data.get('step_type'))})
 
+################################################################################################################
 @complex_code.route('/update_pair_select', methods=['POST'])
 def update_pair_select():
     data = request.json
     return jsonify({'update_select_dir': update_select_dir(data.get('key_dir'),data.get('change_key'), data.get('step_type'),data.get('mode')) })
 
-
-@complex_code.route('/index_select', methods=['POST'])
-def update_index():
-    data = request.json
-    return jsonify({'index_options': get_type_index(data.get('step_type'))})
-    return jsonify({'options': get_type_option(data.get('my_options'))})
-
-####################################
 @complex_code.route('/get_display_value', methods=['POST'])
-def update_display_params():
+def get_display_value():
     data = request.get_json()
-    step_type=data['type'].split()[1]
-    step_params=data['params']
-    select_option = data['select_option']
-    if select_option[-3:]==".fq":
-        input_file=select_option[:-3]
-    else:
-        input_file=select_option[:-4]
-    displayString = soft_format[step_type].format(params=step_params,input=input_file)
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),stepId=data.get('stepId'))
     return jsonify({'displayString': displayString})
+
+##################################################################################################################
 
 @complex_code.route('/get_preset', methods=['POST'])
 def preset_soft():
     data = request.json
     presetType=data.get("presetType")
-    if presetType=="WGS":
-        options=['Trim trim_galore','map bowtie2', 'BAM picard']
-        select=['raw.fq','step0_raw.fq', 'step1_step0_raw.fq']
+    mode=data.get("mode")
+    if presetType=="WGS" and mode == "single":
+        options=['Trim trim_galore','Trim fastp', 'Trim trim_galore']
+        select=[{'fq':'raw.fq.gz'},{'fq':'step0_trim_galore.raw.fq.gz'}, {'fq':'step1_fastp.raw.fq.gz'}]
         params=["-A NNNN","","-D"]
+    
     return jsonify({"options":options,"select":select,"params":params})
 
 
@@ -81,9 +74,9 @@ def submit_form_steps():
 
 @complex_code.route('/submit_form_code/<task_id>', methods=['GET', 'POST'])
 def submit_form_code(task_id):
+    session["task_id"] = task_id
     return render_template('complex_code/code.html', task_id=task_id)
 
-# 从这里进入submit_form_code，也就是code.html
 #####################################
 
 
@@ -91,43 +84,16 @@ def submit_form_code(task_id):
 @complex_code.route('/submit_dir_script', methods=['POST'])
 def submit_dir_script():
     steps = session['steps']
-    fq_type = session["fq_type"]
+    mode = session["fq_type"]
     raw_myOptions = session["raw_myOptions"]
+    task_id = session["task_id"]
     data = request.json
-    task_id = data.get('task_id')
     select_raw_folder = data.get('select_raw_folder')
+    samples_list = get_samples_list(select_raw_folder, mode, raw_myOptions)
 
-    samples_list = get_samples_list(select_raw_folder, fq_type, raw_myOptions)
+    config_string, snakemake_string = generate_steps_config(steps, select_raw_folder, mode, task_id, samples_list)
+    my_code = generate_present_script(steps, mode, select_raw_folder, samples_list, task_id, paths_dict)
 
-    input_list = [record["select_option"] for record in steps]
-    soft_list = [record["type"].split()[1] for record in steps]
-    type_list = [record["type"].split()[0] for record in steps]
-    params_list= [record["params"] for record in steps]
-    config_steps, output_config_list = generate_steps_config(soft_list, type_list, input_list, select_raw_folder,fq_type , raw_myOptions)
-
-
-    # 首先获取step字符串
-    config_string = (f"mode: {fq_type}\n"
-                   f"output_dir: /data/cailab/flask_out/{task_id}\n")
-    config_string += "samples:\n" + "\n".join(f"  - {sample}" for sample in samples_list) + "\n"
-    config_string += "\n".join(f"step{i}_params : \"{params}\"" for i,params in enumerate(params_list)) + "\n"
-    config_string += config_steps
-    # 获取snakemake
-    snakemake_string=(
-            "configfile: \"config.yaml\"\n"
-            "include: \"/data/cailab/flask2024/smk/trim.smk\"\n"
-            "rule all:\n"
-            "    input:\n")
-    snakemake_string += "\n".join( f"        expand({temp}, sample=config[\"samples\"], output_dir=config[\"output_dir\"])," for temp in [record.split("\n")[0].split(":")[1].strip() for record in output_config_list]) + "\n"
- 
-    my_code = (f"mode=\"{fq_type}\"\n"
-               f"output_dir=\"/data/output/{task_id}\"\n")
-    my_code += '\n'.join([f'{soft}="{paths_dict[soft]}"' for soft in soft_list]) + "\n"
-    my_code += 'samples=("{}")'.format('" "'.join(samples_list)) + "\n"
-    my_code += 'mkdir -p $output_dir/logs\n'
-    my_code += 'for sample in "${samples[@]}"; do\n'
-    my_code += generate_present_script([record["type"] for record in steps], fq_type, params_list, input_list, select_raw_folder) + "\n"
-    my_code += "done\n"
 
     os.makedirs("/data/cailab/flask_out/" + task_id, exist_ok=True)
     with open("/data/cailab/flask_out/" + task_id + "/config.yaml", "w") as file1, open(
@@ -135,7 +101,6 @@ def submit_dir_script():
         print(config_string, file=file1)
         print(snakemake_string, file=file2)
     return jsonify({'my_code': my_code, "config_string": config_string, "snakemake_rule": snakemake_string})
-
 
 
 

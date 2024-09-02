@@ -30,56 +30,33 @@
 
 
 <script>
-    var presetIds = ["WGSBtn","WGBSBtn","CSBtn","CAPSBtn"];
-    var buttonIds = [];
-    var buttonIds2 = [];
-    {% for category, buttons in available_steps.items() %}
-        {% for button in buttons %}
-            buttonIds.push('btn-{{ category }}-{{ button }}');
-	    buttonIds2.push('{{ button }}');
-        {% endfor %}
-    {% endfor %}
-
-let steps = [];
-function addStep(type) {
-    const stepId = steps.length;
-    const stepItem = `<li class="list-group-item step-item" id="step-${stepId}">${type}</li>`;
-    $('#selected-steps').append(stepItem);
-    $('#selected-steps').sortable({
-        update: function(event, ui) {
-            updateStepOrder();
-        }
-    });
-    $('#selected-steps').disableSelection();
-    steps.push({ id: stepId, type: type, select_option: {}, params:'', mode: fq_type, raw_type: raw_myOptions[0]});
-}
-
-function updateStepOrder() {
-    const newOrder = [];
-    $('#selected-steps').children().each(function(index, element) {
-        const stepId = parseInt(element.id.replace('step-', ''));
-        newOrder.push(steps.find(step => step.id === stepId));
-    });
-    steps = newOrder;
-}
-
-
-
-
+var available_steps = {{ available_steps | tojson }};
 var raw_myOptions = [localStorage.getItem('selectedFileType') || "raw.fq.gz"];
 var fq_type = localStorage.getItem('selectedFqType') || "single";
 var temp_options = {};
 
+var task_id="{{task_id}}";
+let steps = [];
+function addStep(type) {
+    $('#selected-steps').append(`<li class="list-group-item step-item" id="step-${steps.length}">${type}</li>`);
+    $('#selected-steps').disableSelection();
+    $('#selected-steps').sortable({update: function(event, ui) {
+        steps = $('#selected-steps').children().map(function() {
+            return steps.find(step => step.id === parseInt(this.id.replace('step-', ''))); }).get();} });
+    steps.push({ id: steps.length, type: type, select_option: {}, params:'', mode: fq_type, raw_type: raw_myOptions[0]});
+}
+
 $(document).ready(function() {
     $('input[name="fileType"][value="' + raw_myOptions[0] + '"]').prop('checked', true);
     temp_options["fq"]=[]
+    temp_options["fq1"]=[]
+    temp_options["fq2"]=[]
     temp_options["bam"]=[]
     temp_options["other"]=[]
     temp_options["all"]=[]
-
-    
     if (fq_type === "pair" && raw_myOptions[0] === "raw.fq.gz") {
-        temp_options["fq"] = ["raw_1.fq.gz", "raw_2.fq.gz"];
+        temp_options["fq1"] = ["raw_1.fq.gz"];
+        temp_options["fq2"] = ["raw_2.fq.gz"];
         temp_options["all"] = ["raw_1.fq.gz", "raw_2.fq.gz"];
     }else if (fq_type === "single" && raw_myOptions[0] === "raw.fq.gz"){
         temp_options["fq"] = ["raw.fq.gz"];
@@ -88,7 +65,6 @@ $(document).ready(function() {
         temp_options["bam"] = ["raw.bam"];
         temp_options["all"] = ["raw.bam"];
     }
-
     $('input[name="fileType"]').change(function() {
         raw_myOptions = [$(this).val()];
         localStorage.setItem('selectedFileType', $(this).val());
@@ -101,14 +77,6 @@ $(document).ready(function() {
         location.reload();
     });
 
-
-
 });
-
-
-var task_id="{{task_id}}";
-
-
-
 </script>
 
