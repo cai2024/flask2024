@@ -13,7 +13,7 @@ async function submitSteps() {
     try {
         const response = await fetch('/submit_form_steps', {
             method: 'POST', headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({fq_type: fq_type, raw_myOptions: raw_myOptions[0], steps: steps})
+            body: JSON.stringify({fq_type: raw_mode, raw_myOptions: raw_myOptions[0], steps: steps})
         });
         if (response.ok) {window.location.href = '/submit_form_code/' + task_id;}}
     catch (error) {console.error('Error submitting steps:', error);}

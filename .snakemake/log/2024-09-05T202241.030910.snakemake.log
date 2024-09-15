@@ -1,0 +1,92 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+bwa_pe                2
+mark_duplicate        2
+qualimap_bamqc        2
+sp_bwa_pe             2
+trim_galore_pe        2
+total                11
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu Sep  5 20:22:41 2024]
+localrule trim_galore_pe:
+    input: /data/wangzc/TAPS/TAPS-1w_1.fq.gz, /data/wangzc/TAPS/TAPS-1w_2.fq.gz
+    output: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-1w/step0_trim_galore/trim_galore_TAPS-1w_1.fq.gz, /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-1w/step0_trim_galore/trim_galore_TAPS-1w_2.fq.gz
+    log: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/logs/TAPS-1w/step0_trim_galore/trim_galore_TAPS-1w_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-1w/step0_trim_galore/trim_galore_TAPS-1w_1.fq.gz, /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-1w/step0_trim_galore/trim_galore_TAPS-1w_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c, sample=TAPS-1w, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/temp_test
+
+Activating conda environment: flask2024
+
+[Thu Sep  5 20:22:41 2024]
+localrule trim_galore_pe:
+    input: /data/wangzc/TAPS/TAPS-ad_1.fq.gz, /data/wangzc/TAPS/TAPS-ad_2.fq.gz
+    output: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_1.fq.gz, /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_2.fq.gz
+    log: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/logs/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_pair.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_1.fq.gz, /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c, sample=TAPS-ad, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 20:32:41 2024]
+Finished job 1.
+1 of 11 steps (9%) done
+Select jobs to execute...
+[Thu Sep  5 20:33:21 2024]
+Finished job 2.
+2 of 11 steps (18%) done
+Execute 1 jobs...
+
+[Thu Sep  5 20:33:21 2024]
+localrule sp_bwa_pe:
+    input: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_1.fq.gz, /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_2.fq.gz
+    output: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step2_bwa_spikein/bwa_spikein_TAPS-ad.bam
+    log: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/logs/TAPS-ad/step2_bwa_spikein/TAPS-ad.log
+    jobid: 6
+    reason: Missing output files: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step2_bwa_spikein/bwa_spikein_TAPS-ad.bam; Input files updated by another job: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_1.fq.gz, /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c, sample=TAPS-ad, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 20:34:46 2024]
+Finished job 6.
+3 of 11 steps (27%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Sep  5 20:34:46 2024]
+localrule bwa_pe:
+    input: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_1.fq.gz, /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_2.fq.gz
+    output: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step1_bwa/bwa_TAPS-ad.bam
+    log: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/logs/TAPS-ad/step1_bwa/TAPS-ad.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step1_bwa/bwa_TAPS-ad.bam; Input files updated by another job: /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_1.fq.gz, /data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/TAPS-ad/step0_trim_galore/trim_galore_TAPS-ad_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c, sample=TAPS-ad, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905202151-dbb86d15-f037-4a18-a5f4-3054ac704e3c/temp_test
+
+RuleException in rule bwa_pe in file /data/cailab/flask2024/smk/bwa.smk, line 34:
+AttributeError: 'InputFiles' object has no attribute 'fq', when formatting the following:
+
+        {params.bwa} mem {params.other} -t {threads} {params.index} {input.fq1} {input.fq2} |         samtools view -bh -F 256 -F 2048 -@ {threads} |         samtools sort -@ {threads} -o {output.bam} > {log} 2>&1
+        samtools index {output.bam}
+
+        total_reads=$(zcat {input.fq} | echo $((`wc -l` / 4)))
+        aligned_reads=$(samtools view -c -F 4 {output.bam})
+        alignment_percentage=$(python3 -c "print(format(50 * $aligned_reads / $total_reads, '.2f'))" )      
+        echo "Alignment Percentage $alignment_percentage%" >> {params.final_log}
+        

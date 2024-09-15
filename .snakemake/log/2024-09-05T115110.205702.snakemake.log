@@ -1,0 +1,52 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+bismark_se        2
+total             3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu Sep  5 11:51:10 2024]
+localrule bismark_se:
+    input: /data/cailab/flask2024/test/WGBS/wgbs_1.fq.gz
+    output: /data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/wgbs_1/step0_bismark/bismark_wgbs_1.bam
+    log: /data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/logs/wgbs_1/step0_bismark/wgbs_1.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/wgbs_1/step0_bismark/bismark_wgbs_1.bam
+    wildcards: output_dir=/data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5, sample=wgbs_1, step=step0
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/temp_test
+
+Activating conda environment: flask2024
+
+[Thu Sep  5 11:51:10 2024]
+localrule bismark_se:
+    input: /data/cailab/flask2024/test/WGBS/wgbs_2.fq.gz
+    output: /data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/wgbs_2/step0_bismark/bismark_wgbs_2.bam
+    log: /data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/logs/wgbs_2/step0_bismark/wgbs_2.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/wgbs_2/step0_bismark/bismark_wgbs_2.bam
+    wildcards: output_dir=/data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5, sample=wgbs_2, step=step0
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/temp_test
+
+Activating conda environment: flask2024
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule bismark_se in file /data/cailab/flask2024/smk/bismark.smk, line 1:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/wgbs_1/step0_bismark/bismark_wgbs_1.bam (missing locally, parent dir contents: wgbs_1_bismark_bt2.bam, wgbs_1_bismark_bt2_SE_report.txt)
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule bismark_se in file /data/cailab/flask2024/smk/bismark.smk, line 1:
+Job 2  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/wgbs_2/step0_bismark/bismark_wgbs_2.bam (missing locally, parent dir contents: wgbs_2_bismark_bt2.bam, wgbs_2_bismark_bt2_SE_report.txt)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-09-05T115110.205702.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

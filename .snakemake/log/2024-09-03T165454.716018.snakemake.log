@@ -1,0 +1,135 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+bowtie2_se            2
+bwa_se                2
+fastp_se              2
+trim_galore_se        2
+total                 9
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Sep  3 16:54:54 2024]
+localrule trim_galore_se:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz
+    output: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step0_trim_galore/trim_galore_wgs_1.fq.gz
+    log: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/logs/wgs_1/step0_trim_galore/trim_galore_wgs_1_single.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step0_trim_galore/trim_galore_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093, sample=wgs_1, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/temp_test
+
+Activating conda environment: flask2024
+
+[Tue Sep  3 16:54:56 2024]
+localrule trim_galore_se:
+    input: /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_2/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/logs/wgs_2/step0_trim_galore/trim_galore_wgs_2_single.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_2/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093, sample=wgs_2, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 16:55:04 2024]
+Finished job 2.
+1 of 9 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 16:55:04 2024]
+localrule fastp_se:
+    input: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step0_trim_galore/trim_galore_wgs_1.fq.gz
+    output: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step1_fastp/fastp_wgs_1.fq.gz
+    log: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/logs/wgs_1/step1_fastp/fastp_wgs_1_single.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step1_fastp/fastp_wgs_1.fq.gz; Input files updated by another job: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step0_trim_galore/trim_galore_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093, sample=wgs_1, step=step1
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 16:55:04 2024]
+Finished job 1.
+2 of 9 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 16:55:04 2024]
+localrule fastp_se:
+    input: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_2/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_2/step1_fastp/fastp_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/logs/wgs_2/step1_fastp/fastp_wgs_2_single.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_2/step1_fastp/fastp_wgs_2.fq.gz; Input files updated by another job: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_2/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093, sample=wgs_2, step=step1
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 16:55:05 2024]
+Finished job 3.
+3 of 9 steps (33%) done
+Select jobs to execute...
+[Tue Sep  3 16:55:05 2024]
+Finished job 4.
+4 of 9 steps (44%) done
+Execute 1 jobs...
+
+[Tue Sep  3 16:55:05 2024]
+localrule bwa_se:
+    input: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step1_fastp/fastp_wgs_1.fq.gz
+    output: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step3_bwa/bwa_wgs_1.bam
+    log: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/logs/wgs_1/step3_bwa/wgs_1.log
+    jobid: 8
+    reason: Missing output files: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step3_bwa/bwa_wgs_1.bam; Input files updated by another job: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step1_fastp/fastp_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093, sample=wgs_1, step=step3
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 16:55:15 2024]
+Finished job 8.
+5 of 9 steps (56%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 16:55:15 2024]
+localrule bowtie2_se:
+    input: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step1_fastp/fastp_wgs_1.fq.gz
+    output: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step2_bowtie2/bowtie2_wgs_1.bam
+    log: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/logs/wgs_1/step2_bowtie2/wgs_1.log
+    jobid: 6
+    reason: Missing output files: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step2_bowtie2/bowtie2_wgs_1.bam; Input files updated by another job: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_1/step1_fastp/fastp_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093, sample=wgs_1, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 16:55:19 2024]
+Finished job 6.
+6 of 9 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 16:55:19 2024]
+localrule bowtie2_se:
+    input: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_2/step1_fastp/fastp_wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_2/step2_bowtie2/bowtie2_wgs_2.bam
+    log: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/logs/wgs_2/step2_bowtie2/wgs_2.log
+    jobid: 5
+    reason: Missing output files: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_2/step2_bowtie2/bowtie2_wgs_2.bam; Input files updated by another job: /data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/wgs_2/step1_fastp/fastp_wgs_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093, sample=wgs_2, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903165441-98482aa8-4361-4040-8d80-41340d03d093/temp_test
+
+Activating conda environment: flask2024

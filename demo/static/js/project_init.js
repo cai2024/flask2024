@@ -11,6 +11,7 @@ async function confirmSteps() {
     for (const step of steps) { await initOptionsUI(step.id); } // 初始每一行的选项卡
     $('#selected-steps').sortable('disable'); // 禁用左侧按钮卡排序
     document.getElementById('submitBtn').disabled = false; // 允许提交
+    console.log(steps)
 }
 
 
@@ -27,12 +28,14 @@ async function initOptionsUI(stepId) {
         step.select_option[key] = selectElement.value; }                                    // 初始化step.select_option
     temp_options = await update_my_options(stepId);  //更新提供下一行的总选项
 
-    if (step.type.slice(0, 3) === 'map') {
+    if (step.type.slice(0, 3) === 'map' || step.type === 'BAM CGS_call_modify' || step.type === 'BAM TBS_call_modify') {
         const index_options =  await index_select(stepId);
-        document.getElementById('inputArea').insertAdjacentHTML('beforeend', index_options);
-        const selectElement = document.querySelector(`#index-step-${stepId} select`)
-        selectElement.onchange = () => { step.select_index=selectElement.value; };
-        step.select_index = selectElement.value;                                           // 初始化step.select_index
+        document.getElementById('indexArea').insertAdjacentHTML('beforeend', index_options);
+        const container = document.querySelector(`#index-step-${stepId}`);
+        const selects = container.querySelectorAll('select');
+        selects.forEach(select => { step.select_index[select.id] = select.value;});
+        container.onchange = () => {selects.forEach(select => { step.select_index[select.id] = select.value;})};
+            
     }
 }
 

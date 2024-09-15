@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+bismark_se        2
+total             3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 22:26:12 2024]
+localrule bismark_se:
+    input: /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240903222541-53699316-11bc-40e1-ac64-06d1f5dc304e/wgs_2/step0_bismark/bismark_wgs_2.bam
+    log: /data/cailab/flask_out/20240903222541-53699316-11bc-40e1-ac64-06d1f5dc304e/logs/wgs_2/step0_bismark/wgs_2.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240903222541-53699316-11bc-40e1-ac64-06d1f5dc304e/wgs_2/step0_bismark/bismark_wgs_2.bam
+    wildcards: output_dir=/data/cailab/flask_out/20240903222541-53699316-11bc-40e1-ac64-06d1f5dc304e, sample=wgs_2, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903222541-53699316-11bc-40e1-ac64-06d1f5dc304e/temp_test
+
+RuleException in rule bismark_se in file /data/cailab/flask2024/smk/bismark.smk, line 3:
+NameError: The name 'temp_bam' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        {params.bismark} --path_to_bowtie2 {params.bowtie2_path} {params.index} {input.fq} {params.other} -o {params.out_dir} -p {threads}  > {log} 2>&1
+        if [ $? -ne 0 ]; then
+            echo "Bismark failed，软件暴死！" >&2
+            exit 1
+        fi
+        if grep -q "ERR" {log}; then
+            echo "Bismark encountered an error，比对日志出错，大概率内存原因！" >&2
+            exit 1
+        fi
+        temp_bam=$(basename {input.fq} .fq.gz)
+        samtools sort -@ {threads}  ${temp_bam}_bismark_bt2.bam > {output.bam}
+        samtools index  {output.bam}
+        

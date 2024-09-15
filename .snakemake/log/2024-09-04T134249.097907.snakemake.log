@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule mark_duplicate in file /data/cailab/flask2024/smk/deduping.smk, line 1:
+Missing input files for rule mark_duplicate:
+    output: /data/cailab/flask_out/20240904134234-767f6ff4-e058-4b59-b05c-b5f6b6de8a25/wgs_2/step3_remove_duplicates/remove_duplicates_wgs_2.bam
+    wildcards: output_dir=/data/cailab/flask_out/20240904134234-767f6ff4-e058-4b59-b05c-b5f6b6de8a25, sample=wgs_2, step=step3
+    affected files:
+        /data/cailab/flask_out/20240904134234-767f6ff4-e058-4b59-b05c-b5f6b6de8a25/wgs_2/step2_primary_filtering/primary_filtering_wgs_2.bam

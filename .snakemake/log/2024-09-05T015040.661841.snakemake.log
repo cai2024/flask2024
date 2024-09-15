@@ -1,0 +1,113 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+TBS_extract_mc_hmc           2
+TBS_extract_sp_mc_hmc        2
+all                          1
+bwa_pe                       2
+hairpin_cut_N                2
+mark_duplicate               2
+qualimap_bamqc               2
+sp_bwa_pe                    2
+trim_galore_pe               2
+total                       17
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu Sep  5 01:50:40 2024]
+localrule trim_galore_pe:
+    input: /data/wangzc/0828/CGS-Bst_1.fq.gz, /data/wangzc/0828/CGS-Bst_2.fq.gz
+    output: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step0_trim_galore/trim_galore_CGS-Bst_1.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step0_trim_galore/trim_galore_CGS-Bst_2.fq.gz
+    log: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/logs/CGS-Bst/step0_trim_galore/trim_galore_CGS-Bst_pair.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step0_trim_galore/trim_galore_CGS-Bst_2.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step0_trim_galore/trim_galore_CGS-Bst_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8, sample=CGS-Bst, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/temp_test
+
+Activating conda environment: flask2024
+
+[Thu Sep  5 01:50:41 2024]
+localrule trim_galore_pe:
+    input: /data/wangzc/0828/CGS-Q6_1.fq.gz, /data/wangzc/0828/CGS-Q6_2.fq.gz
+    output: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step0_trim_galore/trim_galore_CGS-Q6_1.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step0_trim_galore/trim_galore_CGS-Q6_2.fq.gz
+    log: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/logs/CGS-Q6/step0_trim_galore/trim_galore_CGS-Q6_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step0_trim_galore/trim_galore_CGS-Q6_1.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step0_trim_galore/trim_galore_CGS-Q6_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8, sample=CGS-Q6, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 01:57:37 2024]
+Finished job 1.
+1 of 17 steps (6%) done
+Select jobs to execute...
+[Thu Sep  5 01:59:10 2024]
+Finished job 2.
+2 of 17 steps (12%) done
+Execute 1 jobs...
+
+[Thu Sep  5 01:59:10 2024]
+localrule hairpin_cut_N:
+    input: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step0_trim_galore/trim_galore_CGS-Bst_1.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step0_trim_galore/trim_galore_CGS-Bst_2.fq.gz
+    output: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step1_hairpin_cut_N/hairpin_cut_N_CGS-Bst.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step1_hairpin_cut_N/hairpin_cut_N_CGS-Bst_1.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step1_hairpin_cut_N/hairpin_cut_N_CGS-Bst_2.fq.gz
+    log: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/logs/CGS-Bst/step1_hairpin_cut/CGS-Bst.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step1_hairpin_cut_N/hairpin_cut_N_CGS-Bst_1.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step1_hairpin_cut_N/hairpin_cut_N_CGS-Bst_2.fq.gz; Input files updated by another job: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step0_trim_galore/trim_galore_CGS-Bst_2.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step0_trim_galore/trim_galore_CGS-Bst_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8, sample=CGS-Bst, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 02:18:01 2024]
+Finished job 4.
+3 of 17 steps (18%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Sep  5 02:18:01 2024]
+localrule hairpin_cut_N:
+    input: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step0_trim_galore/trim_galore_CGS-Q6_1.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step0_trim_galore/trim_galore_CGS-Q6_2.fq.gz
+    output: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step1_hairpin_cut_N/hairpin_cut_N_CGS-Q6.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step1_hairpin_cut_N/hairpin_cut_N_CGS-Q6_1.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step1_hairpin_cut_N/hairpin_cut_N_CGS-Q6_2.fq.gz
+    log: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/logs/CGS-Q6/step1_hairpin_cut/CGS-Q6.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step1_hairpin_cut_N/hairpin_cut_N_CGS-Q6_1.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step1_hairpin_cut_N/hairpin_cut_N_CGS-Q6_2.fq.gz; Input files updated by another job: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step0_trim_galore/trim_galore_CGS-Q6_1.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Q6/step0_trim_galore/trim_galore_CGS-Q6_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8, sample=CGS-Q6, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 02:31:54 2024]
+Finished job 3.
+4 of 17 steps (24%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Sep  5 02:31:54 2024]
+localrule bwa_pe:
+    input: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step1_hairpin_cut_N/hairpin_cut_N_CGS-Bst_1.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step1_hairpin_cut_N/hairpin_cut_N_CGS-Bst_2.fq.gz
+    output: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step2_bwa/bwa_CGS-Bst.bam
+    log: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/logs/CGS-Bst/step2_bwa/CGS-Bst.log
+    jobid: 6
+    reason: Missing output files: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step2_bwa/bwa_CGS-Bst.bam; Input files updated by another job: /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step1_hairpin_cut_N/hairpin_cut_N_CGS-Bst_1.fq.gz, /data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/CGS-Bst/step1_hairpin_cut_N/hairpin_cut_N_CGS-Bst_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8, sample=CGS-Bst, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905014413-f351c0f3-58b7-44c9-920f-cf3bb41841a8/temp_test
+
+RuleException in rule bwa_pe in file /data/cailab/flask2024/smk/bwa.smk, line 34:
+AttributeError: 'InputFiles' object has no attribute 'fq', when formatting the following:
+
+        {params.bwa} mem {params.other} -t {threads} {params.index} {input.fq1} {input.fq2} |         samtools view -bh -F 256 -F 2048 -@ {threads} |         samtools sort -@ {threads} -o {output.bam} > {log} 2>&1
+        samtools index {output.bam}
+
+        total_reads=$(zcat {input.fq} | echo $((`wc -l` / 4)))
+        aligned_reads=$(samtools view -c -F 4 {output.bam})
+        alignment_percentage=$(python3 -c "print(format(50 * $aligned_reads / $total_reads, '.2f'))" )      
+        echo "Alignment Percentage $alignment_percentage%" >> {params.final_log}
+        

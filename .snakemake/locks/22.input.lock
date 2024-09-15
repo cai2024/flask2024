@@ -1,0 +1,8 @@
+/data/cailab/flask_out/20240903235325-89c736b6-38ff-4bb5-a3c2-74bc55011fbf/wgs_2/step0_trim_galore/trim_galore_wgs_2.fq.gz
+/data/cailab/flask_out/20240903235325-89c736b6-38ff-4bb5-a3c2-74bc55011fbf/wgs_1/step0_trim_galore/trim_galore_wgs_1.fq.gz
+/data/cailab/flask_out/20240903235325-89c736b6-38ff-4bb5-a3c2-74bc55011fbf/wgs_2/step1_bismark/bismark_wgs_2.bam
+/data/cailab/flask_out/20240903235325-89c736b6-38ff-4bb5-a3c2-74bc55011fbf/wgs_1/step1_bismark/bismark_wgs_1.bam
+/data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+/data/cailab/flask2024/test/WGS/wgs_1.fq.gz
+/data/cailab/flask_out/20240903235325-89c736b6-38ff-4bb5-a3c2-74bc55011fbf/wgs_2/step0_trim_galore/trim_galore_wgs_2.fq.gz
+/data/cailab/flask_out/20240903235325-89c736b6-38ff-4bb5-a3c2-74bc55011fbf/wgs_1/step0_trim_galore/trim_galore_wgs_1.fq.gz

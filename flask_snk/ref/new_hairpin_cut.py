@@ -288,14 +288,21 @@ class DNAProcessor:
         return [record for result in results for record in result]
 
 
-def cache_and_process(input_file1, input_file2, output_file, alignment,dnaprocessor, min_lenth=50, processes=24, chunk_size=1000000):
-    cut_f1_path = output_file +'_cut_f1.fq'
-    cut_f2_path = output_file +'_cut_f2.fq'
+def cache_and_process(input_file1, input_file2, cut_file1,cut_file2,cut_file,output_file, alignment,dnaprocessor, min_lenth=50, processes=24, chunk_size=1000000):
+    if cut_file1=="" or cut_file2=="" or cut_file=="":
+        cut_f1_path = output_file +'_cut_f1.fq'
+        cut_f2_path = output_file +'_cut_f2.fq'
+        cut_fq_path = output_file + '.fq'
+    else:
+        cut_f1_path = cut_file1
+        cut_f2_path = cut_file2
+        cut_fq_path = cut_file
+
     in_handle1 = dnaprocessor.open_input_file(input_file1)
     in_handle2 = dnaprocessor.open_input_file(input_file2)
 
     report_n1 = 0
-    with (in_handle1, in_handle2, open(output_file+".fq", "w") as out_handle, open(cut_f1_path, "w") as f1, open(cut_f2_path, "w") as f2):
+    with (in_handle1, in_handle2, open(cut_fq_path, "w") as out_handle, open(cut_f1_path, "w") as f1, open(cut_f2_path, "w") as f2):
         buffer = []
         for line_num, (line1, line2) in enumerate(zip(in_handle1, in_handle2)):
             if line_num % 4 == 0:
@@ -340,6 +347,9 @@ def main():
 
     parser.add_argument("--fq1", type=str, help="Input fq1 file")
     parser.add_argument("--fq2", type=str, help="Input fq2 file")
+    parser.add_argument("--cut_fq1", type=str,default="", help="Input fq1 file")
+    parser.add_argument("--cut_fq2", type=str, default="", help="Input fq2 file")
+    parser.add_argument("--cut_fq", type=str, default="", help="Input fq1 file")
     parser.add_argument("--outfile", type=str,default="restored_seq", help="Output w file")
     parser.add_argument("--rule", type=int, default=2, help="default: 2")
     parser.add_argument("--min", type=int, default=50, help="Position parameter")
@@ -351,11 +361,11 @@ def main():
     if args.rule == 2:
         alignment = Alignment("rule_matrix_2")
         dnaprocessor=DNAProcessor("rule_matrix_2")
-        mylog = cache_and_process(args.fq1, args.fq2, args.outfile, alignment,dnaprocessor, args.min, args.parallel, args.chunk_size)
+        mylog = cache_and_process(args.fq1, args.fq2, args.cut_fq1,args.cut_fq2,args.cut_fq,args.outfile, alignment,dnaprocessor, args.min, args.parallel, args.chunk_size)
     else:
         alignment = Alignment("rule_matrix_1")
         dnaprocessor = DNAProcessor("rule_matrix_1")
-        mylog = cache_and_process(args.fq1, args.fq2, args.outfile, alignment, dnaprocessor, args.min, args.parallel,
+        mylog = cache_and_process(args.fq1, args.fq2, args.cut_fq1,args.cut_fq2,args.cut_fq, args.outfile, alignment, dnaprocessor, args.min, args.parallel,
                                   args.chunk_size)
 
 
@@ -365,12 +375,5 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
 
 

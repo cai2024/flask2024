@@ -6,7 +6,7 @@ import pysam
 import collections
 import subprocess
 from Bio import SeqIO
-
+import gzip
 
 
 class DNASeqUtility:
@@ -27,17 +27,21 @@ class DNASeqUtility:
 
     def get_seq_dir(self,fastq_file):
         seq_dict = {}
-        with open(fastq_file) as f:
+        opener = gzip.open if fastq_file.endswith('.gz') else open
+
+        with opener(fastq_file, 'rt') as f:  # 'rt'模式表示以文本模式读取
             while True:
                 line = f.readline().strip()
                 if not line:
                     break  # 到达文件末尾，跳出循环
-                seq_id = line.split()[0][1:]  # 去掉'@'字符
-                seq = f.readline().strip()
-                f.readline()  # 跳过不需要的行
-                f.readline()  # 跳过不需要的行
-                seq_dict[seq_id] = seq
+                if line.startswith('@'):  # 确保处理的是标题行
+                    seq_id = line.split()[0][1:]  # 去掉'@'字符
+                    seq = f.readline().strip()  # 读取序列行
+                    f.readline()  # 跳过第三行，即+行
+                    f.readline()  # 跳过质量行
+                    seq_dict[seq_id] = seq
         return seq_dict
+
 
 class DNAProcessor:
     def __init__(self, sub_matrix):

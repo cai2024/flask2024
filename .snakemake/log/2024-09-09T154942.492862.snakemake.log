@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in rule bismark_pe in file /data/cailab/flask2024/smk/bismark.smk, line 39:
+Missing input files for rule bismark_pe:
+    output: /data/cailab/flask_out/20240909154845-6ce6a860-b086-42d9-96ec-ddee26ebbe83/None/step0_bismark/bismark_None.bam
+    wildcards: output_dir=/data/cailab/flask_out/20240909154845-6ce6a860-b086-42d9-96ec-ddee26ebbe83, sample=None, step=step0
+    affected files:
+        /data/wangzc/es_wgbs/temp2/None_2.fq.gz
+        /data/wangzc/es_wgbs/temp2/None_1.fq.gz

@@ -40,9 +40,9 @@ async function preset_OptionsUI(stepId,preset_input,preset_select) {
     
     if (step.type.slice(0, 3) === 'map') {
         const index_options =  await index_select(stepId);
-        document.getElementById('inputArea').insertAdjacentHTML('beforeend', index_options);
+        document.getElementById('indexArea').insertAdjacentHTML('beforeend', index_options);
         const selectElement = document.querySelector(`#index-step-${stepId} select`)
-        selectElement.onchange = () => { step.select_index=selectElement.value; };
-        step.select_index = selectElement.value;                                           // 初始化step.select_index
+        step.select_index[stepId] = selectElement.value;                                           // 初始化step.select_index
+        selectElement.onchange = () => { step.select_index[stepId]=selectElement.value; };
     }
 }

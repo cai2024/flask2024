@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+bismark_se        1
+total             2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Sep  5 11:54:46 2024]
+localrule bismark_se:
+    input: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/SRR8145389_1/step0_trim_galore/trim_galore_SRR8145389_1.fq.gz
+    output: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/SRR8145389_1/step1_bismark/bismark_SRR8145389_1.bam
+    log: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/logs/SRR8145389_1/step1_bismark/SRR8145389_1.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/SRR8145389_1/step1_bismark/bismark_SRR8145389_1.bam
+    wildcards: output_dir=/data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f, sample=SRR8145389_1, step=step1
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 16:50:28 2024]
+Finished job 2.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Sep  5 16:50:28 2024]
+localrule all:
+    input: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/SRR8145389_1/step0_trim_galore/trim_galore_SRR8145389_1.fq.gz, /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/SRR8145389_1/step1_bismark/bismark_SRR8145389_1.bam
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/SRR8145389_1/step1_bismark/bismark_SRR8145389_1.bam
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/temp_test
+
+[Thu Sep  5 16:50:28 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-09-05T115444.966092.snakemake.log

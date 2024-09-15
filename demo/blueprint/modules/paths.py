@@ -26,6 +26,7 @@ paths_dict = {
     "flask_out": "/data/cailab/flask_out" ,
     "ref_path": "/data/reference2024",
     "py_ref": "/data/cailab/flask2024/flask_snk/ref",   
+    "smk_dir": "/data/cailab/flask2024/smk"
 }
 
 

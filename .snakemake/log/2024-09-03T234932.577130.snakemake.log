@@ -1,0 +1,314 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job                            count
+---------------------------  -------
+all                                1
+bismark_call_methylation           2
+bismark_se                         2
+fastp_se                           2
+get_log                            2
+mark_duplicate                     2
+qualimap_bamqc                     2
+sp_bismark_call_methylation        2
+sp_bismark_se                      2
+total                             17
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Sep  3 23:49:32 2024]
+localrule fastp_se:
+    input: /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/trim/fastp/wgs_2_trimmed.fq.gz, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/trim/fastp/wgs_2_single.json, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/trim/fastp/wgs_2_single.html
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/logs/fastp/wgs_2.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/trim/fastp/wgs_2_trimmed.fq.gz
+    wildcards: sample=wgs_2
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+
+[Tue Sep  3 23:49:33 2024]
+localrule fastp_se:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/trim/fastp/wgs_1_trimmed.fq.gz, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/trim/fastp/wgs_1_single.json, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/trim/fastp/wgs_1_single.html
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/logs/fastp/wgs_1.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/trim/fastp/wgs_1_trimmed.fq.gz
+    wildcards: sample=wgs_1
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 23:49:44 2024]
+Finished job 2.
+1 of 17 steps (6%) done
+Select jobs to execute...
+[Tue Sep  3 23:49:44 2024]
+Finished job 4.
+2 of 17 steps (12%) done
+Execute 1 jobs...
+
+[Tue Sep  3 23:49:44 2024]
+localrule sp_bismark_se:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/trim/fastp/wgs_2_trimmed.fq.gz
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/sp_wgs_2_single.bam
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/logs/sp_bam/sp_wgs_2.log
+    jobid: 5
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/sp_wgs_2_single.bam; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/trim/fastp/wgs_2_trimmed.fq.gz
+    wildcards: sample=wgs_2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 23:49:52 2024]
+Finished job 5.
+3 of 17 steps (18%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 23:49:52 2024]
+localrule bismark_se:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/trim/fastp/wgs_2_trimmed.fq.gz
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/bam/bismark/wgs_2_single.bam
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/logs/bismark/wgs_2.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/bam/bismark/wgs_2_single.bam; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/trim/fastp/wgs_2_trimmed.fq.gz
+    wildcards: sample=wgs_2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 23:50:38 2024]
+Finished job 1.
+4 of 17 steps (24%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Sep  3 23:50:38 2024]
+localrule sp_bismark_call_methylation:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/sp_wgs_2_single.bam
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/sp_wgs_2_single.CX_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/temp/sp_wgs_2_single.bam
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/logs/sp_methylation/sp_wgs_2_methylation.log
+    jobid: 12
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/sp_wgs_2_single.CX_report.txt; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/sp_wgs_2_single.bam
+    wildcards: sample=wgs_2
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+
+[Tue Sep  3 23:50:38 2024]
+localrule mark_duplicate:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/bam/bismark/wgs_2_single.bam
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/picard/wgs_2_dedup.bam
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/logs/duplication/wgs_2.log
+    jobid: 8
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/picard/wgs_2_dedup.bam; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/bam/bismark/wgs_2_single.bam
+    wildcards: sample=wgs_2
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 23:50:47 2024]
+Finished job 8.
+5 of 17 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 23:50:47 2024]
+localrule bismark_call_methylation:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/picard/wgs_2_dedup.bam
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/bismark/wgs_2_dedup_splitting_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/bismark/temp/wgs_2_dedup.bam
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/logs/methylation/wgs_2_methylation.log
+    jobid: 7
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/bismark/wgs_2_dedup_splitting_report.txt; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/picard/wgs_2_dedup.bam
+    wildcards: sample=wgs_2
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 23:50:55 2024]
+Finished job 7.
+6 of 17 steps (35%) done
+Removing temporary output /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/bismark/temp/wgs_2_dedup.bam.
+Select jobs to execute...
+[Tue Sep  3 23:50:57 2024]
+Finished job 12.
+7 of 17 steps (41%) done
+Removing temporary output /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/temp/sp_wgs_2_single.bam.
+Execute 1 jobs...
+
+[Tue Sep  3 23:50:57 2024]
+localrule qualimap_bamqc:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/picard/wgs_2_dedup.bam
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/cover/wgs_2/genome_results.txt
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/logs/qualimap/wgs_2.log
+    jobid: 13
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/cover/wgs_2/genome_results.txt; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/picard/wgs_2_dedup.bam
+    wildcards: sample=wgs_2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+[Tue Sep  3 23:51:23 2024]
+Finished job 13.
+8 of 17 steps (47%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 23:51:23 2024]
+localrule get_log:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/bam/bismark/wgs_2_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/picard/wgs_2_dedup.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/sp_wgs_2_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/bismark/wgs_2_dedup_splitting_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/sp_wgs_2_single.CX_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/cover/wgs_2/genome_results.txt
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/final_log/wgs_2.log
+    jobid: 11
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/final_log/wgs_2.log; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/sp_wgs_2_single.CX_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/sp_wgs_2_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/bam/bismark/wgs_2_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/picard/wgs_2_dedup.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/bismark/wgs_2_dedup_splitting_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/cover/wgs_2/genome_results.txt
+    wildcards: sample=wgs_2
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 23:51:26 2024]
+Finished job 11.
+9 of 17 steps (53%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 23:51:26 2024]
+localrule sp_bismark_se:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/trim/fastp/wgs_1_trimmed.fq.gz
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/sp_wgs_1_single.bam
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/logs/sp_bam/sp_wgs_1.log
+    jobid: 6
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/sp_wgs_1_single.bam; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/trim/fastp/wgs_1_trimmed.fq.gz
+    wildcards: sample=wgs_1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 23:51:34 2024]
+Finished job 6.
+10 of 17 steps (59%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 23:51:34 2024]
+localrule bismark_se:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/trim/fastp/wgs_1_trimmed.fq.gz
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/bam/bismark/wgs_1_single.bam
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/logs/bismark/wgs_1.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/bam/bismark/wgs_1_single.bam; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/trim/fastp/wgs_1_trimmed.fq.gz
+    wildcards: sample=wgs_1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 23:52:18 2024]
+Finished job 3.
+11 of 17 steps (65%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Sep  3 23:52:18 2024]
+localrule sp_bismark_call_methylation:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/sp_wgs_1_single.bam
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/sp_wgs_1_single.CX_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/temp/sp_wgs_1_single.bam
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/logs/sp_methylation/sp_wgs_1_methylation.log
+    jobid: 15
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/sp_wgs_1_single.CX_report.txt; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/sp_wgs_1_single.bam
+    wildcards: sample=wgs_1
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+
+[Tue Sep  3 23:52:18 2024]
+localrule mark_duplicate:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/bam/bismark/wgs_1_single.bam
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/picard/wgs_1_dedup.bam
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/logs/duplication/wgs_1.log
+    jobid: 10
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/picard/wgs_1_dedup.bam; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/bam/bismark/wgs_1_single.bam
+    wildcards: sample=wgs_1
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 23:52:27 2024]
+Finished job 10.
+12 of 17 steps (71%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 23:52:27 2024]
+localrule bismark_call_methylation:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/picard/wgs_1_dedup.bam
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/bismark/wgs_1_dedup_splitting_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/bismark/temp/wgs_1_dedup.bam
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/logs/methylation/wgs_1_methylation.log
+    jobid: 9
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/bismark/wgs_1_dedup_splitting_report.txt; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/picard/wgs_1_dedup.bam
+    wildcards: sample=wgs_1
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 23:52:34 2024]
+Finished job 15.
+13 of 17 steps (76%) done
+Removing temporary output /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/temp/sp_wgs_1_single.bam.
+Select jobs to execute...
+[Tue Sep  3 23:52:35 2024]
+Finished job 9.
+14 of 17 steps (82%) done
+Removing temporary output /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/bismark/temp/wgs_1_dedup.bam.
+Execute 1 jobs...
+
+[Tue Sep  3 23:52:35 2024]
+localrule qualimap_bamqc:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/picard/wgs_1_dedup.bam
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/cover/wgs_1/genome_results.txt
+    log: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/logs/qualimap/wgs_1.log
+    jobid: 16
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/cover/wgs_1/genome_results.txt; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/picard/wgs_1_dedup.bam
+    wildcards: sample=wgs_1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+[Tue Sep  3 23:52:57 2024]
+Finished job 16.
+15 of 17 steps (88%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 23:52:57 2024]
+localrule get_log:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/bam/bismark/wgs_1_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/picard/wgs_1_dedup.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/sp_wgs_1_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/bismark/wgs_1_dedup_splitting_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/sp_wgs_1_single.CX_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/cover/wgs_1/genome_results.txt
+    output: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/final_log/wgs_1.log
+    jobid: 14
+    reason: Missing output files: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/final_log/wgs_1.log; Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/picard/wgs_1_dedup.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/cover/wgs_1/genome_results.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/bam/bismark/wgs_1_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/sp_wgs_1_single.CX_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/sp_wgs_1_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/bismark/wgs_1_dedup_splitting_report.txt
+    wildcards: sample=wgs_1
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+Activating conda environment: flask2024
+[Tue Sep  3 23:52:59 2024]
+Finished job 14.
+16 of 17 steps (94%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 23:52:59 2024]
+localrule all:
+    input: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/bam/bismark/wgs_2_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/bam/bismark/wgs_1_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/sp_wgs_2_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/sp_wgs_1_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/bismark/wgs_2_dedup_splitting_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/bismark/wgs_1_dedup_splitting_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/final_log/wgs_2.log, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/final_log/wgs_1.log
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/de_bam/bismark/wgs_1_dedup_splitting_report.txt, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/bam/bismark/wgs_1_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_1/sp_bam/bismark/sp_wgs_1_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/final_log/wgs_2.log, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/sp_bam/bismark/sp_wgs_2_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/bam/bismark/wgs_2_single.bam, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/final_log/wgs_1.log, /data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/wgs_2/de_bam/bismark/wgs_2_dedup_splitting_report.txt
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903234920-cf906fc6-582e-4830-91bf-c6849554f3c3/temp_test
+
+[Tue Sep  3 23:52:59 2024]
+Finished job 0.
+17 of 17 steps (100%) done
+Complete log: .snakemake/log/2024-09-03T234932.577130.snakemake.log

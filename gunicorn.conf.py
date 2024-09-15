@@ -1,4 +1,4 @@
-workers = 2
+workers = 10
 bind = '0.0.0.0:6090'
 accesslog = './app_logs/gunicorn_access.log'
 errorlog = './app_logs/gunicorn_error.log'

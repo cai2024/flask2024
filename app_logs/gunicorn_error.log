@@ -1,2 +1,1498 @@
-[2024-09-01 23:24:10 +0800] [281307] [ERROR] Worker (pid:281309) was sent SIGHUP!
-[2024-09-01 23:24:10 +0800] [281307] [ERROR] Worker (pid:281308) was sent SIGHUP!
+[2024-09-04 18:22:58,638] ERROR in app: Exception on /submit_dir_script [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 95, in submit_dir_script
+    my_code = generate_present_script(steps, mode, select_raw_folder, samples_list, task_id, paths_dict)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 322, in generate_present_script
+    value.split(".raw", 1)[1]
+IndexError: list index out of range
+[2024-09-04 18:25:01,203] ERROR in app: Exception on /submit_dir_script [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 95, in submit_dir_script
+    my_code = generate_present_script(steps, mode, select_raw_folder, samples_list, task_id, paths_dict)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 323, in generate_present_script
+    value.split(".raw", 1)[1]
+IndexError: list index out of range
+[2024-09-04 19:01:01 +0800] [170988] [ERROR] Worker (pid:170989) was sent SIGHUP!
+[2024-09-04 19:01:01 +0800] [170988] [ERROR] Worker (pid:171135) was sent SIGHUP!
+[2024-09-04 19:01:01 +0800] [170988] [ERROR] Worker (pid:171186) was sent SIGHUP!
+[2024-09-04 19:01:01 +0800] [170988] [ERROR] Worker (pid:171234) was sent SIGHUP!
+[2024-09-04 19:01:01 +0800] [170988] [ERROR] Worker (pid:171184) was sent SIGHUP!
+[2024-09-04 19:01:01 +0800] [170988] [ERROR] Worker (pid:171039) was sent SIGHUP!
+[2024-09-04 19:01:01 +0800] [170988] [ERROR] Worker (pid:171037) was sent SIGHUP!
+[2024-09-04 19:01:01 +0800] [170988] [ERROR] Worker (pid:171038) was sent SIGHUP!
+[2024-09-04 19:01:01 +0800] [170988] [ERROR] Worker (pid:171087) was sent SIGHUP!
+[2024-09-04 19:01:01 +0800] [170988] [ERROR] Worker (pid:171136) was sent SIGHUP!
+[2024-09-04 19:01:02 +0800] [170988] [ERROR] Worker (pid:173820) was sent SIGTERM!
+[2024-09-04 19:01:02 +0800] [170988] [ERROR] Worker (pid:173814) was sent SIGTERM!
+[2024-09-04 19:01:02 +0800] [170988] [ERROR] Worker (pid:173818) was sent SIGTERM!
+[2024-09-04 19:01:02 +0800] [170988] [ERROR] Worker (pid:173824) was sent SIGTERM!
+[2024-09-04 19:01:02 +0800] [170988] [ERROR] Worker (pid:173826) was sent SIGTERM!
+[2024-09-04 19:01:02 +0800] [170988] [ERROR] Worker (pid:173823) was sent SIGTERM!
+[2024-09-04 19:01:02 +0800] [170988] [ERROR] Worker (pid:173819) was sent SIGTERM!
+[2024-09-04 19:01:02 +0800] [170988] [ERROR] Worker (pid:173815) was sent SIGTERM!
+[2024-09-04 19:01:02 +0800] [170988] [ERROR] Worker (pid:173816) was sent SIGTERM!
+[2024-09-04 20:03:51,005] ERROR in app: Exception on /init_type_div [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 27, in init_type_div
+    result= get_init_div(data.get('step_id'),data.get('step_type'),data.get('step_params'),data.get('options'),data.get('mode'))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 205, in get_init_div
+    key_list = tools_input.get(step_type.split()[1], tools_input[step_type.split()[0]])[mode].keys()
+KeyError: 'other'
+[2024-09-04 20:07:56,710] ERROR in app: Exception on /init_type_div [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 27, in init_type_div
+    result= get_init_div(data.get('step_id'),data.get('step_type'),data.get('step_params'),data.get('options'),data.get('mode'))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 206, in get_init_div
+    key_list = tools_input.get(step_type.split()[1], tools_input[step_type.split()[0]])[mode].keys()
+KeyError: 'other'
+[2024-09-04 20:09:24,377] ERROR in app: Exception on /init_type_div [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 27, in init_type_div
+    result= get_init_div(data.get('step_id'),data.get('step_type'),data.get('step_params'),data.get('options'),data.get('mode'))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 207, in get_init_div
+    key_list = tools_input.get(step_type.split()[1], tools_input[step_type.split()[0]])[mode].keys()
+KeyError: 'other'
+[2024-09-04 21:00:01 +0800] [196931] [ERROR] Worker (pid:197175) was sent SIGHUP!
+[2024-09-04 21:00:01 +0800] [196931] [ERROR] Worker (pid:197223) was sent SIGHUP!
+[2024-09-04 21:00:01 +0800] [196931] [ERROR] Worker (pid:196932) was sent SIGHUP!
+[2024-09-04 21:00:01 +0800] [196931] [ERROR] Worker (pid:196933) was sent SIGHUP!
+[2024-09-04 21:00:01 +0800] [196931] [ERROR] Worker (pid:196981) was sent SIGHUP!
+[2024-09-04 21:00:01 +0800] [196931] [ERROR] Worker (pid:196982) was sent SIGHUP!
+[2024-09-04 21:00:01 +0800] [196931] [ERROR] Worker (pid:197030) was sent SIGHUP!
+[2024-09-04 21:00:01 +0800] [196931] [ERROR] Worker (pid:197031) was sent SIGHUP!
+[2024-09-04 21:00:01 +0800] [196931] [ERROR] Worker (pid:197126) was sent SIGHUP!
+[2024-09-04 21:00:01 +0800] [196931] [ERROR] Worker (pid:197127) was sent SIGHUP!
+[2024-09-04 21:00:02 +0800] [196931] [ERROR] Worker (pid:201442) was sent SIGTERM!
+[2024-09-04 21:00:02 +0800] [196931] [ERROR] Worker (pid:201444) was sent SIGTERM!
+[2024-09-04 21:00:02 +0800] [196931] [ERROR] Worker (pid:201451) was sent SIGTERM!
+[2024-09-04 21:00:02 +0800] [196931] [ERROR] Worker (pid:201445) was sent SIGTERM!
+[2024-09-04 21:00:02 +0800] [196931] [ERROR] Worker (pid:201450) was sent SIGTERM!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:215114) was sent SIGHUP!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:214868) was sent SIGHUP!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:214967) was sent SIGHUP!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:214918) was sent SIGHUP!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:215113) was sent SIGHUP!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:214917) was sent SIGHUP!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:215015) was sent SIGHUP!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:215016) was sent SIGHUP!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:215064) was sent SIGHUP!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:214919) was sent SIGHUP!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:217984) was sent SIGTERM!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:217973) was sent SIGTERM!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:217981) was sent SIGTERM!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:217983) was sent SIGTERM!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:217979) was sent SIGTERM!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:217980) was sent SIGTERM!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:217974) was sent SIGTERM!
+[2024-09-04 23:20:12 +0800] [214867] [ERROR] Worker (pid:217975) was sent SIGTERM!
+[2024-09-05 01:52:22 +0800] [233397] [ERROR] Worker (pid:233595) was sent SIGHUP!
+[2024-09-05 01:52:22 +0800] [233397] [ERROR] Worker (pid:233398) was sent SIGHUP!
+[2024-09-05 01:52:22 +0800] [233397] [ERROR] Worker (pid:233447) was sent SIGHUP!
+[2024-09-05 01:52:22 +0800] [233397] [ERROR] Worker (pid:233497) was sent SIGHUP!
+[2024-09-05 01:52:22 +0800] [233397] [ERROR] Worker (pid:233448) was sent SIGHUP!
+[2024-09-05 01:52:22 +0800] [233397] [ERROR] Worker (pid:233399) was sent SIGHUP!
+[2024-09-05 01:52:22 +0800] [233397] [ERROR] Worker (pid:233546) was sent SIGHUP!
+[2024-09-05 01:52:22 +0800] [233397] [ERROR] Worker (pid:233643) was sent SIGHUP!
+[2024-09-05 01:52:22 +0800] [233397] [ERROR] Worker (pid:233449) was sent SIGHUP!
+[2024-09-05 01:52:22 +0800] [233397] [ERROR] Worker (pid:233545) was sent SIGHUP!
+[2024-09-05 01:52:23 +0800] [233397] [ERROR] Worker (pid:237297) was sent SIGTERM!
+[2024-09-05 01:52:23 +0800] [233397] [ERROR] Worker (pid:237308) was sent SIGTERM!
+[2024-09-05 01:52:23 +0800] [233397] [ERROR] Worker (pid:237303) was sent SIGTERM!
+[2024-09-05 01:52:23 +0800] [233397] [ERROR] Worker (pid:237300) was sent SIGTERM!
+[2024-09-05 01:52:23 +0800] [233397] [ERROR] Worker (pid:237307) was sent SIGTERM!
+[2024-09-05 01:52:23 +0800] [233397] [ERROR] Worker (pid:237306) was sent SIGTERM!
+[2024-09-05 01:52:23 +0800] [233397] [ERROR] Worker (pid:237305) was sent SIGTERM!
+[2024-09-05 01:52:23 +0800] [233397] [ERROR] Worker (pid:237299) was sent SIGTERM!
+[2024-09-05 18:38:10,881] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:11,435] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:11,621] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:11,812] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:11,984] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:12,150] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:12,589] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:12,946] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:13,118] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:13,503] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:13,763] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:13,969] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:14,137] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:14,267] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:14,494] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:14,657] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:14,816] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:14,946] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:15,601] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:15,802] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:16,005] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:16,392] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:17,782] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:18,139] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:18,498] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:18,869] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183543-e9720149-461e-46be-9066-1d8100863471/snk.log'
+[2024-09-05 18:38:31,182] ERROR in app: Exception on /get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 63, in preset_soft
+    return jsonify({"options":options,"select":select,"params":params})
+UnboundLocalError: local variable 'options' referenced before assignment
+[2024-09-05 18:38:32,917] ERROR in app: Exception on /get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 63, in preset_soft
+    return jsonify({"options":options,"select":select,"params":params})
+UnboundLocalError: local variable 'options' referenced before assignment
+[2024-09-05 18:38:33,407] ERROR in app: Exception on /get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 63, in preset_soft
+    return jsonify({"options":options,"select":select,"params":params})
+UnboundLocalError: local variable 'options' referenced before assignment
+[2024-09-05 18:38:33,600] ERROR in app: Exception on /get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 63, in preset_soft
+    return jsonify({"options":options,"select":select,"params":params})
+UnboundLocalError: local variable 'options' referenced before assignment
+[2024-09-05 18:38:33,786] ERROR in app: Exception on /get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 63, in preset_soft
+    return jsonify({"options":options,"select":select,"params":params})
+UnboundLocalError: local variable 'options' referenced before assignment
+[2024-09-05 18:38:33,987] ERROR in app: Exception on /get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 63, in preset_soft
+    return jsonify({"options":options,"select":select,"params":params})
+UnboundLocalError: local variable 'options' referenced before assignment
+[2024-09-05 18:38:34,592] ERROR in app: Exception on /get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 63, in preset_soft
+    return jsonify({"options":options,"select":select,"params":params})
+UnboundLocalError: local variable 'options' referenced before assignment
+[2024-09-05 18:41:18,671] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:19,299] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:19,496] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:19,689] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:19,909] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:20,100] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:20,293] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:20,523] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:21,826] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:21,862] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:22,060] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:22,233] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:22,404] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:22,783] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:22,960] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:23,168] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:23,364] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:23,541] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:23,743] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:23,940] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:24,132] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:24,317] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:24,510] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:24,738] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:24,897] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:25,091] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:25,271] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:25,458] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:25,650] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:25,833] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:25,992] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:26,201] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:33,578] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:33,965] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:34,154] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:34,292] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:34,434] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:34,980] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:35,105] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:35,266] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:35,781] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:36,242] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:36,360] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:37,712] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:37,906] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:38,269] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:38,648] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:38,829] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:38,995] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:39,193] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:39,344] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:39,602] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:39,786] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:40,015] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:41,936] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:42,147] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:42,342] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:42,526] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:42,767] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:42,954] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:43,138] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 18:41:43,521] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240905183820-eeb4964e-cc4c-495b-be68-afc28d42723c/snk.log'
+[2024-09-05 21:19:13 +0800] [233397] [CRITICAL] WORKER TIMEOUT (pid:237309)
+[2024-09-05 21:19:13 +0800] [237309] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    req = next(parser)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/parser.py", line 42, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/message.py", line 257, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/message.py", line 269, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/message.py", line 260, in get_data
+    data = unreader.read()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/unreader.py", line 37, in read
+    d = self.chunk()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/unreader.py", line 64, in chunk
+    return self.sock.recv(self.mxchunk)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 203, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2024-09-05 21:34:57,563] ERROR in app: Exception on /init_type_div [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 27, in init_type_div
+    result= get_init_div(data.get('step_id'),data.get('step_type'),data.get('step_params'),data.get('options'),data.get('mode'))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 266, in get_init_div
+    key_dir = {key :options_list[key][max(enumerate([int(temp.split("_")[0][4:]) + 1 if temp.split("_")[0][4:].isdigit() else 0
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 266, in <dictcomp>
+    key_dir = {key :options_list[key][max(enumerate([int(temp.split("_")[0][4:]) + 1 if temp.split("_")[0][4:].isdigit() else 0
+ValueError: max() arg is an empty sequence
+[2024-09-05 21:35:22,070] ERROR in app: Exception on /init_type_div [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/complex_code.py", line 27, in init_type_div
+    result= get_init_div(data.get('step_id'),data.get('step_type'),data.get('step_params'),data.get('options'),data.get('mode'))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 266, in get_init_div
+    key_dir = {key :options_list[key][max(enumerate([int(temp.split("_")[0][4:]) + 1 if temp.split("_")[0][4:].isdigit() else 0
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 266, in <dictcomp>
+    key_dir = {key :options_list[key][max(enumerate([int(temp.split("_")[0][4:]) + 1 if temp.split("_")[0][4:].isdigit() else 0
+ValueError: max() arg is an empty sequence
+[2024-09-12 21:38:49,846] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240910081400-5f92dd41-bc5a-4bcd-8743-5db0410e433f/snk.log'
+[2024-09-12 21:38:50,896] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240910081400-5f92dd41-bc5a-4bcd-8743-5db0410e433f/snk.log'
+[2024-09-12 21:39:14,870] ERROR in app: Exception on /fetch-logs [GET]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 90, in fetch_logs
+    with open( user_dir+"/" +task_id +"/snk.log", 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20240909153839-ef8e3610-83cb-4f07-a279-2b8ed8cf24dd/snk.log'
+[2024-09-13 12:13:08 +0800] [233397] [CRITICAL] WORKER TIMEOUT (pid:237312)
+[2024-09-13 12:13:08 +0800] [237312] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    req = next(parser)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/parser.py", line 42, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/message.py", line 257, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/message.py", line 269, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/message.py", line 260, in get_data
+    data = unreader.read()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/unreader.py", line 37, in read
+    d = self.chunk()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/http/unreader.py", line 64, in chunk
+    return self.sock.recv(self.mxchunk)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 203, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2024-09-13 12:13:09 +0800] [233397] [ERROR] Worker (pid:237312) was sent SIGKILL! Perhaps out of memory?

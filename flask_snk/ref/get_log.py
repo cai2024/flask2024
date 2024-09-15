@@ -264,7 +264,7 @@ def main():
 
     # spikein 子命令
     parser_spikein = subparsers.add_parser('spikein', help='Run spikein')
-    parser_spikein.add_argument('--spikein', type=str, help='The input file for FastQC.')
+    parser_spikein.add_argument('--spikein', type=str,default='lambda,mc,G5hmc,puc19', help='The input file for FastQC.')
     parser_spikein.add_argument('--bam', type=str, help='bam.')
     parser_spikein.add_argument('--hmc', type=str, default='', help='Optional: Path to the HMC file.')
     parser_spikein.add_argument('--mc', type=str, default='', help='Optional: Path to the MC file.')

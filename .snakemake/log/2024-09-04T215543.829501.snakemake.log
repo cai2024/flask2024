@@ -1,0 +1,48 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all                1
+hairpin_cut        1
+total              2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep  4 21:55:45 2024]
+localrule hairpin_cut:
+    input: /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs.fq.gz, /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs_1.fq.gz, /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/logs/wgs/step1_hairpin_cut/wgs.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a, sample=wgs, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/temp_test
+
+Activating conda environment: flask2024
+[Wed Sep  4 21:55:48 2024]
+Error in rule hairpin_cut:
+    jobid: 2
+    input: /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs.fq.gz, /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs_1.fq.gz, /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/logs/wgs/step1_hairpin_cut/wgs.log (check log file(s) for error details)
+    conda-env: flask2024
+    shell:
+        
+        python3 /data/cailab/flask2024/flask_snk/ref/new_hairpin_cut.py --fq1 /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz --fq2 /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz --cut_fq1 /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs_1.fq         --cut_fq2 /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs_2.fq --cut_fq /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs.fq  --parallel 10 > /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/logs/wgs/step1_hairpin_cut/wgs.log 2>&1 
+        python3 /data/cailab/flask2024/flask_snk/ref/wild_stats.py --fq1 /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs_1.fq --fq2 /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs_2.fq >> /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/logs/wgs/step1_hairpin_cut/wgs.log 2>&1
+        gzip /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs_1.fq /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs_2.fq /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/wgs/step1_hairpin_cut/hairpin_cut_wgs.fq
+
+        grep 'resolved ratio:' /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/logs/wgs/step1_hairpin_cut/wgs.log | sed 's/: / /g' | head -n 1 >> /data/cailab/flask_out/20240904215505-2306c825-9ff5-413d-a155-6a9ac2e0c07a/logs/wgs.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-09-04T215543.829501.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

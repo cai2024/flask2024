@@ -91,7 +91,7 @@ def submit_dir_script():
     select_raw_folder = data.get('select_raw_folder')
     samples_list = get_samples_list(select_raw_folder, mode, raw_myOptions)
 
-    config_string, snakemake_string = generate_steps_config(steps, select_raw_folder, mode, task_id, samples_list)
+    config_string, snakemake_string = generate_steps_config(steps, select_raw_folder, mode, task_id, samples_list,paths_dict)
     my_code = generate_present_script(steps, mode, select_raw_folder, samples_list, task_id, paths_dict)
 
 
@@ -122,11 +122,15 @@ def submit_smk_job():
     ]
 
     try:
+        # 使用Popen使命令在后台运行
         with open(outdir + '/snk.log', 'w') as f:
-            subprocess.run(snakemake_cmd , stdout=f, stderr=subprocess.STDOUT)
-    except subprocess.CalledProcessError as e:
+            subprocess.Popen(snakemake_cmd, stdout=f, stderr=subprocess.STDOUT, preexec_fn=os.setpgrp)
+        # 立即返回任务ID，客户端可用task_id来查询任务状态
+        return jsonify({'task_id': task_id })
+    except Exception as e:
         with open(outdir + '/snk.log', 'a') as f:
-            print(f"运行出错:{e}",file=f)
-            print("请确认参数是否正确，或者@wangzc", file = f)
-    return jsonify({'task_id': task_id })
+            print(f"运行出错: {e}", file=f)
+            print("请确认参数是否正确，或者@wangzc", file=f)
+        return jsonify({'error': '任务启动失败，请检查日志', 'task_id': task_id}), 500
+
 
