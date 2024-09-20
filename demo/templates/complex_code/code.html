@@ -55,9 +55,9 @@ var task_id = "{{ task_id }}"
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('selectInputDir').addEventListener('click', async function() {
         try {
-            const response = await fetch('/submit_dir_script', {
+            const response = await fetch('/batch_code/submit_config_script', {
                 method: 'POST', headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ select_raw_folder: document.getElementById('folderInput').value})
+                body: JSON.stringify({ select_raw_folder: document.getElementById('folderInput').value, task_id: task_id})
             });
             const responseData = await response.json();
             document.getElementById('dynamicCode').textContent = responseData.my_code;

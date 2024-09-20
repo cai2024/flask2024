@@ -1,4 +1,5 @@
 import os
+from collections import defaultdict
 
 available_steps = {
     'Trim 操作': ['Trim trim_galore', 'Trim fastp', 'Trim cutadapt' , 'Trim hairpin_cut', 'Trim hairpin_cut_N'],
@@ -247,65 +248,9 @@ index_options_dict = {
 }
 
 
-def get_init_div(stepId, step_type, step_params, options_list, mode):
-    # 每项软件的初始化包含的选项数量和类型，由tools_input.keys提供
-    # 每个类型提供的选项，由options_list提供（字典）
-    # 推荐选项获取step后最大值
-    # 测试验证时间：2024.09.03
-    option_dir = { key: ''.join(f'<option value="{option}">{option}</option>' for option in options) for key, options in options_list.items()}
-    result_string = f"""
-            <div id="input-step-{stepId}" class="form-group">
-                <label><strong>step{stepId}: {step_type}:</strong></label>
-                <input id="input-{stepId}" type="text" class="form-control" placeholder="输入额外参数（默认为空）" onchange="updateInput({stepId})" oninput="updateOutputArea()" value="{step_params}">
-            """
-    key_list = tools_input.get(step_type.split()[1], tools_input[step_type.split()[0]])[mode].keys()
-    result_string += "\n".join(
-        f'<select id="select-{stepId}-{title}" class="form-control mt-2" onchange="updateSelectOption({stepId})" title="{title}">{option_dir.get(title, [])}</select>'
-        for title in key_list)
-    result_string += f"\n </div> \n"
-    key_dir = {key :options_list[key][max(enumerate([int(temp.split("_")[0][4:]) + 1 if temp.split("_")[0][4:].isdigit() else 0
-                for temp in options_list[key]]),key=lambda x: x[1])[0]] for key in key_list }
-    return  result_string , key_dir
 
-def get_result_option(step_id, step_type, mode, temp_options):
-    # 每次扩充当前id的软件的生成文件
-    # 逻辑上是先获取目标软件生成的文件类型有哪些,通过suffix模式扩充temp_options字典
-    # 测试验证时间：2024.09.02
-    # 原始逻辑没有考虑同一个软件生成多个同类型文件，对文件名后缀的要求太死板
-   
-    key_list = list(tools_config.get(step_type.split()[1], tools_config[step_type.split()[0]])[mode].keys())
-    for key in key_list:
-        temp_string = tools_config.get(step_type.split()[1], tools_config[step_type.split()[0]])[mode][key].split("/")[-1].replace("_{{sample}}","_raw")
-        temp_options[key.split("_")[0]].append(f"step{step_id}_" + temp_string.format(input_soft=step_type.split()[1]))
-        temp_options["all"].append(f"step{step_id}_" + temp_string.format(input_soft=step_type.split()[1]))
-    return temp_options
 
-def get_type_index(stepId, step_type):
-    # index定义为字典形式，id为index-stepId-key
-    # 测试验证时间：2024.09.03
-    select_dir = index_options_dict.get(step_type.split()[1], index_options_dict["default"])
-    result= f'<div id="index-step-{stepId}" class="form-group">\n'
-    for title in select_dir:
-        option_div = ''.join([f'<option value="{option}">{option}</option>' for option in select_dir.get(title, [])])
-        result += f'<select id="index-{stepId}-{title}" class="form-control mt-2" title="{title}">{option_div}</select>\n'
-    return f"<label><strong>step{stepId}: {step_type} 参考基因组:</strong></label>\n{result}\n</div>\n"
-
-def update_select_dir(key_dir, change_key, step_type, mode):
-    # key_dir[key]=[step.select_option[key],optionsList],step.select_option[key]为当前选项，optionsList为可选选项
-    # 逻辑是在js创建上述格式字典，修改change_key配对的key的step.select_option[key]
-    # 返回后js将选项和step做出对应修改
-    # 测试验证时间：2024.09.03
-    if step_type == "hairpin_cut" and mode == "single":
-        pass
-    elif change_key == "fq1" and mode == "pair" and ("fq2" in key_dir):
-        paired_file = key_dir["fq1"][0].replace('_1.fq.gz', '_2.fq.gz')
-        key_dir["fq2"][0] = paired_file if paired_file in key_dir["fq2"][1] else key_dir["fq2"][0]
-    elif change_key == "fq2" and mode == "pair" and ("fq1" in key_dir):
-        paired_file = key_dir["fq2"][0].replace('_2.fq.gz', '_1.fq.gz')
-        key_dir["fq1"][0] = paired_file if paired_file in key_dir["fq1"][1] else key_dir["fq1"][0]
-    return key_dir
-
-def generate_steps_config(steps, select_raw_folder, mode, task_id, samples_list, paths_dict):
+def generate_steps_config(steps, select_raw_folder, mode, task_id, samples_list, paths_dict):    
     # 对于config，1.index读入config，包含ref_species，ref_release和other
     # 2.mode，output_dir，soft路径（待添加）
     # 3.samples 4.params 5.steps
@@ -402,6 +347,103 @@ def generate_present_script(steps, mode, select_raw_folder, samples_list, task_i
 
 
 
+class SoftStep:
+    def __init__(self, **kwargs):
+        self.id = kwargs.get('id', None)
+        self.type = kwargs.get('type', None)
+        self.select_option = kwargs.get('select_option', None)
+        self.select_index = kwargs.get('select_index', None)
+        self.params = kwargs.get('params', None)
+        self.mode = kwargs.get('mode', None)
+        self.raw_type = kwargs.get('raw_type', None)
+        self.selectableOptions = kwargs.get('selectableOptions', None)
+        self.rec_option = kwargs.get('rec_option', None)
+        self.selectableIndex = kwargs.get('selectableIndex', None)
+
+    def update_details(self, id=None, type=None, select_option=None,select_index=None, params=None, mode=None, raw_type=None, selectableOptions=None,rec_option=None, selectableIndex=None):
+        if id:
+            self.id = id
+        if type:
+            self.type = type
+        if select_option:
+            self.select_option = select_option
+        if select_index:
+            self.select_index = select_index
+        if params:
+            self.params = params
+        if mode:
+            self.mode = mode
+        if raw_type:
+            self.raw_type = raw_type
+        if selectableOptions:
+             self.selectableOptions = selectableOptions
+        if rec_option:
+            self.rec_option = rec_option
+        if selectableIndex:
+             self.selectableIndex = selectableIndex
+
+    def to_json(self):
+        return {
+            'id': self.id,
+            'type': self.type,
+            'select_option': self.select_option,
+            'select_index': self.select_index,
+            'params': self.params,
+            'mode': self.mode,
+            'raw_type': self.raw_type,
+            'selectableOptions': self.selectableOptions,
+            'rec_option': self.rec_option,
+            'selectableIndex': self.selectableIndex,
+        }
 
 
+class SoftStepManager:
+    def __init__(self):
+        self.steps = []
 
+    def add_step(self, step):
+        self.steps.append(step)
+
+    def to_json(self):
+        return [step.to_json() for step in self.steps]
+
+
+def batch_preset(presetType, mode):
+    manager = SoftStepManager()
+    
+    return manager.to_json()
+
+
+def init_div_steps2(steps):
+    manager = SoftStepManager()
+    all_options = defaultdict(list)
+    for step in steps:
+        soft_step = SoftStep(**step)
+        
+        key_list = tools_input.get(step["type"].split()[1], tools_input[step["type"].split()[0]])[step["mode"]].keys()
+
+        if step["id"] == 0:
+            if step["mode"] == "pair" and step["raw_type"] == "raw.fq.gz":
+                all_options["fq1"] = ["raw_1.fq.gz"]
+                all_options["fq2"] = ["raw_2.fq.gz"]
+            elif step["mode"] == "single" and step["raw_type"] == "raw.fq.gz":
+                all_options["fq"] = ["raw.fq.gz"]
+            else:
+                all_options["bam"] = ["raw.bam"]
+
+        soft_step.update_details(selectableOptions = {key: all_options.get(key.split("_")[0], []).copy() for key in key_list} )
+        soft_step.update_details(rec_option={
+            key: all_options[key][max(enumerate([int(temp.split("_")[0][4:]) + 1 if temp.split("_")[0][4:].isdigit() else 0
+                for temp in all_options[key]]), key=lambda x: x[1])[0]] for key in key_list})
+
+        config = tools_config.get(step["type"].split()[1], tools_config[step["type"].split()[0]])[step["mode"]]
+        for key in config.keys():
+            temp_string = config[key].split("/")[-1].replace("_{{sample}}", "_raw")
+            step_id = step["id"]
+            input_soft = step["type"].split()[1]
+            formatted_string = f"step{step_id}_" + temp_string.format(input_soft=input_soft)
+            all_options[key.split("_")[0]].append(formatted_string)
+
+        soft_step.update_details(selectableIndex=index_options_dict.get(step["type"].split()[1], index_options_dict["default"]))
+        manager.add_step(soft_step)
+    return manager.to_json()

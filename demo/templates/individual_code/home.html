@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% from 'bootstrap4/form.html' import render_form %}
+
+{% block content %}
+<style>
+    .radio-toolbar {
+        display: flex;
+        justify-content: flex-start; /* 左对齐 */
+        align-items: center; /* 垂直居中 */
+        margin-bottom: 10px; /* 为整个行添加下边距 */
+    }
+    .form-check-inline {
+        margin-right: 60px; /* 组内元素间的间距 */
+    }
+    .group-divider {
+        margin-right: 5px; /* 两组之间的间距 */
+    }
+</style>
+
+
+<div class="container">
+    <h1 class="text-center my-4">单样本复杂流程设计</h1>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button id="WGSBtn" class="btn btn-primary m-2">WGS流程预设1</button>
+            <button id="WGBSBtn" class="btn btn-primary m-2">WGBS流程预设1</button>
+            <button id="CSBtn" class="btn btn-primary m-2">CS流程预设</button>
+            <button id="CAPSBtn" class="btn btn-primary m-2">CAPS流程预设</button>
+        </div>
+
+
+    <div class="col-md-12 text-center my-2 radio-toolbar">
+        <!-- 文件类型选择 -->
+        <div class="form-check form-check-inline group-divider">
+            <input class="form-check-input" type="radio" name="fileType" id="rawFq" value="raw.fq.gz" onclick="updateSelection()" checked>
+            <label class="form-check-label" for="rawFq">raw.fq.gz</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="fileType" id="rawBam" value="raw.bam" onclick="updateSelection()">
+            <label class="form-check-label" for="rawBam">raw.bam</label>
+        </div>
+        <!-- Fastq类型选择 -->
+        <div class="form-check form-check-inline group-divider">
+            <input class="form-check-input" type="radio" name="fqType" id="single" value="single" onclick="updateSelection()">
+            <label class="form-check-label" for="single">single</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="fqType" id="pair" value="pair" onclick="updateSelection()" checked>
+            <label class="form-check-label" for="pair">pair</label>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="border p-3 box-fixed-height">
+                <h2 class="h5">选择的步骤</h2>
+                <ul id="selected-steps" class="list-group"></ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border p-3 box-fixed-height">
+                <h2 class="h5">输入参数</h2>
+                <div id="inputArea"></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="border p-3 box-fixed-height">
+                <h2 class="h5">选择索引</h2>
+                <div id="indexArea"></div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center my-4">
+        <button id="confirmBtn" class="btn btn-success">确定</button>
+        <button id="unlockBtn" class="btn btn-warning">解锁</button>
+        <button id="submitBtn" class="btn btn-primary" disabled>提交</button>
+    </div>
+    <!-- Include the workflow HTML here -->
+    {% include 'complex_code/workflow.html' %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="{{ url_for('static', filename='js/project_init.js') }}"></script>
+<script src="{{ url_for('static', filename='js/submit.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/preset.js') }}"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
