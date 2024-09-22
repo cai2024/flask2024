@@ -1553,3 +1553,1710 @@ ImportError: cannot import name 'get_result_option' from 'demo.blueprint.modules
 [2024-09-20 00:16:34 +0800] [46390] [ERROR] Worker (pid:48869) was sent SIGTERM!
 [2024-09-20 00:16:34 +0800] [46390] [ERROR] Worker (pid:48863) was sent SIGTERM!
 [2024-09-20 00:16:34 +0800] [46390] [ERROR] Worker (pid:48866) was sent SIGTERM!
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48871) exited with code 120
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48871) exited with code 120.
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48876) exited with code 120
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48876) exited with code 120.
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48879) exited with code 120
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48879) exited with code 120.
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48877) exited with code 120
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48877) exited with code 120.
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48872) exited with code 120
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48872) exited with code 120.
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48873) exited with code 120
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48873) exited with code 120.
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48878) exited with code 120
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48878) exited with code 120.
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48875) exited with code 120
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48875) exited with code 120.
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48874) exited with code 120
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48870) exited with code 120
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48870) exited with code 120.
+[2024-09-20 23:34:19 +0800] [46390] [ERROR] Worker (pid:48874) exited with code 120.
+[2024-09-20 23:48:53,688] ERROR in app: Exception on /batch_code/submit_config_script [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 59, in submit_dir_script
+    config_string, snakemake_string = generate_steps_config(soft_step, select_raw_folder, soft_step[0]["mode"], task_id, samples_list, paths_dict)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 273, in generate_steps_config
+    if key.split("-")[2]=="ref":
+IndexError: list index out of range
+[2024-09-21 00:19:47 +0800] [157632] [ERROR] Worker (pid:157879) was sent SIGHUP!
+[2024-09-21 00:19:47 +0800] [157632] [ERROR] Worker (pid:157633) was sent SIGHUP!
+[2024-09-21 00:19:47 +0800] [157632] [ERROR] Worker (pid:157831) was sent SIGHUP!
+[2024-09-21 00:19:47 +0800] [157632] [ERROR] Worker (pid:157736) was sent SIGHUP!
+[2024-09-21 00:19:47 +0800] [157632] [ERROR] Worker (pid:157634) was sent SIGHUP!
+[2024-09-21 00:19:47 +0800] [157632] [ERROR] Worker (pid:157635) was sent SIGHUP!
+[2024-09-21 00:19:47 +0800] [157632] [ERROR] Worker (pid:157636) was sent SIGHUP!
+[2024-09-21 00:19:47 +0800] [157632] [ERROR] Worker (pid:157687) was sent SIGHUP!
+[2024-09-21 00:19:47 +0800] [157632] [ERROR] Worker (pid:157735) was sent SIGHUP!
+[2024-09-21 00:19:47 +0800] [157632] [ERROR] Worker (pid:157880) was sent SIGHUP!
+[2024-09-21 00:19:48 +0800] [157632] [ERROR] Worker (pid:159995) was sent SIGTERM!
+[2024-09-21 00:19:48 +0800] [157632] [ERROR] Worker (pid:159997) was sent SIGTERM!
+[2024-09-21 00:19:48 +0800] [157632] [ERROR] Worker (pid:160004) was sent SIGTERM!
+[2024-09-21 00:19:48 +0800] [157632] [ERROR] Worker (pid:160005) was sent SIGTERM!
+[2024-09-21 00:19:48 +0800] [157632] [ERROR] Worker (pid:159998) was sent SIGTERM!
+[2024-09-21 00:19:48 +0800] [157632] [ERROR] Worker (pid:160003) was sent SIGTERM!
+[2024-09-21 00:19:48 +0800] [157632] [ERROR] Worker (pid:160007) was sent SIGTERM!
+[2024-09-21 10:59:58,536] ERROR in app: Exception on /batch_code/get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 27, in get_preset
+    return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 415, in batch_preset
+    preset_list = batch_preset_dict[presetType][mode]
+NameError: name 'batch_preset_dict' is not defined
+[2024-09-21 11:01:29 +0800] [200123] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 414, in <module>
+    "pair": [SoftStep(0,"Trim trim_gallore",{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{}),
+TypeError: __init__() takes 1 positional argument but 11 were given
+[2024-09-21 11:01:29 +0800] [200125] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 414, in <module>
+    "pair": [SoftStep(0,"Trim trim_gallore",{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{}),
+TypeError: __init__() takes 1 positional argument but 11 were given
+[2024-09-21 11:01:29 +0800] [200122] [ERROR] Worker (pid:200123) exited with code 3
+[2024-09-21 11:01:29 +0800] [200124] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 414, in <module>
+    "pair": [SoftStep(0,"Trim trim_gallore",{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{}),
+TypeError: __init__() takes 1 positional argument but 11 were given
+[2024-09-21 11:01:29 +0800] [200122] [ERROR] Worker (pid:200125) was sent SIGTERM!
+[2024-09-21 11:01:30 +0800] [200174] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 414, in <module>
+    "pair": [SoftStep(0,"Trim trim_gallore",{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{}),
+TypeError: __init__() takes 1 positional argument but 11 were given
+[2024-09-21 11:01:30 +0800] [200173] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 414, in <module>
+    "pair": [SoftStep(0,"Trim trim_gallore",{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{}),
+TypeError: __init__() takes 1 positional argument but 11 were given
+[2024-09-21 11:01:30 +0800] [200122] [ERROR] Worker (pid:200124) exited with code 3
+[2024-09-21 11:01:30 +0800] [200222] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 414, in <module>
+    "pair": [SoftStep(0,"Trim trim_gallore",{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{}),
+TypeError: __init__() takes 1 positional argument but 11 were given
+[2024-09-21 11:01:30 +0800] [200223] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 414, in <module>
+    "pair": [SoftStep(0,"Trim trim_gallore",{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{}),
+TypeError: __init__() takes 1 positional argument but 11 were given
+[2024-09-21 11:01:30 +0800] [200271] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 414, in <module>
+    "pair": [SoftStep(0,"Trim trim_gallore",{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{}),
+TypeError: __init__() takes 1 positional argument but 11 were given
+[2024-09-21 11:01:30 +0800] [200272] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 414, in <module>
+    "pair": [SoftStep(0,"Trim trim_gallore",{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{}),
+TypeError: __init__() takes 1 positional argument but 11 were given
+[2024-09-21 11:01:30 +0800] [200461] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 414, in <module>
+    "pair": [SoftStep(0,"Trim trim_gallore",{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{}),
+TypeError: __init__() takes 1 positional argument but 11 were given
+[2024-09-21 11:07:49,166] ERROR in app: Exception on /batch_code/get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 27, in get_preset
+    return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 435, in batch_preset
+    all_options_list = process_all_options(tools_config, [soft_step.to_json() for soft_step in preset_list], batch_preset_dict[presetType]["baseOptions"][mode])
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 453, in process_all_options
+    all_options[key.split("_")[0]].append(formatted_string)
+AttributeError: 'str' object has no attribute 'append'
+[2024-09-21 11:11:55,551] ERROR in app: Exception on /batch_code/get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 27, in get_preset
+    return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 436, in batch_preset
+    all_options_list = process_all_options(tools_config, [soft_step.to_json() for soft_step in preset_list], default_dict)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 454, in process_all_options
+    all_options[key.split("_")[0]].append(formatted_string)
+AttributeError: 'str' object has no attribute 'append'
+[2024-09-21 11:13:04,731] ERROR in app: Exception on /batch_code/get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 27, in get_preset
+    return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 436, in batch_preset
+    all_options_list = process_all_options(tools_config, [soft_step.to_json() for soft_step in preset_list], default_dict)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 455, in process_all_options
+    all_options[key.split("_")[0]].append(formatted_string)
+AttributeError: 'str' object has no attribute 'append'
+[2024-09-21 11:14:03 +0800] [202940] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 424
+    "baseOptions": {"pair":{["fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"]},"single":{["fq":"rqw.fq.gz"]}},
+                                  ^
+SyntaxError: invalid syntax
+[2024-09-21 11:14:03 +0800] [202941] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 424
+    "baseOptions": {"pair":{["fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"]},"single":{["fq":"rqw.fq.gz"]}},
+                                  ^
+SyntaxError: invalid syntax
+[2024-09-21 11:14:03 +0800] [202939] [ERROR] Worker (pid:202940) exited with code 3
+[2024-09-21 11:14:03 +0800] [202939] [ERROR] Worker (pid:202941) was sent SIGTERM!
+[2024-09-21 11:14:03 +0800] [203036] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 424
+    "baseOptions": {"pair":{["fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"]},"single":{["fq":"rqw.fq.gz"]}},
+                                  ^
+SyntaxError: invalid syntax
+[2024-09-21 11:14:03 +0800] [203037] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 424
+    "baseOptions": {"pair":{["fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"]},"single":{["fq":"rqw.fq.gz"]}},
+                                  ^
+SyntaxError: invalid syntax
+[2024-09-21 11:14:03 +0800] [202939] [ERROR] Worker (pid:203036) exited with code 3
+[2024-09-21 11:14:03 +0800] [203038] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 424
+    "baseOptions": {"pair":{["fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"]},"single":{["fq":"rqw.fq.gz"]}},
+                                  ^
+SyntaxError: invalid syntax
+[2024-09-21 11:14:03 +0800] [203133] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 424
+    "baseOptions": {"pair":{["fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"]},"single":{["fq":"rqw.fq.gz"]}},
+                                  ^
+SyntaxError: invalid syntax
+[2024-09-21 11:14:03 +0800] [203134] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 424
+    "baseOptions": {"pair":{["fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"]},"single":{["fq":"rqw.fq.gz"]}},
+                                  ^
+SyntaxError: invalid syntax
+[2024-09-21 11:14:03 +0800] [203135] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 424
+    "baseOptions": {"pair":{["fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"]},"single":{["fq":"rqw.fq.gz"]}},
+                                  ^
+SyntaxError: invalid syntax
+[2024-09-21 11:14:03 +0800] [203184] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 424
+    "baseOptions": {"pair":{["fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"]},"single":{["fq":"rqw.fq.gz"]}},
+                                  ^
+SyntaxError: invalid syntax
+[2024-09-21 11:14:03 +0800] [203183] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 424
+    "baseOptions": {"pair":{["fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"]},"single":{["fq":"rqw.fq.gz"]}},
+                                  ^
+SyntaxError: invalid syntax
+[2024-09-21 11:14:47,086] ERROR in app: Exception on /batch_code/get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 27, in get_preset
+    return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 436, in batch_preset
+    all_options_list = process_all_options(tools_config, [soft_step.to_json() for soft_step in preset_list], default_dict)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 455, in process_all_options
+    all_options[key.split("_")[0]].append(formatted_string)
+AttributeError: 'str' object has no attribute 'append'
+[2024-09-21 11:17:05,138] ERROR in app: Exception on /batch_code/get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 27, in get_preset
+    return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 439, in batch_preset
+    soft_step.update_details(selectableIndex=index_options_dict.get(step.type.split()[1], index_options_dict["default"]))
+NameError: name 'step' is not defined
+[2024-09-21 11:53:19 +0800] [206024] [ERROR] Worker (pid:206025) was sent SIGHUP!
+[2024-09-21 11:53:19 +0800] [206024] [ERROR] Worker (pid:206267) was sent SIGHUP!
+[2024-09-21 11:53:19 +0800] [206024] [ERROR] Worker (pid:206316) was sent SIGHUP!
+[2024-09-21 11:53:19 +0800] [206024] [ERROR] Worker (pid:206317) was sent SIGHUP!
+[2024-09-21 11:53:19 +0800] [206024] [ERROR] Worker (pid:206027) was sent SIGHUP!
+[2024-09-21 11:53:19 +0800] [206024] [ERROR] Worker (pid:206026) was sent SIGHUP!
+[2024-09-21 11:53:19 +0800] [206024] [ERROR] Worker (pid:206123) was sent SIGHUP!
+[2024-09-21 11:53:19 +0800] [206024] [ERROR] Worker (pid:208452) exited with code 120
+[2024-09-21 11:53:19 +0800] [206024] [ERROR] Worker (pid:208452) exited with code 120.
+[2024-09-21 11:53:19 +0800] [206024] [ERROR] Worker (pid:208445) was sent SIGTERM!
+[2024-09-21 11:53:19 +0800] [206024] [ERROR] Worker (pid:208451) was sent SIGTERM!
+[2024-09-21 11:53:20 +0800] [206024] [ERROR] Worker (pid:208454) was sent SIGTERM!
+[2024-09-21 11:53:20 +0800] [206024] [ERROR] Worker (pid:208456) was sent SIGTERM!
+[2024-09-21 11:53:20 +0800] [206024] [ERROR] Worker (pid:208455) was sent SIGTERM!
+[2024-09-21 11:53:20 +0800] [206024] [ERROR] Worker (pid:208449) was sent SIGTERM!
+[2024-09-21 11:53:20 +0800] [206024] [ERROR] Worker (pid:208450) was sent SIGTERM!
+[2024-09-21 11:53:20 +0800] [206024] [ERROR] Worker (pid:208453) was sent SIGTERM!
+[2024-09-21 11:53:20 +0800] [206024] [ERROR] Worker (pid:208448) was sent SIGTERM!
+[2024-09-21 12:40:55,787] ERROR in app: Exception on /batch_code/get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 27, in get_preset
+    return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 436, in batch_preset
+    all_options_list = process_all_options(tools_config, [soft_step.to_json() for soft_step in preset_list], default_dict)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 446, in process_all_options
+    print(all_options)
+OSError: [Errno 5] Input/output error
+[2024-09-21 12:40:58,875] ERROR in app: Exception on /batch_code/get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 27, in get_preset
+    return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 436, in batch_preset
+    all_options_list = process_all_options(tools_config, [soft_step.to_json() for soft_step in preset_list], default_dict)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 446, in process_all_options
+    print(all_options)
+OSError: [Errno 5] Input/output error
+[2024-09-21 12:41:06,065] ERROR in app: Exception on /common/init_div_steps [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 79, in init_div_steps
+    return jsonify(init_div_steps2(data.get("steps")))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 471, in init_div_steps2
+    all_options_list = process_all_options(tools_config, steps, baseOptions)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 446, in process_all_options
+    print(all_options)
+OSError: [Errno 5] Input/output error
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208463) exited with code 120
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208463) exited with code 120.
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208465) exited with code 120
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208465) exited with code 120.
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208462) exited with code 120
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208462) exited with code 120.
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208464) exited with code 120
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208464) exited with code 120.
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208457) exited with code 120
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208458) exited with code 120
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208458) exited with code 120.
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208457) exited with code 120.
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208461) exited with code 120
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208461) exited with code 120.
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208459) exited with code 120
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208459) exited with code 120.
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208466) exited with code 120
+[2024-09-21 12:41:39 +0800] [206024] [ERROR] Worker (pid:208466) exited with code 120.
+[2024-09-21 20:25:44,112] ERROR in app: Exception on /batch_code/submit_config_script [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 59, in submit_dir_script
+    config_string, snakemake_string = generate_steps_config(soft_step, select_raw_folder, soft_step[0]["mode"], task_id, samples_list, paths_dict)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 273, in generate_steps_config
+    if key.split("-")[2]=="ref":
+IndexError: list index out of range
+[2024-09-21 20:25:49,845] ERROR in app: Exception on /batch_code/submit_config_script [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 59, in submit_dir_script
+    config_string, snakemake_string = generate_steps_config(soft_step, select_raw_folder, soft_step[0]["mode"], task_id, samples_list, paths_dict)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 273, in generate_steps_config
+    if key.split("-")[2]=="ref":
+IndexError: list index out of range
+[2024-09-21 20:36:47,961] ERROR in app: Exception on /batch_code/store_soft_step [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 39, in store_soft_step
+    for key,value in soft_step["select_index"].items:
+TypeError: 'builtin_function_or_method' object is not iterable
+[2024-09-21 20:38:18,200] ERROR in app: Exception on /batch_code/store_soft_step [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 39, in store_soft_step
+    for key,value in soft_step["select_index"].items():
+RuntimeError: dictionary changed size during iteration
+[2024-09-21 22:18:40 +0800] [256601] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 29, in <module>
+    @common_blueprint.route('/batch_code/init_div_steps', methods=['POST'])
+NameError: name 'common_blueprint' is not defined
+[2024-09-21 22:18:40 +0800] [256602] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 29, in <module>
+    @common_blueprint.route('/batch_code/init_div_steps', methods=['POST'])
+NameError: name 'common_blueprint' is not defined
+[2024-09-21 22:18:40 +0800] [256600] [ERROR] Worker (pid:256601) exited with code 3
+[2024-09-21 22:18:40 +0800] [256600] [ERROR] Worker (pid:256602) was sent SIGTERM!
+[2024-09-21 22:18:40 +0800] [256650] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 29, in <module>
+    @common_blueprint.route('/batch_code/init_div_steps', methods=['POST'])
+NameError: name 'common_blueprint' is not defined
+[2024-09-21 22:18:40 +0800] [256699] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 29, in <module>
+    @common_blueprint.route('/batch_code/init_div_steps', methods=['POST'])
+NameError: name 'common_blueprint' is not defined
+[2024-09-21 22:18:40 +0800] [256651] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 29, in <module>
+    @common_blueprint.route('/batch_code/init_div_steps', methods=['POST'])
+NameError: name 'common_blueprint' is not defined
+[2024-09-21 22:18:40 +0800] [256600] [ERROR] Worker (pid:256650) exited with code 3
+[2024-09-21 22:18:40 +0800] [256700] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 29, in <module>
+    @common_blueprint.route('/batch_code/init_div_steps', methods=['POST'])
+NameError: name 'common_blueprint' is not defined
+[2024-09-21 22:18:40 +0800] [256844] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 29, in <module>
+    @common_blueprint.route('/batch_code/init_div_steps', methods=['POST'])
+NameError: name 'common_blueprint' is not defined
+[2024-09-21 22:18:40 +0800] [256748] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 29, in <module>
+    @common_blueprint.route('/batch_code/init_div_steps', methods=['POST'])
+NameError: name 'common_blueprint' is not defined
+[2024-09-21 22:18:40 +0800] [256749] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 29, in <module>
+    @common_blueprint.route('/batch_code/init_div_steps', methods=['POST'])
+NameError: name 'common_blueprint' is not defined
+[2024-09-21 22:18:40 +0800] [256892] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 9, in <module>
+    from demo.blueprint.batch_code import complex_code
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 29, in <module>
+    @common_blueprint.route('/batch_code/init_div_steps', methods=['POST'])
+NameError: name 'common_blueprint' is not defined
+[2024-09-21 22:19:30,730] ERROR in app: Exception on /batch_code/init_div_steps [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 32, in init_div_steps
+    return jsonify(init_div_steps2(data.get("steps")))
+NameError: name 'init_div_steps2' is not defined
+[2024-09-22 12:24:18,786] ERROR in app: Exception on /batch_code/init_div_steps [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 32, in init_div_steps
+    return jsonify(init_div_steps2(data.get("steps")))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 446, in init_div_steps2
+    all_options_list = process_all_options(tools_config, steps, baseOptions)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 424, in process_all_options
+    config = tools_config.get(step["type"].split()[1], tools_config[step["type"].split()[0]])[step["mode"]]
+KeyError: 'input'
+[2024-09-22 14:48:03 +0800] [326967] [ERROR] Worker (pid:327020) was sent SIGHUP!
+[2024-09-22 14:48:03 +0800] [326967] [ERROR] Worker (pid:327115) was sent SIGHUP!
+[2024-09-22 14:48:03 +0800] [326967] [ERROR] Worker (pid:326968) was sent SIGHUP!
+[2024-09-22 14:48:03 +0800] [326967] [ERROR] Worker (pid:327019) was sent SIGHUP!
+[2024-09-22 14:48:03 +0800] [326967] [ERROR] Worker (pid:327018) was sent SIGHUP!
+[2024-09-22 14:48:03 +0800] [326967] [ERROR] Worker (pid:327164) was sent SIGHUP!
+[2024-09-22 14:48:03 +0800] [326967] [ERROR] Worker (pid:326969) was sent SIGHUP!
+[2024-09-22 14:48:03 +0800] [326967] [ERROR] Worker (pid:327007) was sent SIGHUP!
+[2024-09-22 14:48:03 +0800] [326967] [ERROR] Worker (pid:327156) was sent SIGHUP!
+[2024-09-22 14:48:03 +0800] [326967] [ERROR] Worker (pid:327260) was sent SIGHUP!
+[2024-09-22 14:48:04 +0800] [326967] [ERROR] Worker (pid:329710) was sent SIGTERM!
+[2024-09-22 14:48:04 +0800] [326967] [ERROR] Worker (pid:329706) was sent SIGTERM!
+[2024-09-22 14:48:04 +0800] [326967] [ERROR] Worker (pid:329701) was sent SIGTERM!
+[2024-09-22 14:48:04 +0800] [326967] [ERROR] Worker (pid:329702) was sent SIGTERM!
+[2024-09-22 14:48:04 +0800] [326967] [ERROR] Worker (pid:329703) was sent SIGTERM!
+[2024-09-22 14:48:04 +0800] [326967] [ERROR] Worker (pid:329713) was sent SIGTERM!
+[2024-09-22 14:48:04 +0800] [326967] [ERROR] Worker (pid:329708) was sent SIGTERM!
+[2024-09-22 14:48:04 +0800] [326967] [ERROR] Worker (pid:329709) was sent SIGTERM!
+[2024-09-22 20:31:57,983] ERROR in app: Exception on /batch_code/init_div_steps [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 32, in init_div_steps
+    return jsonify(init_div_steps2(data.get("steps")))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 463, in init_div_steps2
+    soft_step.update_details(rec_option={
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 465, in <dictcomp>
+    max(enumerate([int(temp.split("_")[0][4:]) + 1 if temp.split("_")[0][4:].isdigit() else 0
+ValueError: max() arg is an empty sequence
+[2024-09-22 20:40:38 +0800] [363850] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 10, in <module>
+    from demo.blueprint.individual_code import individual_code
+  File "/data/cailab/flask2024/demo/blueprint/individual_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_scripti,batch_preset,init_div_steps3
+ImportError: cannot import name 'generate_present_scripti' from 'demo.blueprint.modules.utils_complex' (/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py)
+[2024-09-22 20:40:39 +0800] [363849] [ERROR] Worker (pid:363850) exited with code 3
+[2024-09-22 20:40:39 +0800] [363851] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 10, in <module>
+    from demo.blueprint.individual_code import individual_code
+  File "/data/cailab/flask2024/demo/blueprint/individual_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_scripti,batch_preset,init_div_steps3
+ImportError: cannot import name 'generate_present_scripti' from 'demo.blueprint.modules.utils_complex' (/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py)
+[2024-09-22 20:40:39 +0800] [363899] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 10, in <module>
+    from demo.blueprint.individual_code import individual_code
+  File "/data/cailab/flask2024/demo/blueprint/individual_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_scripti,batch_preset,init_div_steps3
+ImportError: cannot import name 'generate_present_scripti' from 'demo.blueprint.modules.utils_complex' (/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py)
+[2024-09-22 20:40:39 +0800] [363900] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 10, in <module>
+    from demo.blueprint.individual_code import individual_code
+  File "/data/cailab/flask2024/demo/blueprint/individual_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_scripti,batch_preset,init_div_steps3
+ImportError: cannot import name 'generate_present_scripti' from 'demo.blueprint.modules.utils_complex' (/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py)
+[2024-09-22 20:40:39 +0800] [363901] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 10, in <module>
+    from demo.blueprint.individual_code import individual_code
+  File "/data/cailab/flask2024/demo/blueprint/individual_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_scripti,batch_preset,init_div_steps3
+ImportError: cannot import name 'generate_present_scripti' from 'demo.blueprint.modules.utils_complex' (/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py)
+[2024-09-22 20:40:39 +0800] [363849] [ERROR] Worker (pid:363851) exited with code 3
+[2024-09-22 20:40:39 +0800] [364002] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 10, in <module>
+    from demo.blueprint.individual_code import individual_code
+  File "/data/cailab/flask2024/demo/blueprint/individual_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_scripti,batch_preset,init_div_steps3
+ImportError: cannot import name 'generate_present_scripti' from 'demo.blueprint.modules.utils_complex' (/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py)
+[2024-09-22 20:40:39 +0800] [364003] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 10, in <module>
+    from demo.blueprint.individual_code import individual_code
+  File "/data/cailab/flask2024/demo/blueprint/individual_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_scripti,batch_preset,init_div_steps3
+ImportError: cannot import name 'generate_present_scripti' from 'demo.blueprint.modules.utils_complex' (/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py)
+[2024-09-22 20:40:39 +0800] [364098] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 10, in <module>
+    from demo.blueprint.individual_code import individual_code
+  File "/data/cailab/flask2024/demo/blueprint/individual_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_scripti,batch_preset,init_div_steps3
+ImportError: cannot import name 'generate_present_scripti' from 'demo.blueprint.modules.utils_complex' (/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py)
+[2024-09-22 20:40:39 +0800] [364193] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 10, in <module>
+    from demo.blueprint.individual_code import individual_code
+  File "/data/cailab/flask2024/demo/blueprint/individual_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_scripti,batch_preset,init_div_steps3
+ImportError: cannot import name 'generate_present_scripti' from 'demo.blueprint.modules.utils_complex' (/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py)
+[2024-09-22 20:40:39 +0800] [364195] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
+    from demo import create_app
+  File "/data/cailab/flask2024/demo/__init__.py", line 10, in <module>
+    from demo.blueprint.individual_code import individual_code
+  File "/data/cailab/flask2024/demo/blueprint/individual_code.py", line 9, in <module>
+    from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_scripti,batch_preset,init_div_steps3
+ImportError: cannot import name 'generate_present_scripti' from 'demo.blueprint.modules.utils_complex' (/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py)
+[2024-09-22 21:49:46,220] ERROR in app: Exception on /check/20240922214941-72aa2bbd-b9d3-447c-a44b-45a78e9b67fe [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 61, in check
+    fastqs = get_fq_list(selected_folder, info["mode"] != "single")
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils.py", line 69, in get_fq_list
+    for file in os.listdir(indir):
+FileNotFoundError: [Errno 2] No such file or directory: 'no input'
+[2024-09-22 21:49:58,298] ERROR in app: Exception on /check/20240922214941-72aa2bbd-b9d3-447c-a44b-45a78e9b67fe [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 61, in check
+    fastqs = get_fq_list(selected_folder, info["mode"] != "single")
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils.py", line 69, in get_fq_list
+    for file in os.listdir(indir):
+FileNotFoundError: [Errno 2] No such file or directory: 'no input'
+[2024-09-22 22:20:34 +0800] [370404] [ERROR] Worker (pid:370651) was sent SIGHUP!
+[2024-09-22 22:20:34 +0800] [370404] [ERROR] Worker (pid:370458) was sent SIGHUP!
+[2024-09-22 22:20:34 +0800] [370404] [ERROR] Worker (pid:370405) was sent SIGHUP!
+[2024-09-22 22:20:34 +0800] [370404] [ERROR] Worker (pid:370455) was sent SIGHUP!
+[2024-09-22 22:20:34 +0800] [370404] [ERROR] Worker (pid:370554) was sent SIGHUP!
+[2024-09-22 22:20:34 +0800] [370404] [ERROR] Worker (pid:370406) was sent SIGHUP!
+[2024-09-22 22:20:34 +0800] [370404] [ERROR] Worker (pid:370407) was sent SIGHUP!
+[2024-09-22 22:20:34 +0800] [370404] [ERROR] Worker (pid:370456) was sent SIGHUP!
+[2024-09-22 22:20:34 +0800] [370404] [ERROR] Worker (pid:370457) was sent SIGHUP!
+[2024-09-22 22:20:34 +0800] [370404] [ERROR] Worker (pid:370553) was sent SIGHUP!
+[2024-09-22 22:20:35 +0800] [370404] [ERROR] Worker (pid:373007) was sent SIGTERM!
+[2024-09-22 22:20:35 +0800] [370404] [ERROR] Worker (pid:373009) was sent SIGTERM!
+[2024-09-22 22:20:35 +0800] [370404] [ERROR] Worker (pid:373018) was sent SIGTERM!
+[2024-09-22 22:20:35 +0800] [370404] [ERROR] Worker (pid:373016) was sent SIGTERM!
+[2024-09-22 22:20:35 +0800] [370404] [ERROR] Worker (pid:373015) was sent SIGTERM!
+[2024-09-22 22:20:35 +0800] [370404] [ERROR] Worker (pid:373011) was sent SIGTERM!
+[2024-09-22 22:20:35 +0800] [370404] [ERROR] Worker (pid:373008) was sent SIGTERM!
+[2024-09-22 22:20:35 +0800] [370404] [ERROR] Worker (pid:373010) was sent SIGTERM!

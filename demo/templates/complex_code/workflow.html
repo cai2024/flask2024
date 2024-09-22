@@ -36,9 +36,6 @@ var fqType = "pair";
 var task_id="{{task_id}}";
 
 
-
-
-
 let steps = [];
 let soft_step = [];
 function addStep(type) {
@@ -51,23 +48,11 @@ function addStep(type) {
     steps.push({ id: steps.length, type: type, select_option: {}, params:'', mode: fqType, raw_type: fileType, select_index:{}});
 }
 
-
-
-
-
-
-
 function updateSelection() {
     fileType = document.querySelector('input[name="fileType"]:checked').value;
     fqType = document.querySelector('input[name="fqType"]:checked').value;
-    console.log("Selected file type: " + fileType);
-    console.log("Selected fq type: " + fqType);
 }
-
-window.onload = function() {
-    updateSelection();
-};
-
+window.onload = function() {updateSelection();};
 
 </script>
 

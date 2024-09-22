@@ -1,4 +1,5 @@
 import os
+import copy
 from collections import defaultdict
 
 available_steps = {
@@ -165,9 +166,17 @@ tools_input = {
         "pair": {"bam": "step{step_id}_{step_type}.{sample}.bam"},
         "single": {"bam": "step{step_id}_{step_type}.{sample}.bam"}
     },
+    "input":{
+        "pair":{},
+        "single":{}
+    },
 
 }
 tools_config = {
+    "input":{
+        "pair":{},
+        "single":{}
+    },
     "hairpin_cut": {
         "pair": {"fq1": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}_1.fq.gz",
                  "fq2": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}_2.fq.gz",
@@ -249,35 +258,19 @@ index_options_dict = {
 
 
 
-
-def generate_steps_config(steps, select_raw_folder, mode, task_id, samples_list, paths_dict):    
-    # 对于config，1.index读入config，包含ref_species，ref_release和other
-    # 2.mode，output_dir，soft路径（待添加）
-    # 3.samples 4.params 5.steps
-    # 对于snakemake，1.configfile 2.include全部的smk 3.自动获取输出
-    index_list = [record["select_index"] for record in steps if  record["select_index"]]
-    input_list = [record["select_option"] for record in steps]  
+def generate_steps_config(steps, select_raw_folder, samples_list, task_id, paths_dict):
+    index_list = [record["select_index"] for record in steps if record["select_index"]]
+    input_list = [record["select_option"] for record in steps]
     soft_list = [record["type"].split()[1] for record in steps]
     type_list = [record["type"].split()[0] for record in steps]
     params_list = [record["params"] for record in steps]
     mode_list = [record["mode"] for record in steps]
-
-
-    config_dir={}
-    # config_dir["mode"]=mode
-    config_dir["output_dir"]=f"/data/cailab/flask_out/{task_id}"
-    config_dir.update(paths_dict)
-    for temp in index_list:
-        for key,value in temp.items():
-            if key.split("-")[2]=="ref":
-                config_dir[f"step{key.split('-')[1]}_ref_species"]=value.split()[0]
-                config_dir[f"step{key.split('-')[1]}_ref_release"]=value.split()[1]
-            else:
-                config_dir[f"step{key.split('-')[1]}_{key.split('-')[2]}"]=value
+    config_dir = paths_dict.copy()
+    config_dir["output_dir"] = f"/data/cailab/flask_out/{task_id}"
+    config_dir.update({ f"step{i}_{key}": value for i, temp in enumerate(index_list) for key, value in temp.items() })
     config_string = "\n".join(f"{key}: {value}" for key, value in config_dir.items()) + "\n"
     config_string += "samples:\n" + "\n".join(f"  - {sample}" for sample in samples_list) + "\n"
     config_string += "\n".join(f"step{i}_params : \"{params}\"" for i, params in enumerate(params_list)) + "\n"
-       
     output_config_list = []
     for i, soft in enumerate(soft_list):
         config = tools_config.get(soft, tools_config[type_list[i]])[mode_list[i]]
@@ -300,22 +293,23 @@ def generate_steps_config(steps, select_raw_folder, mode, task_id, samples_list,
         config_string += "\n".join(f"      {key} : \"{value}\"" for key, value in output_config_list[i].items()) + "\n"
 
 
- 
     smk_dir = paths_dict["smk_dir"]
     snakemake_string = ''.join(f'include: "{os.path.join(smk_dir, filename)}"\n' for filename in os.listdir(smk_dir))
     snakemake_string += "configfile: \"config.yaml\"\n" + "rule all:\n" + "    input:\n"
-    snakemake_string += "\n".join(f"        expand(\"{temp}\", sample=config[\"samples\"], output_dir=config[\"output_dir\"])," 
+    snakemake_string += "\n".join(
+        f"        expand(\"{temp}\", sample=config[\"samples\"], output_dir=config[\"output_dir\"]),"
         for temp in [list(record.values())[0] for record in output_config_list]) + "\n"
     return config_string, snakemake_string
 
 
-def generate_present_script(steps, mode, select_raw_folder, samples_list, task_id, paths_dict):
+
+
+def generate_present_script(steps, select_raw_folder, samples_list, task_id, paths_dict):
     input_list = [record["select_option"] for record in steps]  # 这是字典
     soft_list = [record["type"].split()[1] for record in steps]
     types_list = [record["type"] for record in steps]
     params_list = [record["params"] for record in steps]
     mode_list = [record["mode"] for record in steps]
-
     formatted_string = ""
     for i, type in enumerate(types_list):
         values_dict = {}
@@ -325,41 +319,43 @@ def generate_present_script(steps, mode, select_raw_folder, samples_list, task_i
             else:
                 prefix = str(value).split("_")[0]
                 suffix = value[len(prefix) + 1:].split(".")[0]
-                values_dict[key] = f"$output_dir/${{sample}}/{prefix}_{suffix}/{suffix}_${{sample}}" + "" \
-                #                   value.split(".raw", 1)[1]
-
+                values_dict[key] = f"$output_dir/${{sample}}/{prefix}_{suffix}/{suffix}_${{sample}}" + ""
         values_dict["params"] = params_list[i]
         values_dict["step"] = "step" + str(i)
-        
-        formatted_string += my_code_script.get(type,my_code_script["BAM remove_duplicates"])[mode_list[i]].format(**values_dict)
-     
+        formatted_string += my_code_script.get(type, my_code_script["BAM remove_duplicates"])[mode_list[i]].format(**values_dict)
 
-    my_code = (f"mode=\"{mode}\"\n"
-               f"output_dir=\"/data/output/{task_id}\"\n")
-    my_code += '\n'.join([f'{soft}="{paths_dict.get(soft,soft)}"' for soft in soft_list]) + "\n"
+    my_code = f"output_dir=\"/data/output/{task_id}\"\n"
+    my_code += '\n'.join([f'{soft}="{paths_dict.get(soft, soft)}"' for soft in soft_list]) + "\n"
     my_code += 'samples=("{}")'.format('" "'.join(samples_list)) + "\n"
     my_code += 'mkdir -p $output_dir/logs\n'
-    my_code += 'for sample in "${samples[@]}"; do\n'
-    my_code += formatted_string + "\n"
-    my_code += "done\n"
-
+    my_code += 'for sample in "${samples[@]}"; do\n' + formatted_string + "\n" + "done\n"
     return my_code
 
 
-
 class SoftStep:
-    def __init__(self, **kwargs):
-        self.id = kwargs.get('id', None)
-        self.type = kwargs.get('type', None)
-        self.select_option = kwargs.get('select_option', None)
-        self.select_index = kwargs.get('select_index', None)
-        self.params = kwargs.get('params', None)
-        self.mode = kwargs.get('mode', None)
-        self.raw_type = kwargs.get('raw_type', None)
-        self.selectableOptions = kwargs.get('selectableOptions', None)
-        self.rec_option = kwargs.get('rec_option', None)
-        self.selectableIndex = kwargs.get('selectableIndex', None)
-
+    def __init__(self, *args, **kwargs):
+        if args:
+            self.id = args[0] if len(args) > 0 else None
+            self.type = args[1] if len(args) > 1 else None
+            self.select_option = args[2] if len(args) > 2 else None
+            self.select_index = args[3] if len(args) > 3 else None
+            self.params = args[4] if len(args) > 4 else None
+            self.mode = args[5] if len(args) > 5 else None
+            self.raw_type = args[6] if len(args) > 6 else None
+            self.selectableOptions = args[7] if len(args) > 7 else None
+            self.rec_option = args[8] if len(args) > 8 else None
+            self.selectableIndex = args[9] if len(args) > 9 else None
+        else:
+            self.id = kwargs.get('id', None)
+            self.type = kwargs.get('type', None)
+            self.select_option = kwargs.get('select_option', None)
+            self.select_index = kwargs.get('select_index', None)
+            self.params = kwargs.get('params', None)
+            self.mode = kwargs.get('mode', None)
+            self.raw_type = kwargs.get('raw_type', None)
+            self.selectableOptions = kwargs.get('selectableOptions', None)
+            self.rec_option = kwargs.get('rec_option', None)
+            self.selectableIndex = kwargs.get('selectableIndex', None)
     def update_details(self, id=None, type=None, select_option=None,select_index=None, params=None, mode=None, raw_type=None, selectableOptions=None,rec_option=None, selectableIndex=None):
         if id:
             self.id = id
@@ -407,35 +403,32 @@ class SoftStepManager:
     def to_json(self):
         return [step.to_json() for step in self.steps]
 
+batch_preset_dict = {
+    "WGS": {
+        "baseOptions": {"pair":{"fq1":["rqw_1.fq.gz"],"fq2":["rqw_2.fq.gz"]},"single":{"fq":["rqw.fq.gz"]}},
+        "pair": [SoftStep(0,"Trim trim_galore",{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{}),
+                 SoftStep(1,"map bwa",{"fq1":"step0_trim_galore_raw_1.fq.gz","fq2":"step0_trim_galore_raw_2.fq.gz"},{"ref":"mouse mm9"},"","pair","raw.fq.gz", {},{"fq1":"step0_trim_galore_raw_1.fq.gz","fq2":"step0_trim_galore_raw_2.fq.gz"},{}),],
+        "single": [SoftStep(0,"Trim trim_galore",{"fq":"rqw.fq.gz"},{},"","single","raw.fq.gz", {},{"fq":"rqw.fq.gz"},{}),
+                   SoftStep(1,"map bwa",{"fq":"step0_trim_galore_raw.fq.gz"},{"ref":"mouse mm9"},"","single","raw.fq.gz", {},{"fq":"step0_trim_galore_raw.fq.gz"},{}),]
+    },
+}
 
 def batch_preset(presetType, mode):
     manager = SoftStepManager()
-    
+    preset_list = batch_preset_dict[presetType][mode]
+    default_dict = defaultdict(list, batch_preset_dict[presetType]["baseOptions"][mode])
+    all_options_list = process_all_options(tools_config, [soft_step.to_json() for soft_step in preset_list], default_dict)
+    for i,soft_step in enumerate(preset_list):
+        soft_step.update_details(selectableOptions=all_options_list[i])
+        soft_step.update_details(selectableIndex=index_options_dict.get(soft_step.type.split()[1], index_options_dict["default"]))
+        manager.add_step(soft_step)
     return manager.to_json()
 
 
-def init_div_steps2(steps):
-    manager = SoftStepManager()
-    all_options = defaultdict(list)
+
+def process_all_options(tools_config, steps, all_options):
+    result = [copy.deepcopy(all_options)]
     for step in steps:
-        soft_step = SoftStep(**step)
-        
-        key_list = tools_input.get(step["type"].split()[1], tools_input[step["type"].split()[0]])[step["mode"]].keys()
-
-        if step["id"] == 0:
-            if step["mode"] == "pair" and step["raw_type"] == "raw.fq.gz":
-                all_options["fq1"] = ["raw_1.fq.gz"]
-                all_options["fq2"] = ["raw_2.fq.gz"]
-            elif step["mode"] == "single" and step["raw_type"] == "raw.fq.gz":
-                all_options["fq"] = ["raw.fq.gz"]
-            else:
-                all_options["bam"] = ["raw.bam"]
-
-        soft_step.update_details(selectableOptions = {key: all_options.get(key.split("_")[0], []).copy() for key in key_list} )
-        soft_step.update_details(rec_option={
-            key: all_options[key][max(enumerate([int(temp.split("_")[0][4:]) + 1 if temp.split("_")[0][4:].isdigit() else 0
-                for temp in all_options[key]]), key=lambda x: x[1])[0]] for key in key_list})
-
         config = tools_config.get(step["type"].split()[1], tools_config[step["type"].split()[0]])[step["mode"]]
         for key in config.keys():
             temp_string = config[key].split("/")[-1].replace("_{{sample}}", "_raw")
@@ -443,7 +436,61 @@ def init_div_steps2(steps):
             input_soft = step["type"].split()[1]
             formatted_string = f"step{step_id}_" + temp_string.format(input_soft=input_soft)
             all_options[key.split("_")[0]].append(formatted_string)
+        result.append(copy.deepcopy(all_options))
+    return  result
 
-        soft_step.update_details(selectableIndex=index_options_dict.get(step["type"].split()[1], index_options_dict["default"]))
+def init_div_steps2(steps):
+    manager = SoftStepManager()
+    baseOptions = defaultdict(list)
+
+    if steps[0]["mode"] == "pair" and steps[0]["raw_type"] == "raw.fq.gz":
+        baseOptions["fq1"] = ["raw_1.fq.gz"]
+        baseOptions["fq2"] = ["raw_2.fq.gz"]
+    elif steps[0]["mode"] == "single" and steps[0]["raw_type"] == "raw.fq.gz":
+        baseOptions["fq"] = ["raw.fq.gz"]
+    else:
+        baseOptions["bam"] = ["raw.bam"]
+
+    all_options_list = process_all_options(tools_config, steps, baseOptions)
+
+    for i,step in enumerate(steps):
+        all_options = all_options_list[i].copy()
+        soft_step = SoftStep(**step)
+        key_list = tools_input.get(step["type"].split()[1], tools_input[step["type"].split()[0]])[step["mode"]].keys()
+
+        soft_step.update_details(
+            selectableOptions={key: all_options.get(key.split("_")[0], []).copy() for key in key_list})
+        soft_step.update_details(rec_option={
+            key: all_options[key][
+                max(enumerate([int(temp.split("_")[0][4:]) + 1 if temp.split("_")[0][4:].isdigit() else 0
+                               for temp in all_options[key]]), key=lambda x: x[1])[0]] for key in key_list})
+        soft_step.update_details(
+            selectableIndex=index_options_dict.get(step["type"].split()[1], index_options_dict["default"]))
         manager.add_step(soft_step)
     return manager.to_json()
+
+
+def init_div_steps3(steps):
+    manager = SoftStepManager()
+    baseOptions = defaultdict(list, steps[0]["selectableOptions"])
+   
+
+
+    all_options_list = process_all_options(tools_config, steps, baseOptions)
+
+    for i,step in enumerate(steps):
+        all_options = all_options_list[i].copy()
+        soft_step = SoftStep(**step)
+        key_list = tools_input.get(step["type"].split()[1], tools_input[step["type"].split()[0]])[step["mode"]].keys()
+
+        soft_step.update_details(
+            selectableOptions={key: all_options.get(key.split("_")[0], []).copy() for key in key_list})
+        soft_step.update_details(rec_option={
+            key: all_options[key][
+                max(enumerate([int(temp.split("_")[0][4:]) + 1 if temp.split("_")[0][4:].isdigit() else 0
+                               for temp in all_options[key]]), key=lambda x: x[1])[0]] for key in key_list})
+        soft_step.update_details(
+            selectableIndex=index_options_dict.get(step["type"].split()[1], index_options_dict["default"]))
+        manager.add_step(soft_step)
+    return manager.to_json()
+

@@ -6,7 +6,7 @@ import uuid
 from datetime import datetime
 from .modules.paths import paths_dict
 from demo.blueprint.modules.utils import get_samples_list
-from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset
+from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset, init_div_steps2
 from demo.blueprint.modules.utils_complex import available_steps, my_code_simple
 
 complex_code = Blueprint('complex_code', __name__)
@@ -26,6 +26,10 @@ def get_preset():
     data = request.json 
     return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
 
+@complex_code.route('/batch_code/init_div_steps', methods=['POST'])
+def init_div_steps():
+    data = request.json
+    return jsonify(init_div_steps2(data.get("steps")))
 
 
 ################################################################################################################
@@ -34,6 +38,10 @@ def get_preset():
 @complex_code.route('/batch_code/store_soft_step', methods=['POST'])
 def store_soft_step():
     data = request.json
+    for soft_step in data['soft_step']:
+        if "ref" in soft_step["select_index"]:
+            soft_step["select_index"]["ref_species"] = soft_step["select_index"]["ref"].split()[0]
+            soft_step["select_index"]["ref_release"] = soft_step["select_index"]["ref"].split()[1]
     session['soft_step'] = data['soft_step']
     return '', 204
 
@@ -56,8 +64,8 @@ def submit_dir_script():
     samples_list = get_samples_list(select_raw_folder, soft_step[0]["mode"], soft_step[0]["raw_type"])
     
 
-    config_string, snakemake_string = generate_steps_config(soft_step, select_raw_folder, soft_step[0]["mode"], task_id, samples_list, paths_dict)
-    my_code = generate_present_script(soft_step, soft_step[0]["mode"], select_raw_folder, samples_list, task_id, paths_dict)
+    config_string, snakemake_string = generate_steps_config(soft_step, select_raw_folder , samples_list, task_id, paths_dict)
+    my_code = generate_present_script(soft_step, select_raw_folder, samples_list, task_id, paths_dict)
 
 
     os.makedirs("/data/cailab/flask_out/" + task_id, exist_ok=True)

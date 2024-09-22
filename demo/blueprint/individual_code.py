@@ -6,10 +6,13 @@ import uuid
 from datetime import datetime
 from .modules.paths import paths_dict
 from demo.blueprint.modules.utils import get_samples_list
-from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script
-from demo.blueprint.modules.utils_complex import available_steps, my_code_simple
+from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script,batch_preset,init_div_steps3
+from demo.blueprint.modules.utils_complex import  my_code_simple, available_steps
 
 individual_code = Blueprint('individual_code', __name__)
+
+
+
 
 
 @individual_code.route('/individual_code/', methods=['GET', 'POST'])
@@ -21,4 +24,13 @@ def code_for_batch(task_id):
     return render_template('individual_code/home.html', available_steps=available_steps, task_id=task_id)
 
 
+@individual_code.route('/individual_code/get_preset', methods=['POST'])
+def get_preset():
+    data = request.json 
+    return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
+
+@individual_code.route('/individual_code/init_div_steps', methods=['POST'])
+def init_div_steps():
+    data = request.json
+    return jsonify(init_div_steps3(data.get("steps")))
 
