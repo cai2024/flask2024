@@ -8,59 +8,6 @@ from wtforms import SubmitField, SelectField, BooleanField, StringField, Integer
 from flask_wtf import FlaskForm
 
 
-class MappingConfigForm(FlaskForm):
-    output_dir=HiddenField()
-    mode = SelectField("选择测序数据模式", choices=[('pair', '双端测序'), ('single', '单端测序')],validate_choice=False, validators=[DataRequired()], description='')
-    pipeline = SelectField("选择分析流程" ,validate_choice=False, validators=[DataRequired()], description='')
-    param_choice = SelectField('选择参数类型',choices=[('default', 'default'), ('custom', 'custom')], default='default', validators=[DataRequired()])
-    cpu_count = IntegerField('CPU数量', validators=[DataRequired()],default=20 ,description='CPU数量，必须为正整数，不超过机器最大CPU数量')
-  
-    submit = SubmitField('开始比对')
-
-
-class MappingCheckForm(FlaskForm):
-    fq_in_path = StringField('数据目录', render_kw={'readonly':True})
-    output_dir = StringField('输出目录', render_kw={'readonly':True})
-    mode = HiddenField()
-    pipeline= HiddenField()
-    param_choice=HiddenField()
-    cpu_count = HiddenField()
-
-
-class ResultForm(FlaskForm):
-    res_dir = StringField('结果目录', render_kw={'readonly':True})
-    upload_res = SubmitField('上传结果', id='upload', render_kw={'hidden':True})
-
-
-
-
-
-
-
-
-
-def filter_folders(query):
-    folder_path = "/" if query.rfind("/") == 0 else query[: query.rfind("/")]
-    folders = []
-    if os.path.exists(folder_path) and os.path.isdir(folder_path):
-        try:
-            temp = [os.path.join(folder_path, d) for d in os.listdir(folder_path) if os.path.isdir(os.path.join(folder_path, d))]
-            folders.extend(temp)
-            for i in temp:
-                try:
-                    subfolders = [os.path.join(i, subitem) for subitem in os.listdir(i) if os.path.isdir(os.path.join(i, subitem))]
-                    folders.extend(subfolders)
-                except PermissionError:
-                    continue
-        except PermissionError:
-            pass
-    query_level = query.count('/')
-    matched_folders = [folder for folder in folders if folder.count('/') == query_level and query.lower() in folder.lower()]
-    if len(matched_folders) == 1:
-            matched_folders = [folder for folder in folders if (folder.count('/')-1  == query_level or folder.count('/') == query_level) and query.lower() in folder.lower()]
-            return matched_folders
-    return matched_folders
-
 
 
 def get_fq_list(indir, paired_end=True):
@@ -89,37 +36,7 @@ def get_samples_list(select_raw_folder, fq_type, raw_myOptions):
             samples_list.append(base_name[:-4])
     return samples_list
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # name 数据量G cleanread比例 去重比例  比对率 基因组cover 平均depth  gc mit q20 q30 totalreads
-
-
-
-
-
-
-
-
-
-
 
 
 

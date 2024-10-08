@@ -17,7 +17,7 @@ class DNASeqUtility:
         dd = {}
         with open(name, 'r') as input_fasta:
             for record in SeqIO.parse(input_fasta, 'fasta'):
-                dd[record.id] = str(record.seq)
+                dd[record.id] = str(record.seq).upper()
         return dd
 
     def reverse_complement(self,dna):

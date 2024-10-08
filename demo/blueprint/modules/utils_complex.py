@@ -244,7 +244,8 @@ tools_config = {
 
 index_options_dict = {
     "bowtie2": {
-        "ref": ["mouse mm9", "mouse mm10", "mouse mm39", "human hg18", "human hg19", "human hg38", "human hs1"]
+        "ref": {"mouse": ["mm9", "mm10", "mm39"],
+                "human": ["hg18", "hg19", "hg38", "hs1"]},
     },
     "STAR": {
         "ref": ["mouse mm9", "mouse mm10", "mouse mm39", "human hg18", "human hg19", "human hg38", "human hs1"],
@@ -267,7 +268,7 @@ def generate_steps_config(steps, select_raw_folder, samples_list, task_id, paths
     mode_list = [record["mode"] for record in steps]
     config_dir = paths_dict.copy()
     config_dir["output_dir"] = f"/data/cailab/flask_out/{task_id}"
-    config_dir.update({ f"step{i}_{key}": value for i, temp in enumerate(index_list) for key, value in temp.items() })
+    config_dir.update({ key: value for i, temp in enumerate(index_list) for key, value in temp.items() })
     config_string = "\n".join(f"{key}: {value}" for key, value in config_dir.items()) + "\n"
     config_string += "samples:\n" + "\n".join(f"  - {sample}" for sample in samples_list) + "\n"
     config_string += "\n".join(f"step{i}_params : \"{params}\"" for i, params in enumerate(params_list)) + "\n"
@@ -405,10 +406,10 @@ class SoftStepManager:
 
 batch_preset_dict = {
     "WGS": {
-        "baseOptions": {"pair":{"fq1":["rqw_1.fq.gz"],"fq2":["rqw_2.fq.gz"]},"single":{"fq":["rqw.fq.gz"]}},
-        "pair": [SoftStep(0,"Trim trim_galore",{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"rqw_1.fq.gz","fq2":"rqw_2.fq.gz"},{}),
+        "baseOptions": {"pair":{"fq1":["raw_1.fq.gz"],"fq2":["raw_2.fq.gz"]},"single":{"fq":["raw.fq.gz"]}},
+        "pair": [SoftStep(0,"Trim trim_galore",{"fq1":"raw_1.fq.gz","fq2":"raw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"raw_1.fq.gz","fq2":"raw_2.fq.gz"},{}),
                  SoftStep(1,"map bwa",{"fq1":"step0_trim_galore_raw_1.fq.gz","fq2":"step0_trim_galore_raw_2.fq.gz"},{"ref":"mouse mm9"},"","pair","raw.fq.gz", {},{"fq1":"step0_trim_galore_raw_1.fq.gz","fq2":"step0_trim_galore_raw_2.fq.gz"},{}),],
-        "single": [SoftStep(0,"Trim trim_galore",{"fq":"rqw.fq.gz"},{},"","single","raw.fq.gz", {},{"fq":"rqw.fq.gz"},{}),
+        "single": [SoftStep(0,"Trim trim_galore",{"fq":"raw.fq.gz"},{},"","single","raw.fq.gz", {},{"fq":"raw.fq.gz"},{}),
                    SoftStep(1,"map bwa",{"fq":"step0_trim_galore_raw.fq.gz"},{"ref":"mouse mm9"},"","single","raw.fq.gz", {},{"fq":"step0_trim_galore_raw.fq.gz"},{}),]
     },
 }

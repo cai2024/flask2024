@@ -1,6 +1,7 @@
 document.getElementById('WGSBtn').addEventListener('click', function() {initialPreset("WGS", fqType)});
 
 
+
 async function initialPreset(presetType, fq_type) {
     try {
         const response = await fetch('/batch_code/get_preset', {
@@ -23,6 +24,7 @@ async function confirmSteps() {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ steps :steps })});
         const data = await response.json();
+        steps = data
         initOptionsUI(data);
         soft_step = data;
     } catch (error) { console.error('Error:', error); }
@@ -52,12 +54,11 @@ async function submitSteps() {
             });
 
         })
-        const response = await fetch('/batch_code/store_soft_step', {
+        const response = await fetch('/batch_code/submit_form_code/${task_id}', {
             method: 'POST', headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({soft_step: soft_step})
         });
         if (response.ok) {window.location.href = '/batch_code/submit_form_code/' + task_id;}
-
     }catch (error) {console.error('Error submitting steps:', error);}
 }
 

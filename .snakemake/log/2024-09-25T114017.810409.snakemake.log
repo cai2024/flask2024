@@ -1,0 +1,10 @@
+Building DAG of jobs...
+InputFunctionException in rule CGS_extract_mc_hmc in file /data/cailab/flask2024/smk/CGS_call_modify.smk, line 1:
+Error:
+  KeyError: 'step5_ref_species'
+Wildcards:
+  output_dir=/data/cailab/flask_out/20240925113224-e25aa5dd-adc2-4942-97ef-55c9494762ca
+  sample=CGS-B-1w-1
+  step=step5
+Traceback:
+  File "/data/cailab/flask2024/smk/CGS_call_modify.smk", line 11, in <lambda> (rule CGS_extract_mc_hmc, line 1, /data/cailab/flask2024/smk/CGS_call_modify.smk)

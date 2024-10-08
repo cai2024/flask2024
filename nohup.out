@@ -1,0 +1,60 @@
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+RuntimeError: reentrant call inside <_io.BufferedWriter name='/data/cailab/flask2024/app_logs/gunicorn_error.log'>
+Call stack:
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 236, in run
+    super().run()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 224, in run
+    handler()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 253, in handle_hup
+    self.reload()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 484, in reload
+    self.spawn_worker()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 593, in spawn_worker
+    pid = os.fork()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/logging/__init__.py", line 227, in _releaseLock
+    def _releaseLock():
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 528, in reap_workers
+    if exitcode == self.WORKER_BOOT_ERROR:
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 554, in reap_workers
+    self.log.error(msg)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/glogging.py", line 272, in error
+    self.error_log.error(msg, *args, **kwargs)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/logging/__init__.py", line 1475, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/logging/__init__.py", line 1589, in _log
+    self.handle(record)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/logging/__init__.py", line 1599, in handle
+    self.callHandlers(record)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/logging/__init__.py", line 1661, in callHandlers
+    hdlr.handle(record)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/logging/__init__.py", line 952, in handle
+    self.emit(record)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/logging/__init__.py", line 1187, in emit
+    StreamHandler.emit(self, record)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 554, in reap_workers
+    self.log.error(msg)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/glogging.py", line 272, in error
+    self.error_log.error(msg, *args, **kwargs)
+Message: 'Worker (pid:352902) was sent SIGHUP!'
+Arguments: ()

@@ -34,48 +34,33 @@ def init_div_steps():
 
 ################################################################################################################
 
-
-@complex_code.route('/batch_code/store_soft_step', methods=['POST'])
-def store_soft_step():
-    data = request.json
-    for soft_step in data['soft_step']:
-        if "ref" in soft_step["select_index"]:
-            soft_step["select_index"]["ref_species"] = soft_step["select_index"]["ref"].split()[0]
-            soft_step["select_index"]["ref_release"] = soft_step["select_index"]["ref"].split()[1]
-    session['soft_step'] = data['soft_step']
-    return '', 204
-
 @complex_code.route('/batch_code/submit_form_code/<task_id>', methods=['GET', 'POST'])
 def submit_form_code(task_id):
-    session["task_id"] = task_id
-    return render_template('complex_code/code.html', task_id=task_id)
+    if request.method == 'POST':
+        data = request.json
+        session["task_id"] = task_id
+        session['soft_step'] = data['soft_step']
+        return jsonify({"task_id": task_id}) 
+    elif request.method == 'GET':
+        return render_template('complex_code/code.html', task_id=task_id)
 
 #####################################
 
-
-
 @complex_code.route('/batch_code/submit_config_script', methods=['POST'])
 def submit_dir_script():
-
     data = request.json
     select_raw_folder = data.get('select_raw_folder')
     task_id = data.get("task_id")
     soft_step = session.get('soft_step', [])
     samples_list = get_samples_list(select_raw_folder, soft_step[0]["mode"], soft_step[0]["raw_type"])
-    
 
     config_string, snakemake_string = generate_steps_config(soft_step, select_raw_folder , samples_list, task_id, paths_dict)
     my_code = generate_present_script(soft_step, select_raw_folder, samples_list, task_id, paths_dict)
-
-
-    os.makedirs("/data/cailab/flask_out/" + task_id, exist_ok=True)
     with open("/data/cailab/flask_out/" + task_id + "/config.yaml", "w") as file1, open( "/data/cailab/flask_out/" + task_id + "/snakefile", "w") as file2:
         print(config_string, file=file1)
         print(snakemake_string, file=file2)
     return jsonify({'my_code': my_code, "config_string": config_string, "snakemake_rule": snakemake_string})
    
-
-
 @complex_code.route('/submit_smk_job', methods=['POST'])
 def submit_smk_job():
     data = request.json

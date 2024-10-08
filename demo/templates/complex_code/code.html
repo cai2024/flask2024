@@ -22,7 +22,6 @@
         </div>
         <h6>原始数据命名要求：单端: .fq.gz结尾 双端: _1.fq.gz, _2.fq.gz  或包含.bam文件</h6>
     </div>
-    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 
 <div class="container">
     <h1 class="text-center my-4">代码展示页面</h1>
@@ -48,7 +47,15 @@
 {% block scripts %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+<script src="{{ url_for('static', filename='js/modules/folderSuggestions.js') }}"></script>
 <script>
+
+$(document).ready(function() {
+    initializeInputSuggestions('#folderInput', 'suggestions');
+});
+
+
+
 
 var task_id = "{{ task_id }}" 
 document.addEventListener('DOMContentLoaded', function() {
