@@ -5,7 +5,7 @@ from collections import defaultdict
 available_steps = {
     'Trim 操作': ['Trim trim_galore', 'Trim fastp', 'Trim cutadapt' , 'Trim hairpin_cut', 'Trim hairpin_cut_N'],
     '比对操作': ['map bowtie2', 'map bowtie2_spikein', 'map bwa','map bwa_spikein', 'map bismark','map bismark_spikein', 'map STAR' ],
-    'BAM 文件操作': ['BAM remove_duplicates','BAM CGS_call_modify','BAM CGS_spikein_modify','BAM TBS_call_modify','BAM TBS_spikein_modify'],
+    'BAM 文件操作': ['BAM remove_duplicates','BAM CGS_call_modify','BAM CGS_spikein_modify','BAM TBS_call_modify','BAM TBS_spikein_modify','BAM CT_call_modify','BAM CT_spikein_modify'],
     '其他': ['other qualimap_cover', 'other featureCounts']
 }
 my_code_script = {
@@ -143,6 +143,18 @@ tools_input = {
         "single": {"bam": "step{step_id}_{step_type}.{sample}.bam",
                  "fq1": "step{step_id}_{step_type}.{sample}_1.fq.gz"}
     },
+    "CT_call_modify": {
+        "pair": {"bam": "step{step_id}_{step_type}.{sample}.bam" ,
+                 "fq1": "step{step_id}_{step_type}.{sample}_1.fq.gz" },
+        "single": {"bam": "step{step_id}_{step_type}.{sample}.bam",
+                 "fq1": "step{step_id}_{step_type}.{sample}_1.fq.gz"}
+    },
+    "CT_spikein_modify": {
+        "pair": {"bam": "step{step_id}_{step_type}.{sample}.bam" ,
+                 "fq1": "step{step_id}_{step_type}.{sample}_1.fq.gz" },
+        "single": {"bam": "step{step_id}_{step_type}.{sample}.bam",
+                 "fq1": "step{step_id}_{step_type}.{sample}_1.fq.gz"}
+    },
 
     "Trim": {
         "pair": {"fq1": "step{step_id}_{step_type}.{sample}_1.fq.gz" ,
@@ -210,6 +222,19 @@ tools_config = {
                    "bed_hmc": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.hmc.all.bed"}
     },
     "TBS_spikein_modify": {
+        "pair": {"bed_mc": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.mc.all.bed",
+                 "bed_hmc": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.hmc.all.bed",},
+        "single": {"bed_mc": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.mc.all.bed",
+                   "bed_hmc": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.hmc.all.bed"}
+    },
+
+    "CT_call_modify": {
+        "pair": {"bed_mc": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.mc.all.bed",
+                 "bed_hmc": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.hmc.all.bed",},
+        "single": {"bed_mc": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.mc.all.bed",
+                   "bed_hmc": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.hmc.all.bed"}
+    },
+    "CT_spikein_modify": {
         "pair": {"bed_mc": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.mc.all.bed",
                  "bed_hmc": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.hmc.all.bed",},
         "single": {"bed_mc": "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.mc.all.bed",
@@ -404,15 +429,39 @@ class SoftStepManager:
     def to_json(self):
         return [step.to_json() for step in self.steps]
 
+
+
+index_options_dict = {
+    "bowtie2": {
+        "ref": {"mouse": ["mm9", "mm10", "mm39"],
+                "human": ["hg18", "hg19", "hg38", "hs1"]},
+    },
+    "STAR": {
+        "ref": ["mouse mm9", "mouse mm10", "mouse mm39", "human hg18", "human hg19", "human hg38", "human hs1"],
+        "gtf": ["a1", "a2"],
+        "overhang": ["149", "99"]
+    },
+    "default": {
+        "ref": {"mouse": ["mm9", "mm10", "mm39"],
+                "human": ["hg18", "hg19", "hg38", "hs1"]},
+    }
+}
+
+
+
 batch_preset_dict = {
     "WGS": {
         "baseOptions": {"pair":{"fq1":["raw_1.fq.gz"],"fq2":["raw_2.fq.gz"]},"single":{"fq":["raw.fq.gz"]}},
         "pair": [SoftStep(0,"Trim trim_galore",{"fq1":"raw_1.fq.gz","fq2":"raw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"raw_1.fq.gz","fq2":"raw_2.fq.gz"},{}),
-                 SoftStep(1,"map bwa",{"fq1":"step0_trim_galore_raw_1.fq.gz","fq2":"step0_trim_galore_raw_2.fq.gz"},{"ref":"mouse mm9"},"","pair","raw.fq.gz", {},{"fq1":"step0_trim_galore_raw_1.fq.gz","fq2":"step0_trim_galore_raw_2.fq.gz"},{}),],
+                 SoftStep(1,"map bowtie2",{"fq1":"step0_trim_galore_raw_1.fq.gz","fq2":"step0_trim_galore_raw_2.fq.gz"},{},"","pair","raw.fq.gz", {},{"fq1":"step0_trim_galore_raw_1.fq.gz","fq2":"step0_trim_galore_raw_2.fq.gz"},index_options_dict["bowtie2"]),],
         "single": [SoftStep(0,"Trim trim_galore",{"fq":"raw.fq.gz"},{},"","single","raw.fq.gz", {},{"fq":"raw.fq.gz"},{}),
-                   SoftStep(1,"map bwa",{"fq":"step0_trim_galore_raw.fq.gz"},{"ref":"mouse mm9"},"","single","raw.fq.gz", {},{"fq":"step0_trim_galore_raw.fq.gz"},{}),]
+                   SoftStep(1,"map bowtie2",{"fq":"step0_trim_galore_raw.fq.gz"},{},"","single","raw.fq.gz", {},{"fq":"step0_trim_galore_raw.fq.gz"},index_options_dict["bowtie2"]),]
     },
 }
+
+
+
+
 
 def batch_preset(presetType, mode):
     manager = SoftStepManager()

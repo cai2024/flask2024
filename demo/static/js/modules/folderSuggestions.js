@@ -5,8 +5,7 @@ function initializeInputSuggestions(inputSelector, suggestionsId) {
         return;
     }
     var suggestionsDiv = $('<div>', {
-        'id': suggestionsId,
-        'class': 'overlay'
+        'id': suggestionsId, 'class': 'overlay','style': 'position: absolute; width: 100%; background-color: #fff; border: 1px solid #ccc; max-height: 200px; overflow-y: auto;'
     }).insertAfter(inputElement);
 
     inputElement.on('input focus', function() {

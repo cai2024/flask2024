@@ -2,29 +2,10 @@
 {% from 'bootstrap4/form.html' import render_form %}
 
 {% block content %}
-<style>
-    .radio-toolbar {
-        display: flex;
-        justify-content: flex-start; /* 左对齐 */
-        align-items: center; /* 垂直居中 */
-        margin-bottom: 10px; /* 为整个行添加下边距 */
-    }
-    .form-check-inline {
-        margin-right: 60px; /* 组内元素间的间距 */
-    }
-    .group-divider {
-        margin-right: 5px; /* 两组之间的间距 */
-    }
-</style>
-
-<div class="container mt-4">
+<div class="container">
     <div class="row justify-content-center">
         <h1><strong>{{ form.pipeline |upper}}分析流程 </strong></h1>
     </div>
-</div>
-
-
-<div class="container">
     <div class="row mt-4">
         <div class="col-md-3">
             <div class="border p-3 box-fixed-height">
@@ -50,36 +31,20 @@
         <button id="unlockBtn" class="btn btn-warning">解锁</button>
         <button id="submitBtn" class="btn btn-primary" disabled>提交</button>
     </div>
-    <!-- Include the workflow HTML here -->
-
-<div class="container">
     <div class="row h-100 page-header justify-content-center align-items-center">
         <h2>数据</h2>
     </div>
     <div class="row h-100 justify-content-center align-items-center">
-        {{data_info|safe}}
+        {{df_data|safe}}
     </div>
- </div>
-
-
 </div>
 
-<script type="text/javascript">
+<script>
     var form = {{ form | tojson | safe }};
     let steps = [];
     let soft_step = [];
 </script>
-
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script src="{{ url_for('static', filename='js/modules/folderSuggestions.js') }}"></script>
-<script src="{{ url_for('static', filename='js/modules/ketToyy.js') }}"></script>
-<script src="{{ url_for('static', filename='js/biology.js') }}"></script>
-<script src="{{ url_for('static', filename='js/modules/project_init.js') }}"></script> 
-<script src="{{ url_for('static', filename='js/modules/disableButtons.js') }}"></script>
-<script src="{{ url_for('static', filename='js/modules/display.js') }}"></script>
+<script src="{{ url_for('static', filename='js/biology/biology.js') }}"></script>
 {% endblock %}
 
 

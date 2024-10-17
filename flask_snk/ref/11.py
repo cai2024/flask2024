@@ -48,7 +48,7 @@ def sample_sort_and_index_bam(input_bam, n, output_dir, output_prefix):
         else:
             # 计算抽样概率并抽样排序
             fraction = i / n
-            command_sort = f"samtools view -s 42.{int(fraction*100)} -b {input_bam} | samtools sort -@ 10 -o {output_bam}"
+            command_sort = f"samtools view -s 38.{str(round(fraction, 4))[2:]} -b {input_bam} | samtools sort -@ 10 -o {output_bam}"
         
         # 执行排序命令
         print(f"Running: {command_sort}")
@@ -84,9 +84,9 @@ def sample_sort_and_index_bam(input_bam, n, output_dir, output_prefix):
 
 
 # 示例调用
-input_bam = "CGS-13.5_dedup.bam"
-n = 5  # 用户提供的整数
-output_dir = "/data/all_data/0628/CGS-13.5/data/dedup/test"  # 指定输出文件夹
+input_bam = "c1.bam"
+n = 30  # 用户提供的整数
+output_dir = "/data/wangzc/test/1015/CAPS-3w"  # 指定输出文件夹
 output_prefix = "mydata"
 sample_sort_and_index_bam(input_bam, n, output_dir, output_prefix)
 

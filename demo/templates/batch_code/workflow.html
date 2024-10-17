@@ -1,0 +1,37 @@
+<!-- 绑定了addStep函数，全部模板风格 -->
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="border p-3 mb-4 overflow-auto" style="height: 300px;">
+            <h2 class="h5">步骤按钮</h2>
+            <div class="row">
+                {% for category, buttons in available_steps.items() %}
+                    <div class="col-md-3 mb-3">
+                        <div class="card">
+                            <div class="card-header">{{ category }}</div>
+                            <div class="card-body">
+                                {% for button in buttons %}
+                                    <button class="btn btn-primary btn-block mb-2 step-button" 
+                                        id="btn-{{ category }}-{{ button }}">{{ button }}</button>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="border p-3 overflow-auto" style="height: 300px;">
+            <h2 class="h5">展示参数</h2>
+            <div id="outputArea"></div>
+        </div>
+    </div>
+</div>
+<script>
+    var available_steps = {{ available_steps | tojson }};
+    var task_id = "{{ task_id }}";
+    let steps = [];
+    let soft_step = [];
+</script>
+<script src="{{ url_for('static', filename='js/batch_code/batch_code.js') }}"></script>

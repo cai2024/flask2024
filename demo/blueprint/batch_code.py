@@ -9,24 +9,24 @@ from demo.blueprint.modules.utils import get_samples_list
 from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset, init_div_steps2
 from demo.blueprint.modules.utils_complex import available_steps, my_code_simple
 
-complex_code = Blueprint('complex_code', __name__)
+batch_code = Blueprint('batch_code', __name__)
 # 分离出实际有效的公共路由
 
-@complex_code.route('/complex_code/', methods=['GET', 'POST'])
-def code_home():
+@batch_code.route('/batch_code/', methods=['GET', 'POST'])
+def batch_home():
     task_id = f"{datetime.now().strftime('%Y%m%d%H%M%S')}-{str(uuid.uuid4())}"
-    return redirect(url_for('complex_code.code_for_batch', task_id=task_id))
-@complex_code.route('/code_for_batch/<task_id>', methods=['GET', 'POST'])
+    return redirect(url_for('batch_code.code_for_batch', task_id=task_id))
+@batch_code.route('/code_for_batch/<task_id>', methods=['GET', 'POST'])
 def code_for_batch(task_id):
-    return render_template('complex_code/home.html', available_steps=available_steps, task_id=task_id)
+    return render_template('batch_code/home.html', available_steps=available_steps, task_id=task_id)
 
 
-@complex_code.route('/batch_code/get_preset', methods=['POST'])
+@batch_code.route('/batch_code/get_preset', methods=['POST'])
 def get_preset():
     data = request.json 
     return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
 
-@complex_code.route('/batch_code/init_div_steps', methods=['POST'])
+@batch_code.route('/batch_code/init_div_steps', methods=['POST'])
 def init_div_steps():
     data = request.json
     return jsonify(init_div_steps2(data.get("steps")))
@@ -34,7 +34,7 @@ def init_div_steps():
 
 ################################################################################################################
 
-@complex_code.route('/batch_code/submit_form_code/<task_id>', methods=['GET', 'POST'])
+@batch_code.route('/batch_code/submit_form_code/<task_id>', methods=['GET', 'POST'])
 def submit_form_code(task_id):
     if request.method == 'POST':
         data = request.json
@@ -42,11 +42,11 @@ def submit_form_code(task_id):
         session['soft_step'] = data['soft_step']
         return jsonify({"task_id": task_id}) 
     elif request.method == 'GET':
-        return render_template('complex_code/code.html', task_id=task_id)
+        return render_template('batch_code/present_code.html', task_id=task_id)
 
 #####################################
 
-@complex_code.route('/batch_code/submit_config_script', methods=['POST'])
+@batch_code.route('/batch_code/submit_config_script', methods=['POST'])
 def submit_dir_script():
     data = request.json
     select_raw_folder = data.get('select_raw_folder')
@@ -56,12 +56,14 @@ def submit_dir_script():
 
     config_string, snakemake_string = generate_steps_config(soft_step, select_raw_folder , samples_list, task_id, paths_dict)
     my_code = generate_present_script(soft_step, select_raw_folder, samples_list, task_id, paths_dict)
+
+    os.makedirs("/data/cailab/flask_out/" + task_id, exist_ok=True)
     with open("/data/cailab/flask_out/" + task_id + "/config.yaml", "w") as file1, open( "/data/cailab/flask_out/" + task_id + "/snakefile", "w") as file2:
         print(config_string, file=file1)
         print(snakemake_string, file=file2)
     return jsonify({'my_code': my_code, "config_string": config_string, "snakemake_rule": snakemake_string})
    
-@complex_code.route('/submit_smk_job', methods=['POST'])
+@batch_code.route('/submit_smk_job', methods=['POST'])
 def submit_smk_job():
     data = request.json
     task_id=data.get('task_id')

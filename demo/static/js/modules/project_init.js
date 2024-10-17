@@ -17,7 +17,7 @@ async function initOptionsUI(data) {
         });
         html += `</div>`;
 
-        if (step.type.slice(0, 3) === 'map' || step.type === 'BAM CGS_call_modify' || step.type === 'BAM TBS_call_modify') {
+        if (step.type.slice(0, 3) === 'map' || step.type === 'BAM CGS_call_modify' || step.type === 'BAM TBS_call_modify' || step.type === 'BAM CT_call_modify') {
             let index_html = `<div id="index-step-${step.id}" class="form-group"> <label><strong>step${step.id}: ${step.type} 参考基因组:</strong></label>`
             Object.entries(step.selectableIndex).forEach(([key, options]) => {
                 if (key === "ref") {

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% from 'bootstrap4/form.html' import render_form %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center my-4">简化流程图</h1>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button id="WGSBtn" class="btn btn-primary m-2">WGS流程预设1</button>
+            <button id="WGBSBtn" class="btn btn-primary m-2">WGBS流程预设1</button>
+            <button id="CSBtn" class="btn btn-primary m-2">CS流程预设</button>
+            <button id="CAPSBtn" class="btn btn-primary m-2">CAPS流程预设</button>
+        </div>
+    <div class="d-flex justify-content-start align-items-center mb-2">
+        <div class="form-check form-check-inline" style="margin-right: 5px;">
+            <input class="form-check-input" type="radio" name="fileType" id="rawFq" value="raw.fq.gz" onclick="updateSelection()" checked>
+            <label class="form-check-label" for="rawFq">raw.fq.gz</label>
+        </div>
+        <div class="form-check form-check-inline" style="margin-right: 60px;">
+            <input class="form-check-input" type="radio" name="fileType" id="rawBam" value="raw.bam" onclick="updateSelection()">
+            <label class="form-check-label" for="rawBam">raw.bam</label>
+        </div>
+        <div class="form-check form-check-inline" style="margin-right: 5px;">
+            <input class="form-check-input" type="radio" name="fqType" id="single" value="single" onclick="updateSelection()">
+            <label class="form-check-label" for="single">single</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="fqType" id="pair" value="pair" onclick="updateSelection()" checked>
+            <label class="form-check-label" for="pair">pair</label>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="border p-3 overflow-auto" style="height: 300px;">
+                <h2 class="h5">选择的步骤</h2>
+                <ul id="selected-steps" class="list-group"></ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border p-3 overflow-auto" style="height: 300px;">
+                <h2 class="h5">输入参数</h2>
+                <div id="inputArea"></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="border p-3 overflow-auto" style="height: 300px;">
+                <h2 class="h5">选择索引</h2>
+                <div id="indexArea"></div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center my-4">
+        <button id="confirmBtn" class="btn btn-success">确定</button>
+        <button id="unlockBtn" class="btn btn-warning">解锁</button>
+        <button id="submitBtn" class="btn btn-primary" disabled>提交</button>
+    </div>
+    {% include 'batch_code/workflow.html' %}
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+

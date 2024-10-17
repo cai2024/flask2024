@@ -1,437 +1,4 @@
-[2024-10-08 11:26:24 +0800] [442741] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 2, in <module>
-    app = create_app()
-  File "/data/cailab/flask2024/demo/__init__.py", line 26, in create_app
-    app.register_blueprint(complex_code)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 595, in register_blueprint
-    blueprint.register(self, options)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 335, in register
-    deferred(state)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
-    lambda s: s.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
-    self.app.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 657, in add_url_rule
-    raise AssertionError(
-AssertionError: View function mapping is overwriting an existing endpoint function: complex_code.submit_form_code
-[2024-10-08 11:26:24 +0800] [442743] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 2, in <module>
-    app = create_app()
-  File "/data/cailab/flask2024/demo/__init__.py", line 26, in create_app
-    app.register_blueprint(complex_code)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 595, in register_blueprint
-    blueprint.register(self, options)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 335, in register
-    deferred(state)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
-    lambda s: s.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
-    self.app.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 657, in add_url_rule
-    raise AssertionError(
-AssertionError: View function mapping is overwriting an existing endpoint function: complex_code.submit_form_code
-[2024-10-08 11:26:24 +0800] [442739] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 2, in <module>
-    app = create_app()
-  File "/data/cailab/flask2024/demo/__init__.py", line 26, in create_app
-    app.register_blueprint(complex_code)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 595, in register_blueprint
-    blueprint.register(self, options)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 335, in register
-    deferred(state)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
-    lambda s: s.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
-    self.app.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 657, in add_url_rule
-    raise AssertionError(
-AssertionError: View function mapping is overwriting an existing endpoint function: complex_code.submit_form_code
-[2024-10-08 11:26:24 +0800] [442940] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 2, in <module>
-    app = create_app()
-  File "/data/cailab/flask2024/demo/__init__.py", line 26, in create_app
-    app.register_blueprint(complex_code)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 595, in register_blueprint
-    blueprint.register(self, options)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 335, in register
-    deferred(state)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
-    lambda s: s.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
-    self.app.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 657, in add_url_rule
-    raise AssertionError(
-AssertionError: View function mapping is overwriting an existing endpoint function: complex_code.submit_form_code
-[2024-10-08 11:26:24 +0800] [442742] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 2, in <module>
-    app = create_app()
-  File "/data/cailab/flask2024/demo/__init__.py", line 26, in create_app
-    app.register_blueprint(complex_code)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 595, in register_blueprint
-    blueprint.register(self, options)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 335, in register
-    deferred(state)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
-    lambda s: s.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
-    self.app.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 657, in add_url_rule
-    raise AssertionError(
-AssertionError: View function mapping is overwriting an existing endpoint function: complex_code.submit_form_code
-[2024-10-08 11:26:24 +0800] [442735] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 2, in <module>
-    app = create_app()
-  File "/data/cailab/flask2024/demo/__init__.py", line 26, in create_app
-    app.register_blueprint(complex_code)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 595, in register_blueprint
-    blueprint.register(self, options)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 335, in register
-    deferred(state)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
-    lambda s: s.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
-    self.app.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 657, in add_url_rule
-    raise AssertionError(
-AssertionError: View function mapping is overwriting an existing endpoint function: complex_code.submit_form_code
-[2024-10-08 11:26:24 +0800] [442734] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 2, in <module>
-    app = create_app()
-  File "/data/cailab/flask2024/demo/__init__.py", line 26, in create_app
-    app.register_blueprint(complex_code)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 595, in register_blueprint
-    blueprint.register(self, options)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 335, in register
-    deferred(state)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
-    lambda s: s.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
-    self.app.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 657, in add_url_rule
-    raise AssertionError(
-AssertionError: View function mapping is overwriting an existing endpoint function: complex_code.submit_form_code
-[2024-10-08 11:26:24 +0800] [442740] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 2, in <module>
-    app = create_app()
-  File "/data/cailab/flask2024/demo/__init__.py", line 26, in create_app
-    app.register_blueprint(complex_code)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 595, in register_blueprint
-    blueprint.register(self, options)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 335, in register
-    deferred(state)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
-    lambda s: s.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
-    self.app.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 657, in add_url_rule
-    raise AssertionError(
-AssertionError: View function mapping is overwriting an existing endpoint function: complex_code.submit_form_code
-[2024-10-08 11:26:24 +0800] [442737] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 2, in <module>
-    app = create_app()
-  File "/data/cailab/flask2024/demo/__init__.py", line 26, in create_app
-    app.register_blueprint(complex_code)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 595, in register_blueprint
-    blueprint.register(self, options)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 335, in register
-    deferred(state)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
-    lambda s: s.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
-    self.app.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 657, in add_url_rule
-    raise AssertionError(
-AssertionError: View function mapping is overwriting an existing endpoint function: complex_code.submit_form_code
-[2024-10-08 11:26:24 +0800] [442738] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 2, in <module>
-    app = create_app()
-  File "/data/cailab/flask2024/demo/__init__.py", line 26, in create_app
-    app.register_blueprint(complex_code)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 595, in register_blueprint
-    blueprint.register(self, options)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 335, in register
-    deferred(state)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 434, in <lambda>
-    lambda s: s.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/blueprints.py", line 110, in add_url_rule
-    self.app.add_url_rule(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
-    return f(self, *args, **kwargs)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/sansio/app.py", line 657, in add_url_rule
-    raise AssertionError(
-AssertionError: View function mapping is overwriting an existing endpoint function: complex_code.submit_form_code
-[2024-10-08 11:26:25 +0800] [442733] [ERROR] Worker (pid:442742) exited with code 3
-[2024-10-08 11:26:25 +0800] [442733] [ERROR] Worker (pid:442740) exited with code 3
-[2024-10-08 11:26:25 +0800] [442733] [ERROR] Worker (pid:442739) exited with code 3
-[2024-10-08 11:27:09,659] ERROR in app: Exception on /batch_code/submit_form_code/${task_id} [POST]
+[2024-10-13 22:16:44,532] ERROR in app: Exception on /batch_code/submit_config_script [POST]
 Traceback (most recent call last):
   File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
@@ -441,170 +8,48 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 51, in submit_form_code
-    return redirect(url_for('render_code_page', task_id=task_id))
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/helpers.py", line 220, in url_for
-    return current_app.url_for(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1084, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1073, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/werkzeug/routing/map.py", line 926, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'render_code_page' with values ['task_id']. Did you mean 'complex_code.render_code_page' instead?
-[2024-10-08 11:28:06,143] ERROR in app: Exception on /batch_code/submit_form_code/${task_id} [POST]
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 51, in submit_form_code
-    return redirect(url_for('/batch_code/render_code_page', task_id=task_id))
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/helpers.py", line 220, in url_for
-    return current_app.url_for(
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1084, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1073, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/werkzeug/routing/map.py", line 926, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint '/batch_code/render_code_page' with values ['task_id']. Did you mean 'complex_code.render_code_page' instead?
-[2024-10-08 12:07:32 +0800] [445378] [ERROR] Worker (pid:445379) was sent SIGHUP!
-[2024-10-08 12:07:32 +0800] [445378] [ERROR] Worker (pid:445380) was sent SIGHUP!
-[2024-10-08 12:07:32 +0800] [445378] [ERROR] Worker (pid:445381) was sent SIGHUP!
-[2024-10-08 12:07:32 +0800] [445378] [ERROR] Worker (pid:445382) was sent SIGHUP!
-[2024-10-08 12:07:32 +0800] [445378] [ERROR] Worker (pid:445430) was sent SIGHUP!
-[2024-10-08 12:07:32 +0800] [445378] [ERROR] Worker (pid:445480) was sent SIGHUP!
-[2024-10-08 12:07:32 +0800] [445378] [ERROR] Worker (pid:445526) was sent SIGHUP!
-[2024-10-08 12:07:32 +0800] [445378] [ERROR] Worker (pid:445574) was sent SIGHUP!
-[2024-10-08 12:07:32 +0800] [445378] [ERROR] Worker (pid:445575) was sent SIGHUP!
-[2024-10-08 12:07:32 +0800] [445378] [ERROR] Worker (pid:445670) was sent SIGHUP!
-[2024-10-08 12:07:50 +0800] [445378] [ERROR] Worker (pid:448267) was sent SIGTERM!
-[2024-10-08 12:07:50 +0800] [445378] [ERROR] Worker (pid:448257) was sent SIGTERM!
-[2024-10-08 12:07:50 +0800] [445378] [ERROR] Worker (pid:448266) was sent SIGTERM!
-[2024-10-08 12:07:50 +0800] [445378] [ERROR] Worker (pid:448263) was sent SIGTERM!
-[2024-10-08 12:07:50 +0800] [445378] [ERROR] Worker (pid:448264) was sent SIGTERM!
-[2024-10-08 12:07:50 +0800] [445378] [ERROR] Worker (pid:448260) was sent SIGTERM!
-[2024-10-08 12:07:50 +0800] [445378] [ERROR] Worker (pid:448261) was sent SIGTERM!
-[2024-10-08 12:07:50 +0800] [445378] [ERROR] Worker (pid:448265) was sent SIGTERM!
-[2024-10-08 12:07:50 +0800] [445378] [ERROR] Worker (pid:448258) was sent SIGTERM!
-[2024-10-08 12:07:50 +0800] [445378] [ERROR] Worker (pid:448259) was sent SIGTERM!
-[2024-10-08 13:16:05,909] ERROR in app: Exception on /biology/check/20241008131531-e1b66f91-d139-4325-b78c-99deb166cae9 [POST]
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 53, in check
-    print(form)
-UnboundLocalError: local variable 'form' referenced before assignment
-[2024-10-08 13:16:22,129] ERROR in app: Exception on /biology/check/20241008131531-e1b66f91-d139-4325-b78c-99deb166cae9 [POST]
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 53, in check
-    print(form)
-UnboundLocalError: local variable 'form' referenced before assignment
-[2024-10-08 13:17:37 +0800] [455545] [ERROR] Worker (pid:455561) was sent SIGINT!
-[2024-10-08 13:17:37 +0800] [455545] [ERROR] Worker (pid:455569) was sent SIGINT!
-[2024-10-08 13:17:37 +0800] [455545] [ERROR] Worker (pid:455560) was sent SIGINT!
-[2024-10-08 13:17:37 +0800] [455545] [ERROR] Worker (pid:455562) was sent SIGINT!
-[2024-10-08 13:20:35 +0800] [456502] [ERROR] Worker (pid:456516) was sent SIGQUIT!
-[2024-10-08 13:20:35 +0800] [456502] [ERROR] Worker (pid:456517) was sent SIGQUIT!
-[2024-10-08 13:20:35 +0800] [456502] [ERROR] Worker (pid:456518) was sent SIGQUIT!
-[2024-10-08 13:20:35 +0800] [456502] [ERROR] Worker (pid:456519) was sent SIGQUIT!
-[2024-10-08 13:20:35 +0800] [456502] [ERROR] Worker (pid:456523) was sent SIGQUIT!
-[2024-10-08 13:20:35 +0800] [456502] [ERROR] Worker (pid:456521) was sent SIGQUIT!
-[2024-10-08 13:20:41 +0800] [456502] [ERROR] Worker (pid:456524) was sent code 131!
-[2024-10-08 13:20:41 +0800] [456502] [ERROR] Worker (pid:456522) was sent code 131!
-[2024-10-08 13:20:41 +0800] [456502] [ERROR] Worker (pid:456520) was sent code 131!
-[2024-10-08 13:20:41 +0800] [456502] [ERROR] Worker (pid:456525) was sent code 131!
-[2024-10-08 13:21:42,679] ERROR in app: Exception on /biology/check/20241008132131-edf5f27f-24f9-4ae5-b1e5-6e0e10f5cb7e [POST]
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 54, in check
-    return render_template('biology/check.html', data_info=df_data, task_id=task_id , available_steps=available_steps)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
-    self.environment.handle_exception()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/data/cailab/flask2024/demo/templates/biology/check.html", line 2, in top-level template code
-    {% from 'bootstrap4/form.html' import render_form %}
-  File "/data/cailab/flask2024/demo/templates/base.html", line 36, in top-level template code
-    {% block content %}
-  File "/data/cailab/flask2024/demo/templates/biology/check.html", line 22, in block 'content'
-    <h1><strong>{{ form.pipeline.data |upper}}分析流程 </strong></h1>
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-[2024-10-08 13:23:36 +0800] [457118] [ERROR] Worker (pid:457129) was sent SIGQUIT!
-[2024-10-08 13:23:36 +0800] [457118] [ERROR] Worker (pid:457140) was sent SIGQUIT!
-[2024-10-08 13:23:36 +0800] [457118] [ERROR] Worker (pid:457130) was sent SIGQUIT!
-[2024-10-08 13:23:38 +0800] [457118] [ERROR] Worker (pid:457137) was sent SIGINT!
-[2024-10-08 13:23:38 +0800] [457118] [ERROR] Worker (pid:457142) was sent SIGINT!
-[2024-10-08 13:23:38 +0800] [457118] [ERROR] Worker (pid:457139) was sent SIGINT!
-[2024-10-08 13:23:43 +0800] [457118] [ERROR] Worker (pid:457132) was sent code 131!
-[2024-10-08 13:23:43 +0800] [457118] [ERROR] Worker (pid:457141) was sent code 131!
-[2024-10-08 13:23:43 +0800] [457118] [ERROR] Worker (pid:457136) was sent code 131!
-[2024-10-08 13:23:43 +0800] [457118] [ERROR] Worker (pid:457138) was sent code 131!
-[2024-10-08 13:45:08 +0800] [552] [ERROR] Worker (pid:578) was sent SIGINT!
-[2024-10-08 13:45:09 +0800] [552] [ERROR] Worker (pid:567) was sent SIGINT!
-[2024-10-08 13:45:10 +0800] [552] [ERROR] Worker (pid:579) was sent SIGINT!
-[2024-10-08 13:45:10 +0800] [552] [ERROR] Worker (pid:565) was sent SIGINT!
-[2024-10-08 13:45:10 +0800] [552] [ERROR] Worker (pid:564) was sent SIGINT!
-[2024-10-08 14:11:31 +0800] [1792] [ERROR] Worker (pid:1815) was sent SIGQUIT!
-[2024-10-08 14:11:31 +0800] [1792] [ERROR] Worker (pid:1821) was sent SIGQUIT!
-[2024-10-08 14:11:34 +0800] [1792] [ERROR] Worker (pid:1818) was sent code 131!
-[2024-10-08 14:11:34 +0800] [1792] [ERROR] Worker (pid:1816) was sent code 131!
-[2024-10-08 14:11:34 +0800] [1792] [ERROR] Worker (pid:1817) was sent code 131!
-[2024-10-08 14:11:34 +0800] [1792] [ERROR] Worker (pid:1822) was sent code 131!
-[2024-10-08 14:15:40 +0800] [5193] [ERROR] Worker (pid:5207) was sent code 131!
-[2024-10-08 14:15:41 +0800] [5193] [ERROR] Worker (pid:5208) was sent code 131!
-[2024-10-08 14:15:41 +0800] [5193] [ERROR] Worker (pid:5209) was sent SIGINT!
-[2024-10-08 14:15:41 +0800] [5193] [ERROR] Worker (pid:5212) was sent SIGINT!
-[2024-10-08 14:15:41 +0800] [5193] [ERROR] Worker (pid:5206) was sent code 131!
-[2024-10-08 14:15:42 +0800] [5193] [ERROR] Worker (pid:5203) was sent code 131!
-[2024-10-08 14:15:42 +0800] [5193] [ERROR] Worker (pid:5204) was sent SIGINT!
-[2024-10-08 14:15:42 +0800] [5193] [ERROR] Worker (pid:5211) was sent SIGINT!
-[2024-10-08 14:15:42 +0800] [5193] [ERROR] Worker (pid:5205) was sent SIGINT!
-[2024-10-08 14:15:43 +0800] [5193] [ERROR] Worker (pid:5210) was sent SIGINT!
-[2024-10-08 14:20:53 +0800] [5909] [ERROR] Worker (pid:5929) was sent SIGINT!
-[2024-10-08 14:20:53 +0800] [5909] [ERROR] Worker (pid:5933) was sent SIGINT!
-[2024-10-08 14:20:54 +0800] [5909] [ERROR] Worker (pid:5942) was sent SIGINT!
-[2024-10-08 14:20:54 +0800] [5909] [ERROR] Worker (pid:5936) was sent SIGINT!
-[2024-10-08 14:20:54 +0800] [5909] [ERROR] Worker (pid:5935) was sent SIGINT!
-[2024-10-08 14:20:54 +0800] [5909] [ERROR] Worker (pid:5937) was sent SIGINT!
-[2024-10-08 14:20:54 +0800] [5909] [ERROR] Worker (pid:5941) was sent SIGINT!
-[2024-10-08 14:20:54 +0800] [5909] [ERROR] Worker (pid:5928) was sent SIGINT!
-[2024-10-08 14:20:54 +0800] [5909] [ERROR] Worker (pid:5932) was sent SIGINT!
-[2024-10-08 14:20:54 +0800] [5909] [ERROR] Worker (pid:5943) was sent SIGINT!
-[2024-10-08 14:22:05 +0800] [6681] [CRITICAL] WORKER TIMEOUT (pid:6702)
-[2024-10-08 14:22:05 +0800] [6702] [ERROR] Error handling request (no URI read)
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 59, in submit_dir_script
+    with open("/data/cailab/flask_out/" + task_id + "/config.yaml", "w") as file1, open( "/data/cailab/flask_out/" + task_id + "/snakefile", "w") as file2:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/cailab/flask_out/20241013221637-36c63774-5f21-4525-8084-7a5308c6cbaa/config.yaml'
+[2024-10-13 22:29:25 +0800] [43445] [ERROR] Worker (pid:43543) was sent SIGHUP!
+[2024-10-13 22:29:25 +0800] [43445] [ERROR] Worker (pid:43446) was sent SIGHUP!
+[2024-10-13 22:29:25 +0800] [43445] [ERROR] Worker (pid:43448) was sent SIGHUP!
+[2024-10-13 22:29:25 +0800] [43445] [ERROR] Worker (pid:43739) was sent SIGHUP!
+[2024-10-13 22:29:25 +0800] [43445] [ERROR] Worker (pid:43592) was sent SIGHUP!
+[2024-10-13 22:29:25 +0800] [43445] [ERROR] Worker (pid:43642) was sent SIGHUP!
+[2024-10-13 22:29:25 +0800] [43445] [ERROR] Worker (pid:43447) was sent SIGHUP!
+[2024-10-13 22:29:25 +0800] [43445] [ERROR] Worker (pid:43643) was sent SIGHUP!
+[2024-10-13 22:29:25 +0800] [43445] [ERROR] Worker (pid:43544) was sent SIGHUP!
+[2024-10-13 22:29:25 +0800] [43445] [ERROR] Worker (pid:43640) was sent SIGHUP!
+[2024-10-13 22:29:26 +0800] [43445] [ERROR] Worker (pid:44170) was sent SIGTERM!
+[2024-10-13 22:29:26 +0800] [43445] [ERROR] Worker (pid:44171) was sent SIGTERM!
+[2024-10-13 22:29:26 +0800] [43445] [ERROR] Worker (pid:44181) was sent SIGTERM!
+[2024-10-13 22:29:26 +0800] [43445] [ERROR] Worker (pid:44176) was sent SIGTERM!
+[2024-10-13 22:29:26 +0800] [43445] [ERROR] Worker (pid:44178) was sent SIGTERM!
+[2024-10-13 22:29:26 +0800] [43445] [ERROR] Worker (pid:44179) was sent SIGTERM!
+[2024-10-13 22:29:26 +0800] [43445] [ERROR] Worker (pid:44177) was sent SIGTERM!
+[2024-10-13 22:29:26 +0800] [43445] [ERROR] Worker (pid:44173) was sent SIGTERM!
+[2024-10-14 17:28:06 +0800] [160471] [ERROR] Worker (pid:160524) was sent SIGHUP!
+[2024-10-14 17:28:06 +0800] [160471] [ERROR] Worker (pid:160472) was sent SIGHUP!
+[2024-10-14 17:28:06 +0800] [160471] [ERROR] Worker (pid:160520) was sent SIGHUP!
+[2024-10-14 17:28:06 +0800] [160471] [ERROR] Worker (pid:160521) was sent SIGHUP!
+[2024-10-14 17:28:06 +0800] [160471] [ERROR] Worker (pid:160522) was sent SIGHUP!
+[2024-10-14 17:28:06 +0800] [160471] [ERROR] Worker (pid:160523) was sent SIGHUP!
+[2024-10-14 17:28:06 +0800] [160471] [ERROR] Worker (pid:160678) was sent SIGHUP!
+[2024-10-14 17:28:06 +0800] [160471] [ERROR] Worker (pid:160714) was sent SIGHUP!
+[2024-10-14 17:28:06 +0800] [160471] [ERROR] Worker (pid:160762) was sent SIGHUP!
+[2024-10-14 17:28:06 +0800] [160471] [ERROR] Worker (pid:160764) was sent SIGHUP!
+[2024-10-14 17:28:08 +0800] [160471] [ERROR] Worker (pid:164713) was sent SIGTERM!
+[2024-10-14 17:28:08 +0800] [160471] [ERROR] Worker (pid:164719) was sent SIGTERM!
+[2024-10-14 17:28:08 +0800] [160471] [ERROR] Worker (pid:164721) was sent SIGTERM!
+[2024-10-14 17:28:08 +0800] [160471] [ERROR] Worker (pid:164715) was sent SIGTERM!
+[2024-10-14 17:28:08 +0800] [160471] [ERROR] Worker (pid:164716) was sent SIGTERM!
+[2024-10-14 17:28:08 +0800] [160471] [ERROR] Worker (pid:164720) was sent SIGTERM!
+[2024-10-14 17:28:08 +0800] [160471] [ERROR] Worker (pid:164714) was sent SIGTERM!
+[2024-10-14 17:28:08 +0800] [160471] [ERROR] Worker (pid:164722) was sent SIGTERM!
+[2024-10-14 17:28:08 +0800] [160471] [ERROR] Worker (pid:164718) was sent SIGTERM!
+[2024-10-14 22:53:29 +0800] [160471] [CRITICAL] WORKER TIMEOUT (pid:164732)
+[2024-10-14 22:53:29 +0800] [164732] [ERROR] Error handling request (no URI read)
 Traceback (most recent call last):
   File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 134, in handle
     req = next(parser)
@@ -625,489 +70,7 @@ Traceback (most recent call last):
   File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 203, in handle_abort
     sys.exit(1)
 SystemExit: 1
-[2024-10-08 14:22:06 +0800] [6681] [ERROR] Worker (pid:6702) was sent SIGKILL! Perhaps out of memory?
-[2024-10-08 14:23:03 +0800] [6681] [ERROR] Worker (pid:6701) was sent SIGINT!
-[2024-10-08 14:23:03 +0800] [6681] [ERROR] Worker (pid:6707) was sent SIGINT!
-[2024-10-08 14:23:03 +0800] [6681] [ERROR] Worker (pid:6693) was sent SIGINT!
-[2024-10-08 14:23:03 +0800] [6681] [ERROR] Worker (pid:6690) was sent SIGINT!
-[2024-10-08 14:23:03 +0800] [6681] [ERROR] Worker (pid:6703) was sent SIGINT!
-[2024-10-08 14:23:03 +0800] [6681] [ERROR] Worker (pid:7237) was sent SIGINT!
-[2024-10-08 14:23:03 +0800] [6681] [ERROR] Worker (pid:6691) was sent SIGINT!
-[2024-10-08 14:23:03 +0800] [6681] [ERROR] Worker (pid:6689) was sent SIGINT!
-[2024-10-08 14:23:03 +0800] [6681] [ERROR] Worker (pid:6692) was sent SIGINT!
-[2024-10-08 14:23:03 +0800] [6681] [ERROR] Worker (pid:6697) was sent SIGINT!
-[2024-10-08 14:34:33 +0800] [7333] [ERROR] Worker (pid:7345) was sent SIGQUIT!
-[2024-10-08 14:34:33 +0800] [7333] [ERROR] Worker (pid:7348) was sent SIGQUIT!
-[2024-10-08 14:34:33 +0800] [7333] [ERROR] Worker (pid:7352) was sent SIGQUIT!
-[2024-10-08 14:34:33 +0800] [7333] [ERROR] Worker (pid:7355) was sent SIGQUIT!
-[2024-10-08 14:34:33 +0800] [7333] [ERROR] Worker (pid:7354) was sent SIGQUIT!
-[2024-10-08 14:34:33 +0800] [7333] [ERROR] Worker (pid:7350) was sent SIGQUIT!
-[2024-10-08 14:34:36 +0800] [7333] [ERROR] Worker (pid:7346) was sent code 131!
-[2024-10-08 14:34:36 +0800] [7333] [ERROR] Worker (pid:7349) was sent code 131!
-[2024-10-08 14:34:36 +0800] [7333] [ERROR] Worker (pid:7353) was sent code 131!
-[2024-10-08 14:34:36 +0800] [7333] [ERROR] Worker (pid:7347) was sent code 131!
-[2024-10-08 14:37:23 +0800] [8691] [ERROR] Worker (pid:8699) was sent SIGINT!
-[2024-10-08 14:37:23 +0800] [8691] [ERROR] Worker (pid:8705) was sent SIGINT!
-[2024-10-08 14:37:23 +0800] [8691] [ERROR] Worker (pid:8697) was sent SIGINT!
-[2024-10-08 14:37:23 +0800] [8691] [ERROR] Worker (pid:8701) was sent SIGINT!
-[2024-10-08 14:37:23 +0800] [8691] [ERROR] Worker (pid:8702) was sent SIGINT!
-[2024-10-08 14:37:23 +0800] [8691] [ERROR] Worker (pid:8698) was sent SIGINT!
-[2024-10-08 14:37:23 +0800] [8691] [ERROR] Worker (pid:8704) was sent SIGINT!
-[2024-10-08 14:37:23 +0800] [8691] [ERROR] Worker (pid:8700) was sent SIGINT!
-[2024-10-08 14:37:23 +0800] [8691] [ERROR] Worker (pid:8703) was sent SIGINT!
-[2024-10-08 14:37:23 +0800] [8691] [ERROR] Worker (pid:8706) was sent SIGINT!
-[2024-10-08 14:39:23 +0800] [9384] [ERROR] Worker (pid:9484) was sent SIGINT!
-[2024-10-08 14:39:23 +0800] [9384] [ERROR] Worker (pid:9473) was sent SIGINT!
-[2024-10-08 14:54:03 +0800] [10272] [ERROR] Worker (pid:10278) was sent SIGQUIT!
-[2024-10-08 14:54:03 +0800] [10272] [ERROR] Worker (pid:10279) was sent SIGQUIT!
-[2024-10-08 14:54:03 +0800] [10272] [ERROR] Worker (pid:10280) was sent SIGQUIT!
-[2024-10-08 14:54:03 +0800] [10272] [ERROR] Worker (pid:10281) was sent SIGQUIT!
-[2024-10-08 14:54:03 +0800] [10272] [ERROR] Worker (pid:10276) was sent SIGQUIT!
-[2024-10-08 14:54:03 +0800] [10272] [ERROR] Worker (pid:10282) was sent SIGQUIT!
-[2024-10-08 14:54:07 +0800] [10272] [ERROR] Worker (pid:10285) was sent code 131!
-[2024-10-08 14:54:07 +0800] [10272] [ERROR] Worker (pid:10284) was sent code 131!
-[2024-10-08 14:54:07 +0800] [10272] [ERROR] Worker (pid:10275) was sent code 131!
-[2024-10-08 14:54:07 +0800] [10272] [ERROR] Worker (pid:10277) was sent code 131!
-[2024-10-08 14:54:42 +0800] [11676] [ERROR] Worker (pid:11689) was sent SIGINT!
-[2024-10-08 14:54:42 +0800] [11676] [ERROR] Worker (pid:11686) was sent SIGINT!
-[2024-10-08 14:54:42 +0800] [11676] [ERROR] Worker (pid:11682) was sent SIGINT!
-[2024-10-08 14:54:42 +0800] [11676] [ERROR] Worker (pid:11684) was sent SIGINT!
-[2024-10-08 14:54:42 +0800] [11676] [ERROR] Worker (pid:11688) was sent SIGINT!
-[2024-10-08 14:54:42 +0800] [11676] [ERROR] Worker (pid:11687) was sent SIGINT!
-[2024-10-08 14:54:42 +0800] [11676] [ERROR] Worker (pid:11685) was sent SIGINT!
-[2024-10-08 14:54:42 +0800] [11676] [ERROR] Worker (pid:11691) was sent SIGINT!
-[2024-10-08 14:54:42 +0800] [11676] [ERROR] Worker (pid:11692) was sent SIGINT!
-[2024-10-08 14:54:42 +0800] [11676] [ERROR] Worker (pid:11693) was sent SIGINT!
-[2024-10-08 15:23:28 +0800] [12184] [ERROR] Worker (pid:12191) was sent SIGQUIT!
-[2024-10-08 15:23:28 +0800] [12184] [ERROR] Worker (pid:12193) was sent SIGQUIT!
-[2024-10-08 15:23:28 +0800] [12184] [ERROR] Worker (pid:12187) was sent SIGQUIT!
-[2024-10-08 15:23:29 +0800] [12184] [ERROR] Worker (pid:12188) was sent SIGINT!
-[2024-10-08 15:23:29 +0800] [12184] [ERROR] Worker (pid:12194) was sent SIGINT!
-[2024-10-08 15:23:32 +0800] [12184] [ERROR] Worker (pid:12190) was sent code 131!
-[2024-10-08 15:23:32 +0800] [12184] [ERROR] Worker (pid:12196) was sent code 131!
-[2024-10-08 15:23:32 +0800] [12184] [ERROR] Worker (pid:12189) was sent code 131!
-[2024-10-08 15:23:32 +0800] [12184] [ERROR] Worker (pid:12195) was sent code 131!
-[2024-10-08 15:25:32 +0800] [16567] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
-    from demo import create_app
-  File "/data/cailab/flask2024/demo/__init__.py", line 6, in <module>
-    from demo.blueprint.biology import biology
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 18, in <module>
-    from demo.blueprint.modules.utils_biology import MappingConfigForm, biology_preset
-ImportError: cannot import name 'biology_preset' from 'demo.blueprint.modules.utils_biology' (/data/cailab/flask2024/demo/blueprint/modules/utils_biology.py)
-[2024-10-08 15:25:32 +0800] [16568] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
-    from demo import create_app
-  File "/data/cailab/flask2024/demo/__init__.py", line 6, in <module>
-    from demo.blueprint.biology import biology
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 18, in <module>
-    from demo.blueprint.modules.utils_biology import MappingConfigForm, biology_preset
-ImportError: cannot import name 'biology_preset' from 'demo.blueprint.modules.utils_biology' (/data/cailab/flask2024/demo/blueprint/modules/utils_biology.py)
-[2024-10-08 15:25:32 +0800] [16573] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
-    from demo import create_app
-  File "/data/cailab/flask2024/demo/__init__.py", line 6, in <module>
-    from demo.blueprint.biology import biology
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 18, in <module>
-    from demo.blueprint.modules.utils_biology import MappingConfigForm, biology_preset
-ImportError: cannot import name 'biology_preset' from 'demo.blueprint.modules.utils_biology' (/data/cailab/flask2024/demo/blueprint/modules/utils_biology.py)
-[2024-10-08 15:25:32 +0800] [16574] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
-    from demo import create_app
-  File "/data/cailab/flask2024/demo/__init__.py", line 6, in <module>
-    from demo.blueprint.biology import biology
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 18, in <module>
-    from demo.blueprint.modules.utils_biology import MappingConfigForm, biology_preset
-ImportError: cannot import name 'biology_preset' from 'demo.blueprint.modules.utils_biology' (/data/cailab/flask2024/demo/blueprint/modules/utils_biology.py)
-[2024-10-08 15:25:33 +0800] [16564] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
-    from demo import create_app
-  File "/data/cailab/flask2024/demo/__init__.py", line 6, in <module>
-    from demo.blueprint.biology import biology
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 18, in <module>
-    from demo.blueprint.modules.utils_biology import MappingConfigForm, biology_preset
-ImportError: cannot import name 'biology_preset' from 'demo.blueprint.modules.utils_biology' (/data/cailab/flask2024/demo/blueprint/modules/utils_biology.py)
-[2024-10-08 15:25:33 +0800] [16575] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
-    from demo import create_app
-  File "/data/cailab/flask2024/demo/__init__.py", line 6, in <module>
-    from demo.blueprint.biology import biology
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 18, in <module>
-    from demo.blueprint.modules.utils_biology import MappingConfigForm, biology_preset
-ImportError: cannot import name 'biology_preset' from 'demo.blueprint.modules.utils_biology' (/data/cailab/flask2024/demo/blueprint/modules/utils_biology.py)
-[2024-10-08 15:25:34 +0800] [16551] [ERROR] Worker (pid:16574) exited with code 3
-[2024-10-08 15:25:34 +0800] [16551] [ERROR] Worker (pid:16567) exited with code 3
-[2024-10-08 15:25:35 +0800] [16571] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
-    from demo import create_app
-  File "/data/cailab/flask2024/demo/__init__.py", line 6, in <module>
-    from demo.blueprint.biology import biology
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 18, in <module>
-    from demo.blueprint.modules.utils_biology import MappingConfigForm, biology_preset
-ImportError: cannot import name 'biology_preset' from 'demo.blueprint.modules.utils_biology' (/data/cailab/flask2024/demo/blueprint/modules/utils_biology.py)
-[2024-10-08 15:25:38 +0800] [16570] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
-    from demo import create_app
-  File "/data/cailab/flask2024/demo/__init__.py", line 6, in <module>
-    from demo.blueprint.biology import biology
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 18, in <module>
-    from demo.blueprint.modules.utils_biology import MappingConfigForm, biology_preset
-ImportError: cannot import name 'biology_preset' from 'demo.blueprint.modules.utils_biology' (/data/cailab/flask2024/demo/blueprint/modules/utils_biology.py)
-[2024-10-08 15:25:38 +0800] [16572] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
-    from demo import create_app
-  File "/data/cailab/flask2024/demo/__init__.py", line 6, in <module>
-    from demo.blueprint.biology import biology
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 18, in <module>
-    from demo.blueprint.modules.utils_biology import MappingConfigForm, biology_preset
-ImportError: cannot import name 'biology_preset' from 'demo.blueprint.modules.utils_biology' (/data/cailab/flask2024/demo/blueprint/modules/utils_biology.py)
-[2024-10-08 15:25:41 +0800] [16565] [ERROR] Exception in worker process
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-    worker.init_process()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-    self.load_wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-    self.wsgi = self.app.wsgi()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-    self.callable = self.load()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-    return self.load_wsgiapp()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-    return util.import_app(self.app_uri)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-    mod = importlib.import_module(module)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/data/cailab/flask2024/wsgi.py", line 1, in <module>
-    from demo import create_app
-  File "/data/cailab/flask2024/demo/__init__.py", line 6, in <module>
-    from demo.blueprint.biology import biology
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 18, in <module>
-    from demo.blueprint.modules.utils_biology import MappingConfigForm, biology_preset
-ImportError: cannot import name 'biology_preset' from 'demo.blueprint.modules.utils_biology' (/data/cailab/flask2024/demo/blueprint/modules/utils_biology.py)
-[2024-10-08 15:49:39 +0800] [17715] [ERROR] Worker (pid:17727) was sent SIGQUIT!
-[2024-10-08 15:49:39 +0800] [17715] [ERROR] Worker (pid:17725) was sent SIGQUIT!
-[2024-10-08 15:49:40 +0800] [17715] [ERROR] Worker (pid:17722) was sent SIGINT!
-[2024-10-08 15:49:42 +0800] [17715] [ERROR] Worker (pid:17730) was sent code 131!
-[2024-10-08 15:49:42 +0800] [17715] [ERROR] Worker (pid:17731) was sent code 131!
-[2024-10-08 15:49:42 +0800] [17715] [ERROR] Worker (pid:17723) was sent code 131!
-[2024-10-08 15:49:42 +0800] [17715] [ERROR] Worker (pid:17729) was sent code 131!
-[2024-10-08 15:52:14 +0800] [20831] [ERROR] Worker (pid:20840) was sent SIGQUIT!
-[2024-10-08 15:52:14 +0800] [20831] [ERROR] Worker (pid:20839) was sent SIGQUIT!
-[2024-10-08 15:52:14 +0800] [20831] [ERROR] Worker (pid:20843) was sent code 131!
-[2024-10-08 15:52:14 +0800] [20831] [ERROR] Worker (pid:20844) was sent code 131!
-[2024-10-08 15:52:14 +0800] [20831] [ERROR] Worker (pid:20841) was sent code 131!
-[2024-10-08 15:52:14 +0800] [20831] [ERROR] Worker (pid:20845) was sent SIGQUIT!
-[2024-10-08 15:52:14 +0800] [20831] [ERROR] Worker (pid:20846) was sent SIGQUIT!
-[2024-10-08 15:52:14 +0800] [20831] [ERROR] Worker (pid:20842) was sent SIGQUIT!
-[2024-10-08 15:52:14 +0800] [20831] [ERROR] Worker (pid:20849) was sent SIGQUIT!
-[2024-10-08 15:52:14 +0800] [20831] [ERROR] Worker (pid:20847) was sent code 131!
-[2024-10-08 15:57:00 +0800] [21592] [ERROR] Worker (pid:21604) was sent SIGQUIT!
-[2024-10-08 15:57:00 +0800] [21592] [ERROR] Worker (pid:21606) was sent SIGQUIT!
-[2024-10-08 15:57:00 +0800] [21592] [ERROR] Worker (pid:21607) was sent SIGQUIT!
-[2024-10-08 15:57:01 +0800] [21592] [ERROR] Worker (pid:21605) was sent SIGINT!
-[2024-10-08 15:57:01 +0800] [21592] [ERROR] Worker (pid:21601) was sent SIGINT!
-[2024-10-08 15:57:01 +0800] [21592] [ERROR] Worker (pid:21599) was sent SIGINT!
-[2024-10-08 15:57:01 +0800] [21592] [ERROR] Worker (pid:21608) was sent code 131!
-[2024-10-08 15:57:01 +0800] [21592] [ERROR] Worker (pid:21600) was sent code 131!
-[2024-10-08 15:57:01 +0800] [21592] [ERROR] Worker (pid:21602) was sent code 131!
-[2024-10-08 16:11:27 +0800] [22578] [ERROR] Worker (pid:22588) was sent SIGINT!
-[2024-10-08 16:32:44 +0800] [24420] [ERROR] Worker (pid:24645) was sent SIGQUIT!
-[2024-10-08 16:32:54 +0800] [24420] [ERROR] Worker (pid:24614) was sent code 131!
-[2024-10-08 16:32:54 +0800] [24420] [ERROR] Worker (pid:24425) was sent code 131!
-[2024-10-08 16:32:54 +0800] [24420] [ERROR] Worker (pid:24426) was sent code 131!
-[2024-10-08 16:32:54 +0800] [24420] [ERROR] Worker (pid:24616) was sent code 131!
-[2024-10-08 16:44:58 +0800] [27471] [ERROR] Worker (pid:27495) was sent SIGINT!
-[2024-10-08 16:45:00 +0800] [27471] [ERROR] Worker (pid:27486) was sent SIGINT!
-[2024-10-08 16:45:01 +0800] [27471] [ERROR] Worker (pid:27492) was sent SIGINT!
-[2024-10-08 16:45:01 +0800] [27471] [ERROR] Worker (pid:27488) was sent SIGINT!
-[2024-10-08 16:45:01 +0800] [27471] [ERROR] Worker (pid:27489) was sent SIGINT!
-[2024-10-08 16:45:04 +0800] [27471] [ERROR] Worker (pid:27487) was sent SIGINT!
-[2024-10-08 16:45:06 +0800] [27471] [ERROR] Worker (pid:27493) was sent SIGINT!
-[2024-10-08 16:45:06 +0800] [27471] [ERROR] Worker (pid:27485) was sent SIGINT!
-[2024-10-08 16:45:06 +0800] [27471] [ERROR] Worker (pid:27491) was sent SIGINT!
-[2024-10-08 16:45:08 +0800] [27471] [ERROR] Worker (pid:27490) was sent SIGINT!
-[2024-10-08 16:48:48 +0800] [29064] [ERROR] Worker (pid:29188) was sent SIGINT!
-[2024-10-08 16:48:48 +0800] [29064] [ERROR] Worker (pid:29090) was sent SIGINT!
-[2024-10-08 16:48:48 +0800] [29064] [ERROR] Worker (pid:29088) was sent SIGINT!
-[2024-10-08 16:48:48 +0800] [29064] [ERROR] Worker (pid:29189) was sent SIGINT!
-[2024-10-08 16:48:48 +0800] [29064] [ERROR] Worker (pid:29087) was sent SIGINT!
-[2024-10-08 16:48:48 +0800] [29064] [ERROR] Worker (pid:29089) was sent SIGINT!
-[2024-10-08 16:48:48 +0800] [29064] [ERROR] Worker (pid:29191) was sent SIGINT!
-[2024-10-08 16:48:48 +0800] [29064] [ERROR] Worker (pid:29192) was sent SIGINT!
-[2024-10-08 16:48:48 +0800] [29064] [ERROR] Worker (pid:29190) was sent SIGINT!
-[2024-10-08 16:48:48 +0800] [29064] [ERROR] Worker (pid:29193) was sent SIGINT!
-[2024-10-08 17:00:28 +0800] [29744] [ERROR] Worker (pid:29748) was sent SIGQUIT!
-[2024-10-08 17:00:28 +0800] [29744] [ERROR] Worker (pid:29747) was sent SIGQUIT!
-[2024-10-08 17:00:30 +0800] [29744] [ERROR] Worker (pid:29752) was sent code 131!
-[2024-10-08 17:00:30 +0800] [29744] [ERROR] Worker (pid:29749) was sent code 131!
-[2024-10-08 17:00:30 +0800] [29744] [ERROR] Worker (pid:29754) was sent code 131!
-[2024-10-08 17:00:30 +0800] [29744] [ERROR] Worker (pid:29751) was sent code 131!
-[2024-10-08 17:04:55 +0800] [32606] [ERROR] Worker (pid:32626) was sent SIGINT!
-[2024-10-08 17:04:55 +0800] [32606] [ERROR] Worker (pid:32633) was sent SIGINT!
-[2024-10-08 17:04:56 +0800] [32606] [ERROR] Worker (pid:32624) was sent SIGINT!
-[2024-10-08 17:04:56 +0800] [32606] [ERROR] Worker (pid:32632) was sent SIGINT!
-[2024-10-08 17:04:56 +0800] [32606] [ERROR] Worker (pid:32625) was sent SIGINT!
-[2024-10-08 17:04:56 +0800] [32606] [ERROR] Worker (pid:32634) was sent SIGINT!
-[2024-10-08 17:04:56 +0800] [32606] [ERROR] Worker (pid:32631) was sent SIGINT!
-[2024-10-08 17:04:56 +0800] [32606] [ERROR] Worker (pid:32628) was sent SIGINT!
-[2024-10-08 17:05:01 +0800] [32606] [ERROR] Worker (pid:32630) was sent SIGINT!
-[2024-10-08 17:05:04 +0800] [32606] [ERROR] Worker (pid:32629) was sent SIGINT!
-[2024-10-08 17:35:23 +0800] [33310] [ERROR] Worker (pid:33316) was sent SIGHUP!
-[2024-10-08 17:35:23 +0800] [33310] [ERROR] Worker (pid:33314) was sent SIGHUP!
-[2024-10-08 17:35:52 +0800] [33310] [ERROR] Worker (pid:35184) was sent SIGTERM!
-[2024-10-08 17:35:53 +0800] [33310] [ERROR] Worker (pid:35178) was sent SIGTERM!
-[2024-10-08 17:35:55 +0800] [33310] [ERROR] Worker (pid:35179) was sent SIGTERM!
-[2024-10-08 17:35:55 +0800] [33310] [ERROR] Worker (pid:35181) was sent SIGTERM!
-[2024-10-08 17:35:56 +0800] [33310] [ERROR] Worker (pid:35177) was sent SIGTERM!
-[2024-10-08 17:35:58 +0800] [33310] [ERROR] Worker (pid:35174) was sent SIGTERM!
-[2024-10-08 17:35:59 +0800] [33310] [ERROR] Worker (pid:35176) was sent SIGTERM!
-[2024-10-08 17:35:59 +0800] [33310] [ERROR] Worker (pid:35183) was sent SIGTERM!
-[2024-10-08 17:36:00 +0800] [33310] [ERROR] Worker (pid:35180) was sent SIGTERM!
-[2024-10-08 17:36:00 +0800] [33310] [ERROR] Worker (pid:35175) was sent SIGTERM!
-[2024-10-08 18:36:17 +0800] [33310] [ERROR] Worker (pid:35190) exited with code 120
-[2024-10-08 18:36:17 +0800] [33310] [ERROR] Worker (pid:35190) exited with code 120.
-[2024-10-08 18:56:37 +0800] [40854] [ERROR] Worker (pid:40862) was sent SIGINT!
-[2024-10-08 18:56:37 +0800] [40854] [ERROR] Worker (pid:40863) was sent SIGINT!
-[2024-10-08 18:56:37 +0800] [40854] [ERROR] Worker (pid:40858) was sent SIGINT!
-[2024-10-08 18:56:37 +0800] [40854] [ERROR] Worker (pid:40861) was sent SIGINT!
-[2024-10-08 18:56:37 +0800] [40854] [ERROR] Worker (pid:40857) was sent SIGINT!
-[2024-10-08 18:56:37 +0800] [40854] [ERROR] Worker (pid:40859) was sent SIGINT!
-[2024-10-08 18:56:37 +0800] [40854] [ERROR] Worker (pid:40864) was sent code 131!
-[2024-10-08 18:56:37 +0800] [40854] [ERROR] Worker (pid:40865) was sent code 131!
-[2024-10-08 18:56:37 +0800] [40854] [ERROR] Worker (pid:40867) was sent code 131!
-[2024-10-08 18:56:37 +0800] [40854] [ERROR] Worker (pid:40866) was sent code 131!
-[2024-10-08 19:00:34 +0800] [42972] [ERROR] Worker (pid:42976) was sent SIGINT!
-[2024-10-08 19:00:34 +0800] [42972] [ERROR] Worker (pid:42982) was sent SIGINT!
-[2024-10-08 19:00:34 +0800] [42972] [ERROR] Worker (pid:44413) was sent code 131!
-[2024-10-08 19:00:34 +0800] [42972] [ERROR] Worker (pid:42980) was sent code 131!
-[2024-10-08 19:00:34 +0800] [42972] [ERROR] Worker (pid:42979) was sent code 131!
-[2024-10-08 19:00:34 +0800] [42972] [ERROR] Worker (pid:42975) was sent code 131!
-[2024-10-08 19:08:08 +0800] [44520] [ERROR] Worker (pid:44521) was sent SIGINT!
-[2024-10-08 19:08:08 +0800] [44520] [ERROR] Worker (pid:44522) was sent SIGINT!
-[2024-10-08 19:08:08 +0800] [44520] [ERROR] Worker (pid:44523) was sent SIGINT!
-[2024-10-08 19:08:08 +0800] [44520] [ERROR] Worker (pid:44584) was sent SIGINT!
-[2024-10-08 19:08:08 +0800] [44520] [ERROR] Worker (pid:44625) was sent SIGINT!
-[2024-10-08 19:08:08 +0800] [44520] [ERROR] Worker (pid:44627) was sent SIGINT!
-[2024-10-08 19:08:08 +0800] [44520] [ERROR] Worker (pid:44628) was sent SIGINT!
-[2024-10-08 19:08:08 +0800] [44520] [ERROR] Worker (pid:44629) was sent SIGINT!
-[2024-10-08 19:08:08 +0800] [44520] [ERROR] Worker (pid:44696) was sent SIGINT!
-[2024-10-08 19:08:08 +0800] [44520] [ERROR] Worker (pid:44524) was sent SIGINT!
-[2024-10-08 19:08:28,060] ERROR in app: Exception on /biology/get_preset [POST]
+[2024-10-15 11:31:46,926] ERROR in app: Exception on /common/get_display_value [POST]
 Traceback (most recent call last):
   File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
@@ -1117,10 +80,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 72, in get_preset
-    return jsonify(biology_preset_dict[data.get(form["pipeline"])])
-NameError: name 'form' is not defined
-[2024-10-08 19:08:28,955] ERROR in app: Exception on /batch_code/init_div_steps [POST]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'Trim hairpin_cut_N'
+[2024-10-15 11:31:46,956] ERROR in app: Exception on /common/get_display_value [POST]
 Traceback (most recent call last):
   File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
@@ -1130,12 +93,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 32, in init_div_steps
-    return jsonify(init_div_steps2(data.get("steps")))
-  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 447, in init_div_steps2
-    if steps[0]["mode"] == "pair" and steps[0]["raw_type"] == "raw.fq.gz":
-IndexError: list index out of range
-[2024-10-08 19:10:07,234] ERROR in app: Exception on /biology/get_preset [POST]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'map bwa'
+[2024-10-15 11:31:46,962] ERROR in app: Exception on /common/get_display_value [POST]
 Traceback (most recent call last):
   File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
@@ -1145,10 +106,485 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/biology.py", line 72, in get_preset
-    return jsonify(biology_preset_dict[data.get(form)["pipeline"]])
-NameError: name 'form' is not defined
-[2024-10-08 19:10:07,973] ERROR in app: Exception on /batch_code/init_div_steps [POST]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'map bwa_spikein'
+[2024-10-15 11:31:46,967] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM remove_duplicates'
+[2024-10-15 11:31:46,972] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM CT_call_modify'
+[2024-10-15 11:31:46,977] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM CT_spikein_modify'
+[2024-10-15 11:31:46,982] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'other qualimap_cover'
+[2024-10-15 11:31:47,568] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'Trim hairpin_cut_N'
+[2024-10-15 11:31:47,577] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'map bwa'
+[2024-10-15 11:31:47,582] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'map bwa_spikein'
+[2024-10-15 11:31:47,586] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM remove_duplicates'
+[2024-10-15 11:31:47,591] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM CT_call_modify'
+[2024-10-15 11:31:47,595] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM CT_spikein_modify'
+[2024-10-15 11:31:47,599] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'other qualimap_cover'
+[2024-10-15 11:31:48,537] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'Trim hairpin_cut_N'
+[2024-10-15 11:31:48,546] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'map bwa'
+[2024-10-15 11:31:48,551] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'map bwa_spikein'
+[2024-10-15 11:31:48,556] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM remove_duplicates'
+[2024-10-15 11:31:48,560] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM CT_call_modify'
+[2024-10-15 11:31:48,565] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM CT_spikein_modify'
+[2024-10-15 11:31:48,573] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'other qualimap_cover'
+[2024-10-15 11:31:48,833] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'Trim hairpin_cut_N'
+[2024-10-15 11:31:48,837] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'map bwa'
+[2024-10-15 11:31:48,842] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'map bwa_spikein'
+[2024-10-15 11:31:48,847] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM remove_duplicates'
+[2024-10-15 11:31:48,852] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM CT_call_modify'
+[2024-10-15 11:31:48,856] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM CT_spikein_modify'
+[2024-10-15 11:31:48,859] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'other qualimap_cover'
+[2024-10-15 11:31:52,060] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'Trim hairpin_cut_N'
+[2024-10-15 11:31:52,065] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'map bwa'
+[2024-10-15 11:31:52,069] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'map bwa_spikein'
+[2024-10-15 11:31:52,073] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM remove_duplicates'
+[2024-10-15 11:31:52,077] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM CT_call_modify'
+[2024-10-15 11:31:52,082] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'BAM CT_spikein_modify'
+[2024-10-15 11:31:52,086] ERROR in app: Exception on /common/get_display_value [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/common.py", line 19, in get_display_value
+    displayString = my_code_simple[data.get('step_type')][data.get('mode')].format(params=data.get('params'),
+KeyError: 'other qualimap_cover'
+[2024-10-16 10:38:08,054] ERROR in app: Exception on /batch_code/get_preset [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 27, in get_preset
+    return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 468, in batch_preset
+    preset_list = batch_preset_dict[presetType][mode]
+KeyError: None
+[2024-10-16 12:20:14 +0800] [410811] [ERROR] Worker (pid:410814) was sent SIGHUP!
+[2024-10-16 12:20:14 +0800] [410811] [ERROR] Worker (pid:410919) was sent SIGHUP!
+[2024-10-16 12:20:14 +0800] [410811] [ERROR] Worker (pid:410871) was sent SIGHUP!
+[2024-10-16 12:20:14 +0800] [410811] [ERROR] Worker (pid:410920) was sent SIGHUP!
+[2024-10-16 12:20:14 +0800] [410811] [ERROR] Worker (pid:411015) was sent SIGHUP!
+[2024-10-16 12:20:14 +0800] [410811] [ERROR] Worker (pid:411016) was sent SIGHUP!
+[2024-10-16 12:20:14 +0800] [410811] [ERROR] Worker (pid:411017) was sent SIGHUP!
+[2024-10-16 12:20:14 +0800] [410811] [ERROR] Worker (pid:410818) was sent SIGHUP!
+[2024-10-16 12:20:14 +0800] [410811] [ERROR] Worker (pid:410870) was sent SIGHUP!
+[2024-10-16 12:20:14 +0800] [410811] [ERROR] Worker (pid:410822) was sent SIGHUP!
+[2024-10-16 12:20:15 +0800] [410811] [ERROR] Worker (pid:413085) was sent SIGTERM!
+[2024-10-16 12:20:15 +0800] [410811] [ERROR] Worker (pid:413091) was sent SIGTERM!
+[2024-10-16 12:20:15 +0800] [410811] [ERROR] Worker (pid:413088) was sent SIGTERM!
+[2024-10-16 12:20:15 +0800] [410811] [ERROR] Worker (pid:413089) was sent SIGTERM!
+[2024-10-16 12:20:15 +0800] [410811] [ERROR] Worker (pid:413086) was sent SIGTERM!
+[2024-10-16 12:20:15 +0800] [410811] [ERROR] Worker (pid:413092) was sent SIGTERM!
+[2024-10-16 12:20:15 +0800] [410811] [ERROR] Worker (pid:413094) was sent SIGTERM!
+[2024-10-16 12:20:15 +0800] [410811] [ERROR] Worker (pid:413084) was sent SIGTERM!
+[2024-10-16 12:20:15 +0800] [410811] [ERROR] Worker (pid:413090) was sent SIGTERM!
+[2024-10-16 13:15:44 +0800] [416928] [ERROR] Worker (pid:417221) was sent SIGHUP!
+[2024-10-16 13:15:44 +0800] [416928] [ERROR] Worker (pid:416929) was sent SIGHUP!
+[2024-10-16 13:15:44 +0800] [416928] [ERROR] Worker (pid:416930) was sent SIGHUP!
+[2024-10-16 13:15:44 +0800] [416928] [ERROR] Worker (pid:417219) was sent SIGHUP!
+[2024-10-16 13:15:44 +0800] [416928] [ERROR] Worker (pid:417220) was sent SIGHUP!
+[2024-10-16 13:15:44 +0800] [416928] [ERROR] Worker (pid:417122) was sent SIGHUP!
+[2024-10-16 13:15:44 +0800] [416928] [ERROR] Worker (pid:417171) was sent SIGHUP!
+[2024-10-16 13:15:44 +0800] [416928] [ERROR] Worker (pid:417026) was sent SIGHUP!
+[2024-10-16 13:15:44 +0800] [416928] [ERROR] Worker (pid:417027) was sent SIGHUP!
+[2024-10-16 13:15:44 +0800] [416928] [ERROR] Worker (pid:416978) was sent SIGHUP!
+[2024-10-17 11:11:06,665] ERROR in app: Exception on /batch_code/submit_config_script [POST]
+Traceback (most recent call last):
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 55, in submit_dir_script
+    samples_list = get_samples_list(select_raw_folder, soft_step[0]["mode"], soft_step[0]["raw_type"])
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils.py", line 28, in get_samples_list
+    for filename in os.listdir(select_raw_folder):
+PermissionError: [Errno 13] Permission denied: '/home/miaoxx'
+[2024-10-17 11:39:53,992] ERROR in app: Exception on /batch_code/init_div_steps [POST]
 Traceback (most recent call last):
   File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
@@ -1160,185 +596,27 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
   File "/data/cailab/flask2024/demo/blueprint/batch_code.py", line 32, in init_div_steps
     return jsonify(init_div_steps2(data.get("steps")))
-  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 447, in init_div_steps2
-    if steps[0]["mode"] == "pair" and steps[0]["raw_type"] == "raw.fq.gz":
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 504, in init_div_steps2
+    all_options_list = process_all_options(tools_config, steps, baseOptions)
+  File "/data/cailab/flask2024/demo/blueprint/modules/utils_complex.py", line 482, in process_all_options
+    config = tools_config.get(step["type"].split()[1], tools_config[step["type"].split()[0]])[step["mode"]]
 IndexError: list index out of range
-[2024-10-08 19:42:43 +0800] [46994] [ERROR] Worker (pid:46995) was sent SIGHUP!
-[2024-10-08 19:42:43 +0800] [46994] [ERROR] Worker (pid:46996) was sent SIGHUP!
-[2024-10-08 19:42:43 +0800] [46994] [ERROR] Worker (pid:46997) was sent SIGHUP!
-[2024-10-08 19:42:43 +0800] [46994] [ERROR] Worker (pid:47045) was sent SIGHUP!
-[2024-10-08 19:42:43 +0800] [46994] [ERROR] Worker (pid:47093) was sent SIGHUP!
-[2024-10-08 19:42:43 +0800] [46994] [ERROR] Worker (pid:47192) was sent SIGHUP!
-[2024-10-08 19:42:43 +0800] [46994] [ERROR] Worker (pid:47144) was sent SIGHUP!
-[2024-10-08 19:42:43 +0800] [46994] [ERROR] Worker (pid:47142) was sent SIGHUP!
-[2024-10-08 20:57:59 +0800] [46994] [ERROR] Worker (pid:52425) exited with code 120
-[2024-10-08 20:57:59 +0800] [46994] [ERROR] Worker (pid:52425) exited with code 120.
-[2024-10-08 21:03:35 +0800] [57995] [CRITICAL] WORKER TIMEOUT (pid:58007)
-[2024-10-08 21:03:36 +0800] [57995] [ERROR] Worker (pid:58007) was sent SIGKILL! Perhaps out of memory?
-[2024-10-08 21:03:38 +0800] [58001] [ERROR] Error handling request /common/get_folders?folder=%2Fdata%2F
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 135, in handle
-    self.handle_request(listener, req, client, addr)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
-    respiter = self.wsgi(environ, resp.start_response)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1498, in __call__
-    return self.wsgi_app(environ, start_response)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/common.py", line 27, in get_folders
-    return jsonify(filter_folders(request.args.get('folder', '')))
-  File "/data/cailab/flask2024/demo/blueprint/common.py", line 46, in filter_folders
-    subfolders = [os.path.join(i, subitem) for subitem in os.listdir(i) if os.path.isdir(os.path.join(i, subitem))]
-  File "/data/cailab/flask2024/demo/blueprint/common.py", line 46, in <listcomp>
-    subfolders = [os.path.join(i, subitem) for subitem in os.listdir(i) if os.path.isdir(os.path.join(i, subitem))]
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/genericpath.py", line 42, in isdir
-    st = os.stat(s)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 196, in handle_quit
-    self.cfg.worker_int(self)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
-    sys.exit(0)
-SystemExit: 0
-[2024-10-08 21:03:38 +0800] [58004] [ERROR] Error handling request /common/get_folders?folder=%2Fdata%2F
-Traceback (most recent call last):
-  File "/data/cailab/flask2024/demo/blueprint/common.py", line 46, in filter_folders
-    subfolders = [os.path.join(i, subitem) for subitem in os.listdir(i) if os.path.isdir(os.path.join(i, subitem))]
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
-    sys.exit(0)
-SystemExit: 0
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 135, in handle
-    self.handle_request(listener, req, client, addr)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
-    respiter = self.wsgi(environ, resp.start_response)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1498, in __call__
-    return self.wsgi_app(environ, start_response)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/common.py", line 27, in get_folders
-    return jsonify(filter_folders(request.args.get('folder', '')))
-  File "/data/cailab/flask2024/demo/blueprint/common.py", line 46, in filter_folders
-    subfolders = [os.path.join(i, subitem) for subitem in os.listdir(i) if os.path.isdir(os.path.join(i, subitem))]
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
-    sys.exit(0)
-SystemExit: 0
-[2024-10-08 21:03:38 +0800] [57999] [ERROR] Error handling request /common/get_folders?folder=%2Fdata%2F
-Traceback (most recent call last):
-  File "/data/cailab/flask2024/demo/blueprint/common.py", line 46, in filter_folders
-    subfolders = [os.path.join(i, subitem) for subitem in os.listdir(i) if os.path.isdir(os.path.join(i, subitem))]
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
-    sys.exit(0)
-SystemExit: 0
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 135, in handle
-    self.handle_request(listener, req, client, addr)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
-    respiter = self.wsgi(environ, resp.start_response)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1498, in __call__
-    return self.wsgi_app(environ, start_response)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/common.py", line 27, in get_folders
-    return jsonify(filter_folders(request.args.get('folder', '')))
-  File "/data/cailab/flask2024/demo/blueprint/common.py", line 46, in filter_folders
-    subfolders = [os.path.join(i, subitem) for subitem in os.listdir(i) if os.path.isdir(os.path.join(i, subitem))]
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
-    sys.exit(0)
-SystemExit: 0
-[2024-10-08 21:03:38 +0800] [58003] [ERROR] Error handling request /common/get_folders?folder=%2Fdata%2F
-Traceback (most recent call last):
-  File "/data/cailab/flask2024/demo/blueprint/common.py", line 46, in filter_folders
-    subfolders = [os.path.join(i, subitem) for subitem in os.listdir(i) if os.path.isdir(os.path.join(i, subitem))]
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
-    sys.exit(0)
-SystemExit: 0
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 135, in handle
-    self.handle_request(listener, req, client, addr)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/sync.py", line 178, in handle_request
-    respiter = self.wsgi(environ, resp.start_response)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1498, in __call__
-    return self.wsgi_app(environ, start_response)
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/data/cailab/flask2024/demo/blueprint/common.py", line 27, in get_folders
-    return jsonify(filter_folders(request.args.get('folder', '')))
-  File "/data/cailab/flask2024/demo/blueprint/common.py", line 46, in filter_folders
-    subfolders = [os.path.join(i, subitem) for subitem in os.listdir(i) if os.path.isdir(os.path.join(i, subitem))]
-  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/envs/flask2024/lib/python3.9/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
-    sys.exit(0)
-SystemExit: 0
-[2024-10-08 21:03:38 +0800] [57995] [ERROR] Worker (pid:57999) was sent SIGINT!
-[2024-10-08 21:03:38 +0800] [57995] [ERROR] Worker (pid:58004) was sent SIGINT!
-[2024-10-08 21:03:38 +0800] [57995] [ERROR] Worker (pid:58001) was sent SIGINT!
-[2024-10-08 21:03:38 +0800] [57995] [ERROR] Worker (pid:58003) was sent SIGINT!
-[2024-10-08 21:25:28 +0800] [58847] [ERROR] Worker (pid:58848) was sent SIGINT!
-[2024-10-08 21:25:28 +0800] [58847] [ERROR] Worker (pid:58849) was sent SIGINT!
-[2024-10-08 21:25:28 +0800] [58847] [ERROR] Worker (pid:58851) was sent SIGINT!
-[2024-10-08 21:25:28 +0800] [58847] [ERROR] Worker (pid:58852) was sent SIGINT!
-[2024-10-08 21:25:28 +0800] [58847] [ERROR] Worker (pid:58853) was sent SIGINT!
-[2024-10-08 21:25:28 +0800] [58847] [ERROR] Worker (pid:58907) was sent SIGINT!
-[2024-10-08 21:25:28 +0800] [58847] [ERROR] Worker (pid:58909) was sent SIGINT!
-[2024-10-08 21:25:28 +0800] [58847] [ERROR] Worker (pid:58911) was sent SIGINT!
-[2024-10-08 21:25:28 +0800] [58847] [ERROR] Worker (pid:58912) was sent SIGINT!
-[2024-10-08 21:25:28 +0800] [58847] [ERROR] Worker (pid:58910) was sent SIGINT!
-[2024-10-08 21:45:56 +0800] [60864] [ERROR] Worker (pid:60872) was sent SIGQUIT!
-[2024-10-08 21:45:56 +0800] [60864] [ERROR] Worker (pid:60875) was sent SIGQUIT!
-[2024-10-08 21:45:56 +0800] [60864] [ERROR] Worker (pid:60877) was sent SIGQUIT!
-[2024-10-08 21:45:58 +0800] [60864] [ERROR] Worker (pid:60874) was sent code 131!
-[2024-10-08 21:45:58 +0800] [60864] [ERROR] Worker (pid:60876) was sent code 131!
-[2024-10-08 21:45:58 +0800] [60864] [ERROR] Worker (pid:60879) was sent code 131!
-[2024-10-08 21:45:58 +0800] [60864] [ERROR] Worker (pid:60871) was sent code 131!
-[2024-10-08 21:56:33 +0800] [62567] [ERROR] Worker (pid:62574) was sent SIGINT!
-[2024-10-08 21:56:33 +0800] [62567] [ERROR] Worker (pid:62572) was sent SIGINT!
-[2024-10-08 21:58:05 +0800] [63688] [ERROR] Worker (pid:63693) was sent SIGINT!
-[2024-10-08 21:58:05 +0800] [63688] [ERROR] Worker (pid:63701) was sent SIGINT!
-[2024-10-08 21:58:05 +0800] [63688] [ERROR] Worker (pid:63691) was sent SIGINT!
-[2024-10-08 22:02:27 +0800] [64931] [ERROR] Worker (pid:64936) was sent SIGINT!
-[2024-10-08 22:02:27 +0800] [64931] [ERROR] Worker (pid:64938) was sent SIGINT!
-[2024-10-08 22:14:55 +0800] [66627] [ERROR] Worker (pid:66638) was sent SIGINT!
-[2024-10-08 22:21:30 +0800] [67393] [ERROR] Worker (pid:67405) was sent SIGINT!
-[2024-10-08 23:07:17 +0800] [68245] [ERROR] Worker (pid:68249) was sent SIGHUP!
-[2024-10-08 23:07:17 +0800] [68245] [ERROR] Worker (pid:68250) was sent SIGHUP!
-[2024-10-08 23:07:17 +0800] [68245] [ERROR] Worker (pid:68251) was sent SIGHUP!
-[2024-10-08 23:07:17 +0800] [68245] [ERROR] Worker (pid:68252) was sent SIGHUP!
-[2024-10-08 23:07:17 +0800] [68245] [ERROR] Worker (pid:68253) was sent SIGHUP!
-[2024-10-08 23:07:17 +0800] [68245] [ERROR] Worker (pid:68254) was sent SIGHUP!
-[2024-10-08 23:07:17 +0800] [68245] [ERROR] Worker (pid:68256) was sent SIGHUP!
-[2024-10-08 23:07:17 +0800] [68245] [ERROR] Worker (pid:68257) was sent SIGHUP!
-[2024-10-08 23:07:17 +0800] [68245] [ERROR] Worker (pid:68258) was sent SIGHUP!
-[2024-10-08 23:07:17 +0800] [68245] [ERROR] Worker (pid:68259) was sent SIGHUP!
-[2024-10-08 23:07:32 +0800] [68245] [ERROR] Worker (pid:71555) was sent SIGTERM!
-[2024-10-08 23:07:33 +0800] [68245] [ERROR] Worker (pid:71548) was sent SIGTERM!
-[2024-10-08 23:07:33 +0800] [68245] [ERROR] Worker (pid:71549) was sent SIGTERM!
-[2024-10-08 23:07:33 +0800] [68245] [ERROR] Worker (pid:71554) was sent SIGTERM!
-[2024-10-08 23:07:33 +0800] [68245] [ERROR] Worker (pid:71557) was sent SIGTERM!
-[2024-10-08 23:07:33 +0800] [68245] [ERROR] Worker (pid:71552) was sent SIGTERM!
-[2024-10-08 23:07:33 +0800] [68245] [ERROR] Worker (pid:71553) was sent SIGTERM!
-[2024-10-08 23:07:33 +0800] [68245] [ERROR] Worker (pid:71550) was sent SIGTERM!
-[2024-10-08 23:07:33 +0800] [68245] [ERROR] Worker (pid:71551) was sent SIGTERM!
-[2024-10-08 23:07:33 +0800] [68245] [ERROR] Worker (pid:71556) was sent SIGTERM!
+[2024-10-17 12:12:18 +0800] [49818] [ERROR] Worker (pid:49819) was sent SIGHUP!
+[2024-10-17 12:12:18 +0800] [49818] [ERROR] Worker (pid:49821) was sent SIGHUP!
+[2024-10-17 12:12:18 +0800] [49818] [ERROR] Worker (pid:49820) was sent SIGHUP!
+[2024-10-17 12:12:18 +0800] [49818] [ERROR] Worker (pid:50017) was sent SIGHUP!
+[2024-10-17 12:12:18 +0800] [49818] [ERROR] Worker (pid:50114) was sent SIGHUP!
+[2024-10-17 12:12:18 +0800] [49818] [ERROR] Worker (pid:49968) was sent SIGHUP!
+[2024-10-17 12:12:18 +0800] [49818] [ERROR] Worker (pid:49869) was sent SIGHUP!
+[2024-10-17 12:12:18 +0800] [49818] [ERROR] Worker (pid:49969) was sent SIGHUP!
+[2024-10-17 12:12:18 +0800] [49818] [ERROR] Worker (pid:50018) was sent SIGHUP!
+[2024-10-17 12:12:18 +0800] [49818] [ERROR] Worker (pid:50066) was sent SIGHUP!
+[2024-10-17 12:12:19 +0800] [49818] [ERROR] Worker (pid:52065) was sent SIGTERM!
+[2024-10-17 12:12:19 +0800] [49818] [ERROR] Worker (pid:52066) was sent SIGTERM!
+[2024-10-17 12:12:19 +0800] [49818] [ERROR] Worker (pid:52062) was sent SIGTERM!
+[2024-10-17 12:12:19 +0800] [49818] [ERROR] Worker (pid:52056) was sent SIGTERM!
+[2024-10-17 12:12:19 +0800] [49818] [ERROR] Worker (pid:52055) was sent SIGTERM!
+[2024-10-17 12:12:19 +0800] [49818] [ERROR] Worker (pid:52058) was sent SIGTERM!
+[2024-10-17 12:12:19 +0800] [49818] [ERROR] Worker (pid:52060) was sent SIGTERM!
+[2024-10-17 12:12:19 +0800] [49818] [ERROR] Worker (pid:52057) was sent SIGTERM!
+[2024-10-17 12:12:19 +0800] [49818] [ERROR] Worker (pid:52063) was sent SIGTERM!

@@ -43,7 +43,6 @@ def home(task_id):
 
 
 #########################################################################################
-
 @biology.route('/biology/check/<task_id>', methods=['GET', 'POST'])
 def check(task_id):
    

@@ -30,29 +30,6 @@
 
 
 <script>
-var available_steps = {{ available_steps | tojson }};
-var fileType =  "raw.fq.gz";
-var fqType = "pair";
 var task_id="{{task_id}}";
-
-
-let steps = [];
-let soft_step = [];
-function addStep(type) {
-    $('#selected-steps').append(`<li class="list-group-item step-item" id="step-${steps.length}">${type}</li>`);
-    $('#selected-steps').disableSelection();
-    $('#selected-steps').sortable({update: function(event, ui) {
-        steps = $('#selected-steps').children().map(function() {
-            return steps.find(step => step.id === parseInt(this.id.replace('step-', ''))); }).get();} });
-
-    steps.push({ id: steps.length, type: type, select_option: {}, params:'', mode: fqType, raw_type: fileType, select_index:{}});
-}
-
-function updateSelection() {
-    fileType = document.querySelector('input[name="fileType"]:checked').value;
-    fqType = document.querySelector('input[name="fqType"]:checked').value;
-}
-window.onload = function() {updateSelection();};
-
 </script>
 

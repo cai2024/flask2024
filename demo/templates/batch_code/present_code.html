@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% from 'bootstrap4/form.html' import render_form %}
+
+
+{% block content %}
+<div class="container mt-5">
+    <div class="overlay-container" style="position: relative;">
+        <h4>请输入原始数据所在文件夹位置</h4>
+        <input type="text" id="folderInput" class="form-control" placeholder="">
+        <h6>原始数据命名要求：单端: .fq.gz结尾 双端: _1.fq.gz, _2.fq.gz 或包含.bam文件</h6>
+    </div>
+    <h1 class="text-center my-4">代码展示页面</h1>
+    <div class="col-md-12">
+        <pre><code class="hljs language-python" id="dynamicCode"># 这里将展示从服务器获取的代码</code></pre>
+    </div>
+    <div class="text-center my-4">
+        <button id="selectInputDir" class="btn btn-success">确认输入文件夹</button>
+        <button id="operationTwoBtn" class="btn btn-danger" disabled>执行smk任务</button>
+    </div>
+    <p class="text-center">请先输入并确认原始数据所在的文件夹。</p>
+</div>
+
+<script>
+    var task_id = "{{ task_id }}" 
+</script>
+<script src="{{ url_for('static', filename='js/batch_code/present_code.js') }}"></script>
+{% endblock %}

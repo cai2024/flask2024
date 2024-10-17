@@ -1,32 +1,15 @@
 {% extends 'base.html' %}
 {% from 'bootstrap4/form.html' import render_form %}
 
-
-
-{% block head %}
-        {{ super() }}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/home.style.css') }}" type="text/css">
-{% endblock %}
-
-
 {% block content %}
-    <div class="container mt-5">
-        <h1>基础设置</h1>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ url_for('static', filename='js/modules/folderSuggestions.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/modules/ketToyy.js') }}"></script>
-
-    <body data-task-id="{{ task_id }}">
+    <h1 class="text-center my-5">基础设置</h1>
     <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
              <form id="myForm" method="POST" action="" class="col-lg-20">
             {{ render_form(form, extra_classes='col-lg-20') }}
-
              </form>   
         </div>
-        <!-- 添加右对齐的按钮，并加入一个新按钮用于跳转 -->
+        
         <div class="row mt-3 justify-content-end">
             <div class="col-auto">
                 <button onclick="toggleImage()" class="btn btn-outline-secondary btn-sm">使用说明</button>
@@ -34,6 +17,7 @@
                 <a href="{{ url_for('static', filename='images/wangzc.jpg') }}" class="btn btn-outline-secondary btn-sm">查看图片</a>
             </div>
         </div>
+
         <div class="row justify-content-center">
             <img id="instructionImage" src="{{ url_for('static', filename='images/instruction.jpg') }}" style="display:none;" alt="Instruction Image"/>
             <div id="loginPrompt" style="display:none;">
@@ -46,17 +30,14 @@
             </div>
         </div>
     </div>
-
 {% endblock %}
-{% block scripts %}
+
+
 <script>
 $(document).ready(function() {
     initializeInputSuggestions('#input_dir', 'suggestions');
     modifyOuterDivClass('#input_dir', 'overlay-container');
 });
-
 </script>
-{{ super() }}
-{% endblock %}
 
 
