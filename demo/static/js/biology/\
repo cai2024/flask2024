@@ -1,0 +1,142 @@
+$(document).ready(function() {
+    initialBiology(form)
+    document.getElementById('confirmBtn').addEventListener('click', confirmSteps);
+    document.getElementById('paramBtn').addEventListener('click', paramSteps);
+    document.getElementById('submitBtn').addEventListener('click', submitSteps);
+});
+
+
+
+// 这里初始化就是获取预设模式
+
+
+function initialSimple(data) {
+    data.forEach((stepObj, index) => {
+        const step = Object.keys(stepObj)[0];
+        const options = stepObj[step];
+        console.log(options)
+        let html = `<div id="input-${step}" class="form-group">
+                    <label><strong>${step}:</strong></label> `;
+        html += `<select id="select-${step}" class="form-control mt-2">`;
+        options.forEach(option => {html += `<option value="${option}">${option}</option>`;});
+        html += `</div>`;
+        document.getElementById('selected-steps').insertAdjacentHTML('beforeend', html);});
+}
+
+
+
+
+
+async function initialBiology(form) {
+    try {
+        const response = await fetch('/biology/get_preset', {
+            method: 'POST', headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({presetType: form["pipeline"], mode: form["mode"], param_choice: form["param_choice"]})});
+        const data = await response.json();
+        if (form["param_choice"] == "custom"){
+            initialSimple(data)
+        }else{
+            initialSimple(data)
+            steps = data
+            initOptionsUI(data)
+        }
+    } catch (error) { console.error('Error initialPreset:', error);}
+}
+
+
+
+
+async function confirmSteps() {
+    confirmBtn.disabled = true;  // 禁用确认按钮
+    const container = document.getElementById('selected-steps');
+
+
+    container.querySelectorAll('.form-group').forEach(step => {
+        const select = step.querySelector('select');
+        const selectedOption = select.options[select.selectedIndex].value;
+        steps.push(id: steps.length, type: selectedOption,mode: form["mode"], raw_type: "raw.fq.gz"});
+    });  
+
+    try {
+        const response = await fetch('/batch_code/init_div_steps', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ steps :steps })});
+        const data = await response.json();
+        steps = data
+        initOptionsUI(data);
+        soft_step = data;
+    } catch (error) { console.error('Error:', error); }
+    document.querySelectorAll('#selected-steps select').forEach(select => {select.disabled = true;})
+    document.getElementById('submitBtn').disabled = false; // 允许提交
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+async function submitSteps() {
+    try {
+        soft_step.forEach((step, stepId) => {
+            step.params = document.getElementById(`input-${stepId}`).value
+            const selectElements = document.querySelectorAll(`#input-step-${stepId} select`);
+            selectElements.forEach(select => {
+                step.select_option[select.title] = select.value;
+            });
+            const indexElements = document.querySelectorAll(`#index-step-${stepId} select`);
+            indexElements.forEach(select => {
+                step.select_index[select.title] = select.value;
+            });
+        })
+        const response = await fetch('/batch_code/submit_form_code/${task_id}', {
+            method: 'POST', headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({soft_step: soft_step})
+        });
+        if (response.ok) {window.location.href = '/batch_code/submit_form_code/' + task_id;}
+    }catch (error) {console.error('Error submitting steps:', error);}
+}
+
+
+
+
+
+document.getElementById('submitBtn').addEventListener('click', async function() {
+        try {
+            const response = await fetch('/biology/submit_config_script', {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ steps :steps,task_id: task_id})
+            });
+            const responseData = await response.json();
+        } catch (error) {console.error('Error submitting directory:', error);}
+
+    window.location.href = '/query/' + task_id;
+    fetch('/common/submit_smk_job', {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ task_id: task_id })
+    })
+});
+
+
+
+
+

@@ -1,0 +1,29 @@
+map bowtie2:  
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_bowtie2
+    $bowtie2 {params} -x $ref_path/{{step}_ref_species}/{{step}_ref_release}/bwa/{{step}_ref_release} -1 {fq1} -2 {fq2} -p 10 | \
+    samtools view -bS -F 256 -F 2048 - | samtools sort -@ 10 -o $output_dir/${{sample}}/{step}_bowtie2/${{sample}}.bam >> $output_dir/logs/${{sample}}.log 2>&1
+    samtools index $output_dir/${{sample}}/{step}_bowtie2/${{sample}}.bam
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_bowtie2
+    $bowtie2 {params} -x $ref_path/{{step}_ref_species}/{{step}_ref_release}/bwa/{{step}_ref_release} -U {fq} -p 10 | \
+    samtools view -bS -F 256 -F 2048 - | samtools sort -@ 10 -o $output_dir/${{sample}}/{step}_bowtie2/${{sample}}.bam >> $output_dir/logs/${{sample}}.log 2>&1
+    samtools index $output_dir/${{sample}}/{step}_bowtie2/${{sample}}.bam
+
+  simple_pair: "bowtie2 {params} -x index_name -1 sample_1.fq.gz -2 sample_2.fq.gz -S bowtie2_sample.sam -p 10"
+  simple_single: "bowtie2 {params} -x index_name -U sample.fq.gz -S bowtie2_sample.sam -p 10"
+
+map bowtie2_spikein:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_bowtie2_spikein
+    $bowtie2 {params} -x $ref_path/spikein/bowtie2/spikein -1 {fq1} -2 {fq2} -p 10 | \
+    samtools view -bS - | samtools sort -@ 10 -o $output_dir/${{sample}}/{step}_bowtie2_spikein/${{sample}}.bam >> $output_dir/logs/${{sample}}/{step}_bowtie2_spikein/${{sample}}.log 2>&1
+    samtools index $output_dir/${{sample}}/{step}_bowtie2_spikein/${{sample}}.bam
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_bowtie2_spikein
+    $bowtie2 {params} -x $ref_path/spikein/bowtie2/spikein -U {fq} -p 10 | \
+    samtools view -bS - | samtools sort -@ 10 -o $output_dir/${{sample}}/{step}_bowtie2_spikein/${{sample}}.bam >> $output_dir/logs/${{sample}}/{step}_bowtie2_spikein/${{sample}}.log 2>&1
+    samtools index $output_dir/${{sample}}/{step}_bowtie2_spikein/${{sample}}.bam
+
+  simple_pair: "bowtie2 {params} -x $ref_path/spikein/bowtie2/spikein -1 sample_1.fq.gz -2 sample_2.fq.gz -S bowtie2_spikein_sample.sam -p 10"
+  simple_single: "bowtie2 {params} -x $ref_path/spikein/bowtie2/spikein -U sample.fq.gz -S bowtie2_spikein_sample.sam -p 10"

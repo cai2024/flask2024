@@ -1,0 +1,157 @@
+available_steps:
+  Trim 操作:
+    - "Trim trim_galore"
+    - "Trim fastp"
+    - "Trim cutadapt"
+    - "Trim hairpin_cut"
+    - "Trim hairpin_cut_N"
+  比对操作:
+    - "map bwa"
+    - "map bwa_spikein"
+    - "map bowtie2"
+    - "map bowtie2_spikein"
+    - "map bismark"
+    - "map bismark_spikein"
+    - "map STAR"
+  BAM 文件操作:
+    - "BAM remove_duplicates"
+    - "BAM CGS_call_modify"
+    - "BAM CGS_spikein_modify"
+    - "BAM CT_call_modify"
+    - "BAM CT_spikein_modify"
+    - "BAM TBS_call_modify"
+    - "BAM TBS_spikein_modify"
+  其他:
+    - "other qualimap_cover"
+    - "other featureCounts"
+
+
+common_pair_fastq_input: &common_pair_fastq_input
+  fq1: "step{step_id}_{step_type}.{sample}_1.fq.gz"
+  fq2: "step{step_id}_{step_type}.{sample}_2.fq.gz"
+common_single_fastq_input: &common_single_fastq_input
+  fq: "step{step_id}_{step_type}.{sample}.fq.gz"
+common_pair_fastq_output: &common_pair_fastq_output
+  fq1: "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}_1.fq.gz"
+  fq2: "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}_2.fq.gz"
+common_single_fastq_output: &common_single_fastq_output
+  fq: "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.fq.gz"
+common_hairpin_cut_output: &common_hairpin_cut_output
+  fq1: "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}_1.fq.gz"
+  fq2: "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}_2.fq.gz"
+  fq: "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.fq.gz"
+common_CGS_input: &common_CGS_input
+  bam: "step{step_id}_{step_type}.{sample}.bam"
+  fq1: "step{step_id}_{step_type}.{sample}_1.fq.gz"
+common_CGS_output: &common_CGS_output
+  bed_mc: "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.mc.all.bed"
+  bed_hmc: "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.hmc.all.bed"
+common_bam_input: &common_bam_input
+  bam: "step{step_id}_{step_type}.{sample}.bam"
+common_bam_output: &common_bam_output
+  bam: "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.bam"
+common_txt_output: &common_txt_output
+  txt: "{{output_dir}}/{{sample}}/{input_step}_{input_soft}/{input_soft}_{{sample}}.txt"
+soft_config:
+  # Trim 操作
+  Trim:
+    pair:
+      input: *common_pair_fastq_input
+      output: *common_pair_fastq_output
+    single:
+      input: *common_single_fastq_input
+      output: *common_single_fastq_output
+  hairpin_cut: &hairpin_cut_anchor
+    pair:
+      input: *common_pair_fastq_input
+      output: *common_hairpin_cut_output
+    single:
+      input: *common_pair_fastq_input
+      output: *common_hairpin_cut_output
+  hairpin_cut_N:
+    <<: *hairpin_cut_anchor
+  # 比对操作
+  map:
+    pair:
+      input: *common_pair_fastq_input
+      output: *common_bam_output
+    single:
+      input: *common_single_fastq_input
+      output: *common_bam_output
+  # BAM 文件操作
+  BAM:
+    pair:
+      input: *common_bam_input
+      output: *common_bam_output
+    single:
+      input: *common_bam_input
+      output: *common_bam_output
+  CGS_call_modify: &CGS_anchor
+    pair:
+      input: *common_CGS_input
+      output: *common_CGS_output
+    single:
+      input: *common_CGS_input
+      output: *common_CGS_output
+  CGS_spikein_modify:
+    <<: *CGS_anchor
+  CT_call_modify:
+    <<: *CGS_anchor
+  CT_spikein_modify:
+    <<: *CGS_anchor
+  TBS_call_modify:
+    <<: *CGS_anchor
+  TBS_spikein_modify:
+    <<: *CGS_anchor
+  # 其他操作
+  other:
+    pair:
+      input: *common_bam_input
+      output: *common_txt_output
+    single:
+      input: *common_bam_input
+      output: *common_txt_output
+
+
+index_options_dict:
+  default:
+    ref:
+      mouse: [mm9, mm10, mm39]
+      human: [hg18, hg19, hg38, hs1]
+  STAR:
+    ref:
+      mouse: [ mm9, mm10, mm39 ]
+      human: [ hg18, hg19, hg38, hs1 ]
+    gtf: [a1, a2]
+    overhang: ["149", "99"]
+  featureCounts:
+    gtf: [a1, a2]
+
+
+paths_dict:
+  # soft路径
+  snakemake: "/data/biosoft/soft2024/conda/anaconda_23.4.7/bin/snakemake"  # 容器conda额外修改
+  # trim软件
+  fastp: "/data/cailab/flask2024/soft/fastp-0.23.4/fastp"
+  trim_galore: "trim_galore"  # conda
+  cutadapt: "cutadapt"  # conda
+  # 比对软件
+  bowtie2: "/data/cailab/flask2024/soft/bowtie2-2.5.2-linux-x86_64/bowtie2"
+  bowtie2_path: "/data/cailab/flask2024/soft/bowtie2-2.5.2-linux-x86_64"
+  bwa: "/data/cailab/flask2024/soft/bwa-0.7.17/bwa"
+  bismark: "/data/cailab/flask2024/soft/Bismark-0.24.2/bismark"
+  bismark_methylation_extractor: "/data/cailab/flask2024/soft/Bismark-0.24.2/bismark_methylation_extractor"
+  STAR: "/data/cailab/flask2024/soft/STAR-2.7.11b/bin/Linux_x86_64_static/STAR"
+  # other
+  picard: "/data/cailab/flask2024/soft/picard/picard.jar"
+  qualimap: "/data/cailab/flask2024/soft/qualimap_v2.3/qualimap"
+  bamUtil: "/data/cailab/flask2024/soft/bamUtil/bin/bam"
+  featureCounts: "/data/cailab/flask2024/soft/subread-2.0.6-Linux-x86_64/bin/featureCounts"
+  bedtools: "/data/cailab/flask2024/soft/bedtools2/bin/bedtools"
+  samtools: "samtools"
+  java: "/usr/bin/java"  # 存疑
+  # 配置目录
+  flask_out: "/data/cailab/flask_out"
+  ref_path: "/data/reference2024"
+  py_ref: "/data/cailab/flask2024/flask_snk/ref"
+  smk_dir: "/data/cailab/flask2024/demo/blueprint/workflows"

@@ -27,20 +27,27 @@
         </div>
     </div>
     <div class="text-center my-4">
-        <button id="confirmBtn" class="btn btn-success">确定</button>
-        <button id="unlockBtn" class="btn btn-warning">解锁</button>
-        <button id="submitBtn" class="btn btn-primary" disabled>提交</button>
+        <button id="confirmBtn" class="btn btn-success">确定步骤软件</button>
+        <button id="paramBtn" class="btn btn-warning">确认输入参数</button>
+        <button id="submitBtn" class="btn btn-primary" disabled>提交任务</button>
     </div>
     <div class="row h-100 page-header justify-content-center align-items-center">
-        <h2>数据</h2>
+        <h2>样本数据</h2>
     </div>
     <div class="row h-100 justify-content-center align-items-center">
         {{df_data|safe}}
     </div>
+    <div class="container mt-5">
+        <div class="col-md-12">
+            <pre><code class="hljs language-python" id="dynamicCode"># 这里将展示从服务器获取的代码</code></pre>
+        </div>
+    </div>
+
 </div>
 
 <script>
     var form = {{ form | tojson | safe }};
+    var task_id = "{{ task_id }}"
     let steps = [];
     let soft_step = [];
 </script>

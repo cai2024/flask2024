@@ -1,0 +1,12 @@
+BAM remove_duplicates:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_remove_duplicates
+    $java -jar $picard MarkDuplicates --REMOVE_DUPLICATES {params} -I {bam} -O $output_dir/${{sample}}/{step}_remove_duplicates/remove_duplicates_${{sample}}.bam -M $output_dir/${{sample}}/{step}_remove_duplicates/${{sample}}.txt > $output_dir/logs/${{sample}}/{step}_remove_duplicates/${{sample}}.log 2>&1
+    samtools index $output_dir/${{sample}}/{step}_remove_duplicates/remove_duplicates_${{sample}}.bam
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_remove_duplicates
+    $java -jar $picard MarkDuplicates --REMOVE_DUPLICATES {params} -I {bam} -O $output_dir/${{sample}}/{step}_remove_duplicates/remove_duplicates_${{sample}}.bam -M $output_dir/${{sample}}/{step}_remove_duplicates/${{sample}}.txt > $output_dir/logs/${{sample}}/{step}_remove_duplicates/${{sample}}.log 2>&1
+    samtools index $output_dir/${{sample}}/{step}_remove_duplicates/remove_duplicates_${{sample}}.bam
+
+  simple_pair: "java -jar MarkDuplicates --REMOVE_DUPLICATES {params} -I sample.bam -O remove_duplicates_sample.bam -M sample.txt"
+  simple_single: "java -jar MarkDuplicates --REMOVE_DUPLICATES {params} -I sample.bam -O remove_duplicates_sample.bam -M sample.txt"

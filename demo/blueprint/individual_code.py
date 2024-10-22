@@ -4,13 +4,11 @@ import subprocess
 import yaml
 import uuid
 from datetime import datetime
-from .modules.paths import paths_dict
-from demo.blueprint.modules.utils import get_samples_list
-from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script,batch_preset,init_div_steps3
-from demo.blueprint.modules.utils_complex import  my_code_simple, available_steps
+
+from demo.blueprint.modules.utils_common import  load_config,generate_steps_config,get_samples_list
 
 individual_code = Blueprint('individual_code', __name__)
-
+available_steps={}
 
 
 

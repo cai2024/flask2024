@@ -1,16 +1,18 @@
-from flask import request, Blueprint, render_template, current_app, url_for, redirect, Response, stream_with_context,g, session, Flask, jsonify,send_from_directory, abort
+from flask import request, Blueprint, render_template, current_app, url_for, redirect, Response, stream_with_context,g, session, Flask, jsonify,send_from_directory, abort, g
 import os
+import redis
 import subprocess
 import yaml
 import uuid
+import json
 from datetime import datetime
-from .modules.paths import paths_dict
-from demo.blueprint.modules.utils import get_samples_list
-from demo.blueprint.modules.utils_complex import generate_steps_config,generate_present_script, batch_preset, init_div_steps2
-from demo.blueprint.modules.utils_complex import available_steps, my_code_simple
-
+from demo.blueprint.modules.utils_batch_code import get_batch_preset, init_div_batch
+from demo.blueprint.modules.utils_common import generate_steps_config, get_samples_list
 batch_code = Blueprint('batch_code', __name__)
 # 分离出实际有效的公共路由
+
+
+
 
 @batch_code.route('/batch_code/', methods=['GET', 'POST'])
 def batch_home():
@@ -18,78 +20,49 @@ def batch_home():
     return redirect(url_for('batch_code.code_for_batch', task_id=task_id))
 @batch_code.route('/code_for_batch/<task_id>', methods=['GET', 'POST'])
 def code_for_batch(task_id):
-    return render_template('batch_code/home.html', available_steps=available_steps, task_id=task_id)
-
+    return render_template('batch_code/home.html', available_steps=current_app.config['available_steps'], task_id=task_id)
 
 @batch_code.route('/batch_code/get_preset', methods=['POST'])
 def get_preset():
-    data = request.json 
-    return jsonify(batch_preset(data.get("presetType"),data.get("mode")))
+    data = request.json
+    return jsonify(get_batch_preset(data.get("presetType"),data.get("mode"),current_app.config['soft_config'],current_app.config['index_options_dict'])) 
 
 @batch_code.route('/batch_code/init_div_steps', methods=['POST'])
 def init_div_steps():
     data = request.json
-    return jsonify(init_div_steps2(data.get("steps")))
-
+    return jsonify(init_div_batch(data.get("steps"),current_app.config['soft_config'],current_app.config['index_options_dict']))
 
 ################################################################################################################
 
 @batch_code.route('/batch_code/submit_form_code/<task_id>', methods=['GET', 'POST'])
 def submit_form_code(task_id):
     if request.method == 'POST':
-        data = request.json
-        session["task_id"] = task_id
-        session['soft_step'] = data['soft_step']
+        data = request.get_json()
+        session["task_id"] = data.get("task_id")
+        session['steps'] = data.get('steps')
         return jsonify({"task_id": task_id}) 
     elif request.method == 'GET':
         return render_template('batch_code/present_code.html', task_id=task_id)
 
-#####################################
-
 @batch_code.route('/batch_code/submit_config_script', methods=['POST'])
 def submit_dir_script():
-    data = request.json
+    data = request.get_json()
     select_raw_folder = data.get('select_raw_folder')
-    task_id = data.get("task_id")
-    soft_step = session.get('soft_step', [])
-    samples_list = get_samples_list(select_raw_folder, soft_step[0]["mode"], soft_step[0]["raw_type"])
+    task_id = session.get("task_id")
+    steps = session.get('steps', [])
+    samples_list = get_samples_list(select_raw_folder, steps[0]["mode"], steps[0]["raw_type"])
+    soft_config = current_app.config['soft_config']
+    paths_dict = current_app.config['paths_dict']
+    code_script = current_app.config['code_script']
 
-    config_string, snakemake_string = generate_steps_config(soft_step, select_raw_folder , samples_list, task_id, paths_dict)
-    my_code = generate_present_script(soft_step, select_raw_folder, samples_list, task_id, paths_dict)
+    output_path =os.path.join(current_app.config['paths_dict']["flask_out"], task_id)
+    os.makedirs(output_path, exist_ok=True)
 
-    os.makedirs("/data/cailab/flask_out/" + task_id, exist_ok=True)
-    with open("/data/cailab/flask_out/" + task_id + "/config.yaml", "w") as file1, open( "/data/cailab/flask_out/" + task_id + "/snakefile", "w") as file2:
+    config_string, snakemake_string, my_code = generate_steps_config(steps, select_raw_folder, samples_list, task_id, soft_config, paths_dict, code_script )
+    output_path =os.path.join(current_app.config['paths_dict']["flask_out"], task_id)
+    with open(os.path.join(output_path,"config.yaml"), "w") as file1, open( os.path.join(output_path,"snakefile"), "w") as file2:
         print(config_string, file=file1)
         print(snakemake_string, file=file2)
-    return jsonify({'my_code': my_code, "config_string": config_string, "snakemake_rule": snakemake_string})
-   
-@batch_code.route('/submit_smk_job', methods=['POST'])
-def submit_smk_job():
-    data = request.json
-    task_id=data.get('task_id')
-    outdir="/data/cailab/flask_out/" + task_id
-    snakemake_cmd = [
-        'nohup',
-        'snakemake',
-        '--snakefile', outdir+'/snakefile' ,
-        '-c', '10',
-        '--use-conda',
-        '--conda-frontend', 'conda',
-        '--configfile', outdir+'/config.yaml',
-        '--default-resources' ,  f"tmpdir='{outdir}/temp_test'", 'mem_mb=200000', 'disk_mb=200000', 
-       
-    ]
-
-    try:
-        # 使用Popen使命令在后台运行
-        with open(outdir + '/snk.log', 'w') as f:
-            subprocess.Popen(snakemake_cmd, stdout=f, stderr=subprocess.STDOUT, preexec_fn=os.setpgrp)
-        # 立即返回任务ID，客户端可用task_id来查询任务状态
-        return jsonify({'task_id': task_id })
-    except Exception as e:
-        with open(outdir + '/snk.log', 'a') as f:
-            print(f"运行出错: {e}", file=f)
-            print("请确认参数是否正确，或者@wangzc", file=f)
-        return jsonify({'error': '任务启动失败，请检查日志', 'task_id': task_id}), 500
+    return jsonify({'my_code': my_code, "config_string": config_string, "snakemake_rule": snakemake_string})   
 
 

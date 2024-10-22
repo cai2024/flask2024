@@ -1,0 +1,14 @@
+other qualimap_cover:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_qualimap_cover
+    $qualimap bamqc -bam {bam} -outdir $output_dir/${{sample}}/{step}_qualimap_cover -outformat PDF:HTML -nt 10 --java-mem-size=10G {params} > $output_dir/logs/${{sample}}/{step}_qualimap_cover/${{sample}}.log 2>&1
+    cp $output_dir/${{sample}}/{step}_qualimap_cover/genome_results.txt $output_dir/${{sample}}/{step}_qualimap_cover/qualimap_cover_${{sample}}.txt
+    cover_depth=$(python3 $py_ref/get_log.py cover_depth --input_file $output_dir/${{sample}}/{step}_qualimap_cover/qualimap_cover_${{sample}}.txt)
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_qualimap_cover
+    $qualimap bamqc -bam {bam} -outdir $output_dir/${{sample}}/{step}_qualimap_cover -outformat PDF:HTML -nt 10 --java-mem-size=10G {params} > $output_dir/logs/${{sample}}/{step}_qualimap_cover/${{sample}}.log 2>&1
+    cp $output_dir/${{sample}}/{step}_qualimap_cover/genome_results.txt $output_dir/${{sample}}/{step}_qualimap_cover/qualimap_cover_${{sample}}.txt
+    cover_depth=$(python3 $py_ref/get_log.py cover_depth --input_file $output_dir/${{sample}}/{step}_qualimap_cover/qualimap_cover_${{sample}}.txt)
+
+  simple_pair: "qualimap bamqc {params} -bam sample.bam -outdir qualimap_cover -outformat PDF:HTML -nt 10 --java-mem-size=10G"
+  simple_single: "qualimap bamqc {params} -bam sample.bam -outdir qualimap_cover -outformat PDF:HTML -nt 10 --java-mem-size=10G"

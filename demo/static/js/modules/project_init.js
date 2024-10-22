@@ -33,13 +33,13 @@ async function initOptionsUI(data) {
             });
             index_html += `</div>`;
             document.getElementById('indexArea').insertAdjacentHTML('beforeend', index_html);
-            handleSpeciesChange(document.getElementById(`species-${step.id}`), step.id);
+            handleSpeciesChange(document.getElementById(`species-${step.id}`) ,step.id);
         }
         document.getElementById('inputArea').insertAdjacentHTML('beforeend', html);
     })
 }
 
-function handleSpeciesChange(selectElement, stepId) {
+function handleSpeciesChange(selectElement,stepId) {
     const step = steps[stepId]
     const selectedSpecies = selectElement.value;
     const versionSelect = document.getElementById(`version-${step.id}`);

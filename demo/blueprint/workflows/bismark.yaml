@@ -1,0 +1,38 @@
+map bismark:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_bismark
+    $bismark --path_to_bowtie2 $bowtie2_path $ref_path/{{step}_ref_species}/{{step}_ref_release}/bismark/ -1 {fq1} -2 {fq2} {params} -o $output_dir/${{sample}}/{step}_bismark -p 10 > $output_dir/logs/${{sample}}/{step}_bismark/${{sample}}.log 2>&1
+    if grep -q "ERR" $output_dir/logs/${{sample}}/{step}_bismark/${{sample}}.log; then echo "Bismark encountered an error, high likelihood of memory error!" >&2; exit 1; fi
+    temp_bam=$(basename {fq1} .fq.gz)_bismark_bt2_pe.bam
+    samtools view -bh -F 256 -F 2048 -@ 10 $output_dir/${{sample}}/{step}_bismark/$temp_bam | samtools sort -@ 10 > $output_dir/${{sample}}/{step}_bismark/bismark_${{sample}}.bam
+    samtools index $output_dir/${{sample}}/{step}_bismark/bismark_${{sample}}.bam
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_bismark
+    $bismark --path_to_bowtie2 $bowtie2_path $ref_path/{{step}_ref_species}/{{step}_ref_release}/bismark/ {fq} {params} -o $output_dir/${{sample}}/{step}_bismark -p 10 > $output_dir/logs/${{sample}}/{step}_bismark/${{sample}}.log 2>&1
+    if grep -q "ERR" $output_dir/logs/${{sample}}/{step}_bismark/${{sample}}.log; then echo "Bismark encountered an error, high likelihood of memory error!" >&2; exit 1; fi
+    temp_bam=$(basename {fq} .fq.gz)_bismark_bt2.bam
+    samtools view -bh -F 256 -F 2048 -@ 10 $output_dir/${{sample}}/{step}_bismark/$temp_bam | samtools sort -@ 10 > $output_dir/${{sample}}/{step}_bismark/bismark_${{sample}}.bam
+    samtools index $output_dir/${{sample}}/{step}_bismark/bismark_${{sample}}.bam
+
+  simple_pair: "bismark --path_to_bowtie2 $bowtie2_path $ref_path/bismark/ -1 sample_1.fq.gz -2 sample_2.fq.gz {params} -o sample -p 10 "
+  simple_single: "bismark --path_to_bowtie2 $bowtie2_path $ref_path/bismark/ sample.fq.gz {params} -o sample -p 10 "
+
+map bismark_spikein:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_bismark_spikein
+    $bismark --path_to_bowtie2 $bowtie2_path $ref_path/spikein/bismark/ -1 {fq1} -2 {fq2} {params} -o $output_dir/${{sample}}/{step}_bismark_spikein -p 10 > $output_dir/logs/${{sample}}/{step}_bismark_spikein/${{sample}}.log 2>&1
+    if grep -q "ERR" $output_dir/logs/${{sample}}/{step}_bismark_spikein/${{sample}}.log; then echo "Bismark encountered an error, high likelihood of memory error!" >&2; exit 1; fi
+    temp_bam=$(basename {fq1} .fq.gz)_bismark_bt2_pe.bam
+    samtools sort -@ 10 $output_dir/${{sample}}/{step}_bismark_spikein/$temp_bam > $output_dir/${{sample}}/{step}_bismark_spikein/bismark_spikein_${{sample}}.bam
+    samtools index $output_dir/${{sample}}/{step}_bismark_spikein/bismark_spikein_${{sample}}.bam
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_bismark_spikein
+    $bismark --path_to_bowtie2 $bowtie2_path $ref_path/spikein/bismark/ {fq} {params} -o $output_dir/${{sample}}/{step}_bismark_spikein -p 10 > $output_dir/logs/${{sample}}/{step}_bismark_spikein/${{sample}}.log 2>&1
+    if grep -q "ERR" $output_dir/logs/${{sample}}/{step}_bismark_spikein/${{sample}}.log; then echo "Bismark encountered an error, high likelihood of memory error!" >&2; exit 1; fi
+    temp_bam=$(basename {fq} .fq.gz)_bismark_bt2.bam
+    samtools sort -@ 10 $output_dir/${{sample}}/{step}_bismark_spikein/$temp_bam > $output_dir/${{sample}}/{step}_bismark_spikein/bismark_spikein_${{sample}}.bam
+    samtools index $output_dir/${{sample}}/{step}_bismark_spikein/bismark_spikein_${{sample}}.bam
+
+  simple_pair: "bismark --path_to_bowtie2 $bowtie2_path $ref_path/spikein/bismark/ -1 sample_1.fq.gz -2 sample_2.fq.gz {params} -o sample -p 10 "
+  simple_single: "bismark --path_to_bowtie2 $bowtie2_path $ref_path/spikein/bismark/ sample.fq.gz {params} -o sample -p 10 "
+

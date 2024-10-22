@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block title %}操作日志和进度{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>操作日志</h2>
+            <button id="refreshLogsButton" class="btn btn-secondary">刷新日志</button>  
+            <pre id="log-content" style="height: 400px; overflow-y: scroll; background-color: #f4f4f4; padding: 10px;">
+            </pre>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <h2>分析进度</h2>
+            <button id="refreshButton" class="btn btn-primary">刷新结果</button>  
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover table-sm" id="data_info">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var url = window.location.href;
+    var taskId = url.substring(url.lastIndexOf('/') + 1);
+</script>
+<script src="{{ url_for('static', filename='js/common/query.js') }}"></script>
+{% endblock %}
+

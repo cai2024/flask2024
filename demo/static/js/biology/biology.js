@@ -1,38 +1,64 @@
 $(document).ready(function() {
     initialBiology(form)
-
+    document.getElementById('confirmBtn').addEventListener('click', confirmSteps);
+    document.getElementById('paramBtn').addEventListener('click', paramSteps);
+    document.getElementById('submitBtn').addEventListener('click', submitSteps);
 });
+
+
+
+
+
+function initialSimple(data) {
+    data.forEach((stepObj, index) => {
+        const step = Object.keys(stepObj)[0];
+        const options = stepObj[step];
+        console.log(options)
+        let html = `<div id="input-${step}" class="form-group">
+                    <label><strong>${step}:</strong></label> `;
+        html += `<select id="select-${step}" class="form-control mt-2">`;
+        options.forEach(option => {html += `<option value="${option}">${option}</option>`;});
+        html += `</div>`;
+        document.getElementById('selected-steps').insertAdjacentHTML('beforeend', html);});
+}
+
 
 async function initialBiology(form) {
     try {
         const response = await fetch('/biology/get_preset', {
             method: 'POST', headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({form: form})});
+            body: JSON.stringify({presetType: form["pipeline"], mode: form["mode"], param_choice: form["param_choice"]})});
         const data = await response.json();
-        data.forEach((step, index) => {
-            let html = `<div id="input-${step.step}" class="form-group">
-                        <label><strong>${step.step}:</strong></label> `;
-            html += `<select id="select-${step.step}" class="form-control mt-2">`;
-            step.select.forEach(option => { html += `<option value="${option}">${option}</option>`; });
-            html += `</div>`;
-            document.getElementById('selected-steps').insertAdjacentHTML('beforeend', html);
-        })                        
+        if (form["param_choice"] === "custom"){
+            initialSimple(data)
+        }else{
+            initialSimple(data.simple)
+            steps = data.preset
+            const container = document.getElementById('selected-steps');
+            container.querySelectorAll('.form-group').forEach((step,id) => {
+                const select = step.querySelector('select');
+                select.value = steps[id].type;
+            });
+            confirmBtn.disabled = true
+            initOptionsUI(steps)
+        }
     } catch (error) { console.error('Error initialPreset:', error);}
 }
 
 
-document.getElementById('confirmBtn').addEventListener('click', confirmSteps);
+
+
 async function confirmSteps() {
     confirmBtn.disabled = true;  // 禁用确认按钮
     const container = document.getElementById('selected-steps');
+
+
     container.querySelectorAll('.form-group').forEach(step => {
         const select = step.querySelector('select');
         const selectedOption = select.options[select.selectedIndex].value;
-        steps.push({
-            id: steps.length, type: selectedOption,
-            mode: form["mode"], raw_type: "raw.fq.gz" ,
-        });
+        steps.push({id: steps.length, type: selectedOption,mode: form["mode"], raw_type: "raw.fq.gz"});
     });  
+
     try {
         const response = await fetch('/batch_code/init_div_steps', {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -46,13 +72,73 @@ async function confirmSteps() {
     document.getElementById('submitBtn').disabled = false; // 允许提交
 }
 
-document.getElementById('submitBtn').addEventListener('click', function() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+async function submitSteps() {
+    try {
+        soft_step.forEach((step, stepId) => {
+            step.params = document.getElementById(`input-${stepId}`).value
+            const selectElements = document.querySelectorAll(`#input-step-${stepId} select`);
+            selectElements.forEach(select => {
+                step.select_option[select.title] = select.value;
+            });
+            const indexElements = document.querySelectorAll(`#index-step-${stepId} select`);
+            indexElements.forEach(select => {
+                step.select_index[select.title] = select.value;
+            });
+        })
+        const response = await fetch('/batch_code/submit_form_code/${task_id}', {
+            method: 'POST', headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({soft_step: soft_step})
+        });
+        if (response.ok) {window.location.href = '/batch_code/submit_form_code/' + task_id;}
+    }catch (error) {console.error('Error submitting steps:', error);}
+}
+
+
+
+
+
+document.getElementById('submitBtn').addEventListener('click', async function() {
+        try {
+            const response = await fetch('/biology/submit_config_script', {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ steps :steps,task_id: task_id})
+            });
+            const responseData = await response.json();
+        } catch (error) {console.error('Error submitting directory:', error);}
+
     window.location.href = '/query/' + task_id;
-    fetch('/submit_smk_job', {
+    fetch('/common/submit_smk_job', {
         method: 'POST', headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ task_id: task_id })
-        })
-    });
+    })
+});
+
+
 
 
 
