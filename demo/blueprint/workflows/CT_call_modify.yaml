@@ -1,0 +1,38 @@
+BAM CT_call_modify:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_CT_call_modify
+    python3 $py_ref/CT_extract_modify.py --bam {bam} --cutfq1 {fq1} --ref $ref_path/{{step}_ref_species}/{{step}_ref_release}/{{step}_ref_release}.fa \
+    --parallel 10 --type mc --output $output_dir/${{sample}}/{step}_CT_call_modify/CT_call_modify_${{sample}}.mc.all.bed {params} > $output_dir/logs/${{sample}}/{step}_CT_call_modify/${{sample}}.log 2>&1 
+    python3 $py_ref/CT_extract_modify.py --bam {bam} --cutfq1 {fq1} --ref $ref_path/{{step}_ref_species}/{{step}_ref_release}/{{step}_ref_release}.fa \
+    --parallel 10 --type hmc --output $output_dir/${{sample}}/{step}_CT_call_modify/CT_call_modify_${{sample}}.hmc.all.bed {params} > $output_dir/logs/${{sample}}/{step}_CT_call_modify/${{sample}}.log 2>&1
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_CT_call_modify
+    python3 $py_ref/CT_extract_modify.py --bam {bam} --cutfq1 {fq1} --ref $ref_path/{{step}_ref_species}/{{step}_ref_release}/{{step}_ref_release}.fa \
+    --parallel 10 --type mc --output $output_dir/${{sample}}/{step}_CT_call_modify/CT_call_modify_${{sample}}.mc.all.bed {params} > $output_dir/logs/${{sample}}/{step}_CT_call_modify/${{sample}}.log 2>&1 
+    python3 $py_ref/CT_extract_modify.py --bam {bam} --cutfq1 {fq1} --ref $ref_path/{{step}_ref_species}/{{step}_ref_release}/{{step}_ref_release}.fa \
+    --parallel 10 --type hmc --output $output_dir/${{sample}}/{step}_CT_call_modify/CT_call_modify_${{sample}}.hmc.all.bed {params} > $output_dir/logs/${{sample}}/{step}_CT_call_modify/${{sample}}.log 2>&1
+
+  simple_pair: "python3 $py_ref/CT_extract_modify.py {params} --bam sample.bam --cutfq1 sample_1.fq.gz -ref ref.fa --parallel 10 --type hmc --output CGS_call_modify_sample.hmc.all.bed"
+  simple_single: "python3 $py_ref/CT_modify.py {params} --bam sample.bam --cutfq1 sample_1.fq.gz -ref ref.fa --parallel 10 --type hmc --output CGS_call_modify_sample.hmc.all.bed"
+
+BAM CT_spikein_modify:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_CT_spikein_modify
+    python3 $py_ref/CT_extract_modify.py --bam {bam} --cutfq1 {fq1} --ref $ref_path/spikein/spikein.fa \
+    --parallel 10 --type mc --output $output_dir/${{sample}}/{step}_CT_spikein_modify/CT_spikein_modify_${{sample}}.mc.all.bed {params} > $output_dir/logs/${{sample}}/{step}_CT_spikein_modify/${{sample}}.log 2>&1
+    python3 $py_ref/CT_extract_modify.py --bam {bam} --cutfq1 {fq1} --ref $ref_path/spikein/spikein.fa \
+    --parallel 10 --type hmc --output $output_dir/${{sample}}/{step}_CT_spikein_modify/CT_spikein_modify_${{sample}}.hmc.all.bed {params} > $output_dir/logs/${{sample}}/{step}_CT_spikein_modify/${{sample}}.log 2>&1
+    all_spikein=$(python3 $py_ref/get_log.py spikein --bam {bam} --hmc $output_dir/${{sample}}/{step}_CT_spikein_modify/CT_spikein_modify_${{sample}}.hmc.all.bed --mc $output_dir/${{sample}}/{step}_CT_spikein_modify/CT_spikein_modify_${{sample}}.mc.all.bed --bedtools $bedtools)
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_CT_spikein_modify
+    python3 $py_ref/CT_extract_modify.py --bam {bam} --cutfq1 {fq1} --ref $ref_path/spikein/spikein.fa \
+    --parallel 10 --type mc --output $output_dir/${{sample}}/{step}_CT_spikein_modify/CT_spikein_modify_${{sample}}.mc.all.bed {params} > $output_dir/logs/${{sample}}/{step}_CT_spikein_modify/${{sample}}.log 2>&1
+    python3 $py_ref/CT_extract_modify.py --bam {bam} --cutfq1 {fq1} --ref $ref_path/spikein/spikein.fa \
+    --parallel 10 --type hmc --output $output_dir/${{sample}}/{step}_CT_spikein_modify/CT_spikein_modify_${{sample}}.hmc.all.bed {params} > $output_dir/logs/${{sample}}/{step}_CT_spikein_modify/${{sample}}.log 2>&1
+    all_spikein=$(python3 $py_ref/get_log.py spikein --bam {bam} --hmc $output_dir/${{sample}}/{step}_CT_spikein_modify/CT_spikein_modify_${{sample}}.hmc.all.bed --mc $output_dir/${{sample}}/{step}_CT_spikein_modify/CT_spikein_modify_${{sample}}.mc.all.bed --bedtools $bedtools)
+
+  simple_pair: "python3 $py_ref/CT_extract_modify.py {params} --bam sample.bam --cutfq1 sample_1.fq.gz -ref ref.fa --parallel 10 --type hmc --output CGS_spikein_modify_sample.hmc.all.bed"
+  simple_single: "python3 $py_ref/CT_extract_modify.py {params} --bam sample.bam --cutfq1 sample_1.fq.gz -ref ref.fa --parallel 10 --type hmc --output CGS_spikein_modify_sample.hmc.all.bed"
+
+
+

@@ -1,0 +1,10 @@
+Building DAG of jobs...
+InputFunctionException in rule bowtie2_pe in file /data/cailab/flask2024/smk/bowtie2.smk, line 32:
+Error:
+  KeyError: 'step1_ref_species'
+Wildcards:
+  output_dir=/data/cailab/flask_out/20241007140620-5f0e704c-783c-4fb7-9fb7-f25fafd307cc
+  sample=wgs
+  step=step1
+Traceback:
+  File "/data/cailab/flask2024/smk/bowtie2.smk", line 41, in <lambda> (rule bowtie2_pe, line 66, /data/cailab/flask2024/smk/bowtie2.smk)

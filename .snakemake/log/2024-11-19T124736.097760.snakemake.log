@@ -1,0 +1,10 @@
+Building DAG of jobs...
+InputFunctionException in rule CT_XM_sp_bam in file /data/cailab/flask2024/demo/blueprint/workflows/CT_XM_bam.smk, line 28:
+Error:
+  KeyError: 'fq1'
+Wildcards:
+  output_dir=/data/cailab/flask_out/20241119124555-c7af425d-f634-4fa0-9193-01202949d5b5
+  sample=caps
+  step=step8
+Traceback:
+  File "/data/cailab/flask2024/demo/blueprint/workflows/CT_XM_bam.smk", line 31, in <lambda> (rule CT_XM_sp_bam, line 57, /data/cailab/flask2024/demo/blueprint/workflows/CT_XM_bam.smk)

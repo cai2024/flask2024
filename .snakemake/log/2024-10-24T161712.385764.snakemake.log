@@ -1,0 +1,56 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+bismark_se        2
+total             3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Oct 24 16:17:12 2024]
+localrule bismark_se:
+    input: /data/cailab/fastq/test_x50.fq.gz
+    output: /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/test_x50/step0_bismark/bismark_test_x50.bam
+    log: /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/logs/test_x50/step0_bismark/test_x50.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/test_x50/step0_bismark/bismark_test_x50.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29, sample=test_x50, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/temp_test
+
+Activating conda environment: flask2024
+[Thu Oct 24 16:17:43 2024]
+Error in rule bismark_se:
+    jobid: 2
+    input: /data/cailab/fastq/test_x50.fq.gz
+    output: /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/test_x50/step0_bismark/bismark_test_x50.bam
+    log: /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/logs/test_x50/step0_bismark/test_x50.log (check log file(s) for error details)
+    conda-env: flask2024
+    shell:
+        
+        /data/cailab/flask2024/soft/Bismark-0.24.2/bismark --path_to_bowtie2 /data/cailab/flask2024/soft/bowtie2-2.5.2-linux-x86_64 /data/reference2024/mouse/mm9/bismark/ /data/cailab/fastq/test_x50.fq.gz  -o /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/test_x50/step0_bismark/ -p 10 > /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/logs/test_x50/step0_bismark/test_x50.log 2>&1 
+        if grep -q "ERR" /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/logs/test_x50/step0_bismark/test_x50.log; then echo "Bismark encountered an error，high likelihood of memory error!" >&2; exit 1; fi 
+        temp_bam=$(basename /data/cailab/fastq/test_x50.fq.gz .fq.gz)_bismark_bt2.bam
+        samtools view -bh -F 256 -F 2048 -@ 10 /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/test_x50/step0_bismark/$temp_bam |  samtools sort -@ 10  > /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/test_x50/step0_bismark/bismark_test_x50.bam
+        samtools index /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/test_x50/step0_bismark/bismark_test_x50.bam
+
+
+
+        total_reads=$(zcat /data/cailab/fastq/test_x50.fq.gz | echo $((`wc -l` / 4)))
+        aligned_reads=$(samtools view -c -F 4 /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/test_x50/step0_bismark/bismark_test_x50.bam)
+        alignment_percentage=$(python3 -c "print(format(100 * $aligned_reads / $total_reads, '.2f'))" )
+        echo "step0 Alignment_Percentage $alignment_percentage%" >> /data/cailab/flask_out/20241024161703-7d333f16-889b-4b7c-bf29-c31144f32a29/logs/test_x50.log
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-10-24T161712.385764.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

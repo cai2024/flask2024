@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+qualimap_bamqc        1
+total                 2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep  4 20:13:41 2024]
+localrule qualimap_bamqc:
+    input: /data/cailab/flask_out/20240904201048-6de1baf4-d8fb-436f-af9e-55cef4340b45/wgs/step2_primary_filtering/primary_filtering_wgs.bam
+    output: /data/cailab/flask_out/20240904201048-6de1baf4-d8fb-436f-af9e-55cef4340b45/wgs/step3_qualimap_cover/qualimap_cover_wgs.txt
+    log: /data/cailab/flask_out/20240904201048-6de1baf4-d8fb-436f-af9e-55cef4340b45/logs/wgs/step3_qualimap_cover/wgs.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_out/20240904201048-6de1baf4-d8fb-436f-af9e-55cef4340b45/wgs/step3_qualimap_cover/qualimap_cover_wgs.txt
+    wildcards: output_dir=/data/cailab/flask_out/20240904201048-6de1baf4-d8fb-436f-af9e-55cef4340b45, sample=wgs, step=step3
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240904201048-6de1baf4-d8fb-436f-af9e-55cef4340b45/temp_test
+
+Activating conda environment: flask2024
+[Wed Sep  4 20:14:07 2024]
+Finished job 4.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep  4 20:14:07 2024]
+localrule all:
+    input: /data/cailab/flask_out/20240904201048-6de1baf4-d8fb-436f-af9e-55cef4340b45/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20240904201048-6de1baf4-d8fb-436f-af9e-55cef4340b45/wgs/step1_bowtie2/bowtie2_wgs.bam, /data/cailab/flask_out/20240904201048-6de1baf4-d8fb-436f-af9e-55cef4340b45/wgs/step2_primary_filtering/primary_filtering_wgs.bam, /data/cailab/flask_out/20240904201048-6de1baf4-d8fb-436f-af9e-55cef4340b45/wgs/step3_qualimap_cover/qualimap_cover_wgs.txt
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20240904201048-6de1baf4-d8fb-436f-af9e-55cef4340b45/wgs/step3_qualimap_cover/qualimap_cover_wgs.txt
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240904201048-6de1baf4-d8fb-436f-af9e-55cef4340b45/temp_test
+
+[Wed Sep  4 20:14:07 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-09-04T201340.015371.snakemake.log

@@ -1,0 +1,61 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+bismark_se        2
+total             3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Oct 24 16:13:52 2024]
+localrule bismark_se:
+    input: /data/cailab/fastq/test_x100.fq.gz
+    output: /data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/test_x100/step0_bismark/bismark_test_x100.bam
+    log: /data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/logs/test_x100/step0_bismark/test_x100.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/test_x100/step0_bismark/bismark_test_x100.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df, sample=test_x100, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/temp_test
+
+Activating conda environment: flask2024
+[Thu Oct 24 16:14:33 2024]
+Finished job 2.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Oct 24 16:14:33 2024]
+localrule bismark_se:
+    input: /data/cailab/fastq/test_s100.fq.gz
+    output: /data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/test_s100/step0_bismark/bismark_test_s100.bam
+    log: /data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/logs/test_s100/step0_bismark/test_s100.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/test_s100/step0_bismark/bismark_test_s100.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df, sample=test_s100, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/temp_test
+
+Activating conda environment: flask2024
+[Thu Oct 24 16:15:10 2024]
+Finished job 1.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Oct 24 16:15:10 2024]
+localrule all:
+    input: /data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/test_s100/step0_bismark/bismark_test_s100.bam, /data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/test_x100/step0_bismark/bismark_test_x100.bam
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/test_s100/step0_bismark/bismark_test_s100.bam, /data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/test_x100/step0_bismark/bismark_test_x100.bam
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241024161342-25c51f03-31a4-4602-979a-caf56b9c38df/temp_test
+
+[Thu Oct 24 16:15:10 2024]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2024-10-24T161352.789609.snakemake.log

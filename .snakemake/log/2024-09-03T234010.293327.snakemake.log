@@ -1,0 +1,40 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+bismark_se            2
+trim_galore_se        2
+total                 5
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Sep  3 23:40:10 2024]
+localrule trim_galore_se:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz
+    output: /data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736/wgs_1/step0_trim_galore/trim_galore_wgs_1.fq.gz
+    log: /data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736/logs/wgs_1/step0_trim_galore/trim_galore_wgs_1_single.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736/wgs_1/step0_trim_galore/trim_galore_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736, sample=wgs_1, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736/temp_test
+
+Activating conda environment: flask2024
+
+[Tue Sep  3 23:40:15 2024]
+localrule trim_galore_se:
+    input: /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736/wgs_2/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736/logs/wgs_2/step0_trim_galore/trim_galore_wgs_2_single.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736/wgs_2/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736, sample=wgs_2, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736/temp_test
+
+Activating conda environment: flask2024

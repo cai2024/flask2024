@@ -1,0 +1,17 @@
+
+
+BAM clipOverlap:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_clipOverlap
+    samtools sort -n {bam} -@ 4 -o $output_dir/${{sample}}/{step}_remove_duplicates/remove_duplicates_${{sample}}_temp.bam
+    ($bamUtil clipOverlap --readName --in $output_dir/${{sample}}/{step}_remove_duplicates/remove_duplicates_${{sample}}_temp.bam --out - | \
+    samtools sort -@ 4 -o $output_dir/${{sample}}/{step}_remove_duplicates/remove_duplicates_${{sample}}.bam -O bam - ) > $output_dir/logs/${{sample}}/{step}_clipOverlap/${{sample}}.log 2>&1
+    rm $output_dir/${{sample}}/{step}_remove_duplicates/remove_duplicates_${{sample}}_temp.bam
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_clipOverlap
+    samtools sort -n {bam} -@ 4 -o $output_dir/${{sample}}/{step}_remove_duplicates/remove_duplicates_${{sample}}_temp.bam
+    ($bamUtil clipOverlap --readName --in $output_dir/${{sample}}/{step}_remove_duplicates/remove_duplicates_${{sample}}_temp.bam --out - | \
+    samtools sort -@ 4 -o $output_dir/${{sample}}/{step}_remove_duplicates/remove_duplicates_${{sample}}.bam -O bam - ) > $output_dir/logs/${{sample}}/{step}_clipOverlap/${{sample}}.log 2>&1
+    rm $output_dir/${{sample}}/{step}_remove_duplicates/remove_duplicates_${{sample}}_temp.bam
+
+

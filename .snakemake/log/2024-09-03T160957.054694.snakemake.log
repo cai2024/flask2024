@@ -1,0 +1,33 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+bowtie2_se            2
+trim_galore_se        2
+total                 5
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Sep  3 16:09:57 2024]
+localrule trim_galore_se:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz
+    output: /data/cailab/flask_out/20240903160659-3f50430c-36f0-4884-bcbc-eac505a5962a/wgs_1/step0_trim_galore/trim_galore_wgs_1.fq.gz
+    log: /data/cailab/flask_out/20240903160659-3f50430c-36f0-4884-bcbc-eac505a5962a/logs/wgs_1/step0_trim_galore/trim_galore_wgs_1_single.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240903160659-3f50430c-36f0-4884-bcbc-eac505a5962a/wgs_1/step0_trim_galore/trim_galore_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240903160659-3f50430c-36f0-4884-bcbc-eac505a5962a, sample=wgs_1, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903160659-3f50430c-36f0-4884-bcbc-eac505a5962a/temp_test
+
+RuleException in rule trim_galore_se in file /data/cailab/flask2024/smk/trim.smk, line 4:
+AttributeError: 'InputFiles' object has no attribute 'fq1', when formatting the following:
+
+        trim_galore  {params.other} --cores {threads} -o {params.trim_dir} {input.fq1} > {log} 2>&1
+        temp_name=$(basename {input.fq1} | sed 's/\.fq\.gz$/_trimmed.fq.gz/')
+        mv {params.trim_dir}/$temp_name {output.trim_fq1}
+        

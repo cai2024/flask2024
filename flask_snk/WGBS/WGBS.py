@@ -21,11 +21,11 @@ spikein_list = '\t'.join([f'{param}_(cover|dep)\t{param}_mc(CpG|CHG|CHH)' for pa
 
 
 # 命令行加载
-include: "trim.smk"
-include: "mapping.smk"
-include: "deduping.smk"
-include: "call_modify.smk"
-include: "cover.smk"
+include: "../smk_modules/trim.smk"
+include: "../smk_modules/mapping_bismark.smk"
+include: "../smk_modules/deduping.smk"
+include: "../smk_modules/call_dup_bismark.smk"
+include: "../smk_modules/de_cover.smk"
 include: "logging.smk"
 
 
@@ -33,11 +33,11 @@ include: "logging.smk"
 # 规则定义
 rule all:
     input:
-        expand("{output_dir}/bam/{align_soft}/{sample}_{mode}.bam", 
+        expand("{output_dir}/{sample}/bam/{align_soft}/{sample}_{mode}.bam", 
                output_dir=config['output_dir'], sample=config["sampleList"], mode=config["mode"],align_soft=config['align_soft']),
-        expand("{output_dir}/sp_bam/{align_soft}/sp_{sample}_{mode}.bam",
+        expand("{output_dir}/{sample}/sp_bam/{align_soft}/sp_{sample}_{mode}.bam",
                output_dir=config['output_dir'], sample=config["sampleList"], mode=config["mode"],align_soft=config['align_soft']),
-        expand("{output_dir}/de_bam/{call_modify_soft}/{sample}_dedup_splitting_report.txt",
+        expand("{output_dir}/{sample}/de_bam/{call_modify_soft}/{sample}_dedup_splitting_report.txt",
                output_dir=config['output_dir'], sample=config["sampleList"], mode=config["mode"],call_modify_soft=config['call_modify_soft']),
         expand("{output_dir}/final_log/{sample}.log",
                output_dir=config['output_dir'], sample=config["sampleList"]),

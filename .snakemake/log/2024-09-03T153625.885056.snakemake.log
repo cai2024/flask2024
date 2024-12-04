@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /data/cailab/flask_out/20240903153548-dabcc73e-88c7-4f37-adff-59b2bf79d3ca/snakefile, line 4:
+Missing input files for rule all:
+    affected files:
+        /data/cailab/flask_out/20240903153548-dabcc73e-88c7-4f37-adff-59b2bf79d3ca/wgs/step1_bowtie2/bowtie2_wgs.bam

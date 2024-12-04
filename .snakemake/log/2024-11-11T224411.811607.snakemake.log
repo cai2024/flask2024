@@ -1,0 +1,10 @@
+Building DAG of jobs...
+InputFunctionException in rule remove_duplicates in file /data/cailab/flask2024/demo/blueprint/workflows/deduping.smk, line 1:
+Error:
+  KeyError: 'step4'
+Wildcards:
+  output_dir=/data/cailab/flask_out/20241108154102-7044cc18-bf3a-4fe1-a525-e80c14b0812a
+  sample=CT-ICR
+  step=step4
+Traceback:
+  File "/data/cailab/flask2024/demo/blueprint/workflows/deduping.smk", line 3, in <lambda> (rule remove_duplicates, line 1, /data/cailab/flask2024/demo/blueprint/workflows/deduping.smk)

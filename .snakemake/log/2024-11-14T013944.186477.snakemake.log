@@ -1,0 +1,81 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+all                          1
+astair_spikein_modify        1
+clipOverlap                  1
+sp_bwa_pe                    1
+total                        4
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Nov 14 01:39:45 2024]
+localrule sp_bwa_pe:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz, /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step0_bwa_spikein/bwa_spikein_wgs.bam
+    log: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/logs/wgs/step0_bwa_spikein/wgs.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step0_bwa_spikein/bwa_spikein_wgs.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11, sample=wgs, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/temp_test
+
+Activating conda environment: flask2024
+[Thu Nov 14 01:40:13 2024]
+Finished job 1.
+1 of 4 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Nov 14 01:40:13 2024]
+localrule clipOverlap:
+    input: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step0_bwa_spikein/bwa_spikein_wgs.bam
+    output: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step1_clipOverlap/clipOverlap_wgs.bam
+    log: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/logs/wgs/step1_clipOverlap/wgs.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step1_clipOverlap/clipOverlap_wgs.bam; Input files updated by another job: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step0_bwa_spikein/bwa_spikein_wgs.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11, sample=wgs, step=step1
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/temp_test
+
+Activating conda environment: flask2024
+[Thu Nov 14 01:40:15 2024]
+Finished job 2.
+2 of 4 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Nov 14 01:40:15 2024]
+localrule astair_spikein_modify:
+    input: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step1_clipOverlap/clipOverlap_wgs.bam
+    output: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step2_astair_spikein_modify/astair_spikein_modify_wgs.bed
+    log: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/logs/wgs/step2_astair_spikein_modify/wgs.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step2_astair_spikein_modify/astair_spikein_modify_wgs.bed; Input files updated by another job: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step1_clipOverlap/clipOverlap_wgs.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11, sample=wgs, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/temp_test
+
+Activating conda environment: py39
+[Thu Nov 14 01:40:24 2024]
+Finished job 3.
+3 of 4 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Nov 14 01:40:24 2024]
+localrule all:
+    input: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step0_bwa_spikein/bwa_spikein_wgs.bam, /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step1_clipOverlap/clipOverlap_wgs.bam, /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step2_astair_spikein_modify/astair_spikein_modify_wgs.bed
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step0_bwa_spikein/bwa_spikein_wgs.bam, /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step2_astair_spikein_modify/astair_spikein_modify_wgs.bed, /data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/wgs/step1_clipOverlap/clipOverlap_wgs.bam
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241114013849-66767e88-d51a-4f09-8e2f-4a6d6ff5ec11/temp_test
+
+[Thu Nov 14 01:40:24 2024]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: .snakemake/log/2024-11-14T013944.186477.snakemake.log

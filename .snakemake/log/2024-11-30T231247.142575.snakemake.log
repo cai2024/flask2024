@@ -1,0 +1,310 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+CT_extract_mc_hmc           2
+CT_extract_sp_mc_hmc        2
+all                         1
+bwa_se                      2
+cutadapt_pe                 2
+hairpin_cut_N               2
+qualimap_bamqc              2
+remove_duplicates           2
+sp_bwa_se                   2
+total                      17
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Sat Nov 30 23:12:47 2024]
+localrule cutadapt_pe:
+    input: /data/wangzc/1130/CT-2W-ET_1.fq.gz, /data/wangzc/1130/CT-2W-ET_2.fq.gz
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step0_cutadapt/cutadapt_CT-2W-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step0_cutadapt/cutadapt_CT-2W-ET_2.fq.gz
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-2W-ET/step0_cutadapt/cutadapt_CT-2W-ET_pair.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step0_cutadapt/cutadapt_CT-2W-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step0_cutadapt/cutadapt_CT-2W-ET_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-2W-ET, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+
+[Sat Nov 30 23:12:54 2024]
+localrule cutadapt_pe:
+    input: /data/wangzc/1130/CT-18-ET_1.fq.gz, /data/wangzc/1130/CT-18-ET_2.fq.gz
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step0_cutadapt/cutadapt_CT-18-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step0_cutadapt/cutadapt_CT-18-ET_2.fq.gz
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-18-ET/step0_cutadapt/cutadapt_CT-18-ET_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step0_cutadapt/cutadapt_CT-18-ET_2.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step0_cutadapt/cutadapt_CT-18-ET_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-18-ET, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov 30 23:14:39 2024]
+Finished job 2.
+1 of 17 steps (6%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sat Nov 30 23:14:39 2024]
+localrule hairpin_cut_N:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step0_cutadapt/cutadapt_CT-2W-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step0_cutadapt/cutadapt_CT-2W-ET_2.fq.gz
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET_2.fq.gz
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-2W-ET/step1_hairpin_cut/CT-2W-ET.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET.fq.gz; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step0_cutadapt/cutadapt_CT-2W-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step0_cutadapt/cutadapt_CT-2W-ET_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-2W-ET, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov 30 23:15:06 2024]
+Finished job 1.
+2 of 17 steps (12%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sat Nov 30 23:15:06 2024]
+localrule hairpin_cut_N:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step0_cutadapt/cutadapt_CT-18-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step0_cutadapt/cutadapt_CT-18-ET_2.fq.gz
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET_2.fq.gz
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-18-ET/step1_hairpin_cut/CT-18-ET.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET.fq.gz; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step0_cutadapt/cutadapt_CT-18-ET_2.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step0_cutadapt/cutadapt_CT-18-ET_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-18-ET, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov 30 23:19:29 2024]
+Finished job 4.
+3 of 17 steps (18%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Sat Nov 30 23:19:29 2024]
+localrule sp_bwa_se:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET.fq.gz
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step3_bwa_spikein/bwa_spikein_CT-2W-ET.bam
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-2W-ET/step3_bwa_spikein/CT-2W-ET.log
+    jobid: 8
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step3_bwa_spikein/bwa_spikein_CT-2W-ET.bam; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-2W-ET, step=step3
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+
+[Sat Nov 30 23:19:29 2024]
+localrule bwa_se:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET.fq.gz
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step2_bwa/bwa_CT-2W-ET.bam
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-2W-ET/step2_bwa/CT-2W-ET.log
+    jobid: 6
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step2_bwa/bwa_CT-2W-ET.bam; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-2W-ET, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov 30 23:19:36 2024]
+Finished job 8.
+4 of 17 steps (24%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sat Nov 30 23:19:36 2024]
+localrule CT_extract_sp_mc_hmc:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step3_bwa_spikein/bwa_spikein_CT-2W-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET_1.fq.gz
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step6_CT_spikein_modify/CT_spikein_modify_CT-2W-ET.mc.all.bed, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step6_CT_spikein_modify/CT_spikein_modify_CT-2W-ET.hmc.all.bed
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-2W-ET/step6_CT_spikein_modify/CT-2W-ET.log
+    jobid: 14
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step6_CT_spikein_modify/CT_spikein_modify_CT-2W-ET.mc.all.bed; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step3_bwa_spikein/bwa_spikein_CT-2W-ET.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-2W-ET, step=step6
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov 30 23:19:52 2024]
+Finished job 14.
+5 of 17 steps (29%) done
+[Sat Nov 30 23:20:10 2024]
+Finished job 6.
+6 of 17 steps (35%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sat Nov 30 23:20:10 2024]
+localrule remove_duplicates:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step2_bwa/bwa_CT-2W-ET.bam
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step4_remove_duplicates/remove_duplicates_CT-2W-ET.bam
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-2W-ET/step4_remove_duplicates/CT-2W-ET.log
+    jobid: 10
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step4_remove_duplicates/remove_duplicates_CT-2W-ET.bam; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step2_bwa/bwa_CT-2W-ET.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-2W-ET, step=step4
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov 30 23:20:35 2024]
+Finished job 10.
+7 of 17 steps (41%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Sat Nov 30 23:20:35 2024]
+localrule qualimap_bamqc:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step4_remove_duplicates/remove_duplicates_CT-2W-ET.bam
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step7_qualimap_cover/qualimap_cover_CT-2W-ET.txt
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-2W-ET/step7_qualimap_cover/CT-2W-ET.log
+    jobid: 16
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step7_qualimap_cover/qualimap_cover_CT-2W-ET.txt; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step4_remove_duplicates/remove_duplicates_CT-2W-ET.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-2W-ET, step=step7
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+
+[Sat Nov 30 23:20:35 2024]
+localrule CT_extract_mc_hmc:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step4_remove_duplicates/remove_duplicates_CT-2W-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET_1.fq.gz
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step5_CT_call_modify/CT_call_modify_CT-2W-ET.mc.all.bed, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step5_CT_call_modify/CT_call_modify_CT-2W-ET.hmc.all.bed
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-2W-ET/step5_CT_call_modify/CT-2W-ET.log
+    jobid: 12
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step5_CT_call_modify/CT_call_modify_CT-2W-ET.mc.all.bed; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step4_remove_duplicates/remove_duplicates_CT-2W-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-2W-ET, step=step5
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov 30 23:20:56 2024]
+Finished job 16.
+8 of 17 steps (47%) done
+[Sat Nov 30 23:22:13 2024]
+Finished job 12.
+9 of 17 steps (53%) done
+[Sat Nov 30 23:22:32 2024]
+Finished job 3.
+10 of 17 steps (59%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Sat Nov 30 23:22:32 2024]
+localrule bwa_se:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET.fq.gz
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step2_bwa/bwa_CT-18-ET.bam
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-18-ET/step2_bwa/CT-18-ET.log
+    jobid: 5
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step2_bwa/bwa_CT-18-ET.bam; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-18-ET, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+
+[Sat Nov 30 23:22:32 2024]
+localrule sp_bwa_se:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET.fq.gz
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step3_bwa_spikein/bwa_spikein_CT-18-ET.bam
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-18-ET/step3_bwa_spikein/CT-18-ET.log
+    jobid: 7
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step3_bwa_spikein/bwa_spikein_CT-18-ET.bam; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-18-ET, step=step3
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov 30 23:22:33 2024]
+Finished job 7.
+11 of 17 steps (65%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sat Nov 30 23:22:33 2024]
+localrule CT_extract_sp_mc_hmc:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step3_bwa_spikein/bwa_spikein_CT-18-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET_1.fq.gz
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step6_CT_spikein_modify/CT_spikein_modify_CT-18-ET.mc.all.bed, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step6_CT_spikein_modify/CT_spikein_modify_CT-18-ET.hmc.all.bed
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-18-ET/step6_CT_spikein_modify/CT-18-ET.log
+    jobid: 13
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step6_CT_spikein_modify/CT_spikein_modify_CT-18-ET.mc.all.bed; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step3_bwa_spikein/bwa_spikein_CT-18-ET.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-18-ET, step=step6
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov 30 23:22:34 2024]
+Finished job 13.
+12 of 17 steps (71%) done
+[Sat Nov 30 23:22:37 2024]
+Finished job 5.
+13 of 17 steps (76%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sat Nov 30 23:22:37 2024]
+localrule remove_duplicates:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step2_bwa/bwa_CT-18-ET.bam
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step4_remove_duplicates/remove_duplicates_CT-18-ET.bam
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-18-ET/step4_remove_duplicates/CT-18-ET.log
+    jobid: 9
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step4_remove_duplicates/remove_duplicates_CT-18-ET.bam; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step2_bwa/bwa_CT-18-ET.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-18-ET, step=step4
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov 30 23:22:47 2024]
+Finished job 9.
+14 of 17 steps (82%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Sat Nov 30 23:22:47 2024]
+localrule CT_extract_mc_hmc:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step4_remove_duplicates/remove_duplicates_CT-18-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET_1.fq.gz
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step5_CT_call_modify/CT_call_modify_CT-18-ET.mc.all.bed, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step5_CT_call_modify/CT_call_modify_CT-18-ET.hmc.all.bed
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-18-ET/step5_CT_call_modify/CT-18-ET.log
+    jobid: 11
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step5_CT_call_modify/CT_call_modify_CT-18-ET.mc.all.bed; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step4_remove_duplicates/remove_duplicates_CT-18-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-18-ET, step=step5
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+
+[Sat Nov 30 23:22:47 2024]
+localrule qualimap_bamqc:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step4_remove_duplicates/remove_duplicates_CT-18-ET.bam
+    output: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step7_qualimap_cover/qualimap_cover_CT-18-ET.txt
+    log: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/logs/CT-18-ET/step7_qualimap_cover/CT-18-ET.log
+    jobid: 15
+    reason: Missing output files: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step7_qualimap_cover/qualimap_cover_CT-18-ET.txt; Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step4_remove_duplicates/remove_duplicates_CT-18-ET.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df, sample=CT-18-ET, step=step7
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov 30 23:23:11 2024]
+Finished job 15.
+15 of 17 steps (88%) done
+[Sat Nov 30 23:23:51 2024]
+Finished job 11.
+16 of 17 steps (94%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sat Nov 30 23:23:51 2024]
+localrule all:
+    input: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step0_cutadapt/cutadapt_CT-18-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step0_cutadapt/cutadapt_CT-2W-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step2_bwa/bwa_CT-18-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step2_bwa/bwa_CT-2W-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step3_bwa_spikein/bwa_spikein_CT-18-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step3_bwa_spikein/bwa_spikein_CT-2W-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step4_remove_duplicates/remove_duplicates_CT-18-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step4_remove_duplicates/remove_duplicates_CT-2W-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step5_CT_call_modify/CT_call_modify_CT-18-ET.mc.all.bed, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step5_CT_call_modify/CT_call_modify_CT-2W-ET.mc.all.bed, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step6_CT_spikein_modify/CT_spikein_modify_CT-18-ET.mc.all.bed, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step6_CT_spikein_modify/CT_spikein_modify_CT-2W-ET.mc.all.bed, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step7_qualimap_cover/qualimap_cover_CT-18-ET.txt, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step7_qualimap_cover/qualimap_cover_CT-2W-ET.txt
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step6_CT_spikein_modify/CT_spikein_modify_CT-18-ET.mc.all.bed, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step3_bwa_spikein/bwa_spikein_CT-2W-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-18-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step0_cutadapt/cutadapt_CT-18-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step2_bwa/bwa_CT-18-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step2_bwa/bwa_CT-2W-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step3_bwa_spikein/bwa_spikein_CT-18-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step4_remove_duplicates/remove_duplicates_CT-18-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step0_cutadapt/cutadapt_CT-2W-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step7_qualimap_cover/qualimap_cover_CT-18-ET.txt, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step4_remove_duplicates/remove_duplicates_CT-2W-ET.bam, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step6_CT_spikein_modify/CT_spikein_modify_CT-2W-ET.mc.all.bed, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step7_qualimap_cover/qualimap_cover_CT-2W-ET.txt, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-18-ET/step5_CT_call_modify/CT_call_modify_CT-18-ET.mc.all.bed, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step1_hairpin_cut_N/hairpin_cut_N_CT-2W-ET_1.fq.gz, /data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/CT-2W-ET/step5_CT_call_modify/CT_call_modify_CT-2W-ET.mc.all.bed
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241130231038-52f8064e-2db3-43f2-b26e-eb0e23b888df/temp_test
+
+[Sat Nov 30 23:23:51 2024]
+Finished job 0.
+17 of 17 steps (100%) done
+Complete log: .snakemake/log/2024-11-30T231247.142575.snakemake.log

@@ -1,0 +1,43 @@
+Trim fastp:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_fastp
+    $fastp {params} -i {fq1} -I {fq2} -o $output_dir/${{sample}}/{step}_fastp/fastp_${{sample}}_1.fq.gz \
+    -O $output_dir/${{sample}}/{step}_fastp/fastp_${{sample}}_2.fq.gz -j $output_dir/${{sample}}/{step}_fastp/fastp_${{sample}}.json \
+    -h $output_dir/${{sample}}/{step}_fastp/fastp_${{sample}}.html -w 4 >> $output_dir/logs/${{sample}}.log 2>&1
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_fastp
+    $fastp {params} -i {fq} -o $output_dir/${{sample}}/{step}_fastp/fastp_${{sample}}.fq.gz \
+    -j $output_dir/${{sample}}/{step}_fastp/fastp_${{sample}}.json -h $output_dir/${{sample}}/{step}_fastp/fastp_${{sample}}.html \
+    -w 4 >> $output_dir/logs/${{sample}}.log 2>&1
+
+  simple_pair: "fastp {params} -i sample_1.fq.gz -I sample_2.fq.gz -o fastp_sample_1.fq.gz -O fastp_sample_2.fq.gz -j fastp_sample.json -h fastp_sample.html -w 4"
+  simple_single: "fastp {params} -i sample.fq.gz -o fastp_sample.fq.gz -j fastp_sample.json -h fastp_sample.html -w 4"
+
+
+Trim trim_galore:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_trim_galore
+    $trim_galore {params} --paired --cores 4 -o $output_dir/${{sample}}/{step}_trim_galore {fq1} {fq2} >> $output_dir/logs/${{sample}}.log 2>&1
+    mv $output_dir/${{sample}}/{step}_trim_galore/$(basename {fq1} _1.fq.gz)_1_val_1.fq.gz $output_dir/${{sample}}/{step}_trim_galore/trim_galore_${{sample}}_1.fq.gz
+    mv $output_dir/${{sample}}/{step}_trim_galore/$(basename {fq2} _2.fq.gz)_2_val_2.fq.gz $output_dir/${{sample}}/{step}_trim_galore/trim_galore_${{sample}}_2.fq.gz
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_trim_galore
+    $trim_galore {params} --cores 4 -o $output_dir/${{sample}}/{step}_trim_galore {fq} >> $output_dir/logs/${{sample}}.log 2>&1
+    mv $output_dir/${{sample}}/{step}_trim_galore/$(basename {fq} .fq.gz)_trimmed.fq.gz $output_dir/${{sample}}/{step}_trim_galore/trim_galore_${{sample}}.fq.gz
+
+  simple_pair: "trim_galore {params} --paired --cores 4 -o step{stepId}_trim_galore sample_1.fq.gz sample_2.fq.gz"
+  simple_single: "trim_galore {params} --cores 4 -o step{stepId}_trim_galore sample.fq.gz"
+    
+
+Trim cutadapt:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_cutadapt
+    $cutadapt {params} -o $output_dir/${{sample}}/{step}_cutadapt/cutadapt_${{sample}}_1.fq.gz \
+    -p $output_dir/${{sample}}/{step}_cutadapt/cutadapt_${{sample}}_2.fq.gz {fq1} {fq2} >> $output_dir/logs/${{sample}}.log 2>&1
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_cutadapt
+    $cutadapt {params} -o $output_dir/${{sample}}/{step}_cutadapt/cutadapt_${{sample}}.fq.gz {fq} >> $output_dir/logs/${{sample}}.log 2>&1
+
+  simple_pair: "cutadapt {params} -o cutadapt_sample_1.fq.gz -p cutadapt_sample_2.fq.gz sample_1.fq.gz sample_2.fq.gz"
+  simple_single: "cutadapt {params} -o cutadapt_sample.fq.gz sample.fq.gz"
+

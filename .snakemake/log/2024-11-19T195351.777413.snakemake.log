@@ -1,0 +1,97 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+bowtie2_se           2
+hairpin_cut          1
+hairpin_cut_L        1
+total                5
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Nov 19 19:53:53 2024]
+localrule hairpin_cut:
+    input: /data/cailab/flask2024/test/CGS/cgs_1.fq.gz, /data/cailab/flask2024/test/CGS/cgs_2.fq.gz
+    output: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step0_hairpin_cut/hairpin_cut_cgs.fq.gz, /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step0_hairpin_cut/hairpin_cut_cgs_1.fq.gz, /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step0_hairpin_cut/hairpin_cut_cgs_2.fq.gz
+    log: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/logs/cgs/step0_hairpin_cut/cgs.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step0_hairpin_cut/hairpin_cut_cgs.fq.gz, /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step0_hairpin_cut/hairpin_cut_cgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116, sample=cgs, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/temp_test
+
+Activating conda environment: flask2024
+
+[Tue Nov 19 19:54:09 2024]
+localrule hairpin_cut_L:
+    input: /data/cailab/flask2024/test/CGS/cgs_1.fq.gz, /data/cailab/flask2024/test/CGS/cgs_2.fq.gz
+    output: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step1_hairpin_cut_L/hairpin_cut_L_cgs.fq.gz, /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step1_hairpin_cut_L/hairpin_cut_L_cgs_1.fq.gz, /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step1_hairpin_cut_L/hairpin_cut_L_cgs_2.fq.gz
+    log: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/logs/cgs/step1_hairpin_cut/cgs.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step1_hairpin_cut_L/hairpin_cut_L_cgs_1.fq.gz, /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step1_hairpin_cut_L/hairpin_cut_L_cgs.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116, sample=cgs, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/temp_test
+
+Activating conda environment: flask2024
+[Tue Nov 19 19:54:49 2024]
+Finished job 2.
+1 of 5 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Nov 19 19:54:49 2024]
+localrule bowtie2_se:
+    input: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step1_hairpin_cut_L/hairpin_cut_L_cgs.fq.gz
+    output: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step3_bowtie2/bowtie2_cgs.bam
+    log: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/logs/cgs/step3_bowtie2/cgs.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step3_bowtie2/bowtie2_cgs.bam; Input files updated by another job: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step1_hairpin_cut_L/hairpin_cut_L_cgs.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116, sample=cgs, step=step3
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/temp_test
+
+Activating conda environment: flask2024
+[Tue Nov 19 19:54:49 2024]
+Finished job 1.
+2 of 5 steps (40%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Nov 19 19:54:49 2024]
+localrule bowtie2_se:
+    input: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step0_hairpin_cut/hairpin_cut_cgs.fq.gz
+    output: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step2_bowtie2/bowtie2_cgs.bam
+    log: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/logs/cgs/step2_bowtie2/cgs.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step2_bowtie2/bowtie2_cgs.bam; Input files updated by another job: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step0_hairpin_cut/hairpin_cut_cgs.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116, sample=cgs, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/temp_test
+
+Activating conda environment: flask2024
+[Tue Nov 19 19:55:13 2024]
+Finished job 3.
+3 of 5 steps (60%) done
+[Tue Nov 19 19:55:14 2024]
+Finished job 4.
+4 of 5 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Nov 19 19:55:14 2024]
+localrule all:
+    input: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step0_hairpin_cut/hairpin_cut_cgs_1.fq.gz, /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step1_hairpin_cut_L/hairpin_cut_L_cgs_1.fq.gz, /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step2_bowtie2/bowtie2_cgs.bam, /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step3_bowtie2/bowtie2_cgs.bam
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step3_bowtie2/bowtie2_cgs.bam, /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step1_hairpin_cut_L/hairpin_cut_L_cgs_1.fq.gz, /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step0_hairpin_cut/hairpin_cut_cgs_1.fq.gz, /data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/cgs/step2_bowtie2/bowtie2_cgs.bam
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119195130-f4782954-2e35-4b60-9869-c5e9cb0e0116/temp_test
+
+[Tue Nov 19 19:55:14 2024]
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: .snakemake/log/2024-11-19T195351.777413.snakemake.log

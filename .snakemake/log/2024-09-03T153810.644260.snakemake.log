@@ -1,0 +1,102 @@
+Building DAG of jobs...
+Traceback (most recent call last):
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/dag.py", line 2043, in collect_potential_dependencies
+    yield PotentialDependency(file, known_producers[file], True)
+                                    ~~~~~~~~~~~~~~~^^^^^^
+
+KeyError: '/data/cailab/flask_out/20240903153803-819d048f-7e39-4289-b1f6-ada481eb7eef/wgs/step1_bowtie2/bowtie2_wgs.bam'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/jobs.py", line 149, in new
+    obj = self.cache[key]
+          ~~~~~~~~~~^^^^^
+
+KeyError: ('bowtie2_se', ('output_dir', '/data/cailab/flask_out/20240903153803-819d048f-7e39-4289-b1f6-ada481eb7eef'), ('sample', 'wgs'), ('step', 'step1'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/cli.py", line 2075, in args_to_api
+    dag_api.execute_workflow(
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/api.py", line 589, in execute_workflow
+    workflow.execute(
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/workflow.py", line 1081, in execute
+    self._build_dag()
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/workflow.py", line 1037, in _build_dag
+    async_run(self.dag.init())
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/common/__init__.py", line 94, in async_run
+    return asyncio.run(coroutine)
+           ^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/dag.py", line 178, in init
+    job = await self.update([job], progress=progress, create_inventory=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/dag.py", line 943, in update
+    await self.update_(
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/dag.py", line 1033, in update_
+    for res in potential_dependencies:
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/dag.py", line 2061, in collect_potential_dependencies
+    file2jobs(file, wildcards_dict=job.wildcards_dict),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/dag.py", line 2152, in file2jobs
+    self.new_job(
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/dag.py", line 1900, in new_job
+    job = self.job_factory.new(
+          ^^^^^^^^^^^^^^^^^^^^^
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/jobs.py", line 151, in new
+    obj = Job(rule, dag, wildcards_dict, format_wildcards, targetfile)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/jobs.py", line 220, in __init__
+    ) = self.rule.expand_input(self.wildcards_dict, groupid=groupid)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/rules.py", line 785, in expand_input
+    incomplete = self._apply_wildcards(
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/rules.py", line 745, in _apply_wildcards
+    raise InputFunctionException(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/exceptions.py", line 235, in __init__
+    + "\n".join(format_traceback(cut_traceback(msg), rule.workflow.linemaps))
+                                 ^^^^^^^^^^^^^^^^^^
+
+  File "/data/biosoft/soft2024/conda/anaconda_23.4.7/lib/python3.11/site-packages/snakemake/exceptions.py", line 53, in cut_traceback
+    for line in traceback.extract_tb(ex.__traceback__)[::-1]:
+                                     ^^^^^^^^^^^^^^^^
+
+AttributeError: 'str' object has no attribute '__traceback__'
+

@@ -1,0 +1,54 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+bismark_se            1
+trim_galore_se        1
+total                 3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Sep  5 01:59:16 2024]
+localrule trim_galore_se:
+    input: /data/wangzc/taps_test/SRR8145389_1.fq.gz
+    output: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/SRR8145389_1/step0_trim_galore/trim_galore_SRR8145389_1.fq.gz
+    log: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/logs/SRR8145389_1/step0_trim_galore/trim_galore_SRR8145389_1_single.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/SRR8145389_1/step0_trim_galore/trim_galore_SRR8145389_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f, sample=SRR8145389_1, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 02:49:41 2024]
+Finished job 1.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Sep  5 02:49:41 2024]
+localrule bismark_se:
+    input: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/SRR8145389_1/step0_trim_galore/trim_galore_SRR8145389_1.fq.gz
+    output: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/SRR8145389_1/step1_bismark/bismark_SRR8145389_1.bam
+    log: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/logs/SRR8145389_1/step1_bismark/SRR8145389_1.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/SRR8145389_1/step1_bismark/bismark_SRR8145389_1.bam; Input files updated by another job: /data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/SRR8145389_1/step0_trim_galore/trim_galore_SRR8145389_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f, sample=SRR8145389_1, step=step1
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905015855-26c77626-565c-4fd4-9eb5-2f514b273b5f/temp_test
+
+RuleException in rule bismark_se in file /data/cailab/flask2024/smk/bismark.smk, line 1:
+ValueError: expected '}' before end of string, when formatting the following:
+
+        {params.bismark} --path_to_bowtie2 {params.bowtie2_path} {params.index} {input.fq} {params.other} -o {params.out_dir} -p {threads} > {log} 2>&1         && if grep -q "ERR" {log}; then echo "Bismark encountered an error，high likelihood of memory error!" >&2; exit 1; fi         && temp_bam=$(basename {input.fq} .fq.gz)_bismark_bt2.bam         && samtools view -bh -F 256 -F 2048 -@ {threads} {params.out_dir}$temp_bam |  samtools sort -@ {threads}  > {output.bam}         && samtools index {output.bam}
+
+        total_reads=$(zcat {input.fq} | echo $((`wc -l` / 4)))
+        aligned_reads=$(samtools view -c -F 4 {output.bam})
+        alignment_percentage=$(python3 -c "print(format(100 * $aligned_reads / $total_reads, '.2f'))" )      
+        echo "Alignment Percentage $alignment_percentage%" >> {params.final_log
+        

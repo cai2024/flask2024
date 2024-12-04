@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+bismark_se        2
+total             3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu Sep  5 11:50:31 2024]
+localrule bismark_se:
+    input: /data/cailab/flask2024/test/WGBS/wgbs_2.fq.gz
+    output: /data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/wgbs_2/step0_bismark/bismark_wgbs_2.bam
+    log: /data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/logs/wgbs_2/step0_bismark/wgbs_2.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/wgbs_2/step0_bismark/bismark_wgbs_2.bam
+    wildcards: output_dir=/data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5, sample=wgbs_2, step=step0
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905114744-ad7da8b2-4703-4702-ae9c-c04e74b4fbe5/temp_test
+
+RuleException in rule bismark_se in file /data/cailab/flask2024/smk/bismark.smk, line 1:
+ValueError: expected '}' before end of string, when formatting the following:
+
+        {params.bismark} --path_to_bowtie2 {params.bowtie2_path} {params.index} {input.fq} {params.other} -o {params.out_dir} -p {threads} > {log} 2>&1 
+        if grep -q "ERR" {log}; then echo "Bismark encountered an error，high likelihood of memory error!" >&2; exit 1; fi 
+
+        total_reads=$(zcat {input.fq} | echo $((`wc -l` / 4)))
+        aligned_reads=$(samtools view -c -F 4 {output.bam})
+        alignment_percentage=$(python3 -c "print(format(100 * $aligned_reads / $total_reads, '.2f'))" )      
+        echo "Alignment Percentage $alignment_percentage%" >> {params.final_log
+        

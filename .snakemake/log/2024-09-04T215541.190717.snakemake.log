@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all                1
+hairpin_cut        1
+total              2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep  4 21:55:42 2024]
+localrule hairpin_cut:
+    input: /data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256/cgs/step0_trim_galore/trim_galore_cgs_1.fq.gz, /data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256/cgs/step0_trim_galore/trim_galore_cgs_2.fq.gz
+    output: /data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256/cgs/step1_hairpin_cut/hairpin_cut_cgs.fq.gz, /data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256/cgs/step1_hairpin_cut/hairpin_cut_cgs_1.fq.gz, /data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256/cgs/step1_hairpin_cut/hairpin_cut_cgs_2.fq.gz
+    log: /data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256/logs/cgs/step1_hairpin_cut/cgs.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256/cgs/step1_hairpin_cut/hairpin_cut_cgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256, sample=cgs, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256/temp_test
+
+Activating conda environment: flask2024
+[Wed Sep  4 21:55:47 2024]
+Finished job 2.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep  4 21:55:47 2024]
+localrule all:
+    input: /data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256/cgs/step0_trim_galore/trim_galore_cgs_1.fq.gz, /data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256/cgs/step1_hairpin_cut/hairpin_cut_cgs_1.fq.gz
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256/cgs/step1_hairpin_cut/hairpin_cut_cgs_1.fq.gz
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240904215441-b79922c8-fffb-417e-bd38-e5e820ac8256/temp_test
+
+[Wed Sep  4 21:55:47 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-09-04T215541.190717.snakemake.log

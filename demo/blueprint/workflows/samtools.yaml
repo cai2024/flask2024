@@ -1,0 +1,13 @@
+BAM samtools_merge:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_samtools_merge
+    samtools merge $output_dir/${{sample}}/{step}_samtools_merge/samtools_merge_${{sample}}.bam {bam1} {bam2} {params}
+    samtools index $output_dir/${{sample}}/{step}_samtools_merge/samtools_merge_${{sample}}.bam
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_samtools_merge
+    samtools merge $output_dir/${{sample}}/{step}_samtools_merge/samtools_merge_${{sample}}.bam {bam1} {bam2} {params}
+    samtools index $output_dir/${{sample}}/{step}_samtools_merge/samtools_merge_${{sample}}.bam
+
+
+
+

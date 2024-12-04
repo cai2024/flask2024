@@ -1,0 +1,25 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+bismark_se        2
+total             3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Sep  3 23:16:25 2024]
+localrule bismark_se:
+    input: /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240903231603-f605b05d-8a68-4479-9c9d-3bcefea8b7db/wgs_2/step0_bismark/bismark_wgs_2.bam
+    log: /data/cailab/flask_out/20240903231603-f605b05d-8a68-4479-9c9d-3bcefea8b7db/logs/wgs_2/step0_bismark/wgs_2.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240903231603-f605b05d-8a68-4479-9c9d-3bcefea8b7db/wgs_2/step0_bismark/bismark_wgs_2.bam
+    wildcards: output_dir=/data/cailab/flask_out/20240903231603-f605b05d-8a68-4479-9c9d-3bcefea8b7db, sample=wgs_2, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240903231603-f605b05d-8a68-4479-9c9d-3bcefea8b7db/temp_test
+

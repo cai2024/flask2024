@@ -1,0 +1,27 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+fastp_pe              1
+trim_galore_pe        2
+total                 4
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Aug 16 16:10:11 2024]
+localrule trim_galore_pe:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz, /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240816160940-b0236935-e498-4851-9225-19589ec7a355/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20240816160940-b0236935-e498-4851-9225-19589ec7a355/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20240816160940-b0236935-e498-4851-9225-19589ec7a355/logs/wgs/step0_trim_galore/trim_galore_wgs_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240816160940-b0236935-e498-4851-9225-19589ec7a355/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20240816160940-b0236935-e498-4851-9225-19589ec7a355/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240816160940-b0236935-e498-4851-9225-19589ec7a355, sample=wgs, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240816160940-b0236935-e498-4851-9225-19589ec7a355/temp_test
+
+Activating conda environment: flask2024

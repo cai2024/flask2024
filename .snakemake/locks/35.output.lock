@@ -1,0 +1,6 @@
+/data/cailab/flask_out/20240904010403-158c64ff-b5c9-47a8-8ab6-cb75aef3535d/wgs_2/step0_bismark/bismark_wgs_2.bam
+/data/cailab/flask_out/20240904010403-158c64ff-b5c9-47a8-8ab6-cb75aef3535d/wgs_2/step0_bismark/bismark_wgs_2.bam.bai
+/data/cailab/flask_out/20240904010403-158c64ff-b5c9-47a8-8ab6-cb75aef3535d/wgs_2/step1_remove_duplicates/remove_duplicates_wgs_2.bam
+/data/cailab/flask_out/20240904010403-158c64ff-b5c9-47a8-8ab6-cb75aef3535d/wgs_1/step0_bismark/bismark_wgs_1.bam
+/data/cailab/flask_out/20240904010403-158c64ff-b5c9-47a8-8ab6-cb75aef3535d/wgs_1/step0_bismark/bismark_wgs_1.bam.bai
+/data/cailab/flask_out/20240904010403-158c64ff-b5c9-47a8-8ab6-cb75aef3535d/wgs_1/step1_remove_duplicates/remove_duplicates_wgs_1.bam

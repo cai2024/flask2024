@@ -1,0 +1,71 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job         count
+--------  -------
+all             1
+bwa_pe          1
+fastp_pe        1
+total           3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sat Nov  9 22:14:53 2024]
+localrule fastp_pe:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz, /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step0_fastp/fastp_wgs_1.fq.gz, /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step0_fastp/fastp_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/logs/wgs/step0_fastp/fastp_wgs_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step0_fastp/fastp_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220, sample=wgs, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov  9 22:14:56 2024]
+Finished job 1.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sat Nov  9 22:14:56 2024]
+localrule bwa_pe:
+    input: /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step0_fastp/fastp_wgs_1.fq.gz, /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step1_bwa/bwa_wgs.bam
+    log: /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/logs/wgs/step1_bwa/wgs.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step1_bwa/bwa_wgs.bam; Input files updated by another job: /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step0_fastp/fastp_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220, sample=wgs, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov  9 22:15:02 2024]
+Error in rule bwa_pe:
+    jobid: 2
+    input: /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step0_fastp/fastp_wgs_1.fq.gz, /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step1_bwa/bwa_wgs.bam
+    log: /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/logs/wgs/step1_bwa/wgs.log (check log file(s) for error details)
+    conda-env: flask2024
+    shell:
+        
+        /data/cailab/flask2024/soft/bwa-0.7.17/bwa mem  -t 10 /data/reference2024/mouse/mm9/bwa/mm9.fa /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step0_fastp/fastp_wgs_1.fq.gz /data/cailab/flask2024/test/WGS/wgs_2.fq.gz |         samtools view -bh -F 256 -F 2048 -@ 10 |         samtools sort -@ 10 -o /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step1_bwa/bwa_wgs.bam > /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/logs/wgs/step1_bwa/wgs.log 2>&1
+        samtools index /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step1_bwa/bwa_wgs.bam
+
+        total_reads=$(zcat /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step0_fastp/fastp_wgs_1.fq.gz | echo $((`wc -l` / 4)))
+        aligned_reads=$(samtools view -c -F 4 /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step1_bwa/bwa_wgs.bam)
+        alignment_percentage=$(python3 -c "print(format(50 * $aligned_reads / $total_reads, '.2f'))" )      
+        echo "step1 Alignment_Percentage $alignment_percentage%" >> /data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/logs/wgs.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job bwa_pe since they might be corrupted:
+/data/cailab/flask_out/20241109221437-841c2ca9-7df1-4663-a3d0-54320f961220/wgs/step1_bwa/bwa_wgs.bam
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-11-09T221453.533812.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

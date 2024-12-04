@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count
+------  -------
+all           1
+bwa_pe        1
+total         2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov 22 09:24:27 2024]
+localrule bwa_pe:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz, /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20241122092401-60d03c58-91fb-402f-a593-4e5f1fa2a02e/wgs/step0_bwa/bwa_wgs.bam
+    log: /data/cailab/flask_out/20241122092401-60d03c58-91fb-402f-a593-4e5f1fa2a02e/logs/wgs/step0_bwa/wgs.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241122092401-60d03c58-91fb-402f-a593-4e5f1fa2a02e/wgs/step0_bwa/bwa_wgs.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241122092401-60d03c58-91fb-402f-a593-4e5f1fa2a02e, sample=wgs, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241122092401-60d03c58-91fb-402f-a593-4e5f1fa2a02e/temp_test
+
+Activating conda environment: flask2024
+[Fri Nov 22 09:24:54 2024]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov 22 09:24:54 2024]
+localrule all:
+    input: /data/cailab/flask_out/20241122092401-60d03c58-91fb-402f-a593-4e5f1fa2a02e/wgs/step0_bwa/bwa_wgs.bam
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20241122092401-60d03c58-91fb-402f-a593-4e5f1fa2a02e/wgs/step0_bwa/bwa_wgs.bam
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241122092401-60d03c58-91fb-402f-a593-4e5f1fa2a02e/temp_test
+
+[Fri Nov 22 09:24:54 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-11-22T092427.266566.snakemake.log

@@ -1,0 +1,166 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+sp_bismark_se         4
+trim_galore_se        4
+total                 9
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Thu Sep  5 21:40:59 2024]
+localrule trim_galore_se:
+    input: /data/wangzc/TAPS/TAPS-1w_2.fq.gz
+    output: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_2/step0_trim_galore/trim_galore_TAPS-1w_2.fq.gz
+    log: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/logs/TAPS-1w_2/step0_trim_galore/trim_galore_TAPS-1w_2_single.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_2/step0_trim_galore/trim_galore_TAPS-1w_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7, sample=TAPS-1w_2, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/temp_test
+
+Activating conda environment: flask2024
+
+[Thu Sep  5 21:40:59 2024]
+localrule trim_galore_se:
+    input: /data/wangzc/TAPS/TAPS-ad_1.fq.gz
+    output: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_1/step0_trim_galore/trim_galore_TAPS-ad_1.fq.gz
+    log: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/logs/TAPS-ad_1/step0_trim_galore/trim_galore_TAPS-ad_1_single.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_1/step0_trim_galore/trim_galore_TAPS-ad_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7, sample=TAPS-ad_1, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/temp_test
+
+Activating conda environment: flask2024
+
+[Thu Sep  5 21:40:59 2024]
+localrule trim_galore_se:
+    input: /data/wangzc/TAPS/TAPS-ad_2.fq.gz
+    output: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_2/step0_trim_galore/trim_galore_TAPS-ad_2.fq.gz
+    log: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/logs/TAPS-ad_2/step0_trim_galore/trim_galore_TAPS-ad_2_single.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_2/step0_trim_galore/trim_galore_TAPS-ad_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7, sample=TAPS-ad_2, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 21:44:46 2024]
+Finished job 4.
+1 of 9 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Sep  5 21:44:46 2024]
+localrule trim_galore_se:
+    input: /data/wangzc/TAPS/TAPS-1w_1.fq.gz
+    output: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_1/step0_trim_galore/trim_galore_TAPS-1w_1.fq.gz
+    log: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/logs/TAPS-1w_1/step0_trim_galore/trim_galore_TAPS-1w_1_single.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_1/step0_trim_galore/trim_galore_TAPS-1w_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7, sample=TAPS-1w_1, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 21:44:53 2024]
+Finished job 3.
+2 of 9 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Sep  5 21:44:53 2024]
+localrule sp_bismark_se:
+    input: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_1/step0_trim_galore/trim_galore_TAPS-ad_1.fq.gz
+    output: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_1/step1_bismark_spikein/bismark_spikein_TAPS-ad_1.bam
+    log: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/logs/TAPS-ad_1/step1_bismark_spikein/TAPS-ad_1.log
+    jobid: 7
+    reason: Missing output files: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_1/step1_bismark_spikein/bismark_spikein_TAPS-ad_1.bam; Input files updated by another job: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_1/step0_trim_galore/trim_galore_TAPS-ad_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7, sample=TAPS-ad_1, step=step1
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 21:45:02 2024]
+Finished job 2.
+3 of 9 steps (33%) done
+Select jobs to execute...
+[Thu Sep  5 21:47:32 2024]
+Finished job 7.
+4 of 9 steps (44%) done
+Execute 1 jobs...
+
+[Thu Sep  5 21:47:32 2024]
+localrule sp_bismark_se:
+    input: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_2/step0_trim_galore/trim_galore_TAPS-ad_2.fq.gz
+    output: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_2/step1_bismark_spikein/bismark_spikein_TAPS-ad_2.bam
+    log: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/logs/TAPS-ad_2/step1_bismark_spikein/TAPS-ad_2.log
+    jobid: 6
+    reason: Missing output files: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_2/step1_bismark_spikein/bismark_spikein_TAPS-ad_2.bam; Input files updated by another job: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_2/step0_trim_galore/trim_galore_TAPS-ad_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7, sample=TAPS-ad_2, step=step1
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 21:48:23 2024]
+Finished job 1.
+5 of 9 steps (56%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Sep  5 21:48:23 2024]
+localrule sp_bismark_se:
+    input: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_2/step0_trim_galore/trim_galore_TAPS-1w_2.fq.gz
+    output: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_2/step1_bismark_spikein/bismark_spikein_TAPS-1w_2.bam
+    log: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/logs/TAPS-1w_2/step1_bismark_spikein/TAPS-1w_2.log
+    jobid: 8
+    reason: Missing output files: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_2/step1_bismark_spikein/bismark_spikein_TAPS-1w_2.bam; Input files updated by another job: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_2/step0_trim_galore/trim_galore_TAPS-1w_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7, sample=TAPS-1w_2, step=step1
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 21:50:11 2024]
+Finished job 6.
+6 of 9 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Sep  5 21:50:11 2024]
+localrule sp_bismark_se:
+    input: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_1/step0_trim_galore/trim_galore_TAPS-1w_1.fq.gz
+    output: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_1/step1_bismark_spikein/bismark_spikein_TAPS-1w_1.bam
+    log: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/logs/TAPS-1w_1/step1_bismark_spikein/TAPS-1w_1.log
+    jobid: 5
+    reason: Missing output files: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_1/step1_bismark_spikein/bismark_spikein_TAPS-1w_1.bam; Input files updated by another job: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_1/step0_trim_galore/trim_galore_TAPS-1w_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7, sample=TAPS-1w_1, step=step1
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/temp_test
+
+Activating conda environment: flask2024
+[Thu Sep  5 21:50:38 2024]
+Finished job 8.
+7 of 9 steps (78%) done
+[Thu Sep  5 21:52:26 2024]
+Finished job 5.
+8 of 9 steps (89%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Sep  5 21:52:26 2024]
+localrule all:
+    input: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_1/step0_trim_galore/trim_galore_TAPS-1w_1.fq.gz, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_2/step0_trim_galore/trim_galore_TAPS-ad_2.fq.gz, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_1/step0_trim_galore/trim_galore_TAPS-ad_1.fq.gz, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_2/step0_trim_galore/trim_galore_TAPS-1w_2.fq.gz, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_1/step1_bismark_spikein/bismark_spikein_TAPS-1w_1.bam, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_2/step1_bismark_spikein/bismark_spikein_TAPS-ad_2.bam, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_1/step1_bismark_spikein/bismark_spikein_TAPS-ad_1.bam, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_2/step1_bismark_spikein/bismark_spikein_TAPS-1w_2.bam
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_2/step0_trim_galore/trim_galore_TAPS-ad_2.fq.gz, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_2/step1_bismark_spikein/bismark_spikein_TAPS-1w_2.bam, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_1/step0_trim_galore/trim_galore_TAPS-ad_1.fq.gz, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_2/step0_trim_galore/trim_galore_TAPS-1w_2.fq.gz, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_1/step0_trim_galore/trim_galore_TAPS-1w_1.fq.gz, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_1/step1_bismark_spikein/bismark_spikein_TAPS-ad_1.bam, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-1w_1/step1_bismark_spikein/bismark_spikein_TAPS-1w_1.bam, /data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/TAPS-ad_2/step1_bismark_spikein/bismark_spikein_TAPS-ad_2.bam
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240905214020-522f0041-e771-448f-815b-52f7ce8460a7/temp_test
+
+[Thu Sep  5 21:52:26 2024]
+Finished job 0.
+9 of 9 steps (100%) done
+Complete log: .snakemake/log/2024-09-05T214059.260425.snakemake.log

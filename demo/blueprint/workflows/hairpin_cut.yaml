@@ -1,0 +1,28 @@
+
+Trim hairpin_cut:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_hairpin_cut
+    python3 $py_ref/new_hairpin_cut.py --fq1 {fq1} --fq2 {fq2} --cut_fq1 $output_dir/${{sample}}/{step}_hairpin_cut/hairpin_cut_${{sample}}_1.fq \
+    --cut_fq2 $output_dir/${{sample}}/{step}_hairpin_cut/hairpin_cut_${{sample}}_2.fq --cut_fq $output_dir/${{sample}}/{step}_hairpin_cut/hairpin_cut_${{sample}}.fq {params} --parallel 10 > $output_dir/logs/${{sample}}/{step}_hairpin_cut/${{sample}}.log 2>&1
+    python3 $py_ref/wild_stats.py --fq1 $output_dir/${{sample}}/{step}_hairpin_cut/hairpin_cut_${{sample}}_1.fq --fq2 $output_dir/${{sample}}/{step}_hairpin_cut/hairpin_cut_${{sample}}_2.fq >> $output_dir/logs/${{sample}}/{step}_hairpin_cut/${{sample}}.log 2>&1
+    gzip $output_dir/${{sample}}/{step}_hairpin_cut/hairpin_cut_${{sample}}_1.fq $output_dir/${{sample}}/{step}_hairpin_cut/hairpin_cut_${{sample}}_2.fq $output_dir/${{sample}}/{step}_hairpin_cut/hairpin_cut_${{sample}}.fq
+
+
+Trim hairpin_cut_N:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_hairpin_cut_N
+    python3 $py_ref/new_hairpin_cut_N.py --fq1 {fq1} --fq2 {fq2} --cut_fq1 $output_dir/${{sample}}/{step}_hairpin_cut_N/hairpin_cut_N_${{sample}}_1.fq \
+    --cut_fq2 $output_dir/${{sample}}/{step}_hairpin_cut_N/hairpin_cut_N_${{sample}}_2.fq --cut_fq $output_dir/${{sample}}/{step}_hairpin_cut_N/hairpin_cut_N_${{sample}}.fq {params} --parallel 10 > $output_dir/logs/${{sample}}/{step}_hairpin_cut_N/${{sample}}.log 2>&1
+    python3 $py_ref/wild_stats.py --fq1 $output_dir/${{sample}}/{step}_hairpin_cut_N/hairpin_cut_N_${{sample}}_1.fq --fq2 $output_dir/${{sample}}/{step}_hairpin_cut_N/hairpin_cut_N_${{sample}}_2.fq >> $output_dir/logs/${{sample}}/{step}_hairpin_cut_N/${{sample}}.log 2>&1
+    gzip $output_dir/${{sample}}/{step}_hairpin_cut_N/hairpin_cut_N_${{sample}}_1.fq $output_dir/${{sample}}/{step}_hairpin_cut_N/hairpin_cut_N_${{sample}}_2.fq $output_dir/${{sample}}/{step}_hairpin_cut_N/hairpin_cut_N_${{sample}}.fq
+
+
+
+Trim hairpin_cut_L:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_hairpin_cut_L
+    python3 $py_ref/new_hairpin_cut_L.py --fq1 {fq1} --fq2 {fq2} --cut_fq1 $output_dir/${{sample}}/{step}_hairpin_cut_L/hairpin_cut_L_${{sample}}_1.fq \
+    --cut_fq2 $output_dir/${{sample}}/{step}_hairpin_cut_L/hairpin_cut_L_${{sample}}_2.fq --cut_fq $output_dir/${{sample}}/{step}_hairpin_cut_L/hairpin_cut_L_${{sample}}.fq {params} --parallel 10 > $output_dir/logs/${{sample}}/{step}_hairpin_cut_L/${{sample}}.log 2>&1
+    python3 $py_ref/wild_stats.py --fq1 $output_dir/${{sample}}/{step}_hairpin_cut_L/hairpin_cut_L_${{sample}}_1.fq --fq2 $output_dir/${{sample}}/{step}_hairpin_cut_L/hairpin_cut_L_${{sample}}_2.fq >> $output_dir/logs/${{sample}}/{step}_hairpin_cut_L/${{sample}}.log 2>&1
+    gzip $output_dir/${{sample}}/{step}_hairpin_cut_L/hairpin_cut_L_${{sample}}_1.fq $output_dir/${{sample}}/{step}_hairpin_cut_L/hairpin_cut_L_${{sample}}_2.fq $output_dir/${{sample}}/{step}_hairpin_cut_L/hairpin_cut_L_${{sample}}.fq
+

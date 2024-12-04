@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+all          1
+total        1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov 22 09:39:49 2024]
+localrule all:
+    jobid: 0
+    reason: Rules with neither input nor output files are always executed.
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241122093909-1b33f57e-44c9-463b-bfc7-553aceb06724/temp_test
+
+[Fri Nov 22 09:39:50 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-11-22T093949.520033.snakemake.log

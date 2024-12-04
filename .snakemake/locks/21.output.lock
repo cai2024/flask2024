@@ -1,0 +1,10 @@
+/data/cailab/flask_out/20240903234218-e0a80f2c-9bde-406b-a84b-26d846611ae8/wgs_2/step1_trim_galore/trim_galore_wgs_2.fq.gz
+/data/cailab/flask_out/20240903234218-e0a80f2c-9bde-406b-a84b-26d846611ae8/wgs_2/step0_trim_galore/trim_galore_wgs_2.fq.gz
+/data/cailab/flask_out/20240903234218-e0a80f2c-9bde-406b-a84b-26d846611ae8/wgs_2/step3_fastp/fastp_wgs_2.fq.gz
+/data/cailab/flask_out/20240903234218-e0a80f2c-9bde-406b-a84b-26d846611ae8/wgs_1/step1_trim_galore/trim_galore_wgs_1.fq.gz
+/data/cailab/flask_out/20240903234218-e0a80f2c-9bde-406b-a84b-26d846611ae8/wgs_1/step3_fastp/fastp_wgs_1.fq.gz
+/data/cailab/flask_out/20240903234218-e0a80f2c-9bde-406b-a84b-26d846611ae8/wgs_2/step2_fastp/fastp_wgs_2.fq.gz
+/data/cailab/flask_out/20240903234218-e0a80f2c-9bde-406b-a84b-26d846611ae8/wgs_1/step0_trim_galore/trim_galore_wgs_1.fq.gz
+/data/cailab/flask_out/20240903234218-e0a80f2c-9bde-406b-a84b-26d846611ae8/wgs_1/step2_fastp/fastp_wgs_1.fq.gz
+/data/cailab/flask_out/20240903234218-e0a80f2c-9bde-406b-a84b-26d846611ae8/wgs_1/step4_bowtie2/bowtie2_wgs_1.bam
+/data/cailab/flask_out/20240903234218-e0a80f2c-9bde-406b-a84b-26d846611ae8/wgs_2/step4_bowtie2/bowtie2_wgs_2.bam

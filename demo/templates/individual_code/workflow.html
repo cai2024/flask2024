@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="border p-3 mb-4 box-fixed-height">
+            <h2 class="h5">步骤按钮</h2>
+            <div class="row">
+                {% for category, buttons in available_steps.items() %}
+                    <div class="col-md-3 mb-3">
+                        <div class="card">
+                            <div class="card-header">{{ category }}</div>
+                            <div class="card-body">
+                                {% for button in buttons %}
+                                    <button class="btn btn-primary btn-block mb-2" 
+                                        id="btn-{{ category }}-{{ button }}" 
+                                        onclick="addStep('{{ button }}')">{{ button }}</button>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="border p-3 box-fixed-height">
+            <h2 class="h5">展示参数</h2>
+            <div id="outputArea"></div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+var available_steps = {{ available_steps | tojson }};
+var fileType =  "raw.fq.gz";
+var fqType = "pair";
+var task_id="{{task_id}}";
+
+
+let steps = [];
+let soft_step = [];
+function addStep(type) {
+    $('#selected-steps').append(`<li class="list-group-item step-item" id="step-${steps.length}">${type}</li>`);
+    $('#selected-steps').disableSelection();
+    $('#selected-steps').sortable({update: function(event, ui) {
+        steps = $('#selected-steps').children().map(function() {
+            return steps.find(step => step.id === parseInt(this.id.replace('step-', ''))); }).get();} });
+
+    steps.push({ id: steps.length, type: type, select_option: {}, params:'', mode: fqType, raw_type: fileType, select_index:{}});
+}
+
+function updateSelection() {
+    fileType = document.querySelector('input[name="fileType"]:checked').value;
+    fqType = document.querySelector('input[name="fqType"]:checked').value;
+}
+window.onload = function() {updateSelection();};
+
+</script>
+

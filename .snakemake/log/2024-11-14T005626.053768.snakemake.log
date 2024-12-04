@@ -1,0 +1,10 @@
+Building DAG of jobs...
+InputFunctionException in rule astair_call_modify in file /data/cailab/flask2024/demo/blueprint/workflows/astair_call_modify.smk, line 1:
+Error:
+  KeyError: 'step2_ref_species'
+Wildcards:
+  output_dir=/data/cailab/flask_out/20241114005437-5dfb55fc-76a3-4068-b4e0-71078d475ee9
+  sample=wgs
+  step=step2
+Traceback:
+  File "/data/cailab/flask2024/demo/blueprint/workflows/astair_call_modify.smk", line 9, in <lambda> (rule astair_call_modify, line 1, /data/cailab/flask2024/demo/blueprint/workflows/astair_call_modify.smk)

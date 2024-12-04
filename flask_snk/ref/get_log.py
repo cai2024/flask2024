@@ -61,8 +61,8 @@ def spikein_log(spikein, bam, hmc="" , mc="", bedtools="bedtools"):
         print('\t'.join(result))
 
 
-def spikein_wgbs(spikein, bam , sort_bam ,mc="", bedtools="bedtools"):
-    bed = bam[:-3] + "bed"
+def spikein_wgbs(spikein , sort_bam ,mc="", bedtools="bedtools"):
+    bed = sort_bam[:-3] + "bed"
     command = f"{bedtools} genomecov -ibam {sort_bam} -bga > {bed}"
     process = subprocess.run(command, shell=True, text=True, check=True)
 
@@ -264,7 +264,7 @@ def main():
 
     # spikein 子命令
     parser_spikein = subparsers.add_parser('spikein', help='Run spikein')
-    parser_spikein.add_argument('--spikein', type=str, help='The input file for FastQC.')
+    parser_spikein.add_argument('--spikein', type=str,default='lambda,mc,G5hmc,puc19', help='The input file for FastQC.')
     parser_spikein.add_argument('--bam', type=str, help='bam.')
     parser_spikein.add_argument('--hmc', type=str, default='', help='Optional: Path to the HMC file.')
     parser_spikein.add_argument('--mc', type=str, default='', help='Optional: Path to the MC file.')
@@ -272,7 +272,6 @@ def main():
     # spikein_wgbs 子命令
     parser_spikein_wgbs = subparsers.add_parser('spikein_wgbs', help='Run spikein')
     parser_spikein_wgbs.add_argument('--spikein', type=str, help='The input file for FastQC.')
-    parser_spikein_wgbs.add_argument('--bam', type=str, help='bam.')
     parser_spikein_wgbs.add_argument('--sort_bam', type=str, help='bam.')
     parser_spikein_wgbs.add_argument('--mc', type=str, default='', help='Optional: Path to the HMC file.')
     parser_spikein_wgbs.add_argument('--bedtools', type=str, default='bedtools', help='Optional: Path to the bedtools executable or name if in PATH.')
@@ -319,7 +318,7 @@ def main():
     if args.command == 'spikein':
         spikein_log(args.spikein, args.bam, args.hmc, args.mc, args.bedtools)
     elif args.command == 'spikein_wgbs':
-        spikein_wgbs(args.spikein, args.bam, args.sort_bam ,args.mc, args.bedtools)
+        spikein_wgbs(args.spikein, args.sort_bam ,args.mc, args.bedtools)
     elif args.command == 'size_clean':
         size_clean(args.raw_fq1, args.trim_fq1, args.mode)
     elif args.command == 'get_json':

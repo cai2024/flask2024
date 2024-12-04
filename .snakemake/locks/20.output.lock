@@ -1,0 +1,4 @@
+/data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736/wgs_1/step1_bismark/bismark_wgs_1.bam
+/data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736/wgs_1/step0_trim_galore/trim_galore_wgs_1.fq.gz
+/data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736/wgs_2/step1_bismark/bismark_wgs_2.bam
+/data/cailab/flask_out/20240903233956-db2b45cd-f1f3-4b4e-97fc-9e4fcdf79736/wgs_2/step0_trim_galore/trim_galore_wgs_2.fq.gz

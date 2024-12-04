@@ -1,0 +1,121 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+CT_XM_bam                1
+CT_XM_sp_bam             1
+all                      1
+bwa_pe                   1
+clipOverlap              2
+qualimap_bamqc           1
+remove_duplicates        1
+sp_bwa_pe                1
+trim_galore_pe           1
+total                   10
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Nov 19 14:07:36 2024]
+localrule trim_galore_pe:
+    input: /data/wangzc/caps/caps_1.fq.gz, /data/wangzc/caps/caps_2.fq.gz
+    output: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step0_trim_galore/trim_galore_caps_1.fq.gz, /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step0_trim_galore/trim_galore_caps_2.fq.gz
+    log: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/logs/caps/step0_trim_galore/trim_galore_caps_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step0_trim_galore/trim_galore_caps_2.fq.gz, /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step0_trim_galore/trim_galore_caps_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137, sample=caps, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/temp_test
+
+Activating conda environment: flask2024
+[Tue Nov 19 14:12:25 2024]
+Finished job 1.
+1 of 10 steps (10%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Nov 19 14:12:25 2024]
+localrule bwa_pe:
+    input: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step0_trim_galore/trim_galore_caps_1.fq.gz, /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step0_trim_galore/trim_galore_caps_2.fq.gz
+    output: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step1_bwa/bwa_caps.bam
+    log: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/logs/caps/step1_bwa/caps.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step1_bwa/bwa_caps.bam; Input files updated by another job: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step0_trim_galore/trim_galore_caps_2.fq.gz, /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step0_trim_galore/trim_galore_caps_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137, sample=caps, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/temp_test
+
+Activating conda environment: flask2024
+
+[Tue Nov 19 14:12:25 2024]
+localrule sp_bwa_pe:
+    input: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step0_trim_galore/trim_galore_caps_1.fq.gz, /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step0_trim_galore/trim_galore_caps_2.fq.gz
+    output: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step6_bwa_spikein/bwa_spikein_caps.bam
+    log: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/logs/caps/step6_bwa_spikein/caps.log
+    jobid: 7
+    reason: Missing output files: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step6_bwa_spikein/bwa_spikein_caps.bam; Input files updated by another job: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step0_trim_galore/trim_galore_caps_2.fq.gz, /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step0_trim_galore/trim_galore_caps_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137, sample=caps, step=step6
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/temp_test
+
+Activating conda environment: flask2024
+[Tue Nov 19 14:13:16 2024]
+Finished job 7.
+2 of 10 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Nov 19 14:13:16 2024]
+localrule clipOverlap:
+    input: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step6_bwa_spikein/bwa_spikein_caps.bam
+    output: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step7_clipOverlap/clipOverlap_caps.bam
+    log: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/logs/caps/step7_clipOverlap/caps.log
+    jobid: 8
+    reason: Missing output files: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step7_clipOverlap/clipOverlap_caps.bam; Input files updated by another job: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step6_bwa_spikein/bwa_spikein_caps.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137, sample=caps, step=step7
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/temp_test
+
+Activating conda environment: flask2024
+[Tue Nov 19 14:14:07 2024]
+Finished job 8.
+3 of 10 steps (30%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Nov 19 14:14:07 2024]
+localrule CT_XM_sp_bam:
+    input: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step7_clipOverlap/clipOverlap_caps.bam
+    output: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step8_CT_XM_sp_bam/CT_XM_sp_bam_caps.bam
+    log: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/logs/caps/step8_CT_XM_sp_bam/caps.log
+    jobid: 9
+    reason: Missing output files: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step8_CT_XM_sp_bam/CT_XM_sp_bam_caps.bam; Input files updated by another job: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step7_clipOverlap/clipOverlap_caps.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137, sample=caps, step=step8
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/temp_test
+
+Activating conda environment: flask2024
+[Tue Nov 19 14:14:09 2024]
+Error in rule CT_XM_sp_bam:
+    jobid: 9
+    input: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step7_clipOverlap/clipOverlap_caps.bam
+    output: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step8_CT_XM_sp_bam/CT_XM_sp_bam_caps.bam
+    log: /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/logs/caps/step8_CT_XM_sp_bam/caps.log (check log file(s) for error details)
+    conda-env: flask2024
+    shell:
+        
+        python3 /data/cailab/flask2024/flask_snk/ref/CT_XM_bam.py --bam /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step7_clipOverlap/clipOverlap_caps.bam --output /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/caps/step8_CT_XM_sp_bam/CT_XM_sp_bam_caps.bam --ref /data/reference2024/spikein/spikein.fa         --parallel 1   > /data/cailab/flask_out/20241119140644-22cf8b19-276a-4fb5-80a7-452d8ab84137/logs/caps/step8_CT_XM_sp_bam/caps.log 2>&1
+        
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Tue Nov 19 14:20:27 2024]
+Finished job 2.
+4 of 10 steps (40%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-11-19T140735.949093.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

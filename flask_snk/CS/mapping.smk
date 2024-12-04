@@ -1,16 +1,16 @@
 rule bowtie2_se: 
     input:
-        cut_fq="{output_dir}/trim/{cut_soft}/{{sample}}.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
+        cut_fq="{output_dir}/{{sample}}/trim/{cut_soft}/{{sample}}.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
     output:
-        bam="{output_dir}/bam/bowtie2/{{sample}}.bam".format(output_dir=config['output_dir']),
+        bam="{output_dir}/{{sample}}/bam/bowtie2/{{sample}}.bam".format(output_dir=config['output_dir']),
     log:
-        "{output_dir}/logs/bowtie2/{{sample}}.log".format(output_dir=config['output_dir']),
+        "{output_dir}/{{sample}}/logs/bowtie2/{{sample}}.log".format(output_dir=config['output_dir']),
     threads: 10
     conda:
         "flask2024",
     params:
-        ref=config["ref_genome"],
-        sam="{output_dir}/bam/{{sample}}.sam".format(output_dir=config['output_dir']),
+        ref=config["ref_path"] +"/"+config["ref_species"] +"/"+ config["ref_release"] +"/bowtie2/" + config["ref_release"],
+        sam="{output_dir}/{{sample}}/bam/{{sample}}.sam".format(output_dir=config['output_dir']),
         other=config['align_params'],
     shell:
         """
@@ -23,17 +23,17 @@ rule bowtie2_se:
 
 rule sp_bowtie2_se:
     input:
-        cut_fq="{output_dir}/trim/{cut_soft}/{{sample}}.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
+        cut_fq="{output_dir}/{{sample}}/trim/{cut_soft}/{{sample}}.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
     output:
-        bam="{output_dir}/sp_bam/bowtie2/sp_{{sample}}.bam".format(output_dir=config['output_dir']),
+        bam="{output_dir}/{{sample}}/sp_bam/bowtie2/sp_{{sample}}.bam".format(output_dir=config['output_dir']),
     log:
-        "{output_dir}/logs/bowtie2/sp_{{sample}}.log".format(output_dir=config['output_dir']),
+        "{output_dir}/{{sample}}/logs/bowtie2/sp_{{sample}}.log".format(output_dir=config['output_dir']),
     threads: 10
     conda:
         "flask2024",
     params:
         ref=f"{ref_path}/spikein/bowtie2/spikein",
-        sam="{output_dir}/sp_bam/sp_{{sample}}.sam".format(output_dir=config['output_dir']),
+        sam="{output_dir}/{{sample}}/sp_bam/sp_{{sample}}.sam".format(output_dir=config['output_dir']),
         other=config['align_params'],
     shell:
         """
@@ -48,16 +48,16 @@ rule sp_bowtie2_se:
 
 rule bwa_se:
     input:
-        cut_fq="{output_dir}/trim/{cut_soft}/{{sample}}.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
+        cut_fq="{output_dir}/{{sample}}/trim/{cut_soft}/{{sample}}.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
     output:
-        bam="{output_dir}/bam/bwa/{{sample}}.bam".format(output_dir=config['output_dir']),
+        bam="{output_dir}/{{sample}}/bam/bwa/{{sample}}.bam".format(output_dir=config['output_dir']),
     log:
-        log="{output_dir}/logs/bwa/{{sample}}.log".format(output_dir=config['output_dir']),
+        log="{output_dir}/{{sample}}/logs/bwa/{{sample}}.log".format(output_dir=config['output_dir']),
     threads: 10
     conda:
         "flask2024",
     params:
-        ref=config["ref_genome"],
+        ref=config["ref_path"] +"/"+config["ref_species"] +"/"+ config["ref_release"] +"/bwa/" + config["ref_release"] +".fa",
         other=config['align_params'],
     shell:
         """
@@ -69,11 +69,11 @@ rule bwa_se:
 
 rule sp_bwa_se:
     input:
-        cut_fq="{output_dir}/trim/{cut_soft}/{{sample}}.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
+        cut_fq="{output_dir}/{{sample}}/trim/{cut_soft}/{{sample}}.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
     output:
-        bam="{output_dir}/sp_bam/bwa/sp_{{sample}}.bam".format(output_dir=config['output_dir']),
+        bam="{output_dir}/{{sample}}/sp_bam/bwa/sp_{{sample}}.bam".format(output_dir=config['output_dir']),
     log:
-        log="{output_dir}/logs/bwa/sp_{{sample}}.log".format(output_dir=config['output_dir']),
+        log="{output_dir}/{{sample}}/logs/bwa/sp_{{sample}}.log".format(output_dir=config['output_dir']),
     threads: 10
     conda:
         "flask2024",

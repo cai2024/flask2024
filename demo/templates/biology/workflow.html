@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="border p-3 mb-4 box-fixed-height">
+            <h2 class="h5">步骤按钮</h2>
+            <div class="row">
+                {% for category, buttons in available_steps.items() %}
+                    <div class="col-md-3 mb-3">
+                        <div class="card">
+                            <div class="card-header">{{ category }}</div>
+                            <div class="card-body">
+                                {% for button in buttons %}
+                                    <button class="btn btn-primary btn-block mb-2" 
+                                        id="btn-{{ category }}-{{ button }}" 
+                                        onclick="addStep('{{ button }}')">{{ button }}</button>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="border p-3 box-fixed-height">
+            <h2 class="h5">展示参数</h2>
+            <div id="outputArea"></div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+var task_id="{{task_id}}";
+</script>
+

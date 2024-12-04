@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in rule hairpin_cut_N in file /data/cailab/flask2024/demo/blueprint/workflows/hairpin_cut.smk, line 34:
+Missing input files for rule hairpin_cut_N:
+    output: /data/cailab/flask_out/20241030162708-0ecc1472-4803-4a2f-be85-fb734447d7d5/CT-ICR/step1_hairpin_cut_N/hairpin_cut_N_CT-ICR.fq.gz, /data/cailab/flask_out/20241030162708-0ecc1472-4803-4a2f-be85-fb734447d7d5/CT-ICR/step1_hairpin_cut_N/hairpin_cut_N_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241030162708-0ecc1472-4803-4a2f-be85-fb734447d7d5/CT-ICR/step1_hairpin_cut_N/hairpin_cut_N_CT-ICR_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241030162708-0ecc1472-4803-4a2f-be85-fb734447d7d5, sample=CT-ICR, step=step1
+    affected files:
+        /data/cailab/flask_out/20241030162708-0ecc1472-4803-4a2f-be85-fb734447d7d5/CT-ICR/step0_cutadapt/cutadapt_CT-ICR_2.fq.gz
+        /data/cailab/flask_out/20241030162708-0ecc1472-4803-4a2f-be85-fb734447d7d5/CT-ICR/step0_cutadapt/cutadapt_CT-ICR_1.fq.gz

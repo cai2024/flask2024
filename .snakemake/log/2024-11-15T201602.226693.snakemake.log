@@ -1,0 +1,189 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+bismark_pe            3
+sp_bismark_pe         3
+trim_galore_pe        3
+total                10
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Fri Nov 15 20:16:02 2024]
+localrule trim_galore_pe:
+    input: /data/wangzc/1115/I-4_1.fq.gz, /data/wangzc/1115/I-4_2.fq.gz
+    output: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_2.fq.gz
+    log: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-4/step0_trim_galore/trim_galore_I-4_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_2.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885, sample=I-4, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/temp_test
+
+Activating conda environment: flask2024
+
+[Fri Nov 15 20:16:02 2024]
+localrule trim_galore_pe:
+    input: /data/wangzc/1115/I-3_1.fq.gz, /data/wangzc/1115/I-3_2.fq.gz
+    output: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step0_trim_galore/trim_galore_I-3_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step0_trim_galore/trim_galore_I-3_2.fq.gz
+    log: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-3/step0_trim_galore/trim_galore_I-3_pair.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step0_trim_galore/trim_galore_I-3_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step0_trim_galore/trim_galore_I-3_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885, sample=I-3, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/temp_test
+
+Activating conda environment: flask2024
+
+[Fri Nov 15 20:16:02 2024]
+localrule trim_galore_pe:
+    input: /data/wangzc/1115/I-2_1.fq.gz, /data/wangzc/1115/I-2_2.fq.gz
+    output: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step0_trim_galore/trim_galore_I-2_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step0_trim_galore/trim_galore_I-2_2.fq.gz
+    log: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-2/step0_trim_galore/trim_galore_I-2_pair.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step0_trim_galore/trim_galore_I-2_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step0_trim_galore/trim_galore_I-2_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885, sample=I-2, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/temp_test
+
+Activating conda environment: flask2024
+[Fri Nov 15 20:18:23 2024]
+Finished job 3.
+1 of 10 steps (10%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri Nov 15 20:18:23 2024]
+localrule sp_bismark_pe:
+    input: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step0_trim_galore/trim_galore_I-2_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step0_trim_galore/trim_galore_I-2_2.fq.gz
+    output: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step2_bismark_spikein/bismark_spikein_I-2.bam
+    log: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-2/step2_bismark_spikein/I-2.log
+    jobid: 9
+    reason: Missing output files: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step2_bismark_spikein/bismark_spikein_I-2.bam; Input files updated by another job: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step0_trim_galore/trim_galore_I-2_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step0_trim_galore/trim_galore_I-2_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885, sample=I-2, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/temp_test
+
+Activating conda environment: flask2024
+
+[Fri Nov 15 20:18:23 2024]
+localrule bismark_pe:
+    input: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step0_trim_galore/trim_galore_I-2_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step0_trim_galore/trim_galore_I-2_2.fq.gz
+    output: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step1_bismark/bismark_I-2.bam
+    log: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-2/step1_bismark/I-2.log
+    jobid: 6
+    reason: Missing output files: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step1_bismark/bismark_I-2.bam; Input files updated by another job: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step0_trim_galore/trim_galore_I-2_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-2/step0_trim_galore/trim_galore_I-2_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885, sample=I-2, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/temp_test
+
+Activating conda environment: flask2024
+[Fri Nov 15 20:18:58 2024]
+Finished job 2.
+2 of 10 steps (20%) done
+Select jobs to execute...
+[Fri Nov 15 20:19:32 2024]
+Finished job 9.
+3 of 10 steps (30%) done
+Execute 1 jobs...
+
+[Fri Nov 15 20:19:32 2024]
+localrule sp_bismark_pe:
+    input: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step0_trim_galore/trim_galore_I-3_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step0_trim_galore/trim_galore_I-3_2.fq.gz
+    output: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step2_bismark_spikein/bismark_spikein_I-3.bam
+    log: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-3/step2_bismark_spikein/I-3.log
+    jobid: 8
+    reason: Missing output files: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step2_bismark_spikein/bismark_spikein_I-3.bam; Input files updated by another job: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step0_trim_galore/trim_galore_I-3_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step0_trim_galore/trim_galore_I-3_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885, sample=I-3, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/temp_test
+
+Activating conda environment: flask2024
+[Fri Nov 15 20:21:06 2024]
+Finished job 8.
+4 of 10 steps (40%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov 15 20:21:06 2024]
+localrule bismark_pe:
+    input: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step0_trim_galore/trim_galore_I-3_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step0_trim_galore/trim_galore_I-3_2.fq.gz
+    output: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step1_bismark/bismark_I-3.bam
+    log: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-3/step1_bismark/I-3.log
+    jobid: 5
+    reason: Missing output files: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step1_bismark/bismark_I-3.bam; Input files updated by another job: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step0_trim_galore/trim_galore_I-3_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-3/step0_trim_galore/trim_galore_I-3_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885, sample=I-3, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/temp_test
+
+Activating conda environment: flask2024
+[Fri Nov 15 20:22:59 2024]
+Finished job 1.
+5 of 10 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov 15 20:22:59 2024]
+localrule bismark_pe:
+    input: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_2.fq.gz
+    output: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step1_bismark/bismark_I-4.bam
+    log: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-4/step1_bismark/I-4.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step1_bismark/bismark_I-4.bam; Input files updated by another job: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_2.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885, sample=I-4, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/temp_test
+
+Activating conda environment: flask2024
+[Fri Nov 15 20:31:51 2024]
+Finished job 6.
+6 of 10 steps (60%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov 15 20:31:51 2024]
+localrule sp_bismark_pe:
+    input: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_2.fq.gz
+    output: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step2_bismark_spikein/bismark_spikein_I-4.bam
+    log: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-4/step2_bismark_spikein/I-4.log
+    jobid: 7
+    reason: Missing output files: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step2_bismark_spikein/bismark_spikein_I-4.bam; Input files updated by another job: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_2.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885, sample=I-4, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/temp_test
+
+Activating conda environment: flask2024
+[Fri Nov 15 20:34:37 2024]
+Finished job 7.
+7 of 10 steps (70%) done
+[Fri Nov 15 20:36:21 2024]
+Finished job 5.
+8 of 10 steps (80%) done
+[Fri Nov 15 20:40:17 2024]
+Error in rule bismark_pe:
+    jobid: 4
+    input: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_1.fq.gz, /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_2.fq.gz
+    output: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step1_bismark/bismark_I-4.bam
+    log: /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-4/step1_bismark/I-4.log (check log file(s) for error details)
+    conda-env: flask2024
+    shell:
+        
+        /data/cailab/flask2024/soft/Bismark-0.24.2/bismark --path_to_bowtie2 /data/cailab/flask2024/soft/bowtie2-2.5.2-linux-x86_64 /data/reference2024/mouse/mm9/bismark/ -1 /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_1.fq.gz -2 /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_2.fq.gz  -o /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step1_bismark/ -p 10 > /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-4/step1_bismark/I-4.log 2>&1         && if grep -q "ERR" /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-4/step1_bismark/I-4.log; then echo "Bismark encountered an error, high likelihood of memory error!" >&2; exit 1; fi         && temp_bam=$(basename /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_1.fq.gz .fq.gz)_bismark_bt2_pe.bam         && samtools view -bh -F 256 -F 2048 -@ 10 /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step1_bismark/$temp_bam | samtools sort -@ 10  > /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step1_bismark/bismark_I-4.bam         && samtools index /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step1_bismark/bismark_I-4.bam
+
+        total_reads=$(zcat /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step0_trim_galore/trim_galore_I-4_1.fq.gz | echo $((`wc -l` / 4)))
+        aligned_reads=$(samtools view -c -F 4 /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/I-4/step1_bismark/bismark_I-4.bam)
+        alignment_percentage=$(python3 -c "print(format(50 * $aligned_reads / $total_reads, '.2f'))" )      
+        echo "step1 Alignment_Percentage $alignment_percentage%" >> /data/cailab/flask_out/20241115201531-adfc20e0-ad27-485f-9e40-9ac4d6b70885/logs/I-4.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-11-15T201602.226693.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

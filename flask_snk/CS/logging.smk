@@ -1,22 +1,22 @@
 rule get_log:
     input:
-        cut_fq="{output_dir}/trim/{cut_soft}/{{sample}}.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
-        bam="{output_dir}/bam/{align_soft}/{{sample}}.bam".format(output_dir=config['output_dir'],align_soft=config['align_soft']),
-        de_bam="{output_dir}/de_bam/{dup_soft}/{{sample}}_dedup.bam".format(output_dir=config['output_dir'],dup_soft=config['dup_soft']),
-        sp_bam="{output_dir}/sp_bam/{align_soft}/sp_{{sample}}.bam".format(output_dir=config['output_dir'],align_soft=config['align_soft']),
-        sp_hmc= "{output_dir}/sp_bam/{call_modify_soft}/sp_{{sample}}.bam.all.bed.hmc".format(output_dir=config['output_dir'],call_modify_soft=config['call_modify_soft']),
-        sp_mc="{output_dir}/sp_bam/{call_modify_soft}/sp_{{sample}}.bam.all.bed.mc".format(output_dir=config['output_dir'],call_modify_soft=config['call_modify_soft']),
-        cover="{output_dir}/cover/{{sample}}/genome_results.txt".format(output_dir=config['output_dir']),
-        hmc= "{output_dir}/de_bam/{call_modify_soft}/{{sample}}_dedup.bam.all.bed.hmc".format(output_dir=config['output_dir'],call_modify_soft=config['call_modify_soft']),
-        mc="{output_dir}/de_bam/{call_modify_soft}/{{sample}}_dedup.bam.all.bed.mc".format(output_dir=config['output_dir'],call_modify_soft=config['call_modify_soft']),
+        cut_fq="{output_dir}/{{sample}}/trim/{cut_soft}/{{sample}}.fq".format(output_dir=config['output_dir'],cut_soft=config['cut_soft']),
+        bam="{output_dir}/{{sample}}/bam/{align_soft}/{{sample}}.bam".format(output_dir=config['output_dir'],align_soft=config['align_soft']),
+        de_bam="{output_dir}/{{sample}}/de_bam/{dup_soft}/{{sample}}_dedup.bam".format(output_dir=config['output_dir'],dup_soft=config['dup_soft']),
+        sp_bam="{output_dir}/{{sample}}/sp_bam/{align_soft}/sp_{{sample}}.bam".format(output_dir=config['output_dir'],align_soft=config['align_soft']),
+        sp_hmc= "{output_dir}/{{sample}}/sp_bam/{call_modify_soft}/sp_{{sample}}.bam.all.bed.hmc".format(output_dir=config['output_dir'],call_modify_soft=config['call_modify_soft']),
+        sp_mc="{output_dir}/{{sample}}/sp_bam/{call_modify_soft}/sp_{{sample}}.bam.all.bed.mc".format(output_dir=config['output_dir'],call_modify_soft=config['call_modify_soft']),
+        cover="{output_dir}/{{sample}}/cover/{{sample}}/genome_results.txt".format(output_dir=config['output_dir']),
+        hmc= "{output_dir}/{{sample}}/de_bam/{call_modify_soft}/{{sample}}_dedup.bam.all.bed.hmc".format(output_dir=config['output_dir'],call_modify_soft=config['call_modify_soft']),
+        mc="{output_dir}/{{sample}}/de_bam/{call_modify_soft}/{{sample}}_dedup.bam.all.bed.mc".format(output_dir=config['output_dir'],call_modify_soft=config['call_modify_soft']),
     output:
         log="{output_dir}/final_log/{{sample}}.log".format(output_dir=config['output_dir']),
     conda:
         "flask2024",
     params:
         raw_fq1="{fq_in_path}/{{sample}}".format(fq_in_path=config['fq_in_path']),
-        trim_fq1="{output_dir}/trim/{trim_soft}/{{sample}}".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
-        json="{output_dir}/trim/{trim_soft}/{{sample}}_{mode}.json".format(output_dir=config['output_dir'],trim_soft=config['trim_soft'],mode=config["mode"]),
+        trim_fq1="{output_dir}/{{sample}}/trim/{trim_soft}/{{sample}}".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
+        json="{output_dir}/{{sample}}/trim/{trim_soft}/{{sample}}_{mode}.json".format(output_dir=config['output_dir'],trim_soft=config['trim_soft'],mode=config["mode"]),
         spikein=config['spikein_params'],
         my_sample="{sample}",
     threads: 4

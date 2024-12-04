@@ -1,0 +1,27 @@
+BAM CGS_call_modify:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_astair_call_modify
+    astair call -i {bam} -f $ref_path/{{step}_ref_species}/{{step}_ref_release}/{{step}_ref_release}.fa  -t 10 -d $output_dir/${{sample}}/{step}_astair_call_modify {params}
+    temp_bam=$(basename {bam} .bam)_mCtoT_all.mods
+    mv $temp_bam $output_dir/${{sample}}/{step}_astair_call_modify/astair_call_modify_${{sample}}.bed
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_astair_call_modify
+    astair call -i {bam} -f $ref_path/{{step}_ref_species}/{{step}_ref_release}/{{step}_ref_release}.fa  -t 10 -d $output_dir/${{sample}}/{step}_astair_call_modify {params}
+    temp_bam=$(basename {bam} .bam)_mCtoT_all.mods
+    mv $temp_bam $output_dir/${{sample}}/{step}_astair_call_modify/astair_call_modify_${{sample}}.bed
+  params: -sc True
+
+BAM CGS_spikein_modify:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_astair_spikein_modify
+    astair call -i {bam} -f $ref_path/spikein/spikein.fa  -t 10 -d $output_dir/${{sample}}/{step}_astair_spikein_modify {params}
+    temp_bam=$(basename {bam} .bam)_mCtoT_all.mods
+    mv $temp_bam $output_dir/${{sample}}/{step}_astair_spikein_modify/astair_spikein_modify_${{sample}}.bed
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_astair_spikein_modify
+    astair call -i {bam} -f $ref_path/spikein/spikein.fa  -t 10 -d $output_dir/${{sample}}/{step}_astair_spikein_modify {params}
+    temp_bam=$(basename {bam} .bam)_mCtoT_all.mods
+    mv $temp_bam $output_dir/${{sample}}/{step}_astair_spikein_modify/astair_spikein_modify_${{sample}}.bed 
+  params: -sc True
+
+

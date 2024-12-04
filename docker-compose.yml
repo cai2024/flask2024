@@ -1,3 +1,5 @@
+
+
 version: '3.8'
 
 services:
@@ -13,4 +15,9 @@ services:
       - "6090:6090"
     environment:
       - PATH=/opt/conda/envs/flask2024/bin:$PATH
+      - TZ=Asia/Shanghai 
+    deploy:
+      resources:
+        limits:
+          memory: 10000M
 

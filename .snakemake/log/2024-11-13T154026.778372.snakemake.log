@@ -1,0 +1,107 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+bwa_pe                   1
+clipOverlap              1
+qualimap_bamqc           1
+remove_duplicates        1
+sp_bwa_pe                1
+trim_galore_pe           1
+total                    7
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 13 15:40:31 2024]
+localrule trim_galore_pe:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz, /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/logs/wgs/step0_trim_galore/trim_galore_wgs_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz, /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9, sample=wgs, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/temp_test
+
+Activating conda environment: flask2024
+[Wed Nov 13 15:42:28 2024]
+Finished job 1.
+1 of 7 steps (14%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Nov 13 15:42:28 2024]
+localrule sp_bwa_pe:
+    input: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    output: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step2_bwa_spikein/bwa_spikein_wgs.bam
+    log: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/logs/wgs/step2_bwa_spikein/wgs.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step2_bwa_spikein/bwa_spikein_wgs.bam; Input files updated by another job: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz, /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9, sample=wgs, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/temp_test
+
+Activating conda environment: flask2024
+
+[Wed Nov 13 15:42:28 2024]
+localrule bwa_pe:
+    input: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    output: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step1_bwa/bwa_wgs.bam
+    log: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/logs/wgs/step1_bwa/wgs.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step1_bwa/bwa_wgs.bam; Input files updated by another job: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz, /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9, sample=wgs, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/temp_test
+
+Activating conda environment: flask2024
+[Wed Nov 13 15:42:29 2024]
+Finished job 3.
+2 of 7 steps (29%) done
+[Wed Nov 13 15:43:37 2024]
+Finished job 2.
+3 of 7 steps (43%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 13 15:43:37 2024]
+localrule remove_duplicates:
+    input: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step1_bwa/bwa_wgs.bam
+    output: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step3_remove_duplicates/remove_duplicates_wgs.bam
+    log: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/logs/wgs/step3_remove_duplicates/wgs.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step3_remove_duplicates/remove_duplicates_wgs.bam; Input files updated by another job: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step1_bwa/bwa_wgs.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9, sample=wgs, step=step3
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/temp_test
+
+Activating conda environment: flask2024
+[Wed Nov 13 15:43:50 2024]
+Finished job 4.
+4 of 7 steps (57%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 13 15:43:50 2024]
+localrule clipOverlap:
+    input: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step3_remove_duplicates/remove_duplicates_wgs.bam
+    output: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step4_clipOverlap/clipOverlap_wgs.bam
+    log: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/logs/wgs/step4_clipOverlap/wgs.log
+    jobid: 5
+    reason: Missing output files: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step4_clipOverlap/clipOverlap_wgs.bam; Input files updated by another job: /data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/wgs/step3_remove_duplicates/remove_duplicates_wgs.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9, sample=wgs, step=step4
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241113153708-3795b39d-58a7-4aac-86a1-da1b5bded4c9/temp_test
+
+RuleException in rule clipOverlap in file /data/cailab/flask2024/demo/blueprint/workflows/clipOverlap.smk, line 3:
+AttributeError: 'Params' object has no attribute 'temp_bam', when formatting the following:
+
+        samtools sort -n {input.bam} -@ {threads} -o {params.tmp_bam}
+        ({params.bam} clipOverlap --readName --in {params.temp_bam} --out - |         samtools sort -@ {threads}  -o {output.bam} -O bam - ) 2> {log}
+        rm {params.tmp_bam} 
+        

@@ -1,0 +1,130 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+hairpin_cut_N         3
+trim_galore_pe        3
+total                 7
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Wed Nov 27 12:31:51 2024]
+localrule trim_galore_pe:
+    input: /data/wangzc/length/CGS-B-1w-1_1.fq.gz, /data/wangzc/length/CGS-B-1w-1_2.fq.gz
+    output: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step0_trim_galore/trim_galore_CGS-B-1w-1_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step0_trim_galore/trim_galore_CGS-B-1w-1_2.fq.gz
+    log: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/logs/CGS-B-1w-1/step0_trim_galore/trim_galore_CGS-B-1w-1_pair.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step0_trim_galore/trim_galore_CGS-B-1w-1_2.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step0_trim_galore/trim_galore_CGS-B-1w-1_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9, sample=CGS-B-1w-1, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/temp_test
+
+Activating conda environment: flask2024
+
+[Wed Nov 27 12:32:06 2024]
+localrule trim_galore_pe:
+    input: /data/wangzc/length/CT-ICR_1.fq.gz, /data/wangzc/length/CT-ICR_2.fq.gz
+    output: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_2.fq.gz
+    log: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/logs/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_2.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9, sample=CT-ICR, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/temp_test
+
+Activating conda environment: flask2024
+
+[Wed Nov 27 12:32:07 2024]
+localrule trim_galore_pe:
+    input: /data/wangzc/length/CT-4w_1.fq.gz, /data/wangzc/length/CT-4w_2.fq.gz
+    output: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step0_trim_galore/trim_galore_CT-4w_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step0_trim_galore/trim_galore_CT-4w_2.fq.gz
+    log: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/logs/CT-4w/step0_trim_galore/trim_galore_CT-4w_pair.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step0_trim_galore/trim_galore_CT-4w_2.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step0_trim_galore/trim_galore_CT-4w_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9, sample=CT-4w, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/temp_test
+
+Activating conda environment: flask2024
+[Wed Nov 27 12:34:38 2024]
+Finished job 1.
+1 of 7 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 27 12:34:38 2024]
+localrule hairpin_cut_N:
+    input: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_2.fq.gz
+    output: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step1_hairpin_cut_N/hairpin_cut_N_CT-ICR.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step1_hairpin_cut_N/hairpin_cut_N_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step1_hairpin_cut_N/hairpin_cut_N_CT-ICR_2.fq.gz
+    log: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/logs/CT-ICR/step1_hairpin_cut/CT-ICR.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step1_hairpin_cut_N/hairpin_cut_N_CT-ICR_1.fq.gz; Input files updated by another job: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_2.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9, sample=CT-ICR, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/temp_test
+
+Activating conda environment: flask2024
+[Wed Nov 27 12:38:23 2024]
+Finished job 3.
+2 of 7 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 27 12:38:23 2024]
+localrule hairpin_cut_N:
+    input: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step0_trim_galore/trim_galore_CGS-B-1w-1_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step0_trim_galore/trim_galore_CGS-B-1w-1_2.fq.gz
+    output: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step1_hairpin_cut_N/hairpin_cut_N_CGS-B-1w-1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step1_hairpin_cut_N/hairpin_cut_N_CGS-B-1w-1_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step1_hairpin_cut_N/hairpin_cut_N_CGS-B-1w-1_2.fq.gz
+    log: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/logs/CGS-B-1w-1/step1_hairpin_cut/CGS-B-1w-1.log
+    jobid: 6
+    reason: Missing output files: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step1_hairpin_cut_N/hairpin_cut_N_CGS-B-1w-1_1.fq.gz; Input files updated by another job: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step0_trim_galore/trim_galore_CGS-B-1w-1_2.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step0_trim_galore/trim_galore_CGS-B-1w-1_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9, sample=CGS-B-1w-1, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/temp_test
+
+Activating conda environment: flask2024
+[Wed Nov 27 12:38:28 2024]
+Finished job 4.
+3 of 7 steps (43%) done
+[Wed Nov 27 12:44:32 2024]
+Finished job 2.
+4 of 7 steps (57%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 27 12:44:32 2024]
+localrule hairpin_cut_N:
+    input: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step0_trim_galore/trim_galore_CT-4w_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step0_trim_galore/trim_galore_CT-4w_2.fq.gz
+    output: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step1_hairpin_cut_N/hairpin_cut_N_CT-4w.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step1_hairpin_cut_N/hairpin_cut_N_CT-4w_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step1_hairpin_cut_N/hairpin_cut_N_CT-4w_2.fq.gz
+    log: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/logs/CT-4w/step1_hairpin_cut/CT-4w.log
+    jobid: 5
+    reason: Missing output files: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step1_hairpin_cut_N/hairpin_cut_N_CT-4w_1.fq.gz; Input files updated by another job: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step0_trim_galore/trim_galore_CT-4w_2.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step0_trim_galore/trim_galore_CT-4w_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9, sample=CT-4w, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/temp_test
+
+Activating conda environment: flask2024
+[Wed Nov 27 12:46:38 2024]
+Finished job 6.
+5 of 7 steps (71%) done
+[Wed Nov 27 13:04:44 2024]
+Finished job 5.
+6 of 7 steps (86%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 27 13:04:44 2024]
+localrule all:
+    input: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step0_trim_galore/trim_galore_CT-4w_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step0_trim_galore/trim_galore_CGS-B-1w-1_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step1_hairpin_cut_N/hairpin_cut_N_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step1_hairpin_cut_N/hairpin_cut_N_CT-4w_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step1_hairpin_cut_N/hairpin_cut_N_CGS-B-1w-1_1.fq.gz
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step0_trim_galore/trim_galore_CT-4w_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step0_trim_galore/trim_galore_CGS-B-1w-1_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-4w/step1_hairpin_cut_N/hairpin_cut_N_CT-4w_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CGS-B-1w-1/step1_hairpin_cut_N/hairpin_cut_N_CGS-B-1w-1_1.fq.gz, /data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/CT-ICR/step1_hairpin_cut_N/hairpin_cut_N_CT-ICR_1.fq.gz
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241127123051-b5bccc10-1320-43d3-a909-881fd87995c9/temp_test
+
+[Wed Nov 27 13:04:44 2024]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2024-11-27T123150.263417.snakemake.log

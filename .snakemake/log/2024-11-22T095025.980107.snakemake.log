@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+qualimap_bamqc        1
+total                 2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov 22 09:50:26 2024]
+localrule qualimap_bamqc:
+    input: /data/cailab/flask2024/test/bam/bwa_wgs.bam
+    output: /data/cailab/flask_out/20241122095004-f41ab407-ee99-43c9-a338-ff788873f9a5/bwa_wgs/step0_qualimap_cover/qualimap_cover_bwa_wgs.txt
+    log: /data/cailab/flask_out/20241122095004-f41ab407-ee99-43c9-a338-ff788873f9a5/logs/bwa_wgs/step0_qualimap_cover/bwa_wgs.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241122095004-f41ab407-ee99-43c9-a338-ff788873f9a5/bwa_wgs/step0_qualimap_cover/qualimap_cover_bwa_wgs.txt
+    wildcards: output_dir=/data/cailab/flask_out/20241122095004-f41ab407-ee99-43c9-a338-ff788873f9a5, sample=bwa_wgs, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241122095004-f41ab407-ee99-43c9-a338-ff788873f9a5/temp_test
+
+Activating conda environment: flask2024
+[Fri Nov 22 09:50:54 2024]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov 22 09:50:54 2024]
+localrule all:
+    input: /data/cailab/flask_out/20241122095004-f41ab407-ee99-43c9-a338-ff788873f9a5/bwa_wgs/step0_qualimap_cover/qualimap_cover_bwa_wgs.txt
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20241122095004-f41ab407-ee99-43c9-a338-ff788873f9a5/bwa_wgs/step0_qualimap_cover/qualimap_cover_bwa_wgs.txt
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241122095004-f41ab407-ee99-43c9-a338-ff788873f9a5/temp_test
+
+[Fri Nov 22 09:50:54 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-11-22T095025.980107.snakemake.log

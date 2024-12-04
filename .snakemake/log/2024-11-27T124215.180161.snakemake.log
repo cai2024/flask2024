@@ -1,0 +1,75 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+hairpin_cut_N        3
+total                4
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Wed Nov 27 12:42:16 2024]
+localrule hairpin_cut_N:
+    input: /data/wangzc/length/CT-4w_1.fq.gz, /data/wangzc/length/CT-4w_2.fq.gz
+    output: /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CT-4w/step0_hairpin_cut_N/hairpin_cut_N_CT-4w.fq.gz, /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CT-4w/step0_hairpin_cut_N/hairpin_cut_N_CT-4w_1.fq.gz, /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CT-4w/step0_hairpin_cut_N/hairpin_cut_N_CT-4w_2.fq.gz
+    log: /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/logs/CT-4w/step0_hairpin_cut/CT-4w.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CT-4w/step0_hairpin_cut_N/hairpin_cut_N_CT-4w_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195, sample=CT-4w, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/temp_test
+
+Activating conda environment: flask2024
+
+[Wed Nov 27 12:42:25 2024]
+localrule hairpin_cut_N:
+    input: /data/wangzc/length/CT-ICR_1.fq.gz, /data/wangzc/length/CT-ICR_2.fq.gz
+    output: /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CT-ICR/step0_hairpin_cut_N/hairpin_cut_N_CT-ICR.fq.gz, /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CT-ICR/step0_hairpin_cut_N/hairpin_cut_N_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CT-ICR/step0_hairpin_cut_N/hairpin_cut_N_CT-ICR_2.fq.gz
+    log: /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/logs/CT-ICR/step0_hairpin_cut/CT-ICR.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CT-ICR/step0_hairpin_cut_N/hairpin_cut_N_CT-ICR_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195, sample=CT-ICR, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/temp_test
+
+Activating conda environment: flask2024
+
+[Wed Nov 27 12:42:26 2024]
+localrule hairpin_cut_N:
+    input: /data/wangzc/length/CGS-B-1w-1_1.fq.gz, /data/wangzc/length/CGS-B-1w-1_2.fq.gz
+    output: /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CGS-B-1w-1/step0_hairpin_cut_N/hairpin_cut_N_CGS-B-1w-1.fq.gz, /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CGS-B-1w-1/step0_hairpin_cut_N/hairpin_cut_N_CGS-B-1w-1_1.fq.gz, /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CGS-B-1w-1/step0_hairpin_cut_N/hairpin_cut_N_CGS-B-1w-1_2.fq.gz
+    log: /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/logs/CGS-B-1w-1/step0_hairpin_cut/CGS-B-1w-1.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CGS-B-1w-1/step0_hairpin_cut_N/hairpin_cut_N_CGS-B-1w-1_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195, sample=CGS-B-1w-1, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/temp_test
+
+Activating conda environment: flask2024
+[Wed Nov 27 12:55:02 2024]
+Finished job 3.
+1 of 4 steps (25%) done
+[Wed Nov 27 13:01:02 2024]
+Finished job 1.
+2 of 4 steps (50%) done
+[Wed Nov 27 13:03:45 2024]
+Finished job 2.
+3 of 4 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Nov 27 13:03:45 2024]
+localrule all:
+    input: /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CT-ICR/step0_hairpin_cut_N/hairpin_cut_N_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CT-4w/step0_hairpin_cut_N/hairpin_cut_N_CT-4w_1.fq.gz, /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CGS-B-1w-1/step0_hairpin_cut_N/hairpin_cut_N_CGS-B-1w-1_1.fq.gz
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CT-ICR/step0_hairpin_cut_N/hairpin_cut_N_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CT-4w/step0_hairpin_cut_N/hairpin_cut_N_CT-4w_1.fq.gz, /data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/CGS-B-1w-1/step0_hairpin_cut_N/hairpin_cut_N_CGS-B-1w-1_1.fq.gz
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241127124131-d0ea6258-0e33-4e73-9f54-9dfaeb0a7195/temp_test
+
+[Wed Nov 27 13:03:45 2024]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: .snakemake/log/2024-11-27T124215.180161.snakemake.log

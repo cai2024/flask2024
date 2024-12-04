@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+bismark_se        1
+total             2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov 22 20:02:51 2024]
+localrule bismark_se:
+    input: /data/cailab/flask_out/20241122091705-e69fd82d-04c8-40b3-9bc6-dd2dcc7da879/CT-ICR/step1_hairpin_cut_L/CT-ICR.fq.gz
+    output: /data/cailab/flask_out/20241122200225-db846c89-16d9-4db1-a0e5-423d67d91031/CT-ICR/step0_bismark/bismark_CT-ICR.bam
+    log: /data/cailab/flask_out/20241122200225-db846c89-16d9-4db1-a0e5-423d67d91031/logs/CT-ICR/step0_bismark/CT-ICR.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241122200225-db846c89-16d9-4db1-a0e5-423d67d91031/CT-ICR/step0_bismark/bismark_CT-ICR.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241122200225-db846c89-16d9-4db1-a0e5-423d67d91031, sample=CT-ICR, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241122200225-db846c89-16d9-4db1-a0e5-423d67d91031/temp_test
+
+Activating conda environment: flask2024
+[Sat Nov 23 02:01:35 2024]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sat Nov 23 02:01:35 2024]
+localrule all:
+    input: /data/cailab/flask_out/20241122200225-db846c89-16d9-4db1-a0e5-423d67d91031/CT-ICR/step0_bismark/bismark_CT-ICR.bam
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20241122200225-db846c89-16d9-4db1-a0e5-423d67d91031/CT-ICR/step0_bismark/bismark_CT-ICR.bam
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241122200225-db846c89-16d9-4db1-a0e5-423d67d91031/temp_test
+
+[Sat Nov 23 02:01:35 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-11-22T200250.834833.snakemake.log

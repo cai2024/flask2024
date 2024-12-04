@@ -1,0 +1,24 @@
+BAM CT_XM_bam:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_CT_XM_bam
+    python3 $py_ref/CT_XM_bam.py --bam {bam}  --ref $ref_path/{{step}_ref_species}/{{step}_ref_release}/{{step}_ref_release}.fa \
+    --parallel 10 --output $output_dir/${{sample}}/{step}_CT_XM_bam/CT_XM_bam_${{sample}}.bam {params} > $output_dir/logs/${{sample}}/{step}_CT_XM_bam/${{sample}}.log 2>&1 
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_CT_XM_bam
+    python3 $py_ref/CT_XM_bam.py --bam {bam} --ref $ref_path/{{step}_ref_species}/{{step}_ref_release}/{{step}_ref_release}.fa \
+    --parallel 10 --output $output_dir/${{sample}}/{step}_CT_XM_bam/CT_XM_bam_${{sample}}.bam {params} > $output_dir/logs/${{sample}}/{step}_CT_XM_bam/${{sample}}.log 2>&1
+
+
+BAM CT_XM_sp_bam:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_CT_XM_sp_bam
+    python3 $py_ref/CT_XM_bam.py --bam {bam} --ref $ref_path/spikein/spikein.fa \
+    --parallel 10 --output $output_dir/${{sample}}/{step}_CT_XM_sp_bam/CT_XM_sp_bam_${{sample}}.bam {params} > $output_dir/logs/${{sample}}/{step}_CT_XM_sp_bam/${{sample}}.log 2>&1
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_CT_XM_sp_bam
+    python3 $py_ref/CT_XM_bam.py --bam {bam}  --ref $ref_path/spikein/spikein.fa \
+    --parallel 10 --output $output_dir/${{sample}}/{step}_CT_XM_sp_bam/CT_XM_sp_bam_${{sample}}.bam {params} > $output_dir/logs/${{sample}}/{step}_CT_XM_sp_bam/${{sample}}.log 2>&1
+
+
+
+

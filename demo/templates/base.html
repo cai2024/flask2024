@@ -1,20 +1,32 @@
 {% from 'bootstrap4/nav.html' import render_nav_item %}
 <!DOCTYPE html>
+<!-- 基础模板的css样式完全由bootstrap提供 -->
 <html lang="zh">
 <head>
     {% block head %}
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}默认标题{% endblock title %}</title>
+        <title>{% block title %}橙子 pipeline{% endblock title %}</title>
         <link rel="icon" href="{{ url_for('static', filename='ico/heart.ico') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/blue.mini.css') }}" type="text/css">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
-        <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/atom-one-dark.min.css') }}" type="text/css">
+        <!-- 加载本地全部的工具js函数 -->  
+        <script src="{{ url_for('static', filename='js/modules/jquery-3.7.1.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/modules/jquery-ui.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/modules/highlight.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/modules/addStep.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/modules/disableButtons.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/modules/folderSuggestions.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/modules/ketToyy.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/modules/project_init.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/modules/postData.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/modules/presetPipeline.js') }}"></script>
         {% block styles %}
         {% endblock styles %}
     {% endblock head %}
 </head>
+
 <body>
     {% block nav %}
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -23,31 +35,27 @@
                     <ul class="navbar-nav mr-auto">
                         {{ render_nav_item('biology.index', '主页') }}
                         {{ render_nav_item('analysis.analysis', '分析流程代码') }} 
-                        {{ render_nav_item('complex_junction.complex_junction', '复杂接头识别') }} 
+                        {{ render_nav_item('individual_code.individual_home', '复杂流程设计(单样本版)') }}
+                        {{ render_nav_item('batch_code.batch_home', '复杂流程设计(批量版)') }}
                     </ul>
                 </div>
             </div>
         </nav>
     {% endblock nav %}
-
-    <div class="content">
-        {% block content %}
-        <!-- 主内容区，具体页面中定义 -->
-        {% endblock content %}
-    </div>
-
+<div class="container py-4">
+    {% block content %}
+    {% endblock content %}
+</div>
     {% block sidebar %}
-        <!-- 如果需要侧边栏，可以在此定义 -->
     {% endblock sidebar %}
-
-    <footer>
-        {% block footer %}
-            <p style="text-align: center;">© 2024 Cai Lab. All rights reserved.</p>
-        {% endblock footer %}
-    </footer>
-
+<footer class="text-center">
+    {% block footer %}
+        <p>© 2024 Cai Lab. All rights reserved.</p>
+    {% endblock footer %}
+</footer>
     {% block scripts %}
-        <!-- 页面特定脚本可以在此定义 -->
+    <script src="{{ url_for('static', filename='js/modules/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/modules/jquery-ui.min.js') }}"></script>
     {% endblock scripts %}
 </body>
 </html>

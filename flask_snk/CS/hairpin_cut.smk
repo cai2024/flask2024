@@ -1,15 +1,15 @@
 rule hairpin_cut: 
     input:
-        trim_fq1="{output_dir}/trim/{trim_soft}/{{sample}}_1_val_1.fq.gz".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
-        trim_fq2="{output_dir}/trim/{trim_soft}/{{sample}}_2_val_2.fq.gz".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
+        trim_fq1="{output_dir}/{{sample}}/trim/{trim_soft}/{{sample}}_1_val_1.fq.gz".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
+        trim_fq2="{output_dir}/{{sample}}/trim/{trim_soft}/{{sample}}_2_val_2.fq.gz".format(output_dir=config['output_dir'],trim_soft=config['trim_soft']),
     output:
-        cut_fq="{output_dir}/trim/CGS_haipin/{{sample}}.fq".format(output_dir=config['output_dir']),
-        cut_fq1="{output_dir}/trim/CGS_haipin/{{sample}}_cut_f1.fq".format(output_dir=config['output_dir']),
-        cut_fq2="{output_dir}/trim/CGS_haipin/{{sample}}_cut_f2.fq".format(output_dir=config['output_dir']),                      
+        cut_fq="{output_dir}/{{sample}}/trim/CGS_haipin/{{sample}}.fq".format(output_dir=config['output_dir']),
+        cut_fq1="{output_dir}/{{sample}}/trim/CGS_haipin/{{sample}}_cut_f1.fq".format(output_dir=config['output_dir']),
+        cut_fq2="{output_dir}/{{sample}}/trim/CGS_haipin/{{sample}}_cut_f2.fq".format(output_dir=config['output_dir']),                      
     log:
-        "{output_dir}/logs/hairpin_cut/{{sample}}.log".format(output_dir=config['output_dir'])
+        "{output_dir}/{{sample}}/logs/hairpin_cut/{{sample}}.log".format(output_dir=config['output_dir'])
     params:
-        out_file="{output_dir}/trim/CGS_haipin/{{sample}}".format(output_dir=config['output_dir']),
+        out_file="{output_dir}/{{sample}}/trim/CGS_haipin/{{sample}}".format(output_dir=config['output_dir']),
         other=config['cut_params'],
     conda:
         "flask2024",

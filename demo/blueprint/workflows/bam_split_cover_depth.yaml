@@ -1,0 +1,9 @@
+plot bam_split_cover_depth:
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_bam_split_cover_depth
+    python3 $py_ref/plot_bam_split_cover_depth.py --bam {bam} --output $output_dir/${{sample}}/{step}_bam_split_cover_depth/bam_split_cover_depth_${{sample}} --qualimap $qualimap {params} > $output_dir/logs/${{sample}}/{step}_bam_split_cover_depth/${{sample}}.log 2>&1
+
+  single: |
+    mkdir -p $output_dir/${{sample}}/{step}_bam_split_cover_depth    
+    python3 $py_ref/plot_bam_split_cover_depth.py --bam {bam} --output $output_dir/${{sample}}/{step}_bam_split_cover_depth/bam_split_cover_depth_${{sample}} --qualimap $qualimap {params} > $output_dir/logs/${{sample}}/{step}_bam_split_cover_depth/${{sample}}.log 2>&1
+

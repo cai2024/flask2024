@@ -1,0 +1,62 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+hairpin_cut_N         1
+trim_galore_pe        1
+total                 3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Nov 26 14:45:25 2024]
+localrule trim_galore_pe:
+    input: /data/cailab/flask2024/test/CGS/cgs_1.fq.gz, /data/cailab/flask2024/test/CGS/cgs_2.fq.gz
+    output: /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step0_trim_galore/trim_galore_cgs_1.fq.gz, /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step0_trim_galore/trim_galore_cgs_2.fq.gz
+    log: /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/logs/cgs/step0_trim_galore/trim_galore_cgs_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step0_trim_galore/trim_galore_cgs_2.fq.gz, /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step0_trim_galore/trim_galore_cgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27, sample=cgs, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/temp_test
+
+Activating conda environment: flask2024
+[Tue Nov 26 14:46:22 2024]
+Finished job 1.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Nov 26 14:46:22 2024]
+localrule hairpin_cut_N:
+    input: /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step0_trim_galore/trim_galore_cgs_1.fq.gz, /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step0_trim_galore/trim_galore_cgs_2.fq.gz
+    output: /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step1_hairpin_cut_N/hairpin_cut_N_cgs.fq.gz, /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step1_hairpin_cut_N/hairpin_cut_N_cgs_1.fq.gz, /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step1_hairpin_cut_N/hairpin_cut_N_cgs_2.fq.gz
+    log: /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/logs/cgs/step1_hairpin_cut/cgs.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step1_hairpin_cut_N/hairpin_cut_N_cgs_1.fq.gz; Input files updated by another job: /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step0_trim_galore/trim_galore_cgs_2.fq.gz, /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step0_trim_galore/trim_galore_cgs_1.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27, sample=cgs, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/temp_test
+
+Activating conda environment: flask2024
+[Tue Nov 26 14:46:29 2024]
+Finished job 2.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Nov 26 14:46:29 2024]
+localrule all:
+    input: /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step0_trim_galore/trim_galore_cgs_1.fq.gz, /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step1_hairpin_cut_N/hairpin_cut_N_cgs_1.fq.gz
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step0_trim_galore/trim_galore_cgs_1.fq.gz, /data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/cgs/step1_hairpin_cut_N/hairpin_cut_N_cgs_1.fq.gz
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241126144414-fa041278-5669-4701-b148-0f3922ac9d27/temp_test
+
+[Tue Nov 26 14:46:29 2024]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2024-11-26T144524.795973.snakemake.log

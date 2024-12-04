@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in rule trim_galore_pe in file /data/cailab/flask2024/smk/trim.smk, line 67:
+Missing input files for rule trim_galore_pe:
+    output: /data/cailab/output/20240809213124-3f5eb33c-00e1-4014-8cb2-49dc708b2e3a/wgs_2/step0_trim_galore/trim_galore_wgs_2_1.fq.gz, /data/cailab/output/20240809213124-3f5eb33c-00e1-4014-8cb2-49dc708b2e3a/wgs_2/step0_trim_galore/trim_galore_wgs_2_2.fq.gz
+    wildcards: output_dir=/data/cailab/output/20240809213124-3f5eb33c-00e1-4014-8cb2-49dc708b2e3a, sample=wgs_2, step=step0
+    affected files:
+        /data/cailab/flask2024/test/WGS/wgs_2_1.fq.gz
+        /data/cailab/flask2024/test/WGS/wgs_2_2.fq.gz

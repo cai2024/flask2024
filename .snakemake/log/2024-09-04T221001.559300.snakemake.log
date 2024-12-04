@@ -1,0 +1,55 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+bowtie2_pe            1
+trim_galore_pe        1
+total                 3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep  4 22:10:01 2024]
+localrule trim_galore_pe:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz, /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/logs/wgs/step0_trim_galore/trim_galore_wgs_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2, sample=wgs, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/temp_test
+
+Activating conda environment: flask2024
+[Wed Sep  4 22:10:04 2024]
+Finished job 1.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Sep  4 22:10:04 2024]
+localrule bowtie2_pe:
+    input: /data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    output: /data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/wgs/step1_bowtie2/bowtie2_wgs.bam
+    log: /data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/logs/wgs/step1_bowtie2/wgs.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/wgs/step1_bowtie2/bowtie2_wgs.bam; Input files updated by another job: /data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2, sample=wgs, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20240904220947-8e3fff2b-ce21-46a1-aa71-aca279987fb2/temp_test
+
+RuleException in rule bowtie2_pe in file /data/cailab/flask2024/smk/bowtie2.smk, line 32:
+ValueError: unexpected '{' in field name, when formatting the following:
+
+        {params.bowtie2} {params.other} -x {params.index} -1 {input.fq1} -2 {input.fq2} -p {threads} |         samtools view -bS - | samtools sort -@ {threads} -o {output.bam} > {log} 2>&1
+        samtools index {output.bam}
+
+        total_reads=$(zcat {input.fq1} | echo $((`wc -l` / 4)))
+        aligned_reads=$(samtools view -c -F 4 {output.bam})
+        alignment_percentage=$(python3 -c "print(f'{50 * float({aligned_reads}) / float({total_reads}):.2f}%')")
+        echo "Alignment Percentage $alignment_percentage" >> {params.final_log}
+        

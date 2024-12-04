@@ -1,0 +1,60 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+CT_extract_mc_hmc           1
+CT_extract_sp_mc_hmc        1
+all                         1
+bwa_se                      1
+hairpin_cut_N               1
+qualimap_bamqc              1
+remove_duplicates           1
+sp_bwa_se                   1
+trim_galore_pe              1
+total                       9
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Nov  7 21:52:31 2024]
+localrule trim_galore_pe:
+    input: /data/wangzc/1107/CT-ICR_1.fq.gz, /data/wangzc/1107/CT-ICR_2.fq.gz
+    output: /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_2.fq.gz
+    log: /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/logs/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9, sample=CT-ICR, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/temp_test
+
+Activating conda environment: flask2024
+[Thu Nov  7 21:52:32 2024]
+Error in rule trim_galore_pe:
+    jobid: 1
+    input: /data/wangzc/1107/CT-ICR_1.fq.gz, /data/wangzc/1107/CT-ICR_2.fq.gz
+    output: /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_1.fq.gz, /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_2.fq.gz
+    log: /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/logs/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_pair.log (check log file(s) for error details)
+    conda-env: flask2024
+    shell:
+        
+        trim_galore  -g "AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC" -G "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT" -a "G{6}" -A "G{6}" --pair-filter=any --discard-trimmed --paired --cores 3 -o /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/CT-ICR/step0_trim_galore /data/wangzc/1107/CT-ICR_1.fq.gz /data/wangzc/1107/CT-ICR_2.fq.gz > /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/logs/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_pair.log 2>&1
+        temp_name1=$(basename /data/wangzc/1107/CT-ICR_1.fq.gz | sed 's/\.fq\.gz$/_val_1.fq.gz/')
+        temp_name2=$(basename /data/wangzc/1107/CT-ICR_2.fq.gz | sed 's/\.fq\.gz$/_val_2.fq.gz/')
+        mv /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/CT-ICR/step0_trim_galore/$temp_name1 /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_1.fq.gz
+        mv /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/CT-ICR/step0_trim_galore/$temp_name2 /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_2.fq.gz
+
+        original_count=$(zcat /data/wangzc/1107/CT-ICR_1.fq.gz | echo $((`wc -l`/4)))
+        trimmed_count=$(zcat /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/CT-ICR/step0_trim_galore/trim_galore_CT-ICR_1.fq.gz | echo $((`wc -l`/4)))
+        clean_read_percentage=$(python3 -c "print(format(100 * $trimmed_count / $original_count, '.2f'))")
+        echo "step0 Clean_Read_Percentage $clean_read_percentage%" >> /data/cailab/flask_out/20241107215110-c26df7db-246f-4ecf-86d6-fa582a8cb7a9/logs/CT-ICR.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-11-07T215231.417192.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

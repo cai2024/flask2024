@@ -1,0 +1,117 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+bwa_pe                   1
+qualimap_bamqc           1
+remove_duplicates        1
+sp_bwa_pe                1
+trim_galore_pe           1
+total                    6
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Nov 11 18:09:21 2024]
+localrule trim_galore_pe:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz, /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    log: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/logs/wgs/step0_trim_galore/trim_galore_wgs_pair.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2, sample=wgs, step=step0
+    threads: 3
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/temp_test
+
+Activating conda environment: flask2024
+[Mon Nov 11 18:09:43 2024]
+Finished job 1.
+1 of 6 steps (17%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Nov 11 18:09:43 2024]
+localrule sp_bwa_pe:
+    input: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    output: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step2_bwa_spikein/bwa_spikein_wgs.bam
+    log: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/logs/wgs/step2_bwa_spikein/wgs.log
+    jobid: 3
+    reason: Missing output files: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step2_bwa_spikein/bwa_spikein_wgs.bam; Input files updated by another job: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2, sample=wgs, step=step2
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/temp_test
+
+Activating conda environment: flask2024
+
+[Mon Nov 11 18:09:43 2024]
+localrule bwa_pe:
+    input: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    output: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step1_bwa/bwa_wgs.bam
+    log: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/logs/wgs/step1_bwa/wgs.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step1_bwa/bwa_wgs.bam; Input files updated by another job: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_2.fq.gz
+    wildcards: output_dir=/data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2, sample=wgs, step=step1
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/temp_test
+
+Activating conda environment: flask2024
+[Mon Nov 11 18:09:44 2024]
+Finished job 3.
+2 of 6 steps (33%) done
+[Mon Nov 11 18:09:56 2024]
+Finished job 2.
+3 of 6 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Nov 11 18:09:56 2024]
+localrule remove_duplicates:
+    input: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step1_bwa/bwa_wgs.bam
+    output: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step3_remove_duplicates/remove_duplicates_wgs.bam
+    log: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/logs/wgs/step3_remove_duplicates/wgs.log
+    jobid: 4
+    reason: Missing output files: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step3_remove_duplicates/remove_duplicates_wgs.bam; Input files updated by another job: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step1_bwa/bwa_wgs.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2, sample=wgs, step=step3
+    threads: 4
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/temp_test
+
+Activating conda environment: flask2024
+[Mon Nov 11 18:10:07 2024]
+Finished job 4.
+4 of 6 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Nov 11 18:10:07 2024]
+localrule qualimap_bamqc:
+    input: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step3_remove_duplicates/remove_duplicates_wgs.bam
+    output: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step4_qualimap_cover/qualimap_cover_wgs.txt
+    log: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/logs/wgs/step4_qualimap_cover/wgs.log
+    jobid: 5
+    reason: Missing output files: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step4_qualimap_cover/qualimap_cover_wgs.txt; Input files updated by another job: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step3_remove_duplicates/remove_duplicates_wgs.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2, sample=wgs, step=step4
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/temp_test
+
+Activating conda environment: flask2024
+[Mon Nov 11 18:10:33 2024]
+Finished job 5.
+5 of 6 steps (83%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Nov 11 18:10:33 2024]
+localrule all:
+    input: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step1_bwa/bwa_wgs.bam, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step2_bwa_spikein/bwa_spikein_wgs.bam, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step3_remove_duplicates/remove_duplicates_wgs.bam, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step4_qualimap_cover/qualimap_cover_wgs.txt
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step3_remove_duplicates/remove_duplicates_wgs.bam, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step1_bwa/bwa_wgs.bam, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step0_trim_galore/trim_galore_wgs_1.fq.gz, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step2_bwa_spikein/bwa_spikein_wgs.bam, /data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/wgs/step4_qualimap_cover/qualimap_cover_wgs.txt
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241111180914-10cbbb77-8d85-4bbc-8479-536e36ce2cc2/temp_test
+
+[Mon Nov 11 18:10:33 2024]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2024-11-11T180921.387970.snakemake.log

@@ -1,0 +1,59 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count
+------  -------
+all           1
+bwa_se        2
+total         3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Nov 19 16:45:16 2024]
+localrule bwa_se:
+    input: /data/cailab/flask2024/test/WGS/wgs_1.fq.gz
+    output: /data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/wgs_1/step0_bwa/bwa_wgs_1.bam
+    log: /data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/logs/wgs_1/step0_bwa/wgs_1.log
+    jobid: 2
+    reason: Missing output files: /data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/wgs_1/step0_bwa/bwa_wgs_1.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2, sample=wgs_1, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/temp_test
+
+Activating conda environment: flask2024
+
+[Tue Nov 19 16:45:36 2024]
+localrule bwa_se:
+    input: /data/cailab/flask2024/test/WGS/wgs_2.fq.gz
+    output: /data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/wgs_2/step0_bwa/bwa_wgs_2.bam
+    log: /data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/logs/wgs_2/step0_bwa/wgs_2.log
+    jobid: 1
+    reason: Missing output files: /data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/wgs_2/step0_bwa/bwa_wgs_2.bam
+    wildcards: output_dir=/data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2, sample=wgs_2, step=step0
+    threads: 10
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/temp_test
+
+Activating conda environment: flask2024
+[Tue Nov 19 16:47:33 2024]
+Finished job 1.
+1 of 3 steps (33%) done
+[Tue Nov 19 16:47:33 2024]
+Finished job 2.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Nov 19 16:47:33 2024]
+localrule all:
+    input: /data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/wgs_2/step0_bwa/bwa_wgs_2.bam, /data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/wgs_1/step0_bwa/bwa_wgs_1.bam
+    jobid: 0
+    reason: Input files updated by another job: /data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/wgs_1/step0_bwa/bwa_wgs_1.bam, /data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/wgs_2/step0_bwa/bwa_wgs_2.bam
+    resources: mem_mb=200000, mem_mib=190735, disk_mb=200000, disk_mib=190735, tmpdir=/data/cailab/flask_out/20241119164354-7e9f46d3-dec2-4e4f-b961-13a2d2b4eae2/temp_test
+
+[Tue Nov 19 16:47:33 2024]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2024-11-19T164514.652396.snakemake.log

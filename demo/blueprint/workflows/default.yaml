@@ -1,0 +1,7 @@
+default : 
+  pair: |
+    mkdir -p $output_dir/${{sample}}/{step}_trim_galore
+  single: 
+    mkdir -p $output_dir/${{sample}}/{step}_trim_galore
+  simple_pair: "mkdir -p {params} sample_trim_galore"
+  simple_single: "mkdir -p {params} sample_trim_galore"
